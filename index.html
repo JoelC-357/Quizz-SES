@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SES Master Quiz - 1ère & Terminale</title>
+    <title>SES Master Quiz - Terminale (Version Marathon 180 Questions)</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- React and ReactDOM CDN -->
@@ -41,1215 +41,10 @@
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
 
-        // =========================================================================
-        // BASE DE DONNÉES PREMIÈRE (Sera complétée aux Étapes 2 et 3)
-        // =========================================================================
-        530
-    // 1. COMMENT UN MARCHÉ CONCURRENTIEL FONCTIONNE-T-IL ?
-    {
-        id: "prem_marche_concurrentiel",
-        title: "1. Comment un marché concurrentiel fonctionne-t-il ?",
-        icon: "fa-scale-balanced",
-        color: "from-blue-600 to-cyan-600",
-        questions: [
-            {
-                question: "Sur un marché en concurrence parfaite, que représente le surplus du consommateur ?",
-                options: [
-                    { text: "L'écart entre le prix maximal qu'il est prêt à payer et le prix d'équilibre effectif.", isCorrect: true, rationale: "Le surplus mesure le gain à l'échange : c'est la différence entre la disposition à payer (prix de réserve) et le prix payé." },
-                    { text: "La quantité totale de biens achetés au-delà du seuil de rentabilité.", isCorrect: false, rationale: "Faux, le surplus est une grandeur monétaire de bien-être, pas un volume physique." },
-                    { text: "Le profit net réalisé par les entreprises du secteur.", isCorrect: false, rationale: "Faux, cela correspond au surplus du producteur ou au bénéfice." },
-                    { text: "Le montant total des taxes économisées par le consommateur.", isCorrect: false, rationale: "Faux, cela ne correspond à aucune définition théorique du surplus." }
-                ]
-            },
-            {
-                question: "Que se passe-t-il graphiquement sur le marché si les coûts de production des offreurs augmentent ?",
-                options: [
-                    { text: "La courbe d'offre se déplace vers la gauche (hausse du prix d'équilibre et baisse des quantités).", isCorrect: true, rationale: "Pour chaque niveau de prix, les entreprises offrent moins de biens : la courbe d'offre glisse vers la gauche." },
-                    { text: "La courbe d'offre se déplace vers la droite et le prix d'équilibre diminue.", isCorrect: false, rationale: "Inversion : une hausse des coûts réduit l'offre pour un prix donné." },
-                    { text: "La courbe de demande se déplace immédiatement vers la droite.", isCorrect: false, rationale: "Faux : une variation des coûts des offreurs affecte l'offre, pas la demande." },
-                    { text: "Le prix d'équilibre baisse mécaniquement.", isCorrect: false, rationale: "Inversion : la raréfaction relative de l'offre pousse le prix de marché à la hausse." }
-                ]
-            },
-            {
-                question: "À court terme, une entreprise concurrentielle maximise son profit lorsque :",
-                options: [
-                    { text: "La recette marginale (le prix de marché) est égale au coût marginal.", isCorrect: true, rationale: "Tant que le prix de vente unitaire est supérieur au coût de la dernière unité produite (Cm), l'entreprise a intérêt à produire." },
-                    { text: "Le prix de vente est rigoureusement égal au coût fixe moyen.", isCorrect: false, rationale: "Faux : l'égalisation au coût fixe moyen ne maximise pas le profit global." },
-                    { text: "Le coût moyen est à son niveau historique le plus haut.", isCorrect: false, rationale: "Faux : une entreprise cherche à minimiser ses coûts moyens." },
-                    { text: "La production atteint la capacité physique maximale de l'usine.", isCorrect: false, rationale: "Faux : produire au maximum peut générer des rendements décroissants et un Cm supérieur au prix." }
-                ]
-            },
-            {
-                question: "L'instauration d'une taxe forfaitaire sur un marché engendre généralement :",
-                options: [
-                    { text: "Une perte sèche (diminution du surplus total non compensée par les recettes fiscales).", isCorrect: true, rationale: "La taxe réduit les quantités échangées par rapport à l'optimum, créant une perte nette de bien-être pour la société." },
-                    { text: "Une augmentation mathématique du surplus global des offreurs et des demandeurs.", isCorrect: false, rationale: "Inversion : les taxes réduisent simultanément le surplus des consommateurs et des producteurs." },
-                    { text: "Une baisse systématique du prix payé par le consommateur final.", isCorrect: false, rationale: "Inversion : la taxe augmente le prix payé par le consommateur." },
-                    { text: "Une hausse immédiate des quantités totales de biens échangés.", isCorrect: false, rationale: "Inversion : la hausse du prix induite par la taxe décourage la demande et réduit les volumes." }
-                ]
-            },
-            {
-                question: "L'hypothèse d'atomicité du marché en concurrence parfaite signifie que :",
-                options: [
-                    { text: "Les offreurs et demandeurs sont très nombreux et aucun ne peut influencer le prix.", isCorrect: true, rationale: "L'atomicité fait de chaque agent un 'preneur de prix' (price-taker)." },
-                    { text: "Tous les produits échangés sont strictement identiques et standardisés.", isCorrect: false, rationale: "Confusion : cela correspond à l'hypothèse d'homogénéité des produits." },
-                    { text: "L'information sur les caractéristiques des biens est parfaite et gratuite pour tous.", isCorrect: false, rationale: "Confusion : cela correspond à l'hypothèse de transparence du marché." },
-                    { text: "Les facteurs de production circulent librement sans aucun obstacle.", isCorrect: false, rationale: "Confusion : cela correspond à l'hypothèse de parfaite mobilité des facteurs." }
-                ]
-            },
-            {
-                question: "Que mesure l'élasticité-prix de la demande ?",
-                options: [
-                    { text: "La sensibilité de la quantité demandée suite à une variation en pourcentage du prix.", isCorrect: true, rationale: "Elle se calcule par : (Variation en % de la demande) / (Variation en % du prix). Si elle est négative et inférieure à -1, la demande est élastique." },
-                    { text: "La variation du coût moyen consécutive à une hausse du coût du travail.", isCorrect: false, rationale: "Confusion : c'est l'élasticité de l'offre ou la fonction de coût." },
-                    { text: "L'augmentation des profits des entreprises lorsque la TVA diminue.", isCorrect: false, rationale: "Faux : l'élasticité-prix de la demande mesure une réaction des acheteurs, pas les marges des firmes." },
-                    { text: "Le ratio entre le nombre de demandeurs et le nombre d'offreurs sur le marché.", isCorrect: false, rationale: "Faux : cela relève de la structure du marché (atomicité), pas d'une élasticité." }
-                ]
-            },
-            {
-                question: "Si l'élasticité-prix de la demande d'un bien est proche de zéro (demande inélastique ou rigide) :",
-                options: [
-                    { text: "Une hausse forte du prix entraîne une faible baisse de la quantité demandée (ex: carburant, médicaments).", isCorrect: true, rationale: "Lorsque les biens sont de première nécessité ou sans substituts proches, les consommateurs continuent d'acheter malgré la hausse des prix." },
-                    { text: "Une faible hausse du prix fait chuter instantanément la demande à zéro.", isCorrect: false, rationale: "Confusion : cela correspondrait à une demande parfaitement élastique (infinie)." },
-                    { text: "La courbe de demande est parfaitement horizontale.", isCorrect: false, rationale: "Inversion : une demande inélastique est représentée par une courbe quasi verticale." },
-                    { text: "Les offreurs sont contraints de vendre à perte.", isCorrect: false, rationale: "Faux : une demande inélastique confère au contraire un pouvoir de fixation des prix avantageux à l'offreur." }
-                ]
-            },
-            {
-                question: "Que représente graphiquement le surplus du producteur ?",
-                options: [
-                    { text: "La surface située au-dessus de la courbe d'offre et en dessous du prix d'équilibre du marché.", isCorrect: true, rationale: "Il mesure la différence entre le prix de marché perçu par les offreurs et le prix minimal auquel ils étaient prêts à céder chaque unité." },
-                    { text: "La surface située au-dessus du prix de marché et sous la courbe de demande.", isCorrect: false, rationale: "Confusion : c'est la définition géométrique du surplus du consommateur." },
-                    { text: "Le montant total des impôts prélevés par l'État sur la production.", isCorrect: false, rationale: "Confusion : cela correspond aux recettes fiscales publiques." },
-                    { text: "La perte sèche subie en cas de taxation forfaitaire.", isCorrect: false, rationale: "Confusion : la perte sèche est le triangle de bien-être perdu pour l'ensemble de la société." }
-                ]
-            },
-            {
-                question: "Sur un marché concurrentiel, l'instauration d'une subvention versée aux producteurs entraîne :",
-                options: [
-                    { text: "Un déplacement de la courbe d'offre vers la droite, une baisse du prix payé par les acheteurs et une hausse des quantités.", isCorrect: true, rationale: "La subvention allège les coûts de production, ce qui incite les firmes à offrir davantage pour chaque niveau de prix." },
-                    { text: "Une baisse des quantités échangées et une hausse du prix d'équilibre.", isCorrect: false, rationale: "Inversion : c'est l'effet d'une taxe, pas d'une subvention." },
-                    { text: "Un déplacement de la courbe de demande vers la gauche.", isCorrect: false, rationale: "Faux : la subvention versée aux offreurs agit directement sur la courbe d'offre." },
-                    { text: "La disparition immédiate du surplus du consommateur.", isCorrect: false, rationale: "Inversion : la subvention fait baisser le prix de marché, augmentant le surplus des consommateurs." }
-                ]
-            },
-            {
-                question: "Pourquoi dit-on que le marché en concurrence parfaite réalise des gains à l'échange optimaux ?",
-                options: [
-                    { text: "Parce qu'à l'équilibre concurrentiel, la somme des surplus du consommateur et du producteur est maximisée.", isCorrect: true, rationale: "À l'équilibre, toutes les transactions mutuellement avantageuses sont réalisées : il n'y a pas de perte sèche (efficacité au sens de Pareto)." },
-                    { text: "Parce que l'État fixe un prix juste qui garantit le même bénéfice à chaque citoyen.", isCorrect: false, rationale: "Faux : en CPP, le prix résulte de la confrontation décentralisée de l'offre et de la demande sans fixation étatique." },
-                    { text: "Parce que les coûts de production tombent automatiquement à zéro.", isCorrect: false, rationale: "Faux : les coûts de production dépendent des contraintes techniques et du prix des facteurs." },
-                    { text: "Parce que les entreprises ne réalisent aucun chiffre d'affaires.", isCorrect: false, rationale: "Non-sens économique : les entreprises vendent leurs productions et réalisent des recettes." }
-                ]
-            }
-        ]
-    },
-
-    // 2. COMMENT LES MARCHÉS IMPARFAITEMENT CONCURRENTIELS FONCTIONNENT-ILS ?
-    {
-        id: "prem_marches_imparfaits",
-        title: "2. Les marchés imparfaitement concurrentiels",
-        icon: "fa-chess-rook",
-        color: "from-sky-600 to-indigo-600",
-        questions: [
-            {
-                question: "Quelle est la caractéristique principale d'une entreprise en situation de 'price-maker' (faiseuse de prix) ?",
-                options: [
-                    { text: "Elle dispose d'un pouvoir de marché lui permettant de fixer un prix supérieur au coût marginal.", isCorrect: true, rationale: "Le pouvoir de marché permet d'appliquer une marge (markup) par rapport au coût marginal." },
-                    { text: "Elle subit le prix fixé par les mécanismes anonymes du marché.", isCorrect: false, rationale: "C'est la définition d'un preneur de prix (price-taker) en CPP." },
-                    { text: "Elle a l'obligation légale de vendre au coût de revient sans faire de bénéfice.", isCorrect: false, rationale: "Faux : une entreprise faiseuse de prix cherche à maximiser son profit." },
-                    { text: "Elle opère sur un marché comprenant une infinité d'offreurs concurrents.", isCorrect: false, rationale: "Inversion : le pouvoir de marché provient de la raréfaction des offreurs (monopole, oligopole)." }
-                ]
-            },
-            {
-                id: "q2_monopole_naturel",
-                question: "Un monopole résultant de coûts fixes très élevés et de rendements d'échelle croissants est un :",
-                options: [
-                    { text: "Monopole naturel.", isCorrect: true, rationale: "Dans un monopole naturel (ex: réseaux ferrés, électricité), une seule firme produit à coût moyen plus bas que plusieurs concurrents." },
-                    { text: "Monopole d'innovation protégé par un brevet.", isCorrect: false, rationale: "Confusion : le monopole d'innovation découle d'une découverte technique temporaire (Schumpeter)." },
-                    { text: "Monopole légal ou institutionnel.", isCorrect: false, rationale: "Confusion : le monopole légal découle d'une décision réglementaire de l'État." },
-                    { text: "Monopole temporaire d'entente illicite.", isCorrect: false, rationale: "Confusion : une entente forme un cartel en oligopole, pas un monopole naturel." }
-                ]
-            },
-            {
-                question: "Dans le dilemme du prisonnier appliqué à un duopole, l'équilibre de Nash non coopératif aboutit à :",
-                options: [
-                    { text: "Une situation sous-optimale où chaque firme baisse ses prix par crainte d'être trahie par l'autre.", isCorrect: true, rationale: "Sans accord contraignant, la stratégie dominante individuelle conduit à un équilibre moins rémunérateur que l'entente." },
-                    { text: "La maximisation parfaite du profit joint des deux entreprises concurrentes.", isCorrect: false, rationale: "Inversion : c'est l'entente coopérative (cartel) qui maximiserait le profit joint." },
-                    { text: "La fixation d'un prix de vente supérieur au prix de monopole.", isCorrect: false, rationale: "Faux : la guerre des prix non coopérative rapproche le prix du coût marginal." },
-                    { text: "Une coopération spontanée et durable sans aucune surveillance.", isCorrect: false, rationale: "Faux : la tentation de tricher pour capter toute la clientèle déstabilise spontanément la coopération." }
-                ]
-            },
-            {
-                question: "La politique de la concurrence régule les fusions-acquisitions (concentrations) afin :",
-                options: [
-                    { text: "D'éviter la création de positions dominantes excessives nuisant au consommateur.", isCorrect: true, rationale: "Le contrôle des concentrations prévient les hausses de prix excessives ou la réduction du choix pour les acheteurs." },
-                    { text: "D'interdire aux entreprises de recruter des salariés supplémentaires.", isCorrect: false, rationale: "Faux : la politique de la concurrence n'encadre pas les embauches." },
-                    { text: "De forcer toutes les firmes à adopter exactement les mêmes grilles tarifaires.", isCorrect: false, rationale: "Inversion : l'alignement concerté des tarifs constitue une entente illicite sanctionnée." },
-                    { text: "De supprimer l'ensemble des droits de douane aux frontières de l'Union européenne.", isCorrect: false, rationale: "Confusion : cela relève des accords commerciaux internationaux et du marché unique." }
-                ]
-            },
-            {
-                question: "La concurrence monopolistique se caractérise par :",
-                options: [
-                    { text: "Un grand nombre d'offreurs proposant des produits différenciés par la marque ou la qualité.", isCorrect: true, rationale: "La différenciation des produits confère à chaque producteur un petit monopole local sur sa variété spécifique (Chamberlin)." },
-                    { text: "Un seul offreur vendant un produit parfaitement homogène à tout le marché.", isCorrect: false, rationale: "Confusion : cette définition correspond au monopole pur." },
-                    { text: "L'interdiction absolue pour les entreprises d'utiliser la publicité commerciale.", isCorrect: false, rationale: "Inversion : la publicité est l'instrument central de la différenciation." },
-                    { text: "Une transparence absolue éliminant toute fidélité des consommateurs à une marque.", isCorrect: false, rationale: "Faux : la concurrence monopolistique s'appuie précisément sur l'attachement à l'image de marque." }
-                ]
-            },
-            {
-                question: "Qu'est-ce qu'une 'barrière à l'entrée' sur un marché ?",
-                options: [
-                    { text: "Un obstacle économique, technique ou légal qui empêche ou dissuade de nouveaux concurrents de s'implanter.", isCorrect: true, rationale: "Les barrières (brevets, coûts d'infrastructure, marques fortes) protègent les entreprises en place et préservent leur pouvoir de marché." },
-                    { text: "Une taxe douanière appliquée uniquement aux produits exportés.", isCorrect: false, rationale: "Confusion : cela correspond à une taxe commerciale à l'exportation." },
-                    { text: "La limitation légale de la durée hebdomadaire du travail des salariés.", isCorrect: false, rationale: "Confusion avec le droit du travail (durée légale des 35 heures)." },
-                    { text: "L'obligation pour une entreprise de publier ses comptes financiers annuels.", isCorrect: false, rationale: "Faux : c'est une obligation comptable de transparence, pas une barrière à l'entrée stratégique." }
-                ]
-            },
-            {
-                question: "Un cartel de producteurs (ex: entente secrète sur les prix) est instable parce que :",
-                options: [
-                    { text: "Chaque membre a une incitation individuelle à tricher en vendant un peu moins cher pour rafler des parts de marché.", isCorrect: true, rationale: "C'est l'application de la théorie des jeux : l'intérêt individuel à court terme détruit l'accord collectif à long terme." },
-                    { text: "Les prix fixés par les cartels sont obligatoirement égaux au coût marginal.", isCorrect: false, rationale: "Inversion : un cartel cherche à fixer un prix élevé de type monopole pour maximiser sa rente." },
-                    { text: "L'État oblige les cartels à distribuer 100 % de leurs bénéfices aux consommateurs.", isCorrect: false, rationale: "Faux : les cartels sont illégaux et pourchassés par les autorités de la concurrence." },
-                    { text: "La demande des consommateurs augmente de manière infinie dès que l'entente est signée.", isCorrect: false, rationale: "Faux : la hausse des prix décidée par le cartel tend au contraire à contracter la quantité demandée." }
-                ]
-            },
-            {
-                question: "Dans le cadre de la politique de la concurrence européenne, le programme de 'clémence' consiste à :",
-                options: [
-                    { text: "Exonérer d'amende ou réduire la sanction d'une entreprise membre d'un cartel si elle est la première à dénoncer l'entente aux autorités.", isCorrect: true, rationale: "Ce mécanisme exploite le dilemme du prisonnier pour briser la confiance entre les membres d'un cartel illicite." },
-                    { text: "Autoriser les monopoles publics à fixer librement les tarifs du gaz et de l'électricité.", isCorrect: false, rationale: "Faux : la politique européenne de la concurrence encadre strictement les tarifs et ouvre les marchés à la concurrence." },
-                    { text: "Interdire toute amende financière contre les petites et moyennes entreprises.", isCorrect: false, rationale: "Faux : les sanctions s'appliquent à toute firme coupable d'infraction, proportionnellement au chiffre d'affaires." },
-                    { text: "Subventionner les firmes qui réalisent des pertes financières consécutives.", isCorrect: false, rationale: "Confusion : les aides d'État non justifiées sont prohibées par la Commission européenne." }
-                ]
-            },
-            {
-                question: "Comparé à un marché de concurrence parfaite, un marché en situation de monopole produit :",
-                options: [
-                    { text: "Une quantité plus faible à un prix plus élevé, entraînant une perte sèche de bien-être pour la société.", isCorrect: true, rationale: "Le monopoleur réduit délibérément son volume de production pour maintenir un prix élevé et capter une rente de monopole." },
-                    { text: "Une quantité plus importante à un prix strictement inférieur.", isCorrect: false, rationale: "Inversion complète des effets du monopole par rapport à la CPP." },
-                    { text: "Un surplus du consommateur maximal et sans aucune marge bénéficiaire.", isCorrect: false, rationale: "Inversion : le monopole capte une grande part du surplus du consommateur sous forme de profit." },
-                    { text: "Une infinité de variétés de produits pour satisfaire tous les goûts.", isCorrect: false, rationale: "Confusion : le monopole propose une offre unique, la variété est le propre de la concurrence monopolistique." }
-                ]
-            },
-            {
-                question: "Qu'est-ce qu'un abus de position dominante ?",
-                options: [
-                    { text: "Le comportement d'une firme puissante qui profite de sa force pour évincer des rivaux ou imposer des conditions déloyales (ex: ventes liées, prix prédateurs).", isCorrect: true, rationale: "Détenir une position dominante est légal, mais en abuser pour fausser la concurrence est illicite et sanctionné." },
-                    { text: "Le fait pour une entreprise d'atteindre plus de 50 % de parts de marché grâce à une innovation brevetée.", isCorrect: false, rationale: "Faux : avoir une part de marché élevée n'est pas illégal en soi si cela résulte des mérites de l'innovation." },
-                    { text: "La décision d'une firme d'augmenter les salaires de ses dirigeants au-delà du SMIC.", isCorrect: false, rationale: "Confusion : la rémunération des dirigeants relève de la gouvernance d'entreprise, pas du droit de la concurrence." },
-                    { text: "L'obligation pour une entreprise de fusionner avec son principal concurrent local.", isCorrect: false, rationale: "Faux : les fusions sont des décisions stratégiques privées soumises au contrôle préalable des autorités." }
-                ]
-            }
-        ]
-    },
-
-    // 3. QUELLES SONT LES PRINCIPALES DÉFAILLANCES DU MARCHÉ ?
-    {
-        id: "prem_defaillances_marche",
-        title: "3. Les défaillances du marché",
-        icon: "fa-triangle-exclamation",
-        color: "from-amber-600 to-orange-600",
-        questions: [
-            {
-                question: "Une externalité négative de production (ex: pollution industrielle) conduit le marché concurrentiel à :",
-                options: [
-                    { text: "Produire une quantité trop élevée car le coût privé est inférieur au coût social supporté par la collectivité.", isCorrect: true, rationale: "L'émetteur ne payant pas les dommages causés aux tiers, le signal-prix est faussé et le marché surproduit le bien polluant." },
-                    { text: "Produire une quantité trop faible par rapport à l'optimum social de bien-être.", isCorrect: false, rationale: "Inversion : c'est l'externalité positive (ex: recherche, vaccins) qui conduit à une sous-production par le marché." },
-                    { text: "Fixer spontanément un prix de marché supérieur au coût marginal social.", isCorrect: false, rationale: "Faux : le prix de marché concurrentiel ne reflète que le coût privé, il est donc inférieur au coût social réel." },
-                    { text: "Éliminer automatiquement et sans intervention publique tous les polluants.", isCorrect: false, rationale: "Faux : en l'absence de régulation (taxe, norme), les offreurs n'ont aucun intérêt monétaire à dépolluer à leurs frais." }
-                ]
-            },
-            {
-                question: "Un bien collectif pur se définit par :",
-                options: [
-                    { text: "La non-rivalité (la consommation d'un agent ne réduit pas celle des autres) et la non-excluabilité (impossible d'exclure un individu).", isCorrect: true, rationale: "Exemples types : l'éclairage public, la défense nationale, la justice." },
-                    { text: "La rivalité forte et la possibilité d'exclure les consommateurs par les prix de vente.", isCorrect: false, rationale: "Confusion : c'est la définition d'un bien privatif pur marchand (ex: un vêtement, une pomme)." },
-                    { text: "La rivalité forte associée à une impossibilité technique d'exclure les usagers.", isCorrect: false, rationale: "Confusion : c'est la définition d'un bien commun (ex: poissons dans l'océan, pâturages partagés)." },
-                    { text: "La non-rivalité associée à une possibilité d'exclusion par un péage payant.", isCorrect: false, rationale: "Confusion : c'est la définition d'un bien de club ou bien collectif impur (ex: chaîne TV cryptée, autoroute payante)." }
-                ]
-            },
-            {
-                question: "Le comportement de 'passager clandestin' (free-rider) sur les biens collectifs pousse le marché privé à :",
-                options: [
-                    { text: "Une sous-production voire une absence totale d'offre spontanée par les entreprises privées.", isCorrect: true, rationale: "Puisqu'on ne peut pas forcer les bénéficiaires à payer une fois le bien produit, aucune firme privée rentable ne veut le financer seule." },
-                    { text: "Une rentabilité excessive incitant toutes les firmes à investir dans le secteur.", isCorrect: false, rationale: "Inversion : l'impossibilité de faire payer les usagers détruit la rentabilité commerciale du projet." },
-                    { text: "Une réduction automatique des dépenses publiques de fonctionnement de l'État.", isCorrect: false, rationale: "Faux : pour pallier cette défaillance, c'est au contraire l'État qui doit intervenir pour financer le bien par l'impôt." },
-                    { text: "La fixation d'un prix de vente unitaire prohibitif pour chaque bénéficiaire.", isCorrect: false, rationale: "Faux : le passager clandestin profite du service gratuitement, il ne subit aucun prix prohibitif." }
-                ]
-            },
-            {
-                question: "Sur le marché des voitures d'occasion d'Akerlof, l'asymétrie d'information ex ante entraîne :",
-                options: [
-                    { text: "Une sélection adverse (les mauvais produits chassent les bons, risquant de détruire le marché).", isCorrect: true, rationale: "Les acheteurs ne pouvant distinguer la qualité avant l'achat, ils proposent un prix moyen qui fait fuir les vendeurs de bons véhicules." },
-                    { text: "Un aléa moral modifiant la conduite du conducteur après la conclusion de la vente.", isCorrect: false, rationale: "Confusion : l'aléa moral survient après la signature du contrat (ex post), alors que la sélection adverse a lieu avant (ex ante)." },
-                    { text: "Une hausse immédiate de la qualité moyenne des voitures proposées à la vente.", isCorrect: false, rationale: "Inversion : l'asymétrie dégrade la qualité moyenne disponible sur le marché (phénomène des 'lemons')." },
-                    { text: "La disparition immédiate de tout intermédiaire ou garage professionnel.", isCorrect: false, rationale: "Faux : les garanties et labels proposés par les professionnels sont précisément des solutions pour corriger l'asymétrie." }
-                ]
-            },
-            {
-                question: "L'aléa moral (hasard moral) désigne une situation dans laquelle :",
-                options: [
-                    { text: "Un agent modifie son comportement de façon plus risquée ou négligente après la signature du contrat car il est protégé.", isCorrect: true, rationale: "Exemple : être assuré tous risques sans franchise peut inciter un conducteur à être moins vigilant au stationnement." },
-                    { text: "L'acheteur ignore la qualité intrinsèque du produit au moment de payer en magasin.", isCorrect: false, rationale: "Confusion : cela décrit l'asymétrie d'information précontractuelle (sélection adverse)." },
-                    { text: "L'État décide d'interdire l'ensemble des contrats d'assurance privée facultatifs.", isCorrect: false, rationale: "Faux : l'aléa moral est un problème microéconomique de comportement, pas une décision d'interdiction étatique." },
-                    { text: "Deux entreprises s'accordent secrètement sur le niveau des prix de vente futurs.", isCorrect: false, rationale: "Confusion : cela correspond à une entente illicite (cartel) en oligopole." }
-                ]
-            },
-            {
-                question: "Comment l'État peut-il 'internaliser' une externalité négative selon Arthur Cecil Pigou ?",
-                options: [
-                    { text: "En instaurant une taxe pigouvienne égale au coût marginal du dommage pour intégrer le coût social dans le prix privé.", isCorrect: true, rationale: "Le principe pollueur-payeur rétablit la vérité des prix et incite les agents à réduire spontanément leurs nuisances." },
-                    { text: "En accordant des subventions sans condition à toutes les usines polluantes.", isCorrect: false, rationale: "Inversion : subventionner la pollution aggraverait l'externalité négative au lieu de la corriger." },
-                    { text: "En interdisant toute forme de production industrielle sur l'ensemble du territoire.", isCorrect: false, rationale: "Caricature : la taxe pigouvienne utilise le signal-prix pour réguler la production, pas l'interdiction totale." },
-                    { text: "En supprimant l'ensemble des tribunaux et des droits de propriété.", isCorrect: false, rationale: "Faux : la protection des droits de propriété est indispensable au fonctionnement des marchés." }
-                ]
-            },
-            {
-                question: "Quelle est la caractéristique économique d'un 'bien commun' (ex: bancs de poissons, forêts) ?",
-                options: [
-                    { text: "Il est rival (sa consommation par un individu réduit celle des autres) mais non-excluable (accès libre et gratuit).", isCorrect: true, rationale: "L'absence d'exclusion combinée à la rivalité crée un risque de surexploitation et d'épuisement de la ressource (tragédie des communs)." },
-                    { text: "Il est non-rival et parfaitement excluable par un ticket payant.", isCorrect: false, rationale: "Confusion : c'est la définition d'un bien de club (ex: cinéma, autoroute à péage)." },
-                    { text: "Il est fabriqué exclusivement par des entreprises publiques d'État.", isCorrect: false, rationale: "Faux : un bien commun est le plus souvent une ressource naturelle préexistante en libre accès." },
-                    { text: "Sa consommation n'engendre jamais aucun épuisement dans le temps.", isCorrect: false, rationale: "Inversion : la rivalité implique précisément que chaque prélèvement diminue le stock disponible." }
-                ]
-            },
-            {
-                question: "Selon Elinor Ostrom (Prix Nobel d'économie), comment les communautés peuvent-elles éviter la 'tragédie des communs' ?",
-                options: [
-                    { text: "En instaurant des règles locales d'auto-gouvernance, de surveillance mutuelle et de sanctions graduées entre usagers.", isCorrect: true, rationale: "Ostrom montre qu'entre la privatisation marchande et la nationalisation étatique, la gestion collective par les usagers eux-mêmes est souvent efficiente." },
-                    { text: "En privatisant immédiatement l'intégralité des océans et de l'atmosphère mondiale.", isCorrect: false, rationale: "Faux : Ostrom démontre précisément les limites de la privatisation pure pour les ressources communes." },
-                    { text: "En interdisant définitivement toute activité de pêche ou d'agriculture.", isCorrect: false, rationale: "Faux : l'objectif est d'assurer une exploitation soutenable et durable de la ressource, pas son abandon." },
-                    { text: "En laissant le marché libre fonctionner sans aucune règle ni contrôle.", isCorrect: false, rationale: "Inversion : c'est l'absence de règles en libre accès qui déclenche la tragédie des communs selon Hardin." }
-                ]
-            },
-            {
-                question: "Face aux asymétries d'information, qu'est-ce qu'un mécanisme de 'signalement' (signaling de Michael Spence) ?",
-                options: [
-                    { text: "L'action par laquelle l'agent le mieux informé envoie un signal crédible et coûteux pour prouver sa qualité (ex: diplôme, label, garantie).", isCorrect: true, rationale: "Le signal (ex: garantie constructeur de 5 ans) restaure la confiance de l'acheteur car un vendeur de mauvaise qualité ne pourrait pas l'offrir." },
-                    { text: "L'interdiction légale pour les entreprises de communiquer sur la qualité de leurs produits.", isCorrect: false, rationale: "Inversion : le signalement est une démarche volontaire d'information et de différenciation." },
-                    { text: "Le piratage des bases de données des banques concurrentes.", isCorrect: false, rationale: "Confusion avec la cybercriminalité, hors du champ de la théorie économique des contrats." },
-                    { text: "La décision unilatérale de l'État de fixer un prix unique pour tous les biens.", isCorrect: false, rationale: "Faux : le signalement est un mécanisme décentralisé émis par les offreurs ou demandeurs." }
-                ]
-            },
-            {
-                question: "Pourquoi les dépenses de Recherche et Développement (R&D) génèrent-elles des externalités positives ?",
-                options: [
-                    { text: "Parce que les connaissances découvertes diffusent dans l'économie et profitent à d'autres innovateurs sans paiement intégral.", isCorrect: true, rationale: "Le savoir présente un caractère cumulatif et partiellement non-rival, ce qui justifie les subventions publiques et les brevets pour éviter le sous-investissement." },
-                    { text: "Parce qu'elles augmentent automatiquement la pollution de l'air des usines.", isCorrect: false, rationale: "Inversion : la pollution est une externalité négative." },
-                    { text: "Parce qu'elles obligent tous les concurrents à fermer leurs laboratoires.", isCorrect: false, rationale: "Faux : les découvertes stimulent au contraire l'émulation et de nouvelles inventions dérivées." },
-                    { text: "Parce qu'elles suppriment le besoin d'embaucher des chercheurs diplômés.", isCorrect: false, rationale: "Inversion : les dépenses de R&D servent précisément à financer les salaires des équipes scientifiques." }
-                ]
-            }
-        ]
-    },
-
-    // 4. COMMENT LES AGENTS ÉCONOMIQUES SE FINANCENT-ILS ?
-    {
-        id: "prem_financement_agents",
-        title: "4. Le financement des agents économiques",
-        icon: "fa-building-columns",
-        color: "from-emerald-600 to-teal-600",
-        questions: [
-            {
-                question: "Un agent économique est en situation de 'capacité de financement' lorsque :",
-                options: [
-                    { text: "Son épargne brute est supérieure à ses investissements (FBCF).", isCorrect: true, rationale: "L'agent dégage un excédent de ressources financières qu'il peut mettre à disposition du reste de l'économie." },
-                    { text: "Ses dépenses de consommation courante dépassent son revenu disponible.", isCorrect: false, rationale: "Inversion : un tel agent est en déficit et doit s'endetter pour consommer." },
-                    { text: "Il est contraint de souscrire un prêt bancaire à court terme pour financer ses machines.", isCorrect: false, rationale: "Confusion : c'est la caractéristique d'un agent à besoin de financement." },
-                    { text: "Son taux d'endettement financier net est strictement supérieur à 100 % de ses actifs.", isCorrect: false, rationale: "Faux : cela traduit un surendettement, pas une capacité d'épargne nette." }
-                ]
-            },
-            {
-                question: "Quelle est la différence fondamentale entre une action et une obligation ?",
-                options: [
-                    { text: "L'action est un titre de propriété conférant un dividende variable ; l'obligation est un titre de créance rémunéré par un intérêt.", isCorrect: true, rationale: "L'actionnaire est copropriétaire et prend un risque sur les profits ; l'obligataire est un prêteur qui récupère son capital majoré d'intérêts contractuels." },
-                    { text: "L'action est émise par l'État, tandis que l'obligation est émise exclusivement par les ménages.", isCorrect: false, rationale: "Faux : l'État émet des obligations publiques (emprunts d'État) et les ménages n'émettent ni actions ni obligations." },
-                    { text: "L'obligation confère un droit de vote obligatoire lors des assemblées générales d'actionnaires.", isCorrect: false, rationale: "Inversion : c'est l'actionnaire qui possède un droit de vote sur la gestion de l'entreprise." },
-                    { text: "L'action garantit le remboursement certain du capital initial à une date d'échéance fixée.", isCorrect: false, rationale: "Inversion : l'obligation a une échéance contractuelle, la valeur de l'action dépend du cours boursier." }
-                ]
-            },
-            {
-                question: "Le financement direct (intermédiation de marché) correspond à la situation où :",
-                options: [
-                    { text: "Les agents à besoin de financement émettent directement des titres achetés par les agents à capacité sur les marchés de capitaux.", isCorrect: true, rationale: "Le financement direct s'opère sur les marchés financiers via l'émission d'actions ou d'obligations sans crédit bancaire intermédiaire." },
-                    { text: "Une banque commerciale utilise ses propres réserves pour accorder un crédit à un ménage.", isCorrect: false, rationale: "Confusion : c'est la définition du financement indirect ou intermédié." },
-                    { text: "L'entreprise finance l'intégralité de ses investissements grâce à ses bénéfices non distribués.", isCorrect: false, rationale: "Confusion : cela correspond à l'autofinancement (financement interne)." },
-                    { text: "L'État attribue des subventions publiques sans exiger aucun remboursement futur.", isCorrect: false, rationale: "Faux : une subvention est une aide budgétaire publique, pas une transaction sur les marchés financiers." }
-                ]
-            },
-            {
-                question: "Le taux d'intérêt réel est égal :",
-                options: [
-                    { text: "Au taux d'intérêt nominal diminué du taux d'inflation.", isCorrect: true, rationale: "Le taux d'intérêt réel mesure le coût réel pour l'emprunteur ou le gain réel en pouvoir d'achat pour le prêteur une fois l'inflation déduite." },
-                    { text: "Au taux d'intérêt nominal multiplié par le taux de croissance du PIB.", isCorrect: false, rationale: "Faux : la formule d'approximation économique est le taux nominal moins le taux d'inflation." },
-                    { text: "Au taux de marge brute de l'entreprise majoré des cotisations sociales.", isCorrect: false, rationale: "Confusion de concepts comptables d'entreprise." },
-                    { text: "Au montant total des dividendes distribués aux actionnaires de la banque.", isCorrect: false, rationale: "Faux : le taux d'intérêt concerne la rémunération d'un prêt de monnaie, pas les profits de la banque." }
-                ]
-            },
-            {
-                question: "Un déficit budgétaire public correspond à :",
-                options: [
-                    { text: "Un flux annuel où les dépenses publiques de l'État sont supérieures à ses recettes publiques.", isCorrect: true, rationale: "Le déficit est le solde négatif d'une année budgétaire, dont le cumul dans le temps forme la dette publique (stock)." },
-                    { text: "Le montant total cumulé de l'ensemble des emprunts contractés par l'État depuis sa création.", isCorrect: false, rationale: "Confusion flux/stock : le montant cumulé correspond à la dette publique, pas au déficit annuel." },
-                    { text: "Une situation où les importations nationales dépassent la valeur des exportations.", isCorrect: false, rationale: "Confusion : cela désigne le déficit commercial, pas le déficit budgétaire public." },
-                    { text: "Une baisse immédiate du taux de prélèvements obligatoires votée par le Parlement.", isCorrect: false, rationale: "Faux : une baisse des taxes peut aggraver le déficit, mais ne constitue pas sa définition." }
-                ]
-            },
-            {
-                question: "Qu'est-ce que l'autofinancement d'une entreprise ?",
-                options: [
-                    { text: "La capacité de l'entreprise à financer ses investissements grâce à sa propre épargne brute (bénéfices non distribués et amortissements).", isCorrect: true, rationale: "L'autofinancement garantit l'indépendance financière de la firme et lui évite d'avoir à payer des intérêts bancaires." },
-                    { text: "L'emprunt contracté auprès des actionnaires sous forme d'obligations convertibles.", isCorrect: false, rationale: "Confusion : c'est un financement externe par endettement obligataire." },
-                    { text: "La vente forcée des usines de production pour rembourser les créanciers.", isCorrect: false, rationale: "Confusion : cela correspond à une liquidation d'actifs en situation de faillite." },
-                    { text: "L'obtention de crédits bancaires à taux d'intérêt nul garantis par la Banque centrale.", isCorrect: false, rationale: "Confusion : cela relève du financement externe intermédié." }
-                ]
-            },
-            {
-                question: "Sur les marchés financiers, quelle est la distinction entre marché primaire et marché secondaire ?",
-                options: [
-                    { text: "Le marché primaire est le marché du 'neuf' (émission des nouveaux titres) ; le marché secondaire est le marché de l''occasion' (revente des titres existants).", isCorrect: true, rationale: "Le marché primaire apporte de nouveaux capitaux frais aux entreprises ; le marché secondaire assure la liquidité des titres pour les investisseurs." },
-                    { text: "Le marché primaire concerne les actions, le marché secondaire concerne uniquement les obligations d'État.", isCorrect: false, rationale: "Faux : actions et obligations sont émises sur le primaire puis négociées sur le secondaire." },
-                    { text: "Le marché primaire est réservé aux particuliers, le marché secondaire aux banques centrales.", isCorrect: false, rationale: "Faux : les investisseurs institutionnels et particuliers interviennent sur les deux compartiments." },
-                    { text: "Le marché primaire est gratuit, le marché secondaire applique une taxe obligatoire de 50 %.", isCorrect: false, rationale: "Faux : les deux marchés appliquent des frais de courtage et de transaction normaux." }
-                ]
-            },
-            {
-                question: "Qu'appelle-t-on l'effet de levier de l'endettement ?",
-                options: [
-                    { text: "Le mécanisme par lequel une entreprise accroît la rentabilité de ses capitaux propres en s'endettant, tant que la rentabilité économique est supérieure au taux d'intérêt.", isCorrect: true, rationale: "Si emprunter à 3 % permet d'investir dans un projet qui rapporte 8 %, le surplus de profit augmente la rentabilité pour les actionnaires." },
-                    { text: "La faillite automatique d'une entreprise dès qu'elle souscrit un crédit bancaire.", isCorrect: false, rationale: "Inversion : l'effet de levier est positif tant que le coût de l'emprunt reste inférieur aux gains d'exploitation." },
-                    { text: "L'obligation pour les banques de refuser tout prêt aux ménages modestes.", isCorrect: false, rationale: "Confusion : cela correspondrait au rationnement du crédit bancaire." },
-                    { text: "L'augmentation mécanique de la masse monétaire consécutive à l'impression de billets.", isCorrect: false, rationale: "Confusion de chapitre avec la création monétaire." }
-                ]
-            },
-            {
-                question: "Qu'est-ce que l'effet d'éviction d'un déficit public sur les marchés financiers ?",
-                options: [
-                    { text: "La hausse des emprunts de l'État absorbe l'épargne disponible et fait monter les taux d'intérêt, réduisant l'investissement privé des entreprises.", isCorrect: true, rationale: "En captant une grande part des capitaux disponibles, l'État entre en concurrence avec les firmes privées et renchérit le coût de leur financement." },
-                    { text: "L'expulsion des banques étrangères du territoire national par une loi souveraine.", isCorrect: false, rationale: "Piège sur le sens littéral du mot 'éviction'." },
-                    { text: "L'annulation de la dette publique par décision unilatérale du ministère du Budget.", isCorrect: false, rationale: "Confusion : cela désignerait un défaut de paiement souverain." },
-                    { text: "La baisse systématique du taux d'inflation nationale en période de crise budgétaire.", isCorrect: false, rationale: "Faux : les déficits excessifs peuvent au contraire alimenter les tensions inflationnistes." }
-                ]
-            },
-            {
-                question: "Au niveau macroéconomique, quel secteur institutionnel dégage traditionnellement une capacité de financement structurelle en France ?",
-                options: [
-                    { text: "Les ménages (grâce à leur épargne financière et immobilière).", isCorrect: true, rationale: "Les ménages consomment moins que leur revenu disponible brut et épargnent, finançant ainsi les besoins des entreprises (SNF) et des administrations publiques (APU)." },
-                    { text: "Les sociétés non financières (entreprises privées).", isCorrect: false, rationale: "Faux : les entreprises sont globalement en besoin de financement structurel pour financer leurs investissements lourds (FBCF)." },
-                    { text: "Les administrations publiques (État, Sécurité sociale, collectivités).", isCorrect: false, rationale: "Faux : les administrations publiques françaises enregistrent un besoin de financement (déficit public) quasi permanent." },
-                    { text: "Les banques centrales étrangères.", isCorrect: false, rationale: "Faux : la capacité de financement nationale provient principalement de l'épargne des ménages résidents." }
-                ]
-            }
-        ]
-    },
-
-    // 5. QU'EST-CE QUE LA MONNAIE ET COMMENT EST-ELLE CRÉÉE ?
-    {
-        id: "prem_monnaie_creation",
-        title: "5. La monnaie et sa création",
-        icon: "fa-coins",
-        color: "from-green-600 to-emerald-700",
-        questions: [
-            {
-                question: "Dans une économie moderne, comment s'opère la majeure partie de la création de monnaie scripturale ?",
-                options: [
-                    { text: "Par les banques commerciales de second rang lors de l'octroi de crédits ('les crédits font les dépôts').", isCorrect: true, rationale: "La banque crée de la monnaie d'un simple jeu d'écritures comptables en créditant le compte de l'emprunteur sans prélever d'épargne préalable." },
-                    { text: "Par l'impression matérielle continue de pièces et de billets de banque par le Trésor public.", isCorrect: false, rationale: "Faux : la monnaie fiduciaire physique ne représente qu'une fraction marginale (moins de 10 %) de la masse monétaire globale." },
-                    { text: "Par l'obligation pour les clients d'apporter de l'or physique au guichet avant chaque prêt.", isCorrect: false, rationale: "Anachronisme : le système de l'étalon-or et la convertibilité métallique ont été définitivement abandonnés." },
-                    { text: "Par la collecte préalable d'une épargne liquide d'un montant strictement identique.", isCorrect: false, rationale: "Erreur classique : la banque ne se contente pas de prêter l'épargne existante, elle crée une monnaie nouvelle lors de l'octroi du prêt." }
-                ]
-            },
-            {
-                question: "Quelles sont les trois fonctions canoniques de la monnaie depuis Aristote ?",
-                options: [
-                    { text: "Unité de compte, intermédiaire des échanges, et réserve de valeur.", isCorrect: true, rationale: "La monnaie permet de chiffrer les prix (compte), d'éviter le troc (échange) et de reporter un pouvoir d'achat dans le temps (réserve)." },
-                    { text: "Investissement productif, amortissement comptable, et spéculation financière.", isCorrect: false, rationale: "Confusion : ce sont des utilisations financières ou des opérations de gestion, pas les fonctions économiques de base de la monnaie." },
-                    { text: "Épargne de précaution, consommation collective, et paiement des impôts.", isCorrect: false, rationale: "Confusion : ce sont des motifs d'arbitrage de revenu ou des flux, pas les trois fonctions de l'instrument monétaire." },
-                    { text: "Crédit à la consommation, subvention publique, et dividende d'action.", isCorrect: false, rationale: "Confusion : ce sont des flux financiers particuliers entre agents économiques." }
-                ]
-            },
-            {
-                question: "Que se passe-t-il lors du remboursement du capital d'un crédit par un ménage auprès de sa banque ?",
-                options: [
-                    { text: "Une destruction de monnaie scripturale.", isCorrect: true, rationale: "Le remboursement de la dette éteint la créance de la banque et détruit la monnaie qui avait été créée lors de l'octroi du prêt." },
-                    { text: "Une création monétaire supplémentaire équivalente aux intérêts versés.", isCorrect: false, rationale: "Inversion : le remboursement détruit de la monnaie. Seuls les intérêts constituent une rémunération de service pour la banque." },
-                    { text: "Le transfert immédiat et obligatoire des fonds vers les coffres de la Banque centrale.", isCorrect: false, rationale: "Faux : les écritures sont régularisées au bilan de la banque commerciale de second rang." },
-                    { text: "Une augmentation automatique de la masse monétaire en circulation dans le pays.", isCorrect: false, rationale: "Inversion : la destruction monétaire nette réduit la masse monétaire globale si les nouveaux crédits sont inférieurs aux remboursements." }
-                ]
-            },
-            {
-                question: "Si la Banque centrale augmente ses taux d'intérêt directeurs, quel est le mécanisme attendu ?",
-                options: [
-                    { text: "Le refinancement des banques devient plus cher, les taux des crédits augmentent, freinant la création monétaire et l'inflation.", isCorrect: true, rationale: "C'est le canal du taux d'intérêt : renchérir le coût du crédit permet de refroidir l'activité et de stabiliser le niveau des prix." },
-                    { text: "Les banques commerciales distribuent immédiatement deux fois plus de prêts immobiliers.", isCorrect: false, rationale: "Inversion : la hausse des taux désincite les ménages et firmes à emprunter en augmentant la charge d'intérêts." },
-                    { text: "La masse monétaire scripturale explose sous l'effet de l'impression de nouveaux billets.", isCorrect: false, rationale: "Inversion : la hausse des taux directeurs a pour vocation de resserrer les conditions monétaires et de freiner la masse monétaire." },
-                    { text: "Le taux d'inflation nationale grimpe de façon immédiate et incontrôlée.", isCorrect: false, rationale: "Inversion : la hausse des taux directeurs est l'outil privilégié de lutte contre l'inflation." }
-                ]
-            },
-            {
-                question: "La 'monnaie centrale' (ou base monétaire) correspond à :",
-                options: [
-                    { text: "La monnaie émise par la Banque centrale (billets + réserves des banques commerciales sur leur compte à la Banque centrale).", isCorrect: true, rationale: "Les banques commerciales utilisent la monnaie centrale pour compenser leurs soldes interbancaires quotidiens et répondre aux exigences de réserves obligatoires." },
-                    { text: "La monnaie scripturale créée par les banques de détail pour leurs clients ordinaires.", isCorrect: false, rationale: "Confusion : la monnaie scripturale commerciale circule entre les agents non financiers (ménages, entreprises)." },
-                    { text: "La réserve d'or physique conservée dans les coffres du ministère de l'Économie.", isCorrect: false, rationale: "Faux : les réserves de change font partie des actifs, mais la monnaie centrale moderne est fiduciaire et scripturale." },
-                    { text: "La somme de l'ensemble des pièces métalliques en circulation dans l'espace public.", isCorrect: false, rationale: "Confusion : les pièces relèvent de la monnaie divisionnaire, pas de l'ensemble de la base monétaire centrale." }
-                ]
-            },
-            {
-                question: "Qu'appelle-t-on la monnaie 'fiduciaire' ?",
-                options: [
-                    { text: "La monnaie se présentant sous forme matérielle de pièces et de billets de banque.", isCorrect: true, rationale: "Du latin 'fiducia' (confiance), sa valeur faciale repose sur la confiance des agents économiques envers l'institution émettrice (Banque centrale)." },
-                    { text: "La monnaie inscrite sur les comptes bancaires gérés par carte bancaire ou virement.", isCorrect: false, rationale: "Confusion : cela correspond à la monnaie scripturale (écritures comptables)." },
-                    { text: "La monnaie convertible directement en lingots d'or au guichet de l'État.", isCorrect: false, rationale: "Anachronisme : la monnaie métallique convertible n'existe plus dans le système contemporain." },
-                    { text: "L'ensemble des devises étrangères détenues par les exportateurs.", isCorrect: false, rationale: "Confusion : cela désigne les réserves de devises sur le marché des changes." }
-                ]
-            },
-            {
-                question: "Quel est le risque macroéconomique majeur d'une création monétaire excessive et trop rapide par rapport à la production réelle ?",
-                options: [
-                    { text: "Une forte inflation (perte de pouvoir d'achat de la monnaie par excès de demande globale).", isCorrect: true, rationale: "Selon la théorie quantitative de la monnaie, si la quantité de monnaie en circulation croît plus vite que les biens disponibles, les prix montent." },
-                    { text: "Une déflation continue et une baisse généralisée des prix.", isCorrect: false, rationale: "Inversion : la déflation résulte d'une pénurie de monnaie ou d'un effondrement de la demande." },
-                    { text: "L'interdiction des banques commerciales par les autorités européennes.", isCorrect: false, rationale: "Faux : la Banque centrale réagit en augmentant ses taux directeurs, pas en interdisant les banques." },
-                    { text: "La baisse de la dette publique de l'État à zéro euro.", isCorrect: false, rationale: "Faux : l'inflation allège le poids réel de la dette existante, mais ne supprime pas le stock nominal de dette." }
-                ]
-            },
-            {
-                question: "Pourquoi les banques commerciales ont-elles un besoin structurel de se procurer de la monnaie centrale ?",
-                options: [
-                    { text: "Pour faire face aux retraits de billets au distributeur et régler leurs dettes envers les autres banques lors de la compensation interbancaire.", isCorrect: true, rationale: "Chaque jour, les virements croisés entre clients de banques différentes (ex: BNP vers Crédit Agricole) se compensent en monnaie centrale." },
-                    { text: "Pour payer le loyer de leurs agences bancaires directement au président de la République.", isCorrect: false, rationale: "Caricature sans rapport avec la gestion de la trésorerie interbancaire." },
-                    { text: "Pour financer l'achat d'actions en bourse de leurs propres clients.", isCorrect: false, rationale: "Faux : les banques utilisent leurs dépôts et fonds propres pour leurs opérations de marché." },
-                    { text: "Parce que la monnaie scripturale est interdite pour les paiements supérieurs à 10 euros.", isCorrect: false, rationale: "Faux : la monnaie scripturale (carte, virement, chèque) est le moyen de paiement ultra-majoritaire." }
-                ]
-            },
-            {
-                question: "Qu'est-ce que le 'taux de réserves obligatoires' imposé par la Banque centrale aux banques de second rang ?",
-                options: [
-                    { text: "Le pourcentage minimal des dépôts collectés que les banques doivent obligatoirement bloquer sur leur compte à la Banque centrale.", isCorrect: true, rationale: "Les réserves obligatoires constituent un instrument de politique monétaire pour réguler la liquidité bancaire et freiner l'octroi inconsidéré de crédits." },
-                    { text: "Le taux d'intérêt maximal qu'une banque a le droit d'appliquer sur un crédit immobilier.", isCorrect: false, rationale: "Confusion : cela correspond au taux de l'usure fixé par la Banque de France." },
-                    { text: "Le montant des impôts sur les sociétés versé chaque année par les banques privées.", isCorrect: false, rationale: "Confusion : la fiscalité des sociétés relève du budget de l'État, pas de la politique monétaire." },
-                    { text: "Le stock d'or que chaque ménage doit obligatoirement conserver à son domicile.", isCorrect: false, rationale: "Piège absurde sans fondement légal ni économique." }
-                ]
-            },
-            {
-                question: "Qu'est-ce que la 'confiance institutionnelle' dans la monnaie ?",
-                options: [
-                    { text: "La certitude partagée que la Banque centrale et l'État garantissent la stabilité, la sécurité et l'acceptation universelle de la monnaie légale.", isCorrect: true, rationale: "La monnaie repose sur trois formes de confiance indissociables (Aglietta et Orléan) : méthodique (routine), hiérarchique (la Banque centrale) et éthique (le contrat social)." },
-                    { text: "La confiance accordée aux distributeurs automatiques de billets pour ne jamais tomber en panne.", isCorrect: false, rationale: "Confusion technique superficielle : la confiance institutionnelle porte sur la valeur juridique et politique du signe monétaire." },
-                    { text: "L'obligation d'épargner son argent uniquement dans des livrets A publics.", isCorrect: false, rationale: "Faux : les ménages placent leur argent librement dans divers supports financiers." },
-                    { text: "La signature d'un contrat notarié lors de chaque paiement en magasin.", isCorrect: false, rationale: "Faux : la monnaie a cours légal et libère instantanément la dette de l'acheteur sans formalité notariée." }
-                ]
-            }
-        ]
-    },
-
-    // 6. COMMENT LA SOCIALISATION CONTRIBUE-T-ELLE À EXPLIQUER LES COMPORTEMENTS ?
-    {
-        id: "prem_socialisation",
-        title: "6. La socialisation et les comportements",
-        icon: "fa-child-reaching",
-        color: "from-purple-600 to-pink-600",
-        questions: [
-            {
-                question: "Qu'appelle-t-on la 'socialisation différentielle selon le genre' ?",
-                options: [
-                    { text: "Le processus par lequel les garçons et les filles intériorisent des normes, rôles et attentes sociales distincts dès l'enfance.", isCorrect: true, rationale: "Les instances de socialisation (famille, école, médias, pairs) orientent différemment les comportements, goûts et choix d'orientation selon le sexe." },
-                    { text: "La transmission exclusivement génétique et biologique des traits de caractère à la naissance.", isCorrect: false, rationale: "Erreur non-sociologique : la socialisation est un apprentissage culturel et social, pas une détermination génétique." },
-                    { text: "L'égalité absolue des pratiques de loisirs et des réussites scolaires entre garçons et filles.", isCorrect: false, rationale: "Inversion : la socialisation différentielle contribue à expliquer la persistance des disparités de comportement et d'orientation." },
-                    { text: "La coupure totale de relations avec la famille lors de l'entrée dans l'adolescence.", isCorrect: false, rationale: "Faux : la socialisation secondaire peut modifier ou compléter la socialisation primaire, mais elle ne supprime pas l'apprentissage initial." }
-                ]
-            },
-            {
-                question: "Quels sont les trois principaux modes de socialisation identifiés par la sociologie ?",
-                options: [
-                    { text: "L'inculcation (apprentissage explicite), l'imprégnation (imitation/observation) et l'interaction.", isCorrect: true, rationale: "L'inculcation repose sur des ordres ou des sanctions explicites, tandis que l'imprégnation s'effectue par l'imitation diffuse du quotidien." },
-                    { text: "La contrainte pénale, le tirage au sort génétique et le don monétaire.", isCorrect: false, rationale: "Confusion de domaines : ce ne sont pas les mécanismes d'intériorisation des normes et des valeurs de la socialisation." },
-                    { text: "La sélection naturelle, la concurrence des prix et la publicité commerciale.", isCorrect: false, rationale: "Mélange de concepts biologiques et économiques hors du champ de la socialisation sociologique." },
-                    { text: "L'adhésion obligatoire à un syndicat, le service militaire et le contrat de travail.", isCorrect: false, rationale: "Faux : ce sont des institutions adultes particulières, pas la typologie générale des mécanismes d'apprentissage social." }
-                ]
-            },
-            {
-                question: "Qu'est-ce que la 'socialisation anticipatrice' théorisée par Robert K. Merton ?",
-                options: [
-                    { text: "Le processus par lequel un individu adopte les normes et valeurs d'un groupe de référence qu'il souhaite intégrer.", isCorrect: true, rationale: "L'individu se conforme à l'avance aux comportements du groupe auquel il aspire à appartenir (groupe de référence), différent de son groupe d'origine." },
-                    { text: "L'apprentissage obligatoire des matières scolaires avant la rentrée des classes de septembre.", isCorrect: false, rationale: "Piège littéral : confusion avec le sens scolaire commun de préparer ses cours à l'avance." },
-                    { text: "Le refus catégorique d'apprendre les règles de politesse en vigueur dans sa propre famille.", isCorrect: false, rationale: "Faux : cela désignerait une déviance primaire ou une rupture, pas le mécanisme d'anticipation de Merton." },
-                    { text: "La conformité stricte et définitive aux normes imposées par son groupe d'appartenance de naissance.", isCorrect: false, rationale: "Inversion : la socialisation anticipatrice vise précisément à s'éloigner des normes de son groupe d'appartenance pour en rejoindre un autre." }
-                ]
-            },
-            {
-                question: "Une trajectoire sociale qualifiée d''improbable' (ex: un enfant d'ouvriers non qualifiés devenant haut fonctionnaire) s'explique par :",
-                options: [
-                    { text: "Des configurations familiales particulières, des rencontres décisives ou des modes de socialisation pluriels.", isCorrect: true, rationale: "La sociologie montre que des capitaux culturels spécifiques au sein de la fratrie ou une mobilisation parentale atypique expliquent ces réussites paradoxales." },
-                    { text: "Le hasard absolu des gènes ou une intelligence miraculeuse indépendante de l'environnement.", isCorrect: false, rationale: "Erreur non-sociologique : la sociologie cherche des causes sociales structurées (configurations familiales, rôle de l'école)." },
-                    { text: "La disparition totale de toute forme de reproduction sociale au sein de la société contemporaine.", isCorrect: false, rationale: "Faux : les trajectoires improbables sont minoritaires par définition et n'annulent pas les régularités statistiques de la reproduction." },
-                    { text: "L'obligation légale pour l'État de tirer au sort les élèves accédant aux grandes écoles réputées.", isCorrect: false, rationale: "Faux : les concours d'entrée reposent sur des épreuves académiques et non sur un tirage au sort administratif." }
-                ]
-            },
-            {
-                question: "La socialisation secondaire se caractérise par le fait qu'elle s'exerce :",
-                options: [
-                    { text: "Tout au long de la vie adulte (monde professionnel, vie de couple, engagements militants) en transformant ou renforçant les acquis primaires.", isCorrect: true, rationale: "La socialisation secondaire s'appuie sur la socialisation primaire (enfance) mais peut la compléter, la réorienter ou entrer en tension avec elle." },
-                    { text: "Uniquement durant les premières années de la vie avant l'âge de 6 ans à la maison.", isCorrect: false, rationale: "Confusion : c'est la définition stricte de la socialisation primaire (famille, crèche)." },
-                    { text: "Exclusivement dans le cadre des consultations médicales hospitalières.", isCorrect: false, rationale: "Faux : la santé est un lieu d'apprentissage ponctuel, mais la socialisation secondaire englobe tout le tissu social adulte." },
-                    { text: "De façon purement passive sans que l'individu ne soit jamais acteur de ses choix.", isCorrect: false, rationale: "Faux : l'individu participe activement à la construction de son identité et à l'intériorisation des nouveaux rôles." }
-                ]
-            },
-            {
-                question: "Qu'appelle-t-on le 'groupe de pairs' dans les instances de socialisation ?",
-                options: [
-                    { text: "L'ensemble des personnes partageant le même statut, le même âge ou la même situation sociale (ex: amis, camarades de classe).", isCorrect: true, rationale: "Le groupe de pairs joue un rôle central à l'adolescence en diffusant des normes vestimentaires, musicales et relationnelles souvent distinctes de la famille." },
-                    { text: "Le corps des inspecteurs de l'Éducation nationale et les directeurs d'école.", isCorrect: false, rationale: "Confusion : ce sont des représentants de l'institution scolaire formelle." },
-                    { text: "L'ensemble des membres ascendants de l'arbre généalogique familial (parents, grands-parents).", isCorrect: false, rationale: "Confusion : cela désigne la parentèle ou le groupe familial." },
-                    { text: "Les partis politiques représentés au Parlement.", isCorrect: false, rationale: "Confusion : ce sont des organisations politiques spécialisées." }
-                ]
-            },
-            {
-                question: "Selon la sociologue Muriel Darmon, la socialisation s'analyse comme :",
-                options: [
-                    { text: "La façon dont la société forme et transforme les individus à travers des processus continus et incorporés.", isCorrect: true, rationale: "Muriel Darmon montre que la socialisation façonne nos manières de penser, d'agir et de sentir du corps jusqu'aux dispositions mentales." },
-                    { text: "L'apprentissage par cœur du code de la route avant l'âge de 18 ans.", isCorrect: false, rationale: "Piège réducteur sur un apprentissage technique ponctuel." },
-                    { text: "Une manipulation consciente et cynique imposée par l'État pour soumettre le peuple.", isCorrect: false, rationale: "Caricature : la socialisation s'opère de manière diffuse et relationnelle à travers des instances multiples." },
-                    { text: "La disparition de toute personnalité individuelle au profit d'un conformisme robotique.", isCorrect: false, rationale: "Faux : les socialisations plurielles permettent l'émergence d'individualités singulières et complexes." }
-                ]
-            },
-            {
-                question: "Qu'appelle-t-on la 'socialisation conjugale' dans la vie d'adulte ?",
-                options: [
-                    { text: "L'ajustement mutuel, les compromis et la transformation des habitudes des conjoints lors de la mise en couple.", isCorrect: true, rationale: "La vie à deux transforme les goûts alimentaires, les loisirs, la gestion du budget et les opinions politiques de chaque partenaire (Berger et Kellner)." },
-                    { text: "L'obligation légale de signer un contrat de mariage devant le notaire.", isCorrect: false, rationale: "Confusion : cela relève du formalisme juridique de l'état civil." },
-                    { text: "L'interdiction pour les membres d'un couple de conserver des amis extérieurs.", isCorrect: false, rationale: "Caricature sans rapport avec la sociologie du couple." },
-                    { text: "La transmission des règles de politesse des parents vers les enfants en bas âge.", isCorrect: false, rationale: "Confusion : c'est la socialisation primaire descendante." }
-                ]
-            },
-            {
-                question: "Qu'est-ce qu'une 'socialisation professionnelle' ?",
-                options: [
-                    { text: "L'intériorisation des savoir-faire, du langage technique, des codes et des valeurs propres à un métier ou une entreprise.", isCorrect: true, rationale: "L'entrée dans un milieu professionnel (ex: infirmiers, policiers, enseignants) transforme l'identité sociale et les réflexes quotidiens des recrues." },
-                    { text: "L'obtention du premier salaire mensuel sur un compte bancaire.", isCorrect: false, rationale: "Confusion : c'est une transaction économique, pas le processus d'apprentissage culturel des codes du métier." },
-                    { text: "L'obligation pour les salariés d'adhérer au même syndicat de branche.", isCorrect: false, rationale: "Faux : l'adhésion syndicale est libre en France." },
-                    { text: "L'inscription obligatoire sur les listes de demandeurs d'emploi.", isCorrect: false, rationale: "Faux : cela relève des démarches administratives auprès de France Travail." }
-                ]
-            },
-            {
-                question: "Pourquoi parle-t-on de 'socialisation plurielle' chez le sociologue Bernard Lahire ?",
-                options: [
-                    { text: "Parce que les individus traversent des cadres sociaux variés et contradictoires (famille, école, amis, travail), développant des dispositions hétérogènes.", isCorrect: true, rationale: "L'homme pluriel de Lahire n'a pas un habitus monolithique mais une palette de dispositions qu'il active selon les contextes sociaux rencontrés." },
-                    { text: "Parce que chaque citoyen doit apprendre au moins trois langues vivantes étrangères.", isCorrect: false, rationale: "Piège linguistique sur le mot 'pluriel'." },
-                    { text: "Parce que les parents n'exercent plus aucune autorité sur les enfants de la fratrie.", isCorrect: false, rationale: "Faux : la famille reste une instance majeure même si d'autres influences coexistent." },
-                    { text: "Parce que la socialisation ne commence qu'à l'âge de 30 ans.", isCorrect: false, rationale: "Inversion : la socialisation débute dès la naissance (socialisation primaire)." }
-                ]
-            }
-        ]
-    },
-            // 7. COMMENT SE CONSTRUISENT ET ÉVOLUENT LES LIENS SOCIAUX ?
-    {
-        id: "prem_liens_sociaux",
-        title: "7. Liens sociaux et cohésion sociale",
-        icon: "fa-network-wired",
-        color: "from-violet-600 to-purple-700",
-        questions: [
-            {
-                question: "Selon Émile Durkheim, la 'solidarité mécanique' est caractéristique :",
-                options: [
-                    { text: "Des sociétés traditionnelles à faible division du travail où les individus se ressemblent et partagent une forte conscience collective.", isCorrect: true, rationale: "Dans la solidarité mécanique, le lien social repose sur la similitude des individus et la prédominance d'un droit répressif sanctionnant tout écart." },
-                    { text: "Des sociétés industrielles modernes fondées sur la spécialisation et l'individualisme.", isCorrect: false, rationale: "Confusion : les sociétés modernes se caractérisent par la solidarité organique née de la division du travail." },
-                    { text: "Des marchés financiers régulés par des algorithmes informatiques automatisés.", isCorrect: false, rationale: "Piège anachronique : confusion sur le terme 'mécanique' pris dans son sens technologique contemporain." },
-                    { text: "De l'absence totale de règles morales et de sanctions au sein d'une collectivité.", isCorrect: false, rationale: "Inversion : la solidarité mécanique impose une conformité morale très stricte et un contrôle social collectif pesant." }
-                ]
-            },
-            {
-                question: "Selon Serge Paugam, quels sont les quatre grands types de liens sociaux qui unissent un individu à la société ?",
-                options: [
-                    { text: "Le lien de filiation, le lien de participation élective, le lien de participation organique, et le lien de citoyenneté.", isCorrect: true, rationale: "Ces quatre liens apportent à la fois protection (compter sur) et reconnaissance sociale (compter pour) à travers la famille, les pairs, le travail et la nation." },
-                    { text: "Le lien d'argent, le lien de propriété, le lien de subordination et le lien d'endettement.", isCorrect: false, rationale: "Confusion : ce sont des liens purement marchands ou juridiques, pas la typologie sociologique intégrative de Paugam." },
-                    { text: "Le lien scolaire, le lien sportif, le lien militaire et le lien administratif.", isCorrect: false, rationale: "Faux : ce sont des institutions particulières d'activité, pas les quatre catégories fondamentales théorisées par Paugam." },
-                    { text: "Le lien juridique, le lien fiscal, le lien policier et le lien constitutionnel.", isCorrect: false, rationale: "Faux : ces dimensions relèvent principalement du seul lien politique et institutionnel de citoyenneté." }
-                ]
-            },
-            {
-                question: "Qu'est-ce que l'individualisme au sens sociologique ?",
-                options: [
-                    { text: "Le processus d'émancipation et d'autonomisation par lequel l'individu devient le sujet de ses choix face aux groupes d'appartenance.", isCorrect: true, rationale: "L'individualisme sociologique n'est pas l'égoïsme : c'est l'affirmation de la liberté individuelle et de l'égalité des droits au sein des sociétés modernes." },
-                    { text: "Le repli égoïste destructeur et la recherche exclusive du profit financier personnel contre autrui.", isCorrect: false, rationale: "Confusion avec le sens moral et péjoratif du langage courant, que la sociologie récuse pour analyser la modernité." },
-                    { text: "L'obligation légale pour chaque citoyen de vivre seul dans son propre logement.", isCorrect: false, rationale: "Piège absurde sur le mode d'habitation, sans rapport avec le concept sociologique d'émancipation." },
-                    { text: "La disparition complète de tout sentiment de solidarité ou de tout lien d'entraide collective.", isCorrect: false, rationale: "Faux : l'individualisme s'accompagne d'autres formes de solidarités librement consenties (associations, État social)." }
-                ]
-            },
-            {
-                question: "Le processus de 'disqualification sociale' décrit par Serge Paugam met l'accent sur :",
-                options: [
-                    { text: "L'affaiblissement progressif des liens sociaux (fragilité, dépendance, rupture) et l'intériorisation d'une identité stigmatisée d'assisté.", isCorrect: true, rationale: "Paugam montre comment la précarité économique s'articule avec le regard stigmatisant des institutions et de l'entourage, dégradant l'estime de soi." },
-                    { text: "L'expulsion disciplinaire d'un salarié suite à une faute lourde commise au travail.", isCorrect: false, rationale: "Confusion : cela désigne une sanction professionnelle contractuelle ponctuelle, pas la trajectoire de pauvreté de Paugam." },
-                    { text: "La perte de nationalité prononcée par un tribunal pénal contre un citoyen.", isCorrect: false, rationale: "Confusion : il s'agit d'une sanction judiciaire de déchéance civique, hors sujet." },
-                    { text: "L'annulation des diplômes universitaires des chômeurs de longue durée.", isCorrect: false, rationale: "Faux : les titres scolaires restent acquis, c'est leur valorisation sur le marché du travail qui peut faiblir." }
-                ]
-            },
-            {
-                question: "Dans l'analyse de Robert Castel, la 'zone de vulnérabilité' sociale se situe :",
-                options: [
-                    { text: "Entre la zone d'intégration (emploi stable et sociabilité solide) et la zone de désaffiliation (chômage et isolement).", isCorrect: true, rationale: "La zone de vulnérabilité associe la précarité de l'emploi (CDD, temps partiel subi) à une fragilité des supports relationnels et familiaux." },
-                    { text: "Uniquement au sein des banques privées exposées au risque de faillite financière.", isCorrect: false, rationale: "Confusion économique : la vulnérabilité chez Castel concerne le statut social et l'intégration des individus." },
-                    { text: "Exclusivement dans les zones rurales dépourvues de réseaux de transport en commun.", isCorrect: false, rationale: "Confusion : cela désigne un enjeu d'enclavement spatial ou géographique, pas les concepts d'intégration sociétale de Castel." },
-                    { text: "Au sein des catégories supérieures de cadres très diplômés refusant de payer l'impôt.", isCorrect: false, rationale: "Inversion : les catégories favorisées disposent au contraire d'une forte intégration et de multiples sécurités matérielles." }
-                ]
-            },
-            {
-                question: "Selon Émile Durkheim, la 'solidarité organique' repose sur :",
-                options: [
-                    { text: "La division du travail et la complémentarité d'individus exerçant des fonctions spécialisées et interdépendantes.", isCorrect: true, rationale: "Dans les sociétés modernes, chacun a besoin des compétences des autres pour subsister, créant une interdépendance fonctionnelle forte." },
-                    { text: "La ressemblance absolue de tous les modes de vie au sein du village.", isCorrect: false, rationale: "Confusion : cela correspond à la solidarité mécanique." },
-                    { text: "L'obligation d'adhérer aux mêmes croyances religieuses traditionnelles.", isCorrect: false, rationale: "Confusion : la forte conscience collective religieuse caractérise la solidarité mécanique." },
-                    { text: "L'application exclusive d'un droit répressif très sévère.", isCorrect: false, rationale: "Inversion : la solidarité organique s'accompagne d'un droit restitutif (remettre les choses en état, réparer)." }
-                ]
-            },
-            {
-                question: "Qu'est-ce que le 'lien de participation organique' selon Serge Paugam ?",
-                options: [
-                    { text: "Le lien tissé dans le monde du travail et de l'emploi qui confère une utilité sociale et une protection salariale.", isCorrect: true, rationale: "Il renvoie au concept de solidarité organique de Durkheim et s'incarne dans l'insertion professionnelle et les relations professionnelles." },
-                    { text: "Le lien biologique et affectif qui unit les enfants à leurs parents.", isCorrect: false, rationale: "Confusion : c'est la définition du lien de filiation." },
-                    { text: "Le lien choisi librement avec des amis ou au sein d'une association de loisirs.", isCorrect: false, rationale: "Confusion : c'est la définition du lien de participation élective." },
-                    { text: "Le lien politique qui unit les citoyens d'une même nation souveraine.", isCorrect: false, rationale: "Confusion : c'est la définition du lien de citoyenneté." }
-                ]
-            },
-            {
-                question: "Comment les mutations contemporaines du travail (précarité, flexibilité) menacent-elles la cohésion sociale ?",
-                options: [
-                    { text: "En créant de l'insécurité économique et en fragilisant l'accès aux droits sociaux et aux collectifs de travail protecteurs.", isCorrect: true, rationale: "L'émiettement des statuts salariaux réduit la capacité de l'emploi à faire office de socle stable pour l'intégration et les projets de vie." },
-                    { text: "En augmentant de façon excessive le nombre de fonctionnaires titulaires.", isCorrect: false, rationale: "Faux : la précarité concerne l'essor des contrats courts et non titulaires." },
-                    { text: "En forçant tous les salariés à prendre leur retraite dès l'âge de 40 ans.", isCorrect: false, rationale: "Non-sens social : les réformes repoussent au contraire l'âge légal de départ." },
-                    { text: "En interdisant l'utilisation des smartphones sur le lieu de travail.", isCorrect: false, rationale: "Faux : les outils numériques pénètrent au contraire massivement l'organisation du travail." }
-                ]
-            },
-            {
-                question: "Quel est l'effet des réseaux sociaux numériques sur les formes de sociabilité contemporaines ?",
-                options: [
-                    { text: "Ils transforment les modes de communication et prolongent souvent la sociabilité réelle sans détruire les liens forts.", isCorrect: true, rationale: "Les sociologues montrent que le numérique diversifie le capital social (liens faibles) et maintient le contact au quotidien avec les proches (liens forts)." },
-                    { text: "Ils provoquent la disparition complète et définitive de toute relation familiale.", isCorrect: false, rationale: "Caricature démentie par les enquêtes empiriques sur les pratiques numériques." },
-                    { text: "Ils obligent les utilisateurs à rompre avec l'ensemble de leurs collègues de travail.", isCorrect: false, rationale: "Faux : les réseaux professionnels (LinkedIn, boucles WhatsApp) renforcent au contraire les échanges professionnels." },
-                    { text: "Ils suppriment tout sentiment d'individualisme au profit d'une vie tribale.", isCorrect: false, rationale: "Inversion : les réseaux numériques s'inscrivent pleinement dans l'individualisme expressif contemporain." }
-                ]
-            },
-            {
-                question: "Qu'entend Robert Castel par le concept de 'propriété sociale' ?",
-                options: [
-                    { text: "L'ensemble des droits sociaux (retraite, chômage, santé) qui protègent les travailleurs non propriétaires de capital contre les aléas de l'existence.", isCorrect: true, rationale: "L'État social a doté les salariés sans patrimoine d'un équivalent de propriété : la sécurité sociale et le droit du travail comme remparts contre la misère." },
-                    { text: "L'obligation pour chaque salarié d'acheter des actions de sa propre entreprise.", isCorrect: false, rationale: "Confusion : cela correspond à l'actionnariat salarié privé, pas à la propriété sociale publique de Castel." },
-                    { text: "La nationalisation intégrale de tous les logements privés par l'État.", isCorrect: false, rationale: "Confusion : Castel analyse la protection salariale dans l'économie de marché, pas la collectivisation immobilière." },
-                    { text: "Le montant total des impôts fonciers payés par les ménages les plus fortunés.", isCorrect: false, rationale: "Confusion de notion fiscale." }
-                ]
-            }
-        ]
-    },
-
-    // 8. QUELS SONT LES PROCESSUS SOCIAUX QUI CONTRIBUENT À LA DÉVIANCE ?
-    {
-        id: "prem_deviance",
-        title: "8. Les processus de la déviance",
-        icon: "fa-masks-theater",
-        color: "from-fuchsia-600 to-rose-600",
-        questions: [
-            {
-                question: "Comment définit-on la déviance en sociologie ?",
-                options: [
-                    { text: "La transgression des normes sociales ou juridiques en vigueur et partagées au sein d'un groupe donné.", isCorrect: true, rationale: "La déviance est relative aux contextes historiques et culturels : un comportement n'est déviant que parce qu'un groupe le définit comme tel." },
-                    { text: "Une anomalie génétique ou une pathologie mentale incurable diagnostiquée par un médecin.", isCorrect: false, rationale: "Erreur naturaliste : la déviance est une construction sociale et normative, pas une maladie biologique." },
-                    { text: "Uniquement les actes criminels passibles d'une peine de prison ferme.", isCorrect: false, rationale: "Confusion : la délinquance (transgression d'une norme juridique pénale) n'est qu'un sous-ensemble de la déviance générale." },
-                    { text: "L'adhésion scrupuleuse à l'ensemble des règles de politesse imposées par l'école.", isCorrect: false, rationale: "Inversion : cela correspond au conformisme social, qui est le strict opposé du comportement déviant." }
-                ]
-            },
-            {
-                question: "Selon la théorie de l'étiquetage d'Howard Becker (Outsiders), la déviance est :",
-                options: [
-                    { text: "Le produit d'une interaction sociale où un individu est désigné et étiqueté avec succès comme déviant par des entrepreneurs de morale.", isCorrect: true, rationale: "« Le déviant est celui à qui cette étiquette a été appliquée avec succès ; le comportement déviant est celui auquel la collectivité attache cette étiquette. »" },
-                    { text: "Une qualité intrinsèque logée à l'intérieur même de la personne qui commet l'action.", isCorrect: false, rationale: "Inversion : Becker refuse l'approche substantialiste ; ce n'est pas l'acte en soi mais le regard et le jugement du groupe qui créent la déviance." },
-                    { text: "Une fatalité exclusivement déterminée par le niveau de revenu monétaire des parents.", isCorrect: false, rationale: "Faux : Becker montre que l'étiquetage dépend des interactions, des jugements sociaux et des capacités de négociation des acteurs." },
-                    { text: "Un dysfonctionnement physiologique réparé par la chirurgie moderne.", isCorrect: false, rationale: "Erreur biologique réductrice contredite par l'ensemble des sociologues interactionnistes." }
-                ]
-            },
-            {
-                question: "Quelle est la distinction entre déviance primaire et déviance secondaire chez Edwin Lemert ?",
-                options: [
-                    { text: "La déviance primaire est la transgression initiale non étiquetée ; la secondaire survient quand l'individu intègre l'étiquette dans son identité et sa carrière.", isCorrect: true, rationale: "La déviance secondaire est la réaction de l'acteur aux sanctions et à la stigmatisation, qui réorganisent son mode de vie autour du statut de déviant." },
-                    { text: "La déviance primaire concerne les délits mineurs, la secondaire concerne les infractions financières internationales.", isCorrect: false, rationale: "Confusion : la distinction ne porte pas sur la gravité pénale de l'acte, mais sur l'impact identitaire du processus d'étiquetage." },
-                    { text: "La déviance primaire est commise par les adultes, la secondaire uniquement par les enfants scolarisés.", isCorrect: false, rationale: "Faux : ce sont des étapes d'une carrière déviante applicables à tous les âges de la vie." },
-                    { text: "La déviance primaire est légale et tolérée, la secondaire est systématiquement punie de mort.", isCorrect: false, rationale: "Caricature absurde : la déviance primaire transgresse bien une norme, mais sans encore figer le rôle social de l'individu." }
-                ]
-            },
-            {
-                question: "Le contrôle social informel s'exerce au quotidien par :",
-                options: [
-                    { text: "Les interactions ordinaires au sein des groupes primaires (famille, amis, collègues) via des sourires, moqueries ou réprobations.", isCorrect: true, rationale: "Le contrôle informel n'est pas codifié par des lois écrites : il s'exerce de manière spontanée et diffuse dans la vie courante." },
-                    { text: "Les tribunaux judiciaires, le code pénal et les peines d'amendes infligées par les policiers.", isCorrect: false, rationale: "Confusion : cela désigne le contrôle social formel, exercé par des institutions spécialisées et codifié par des règles explicites." },
-                    { text: "La pose obligatoire de caméras de vidéosurveillance automatisées dans les rues.", isCorrect: false, rationale: "Confusion : c'est un dispositif technique au service du contrôle social formel des institutions de sécurité." },
-                    { text: "La publication officielle du Journal officiel de la République française.", isCorrect: false, rationale: "Faux : le Journal officiel promulgue le droit formel, pas les sanctions diffuses du contrôle informel." }
-                ]
-            },
-            {
-                question: "Pourquoi les chiffres officiels de la délinquance (statistiques policières) doivent-ils être complétés par des enquêtes de victimation ?",
-                options: [
-                    { text: "Parce qu'ils ne mesurent que l'activité des services de police et occultent le 'chiffre noir' des infractions non déclarées par les victimes.", isCorrect: true, rationale: "Le chiffre noir correspond à l'écart entre la délinquance réelle et la délinquance enregistrée (ex: agressions ou vols non suivis de plaintes)." },
-                    { text: "Parce que les services de police refusent de transmettre leurs données aux ministères.", isCorrect: false, rationale: "Faux : les services de police et de gendarmerie centralisent mensuellement l'ensemble de leurs enregistrements administratifs." },
-                    { text: "Parce que les enquêtes de victimation sont obligatoires pour valider le budget annuel de la justice.", isCorrect: false, rationale: "Faux : les enquêtes de victimation sont des outils d'observation sociologique et statistique menés par des chercheurs et l'Insee." },
-                    { text: "Parce que la loi française interdit de comptabiliser les délits commis dans les grandes villes.", isCorrect: false, rationale: "Faux : les statistiques officielles couvrent l'intégralité du territoire national sans exclusion territoriale." }
-                ]
-            },
-            {
-                question: "Qui sont les 'entrepreneurs de morale' selon Howard Becker ?",
-                options: [
-                    { text: "Les acteurs ou groupes qui se mobilisent pour faire reconnaître de nouvelles normes et faire sanctionner certains comportements (croisades morales).", isCorrect: true, rationale: "Ils créent les normes (ex: militants anti-tabac, ligues de tempérance) et veillent à leur application par les institutions judiciaires et policières." },
-                    { text: "Les chefs d'entreprise qui vendent des biens éthiques à fort profit commercial.", isCorrect: false, rationale: "Confusion avec des acteurs de marché marchand." },
-                    { text: "Les avocats commis d'office chargés de défendre les accusés au tribunal.", isCorrect: false, rationale: "Confusion : les avocats interviennent dans la procédure judiciaire formelle, ils ne créent pas les croisades morales." },
-                    { text: "Les policiers municipaux qui patrouillent la nuit dans les gares.", isCorrect: false, rationale: "Faux : Becker distingue les 'créateurs de normes' (entrepreneurs de morale) des simples 'gardiens des normes' (policiers)." }
-                ]
-            },
-            {
-                question: "Selon Robert K. Merton, comment l'anomie peut-elle engendrer des comportements déviants d''innovation' ?",
-                options: [
-                    { text: "Lorsque des individus partagent les buts valorisés par la société (richesse) mais utilisent des moyens illégitimes faute d'accès aux moyens légitimes.", isCorrect: true, rationale: "Merton montre que la tension entre les buts culturels valorisés (succès matériel) et l'inégale répartition des moyens légitimes (diplômes, capitaux) pousse vers la délinquance." },
-                    { text: "Lorsque les citoyens renoncent totalement à toute ambition matérielle pour vivre dans la pauvreté volontaire.", isCorrect: false, rationale: "Confusion : c'est la typologie de l'évasion ou du retrait chez Merton." },
-                    { text: "Lorsque toutes les lois sont respectées scrupuleusement par l'ensemble de la population.", isCorrect: false, rationale: "Confusion : c'est la typologie du conformisme selon Merton." },
-                    { text: "Lorsque l'État supprime l'utilisation de la monnaie scripturale et des cartes bancaires.", isCorrect: false, rationale: "Hors sujet : l'analyse de Merton porte sur la structure sociologique des opportunités." }
-                ]
-            },
-            {
-                question: "Qu'appelle-t-on la 'stigmatisation' selon le sociologue Erving Goffman ?",
-                options: [
-                    { text: "Le processus par lequel un individu est discrédité et réduit à un attribut dévalorisant aux yeux d'autrui.", isCorrect: true, rationale: "Le stigmate (physique, moral ou tribal) altère l'identité sociale de l'individu et modifie profondément ses interactions avec les 'normaux'." },
-                    { text: "L'obligation d'obtenir un diplôme officiel d'État pour exercer un métier.", isCorrect: false, rationale: "Confusion avec la certification scolaire ou professionnelle." },
-                    { text: "L'attribution d'une prime financière de fin d'année aux salariés les plus assidus.", isCorrect: false, rationale: "Inversion : le stigmate est une marque négative et disqualifiante, pas une récompense." },
-                    { text: "La signature d'un accord collectif d'entreprise entre syndicats et employeurs.", isCorrect: false, rationale: "Confusion de chapitre avec le dialogue social." }
-                ]
-            },
-            {
-                question: "En sociologie, pourquoi affirme-t-on que la déviance est une notion 'relative' ?",
-                options: [
-                    { text: "Parce qu'un même acte peut être jugé déviant ou normal selon l'époque, la société ou le contexte social considéré.", isCorrect: true, rationale: "Exemples : la consommation d'alcool, le travail le dimanche ou le port de certains vêtements varient selon les cultures et les époques." },
-                    { text: "Parce que les tribunaux judiciaires tirent les peines de prison au sort.", isCorrect: false, rationale: "Faux : les peines sont fixées selon le code pénal et les circonstances de l'infraction." },
-                    { text: "Parce que seuls les mineurs de moins de 15 ans peuvent commettre des transgressions.", isCorrect: false, rationale: "Faux : la déviance concerne l'ensemble des tranches d'âge de la société." },
-                    { text: "Parce que les règles morales sont universelles et n'ont jamais évolué depuis la Préhistoire.", isCorrect: false, rationale: "Inversion complète : les normes sociales et juridiques se transforment continuellement dans l'histoire." }
-                ]
-            },
-            {
-                question: "Qu'est-ce qu'une 'carrière déviante' au sens d'Howard Becker ?",
-                options: [
-                    { text: "Une succession d'étapes (transgression, étiquetage, intégration à un sous-groupe déviant) qui consolide l'identité déviante de l'individu.", isCorrect: true, rationale: "L'entrée dans la déviance n'est pas un acte isolé : c'est un parcours dynamique où l'engagement dans un groupe marginal stabilise la pratique." },
-                    { text: "Le parcours professionnel des policiers et magistrats spécialisés dans la lutte contre le crime.", isCorrect: false, rationale: "Piège sur le mot 'carrière' pris au sens de métier administratif ordinaire." },
-                    { text: "L'apprentissage scolaire dans les filières d'enseignement professionnel en lycée.", isCorrect: false, rationale: "Confusion avec les cursus scolaires réguliers." },
-                    { text: "La décision d'un individu de respecter l'ensemble des lois sans aucune exception.", isCorrect: false, rationale: "Inversion : c'est une trajectoire de conformisme absolu." }
-                ]
-            }
-        ]
-    },
-
-    // 9. COMMENT SE FORME ET S'EXPRIME L'OPINION PUBLIQUE ?
-    {
-        id: "prem_opinion_publique",
-        title: "9. L'opinion publique et les sondages",
-        icon: "fa-square-poll-vertical",
-        color: "from-indigo-600 to-blue-700",
-        questions: [
-            {
-                question: "Au XVIIIe siècle, avant l'invention des sondages, comment s'exprimait l'opinion publique ?",
-                options: [
-                    { text: "Dans les salons littéraires, les clubs et la presse au sein d'une élite bourgeoise cultivée débattant rationnellement.", isCorrect: true, rationale: "L'opinion publique éclairée était alors l'apanage des lettrés et notables débattant dans l'espace public bourgeois (Habermas)." },
-                    { text: "À travers des sondages d'opinion téléphoniques quotidiens auprès de milliers d'ouvriers.", isCorrect: false, rationale: "Anachronisme : les techniques de sondages par échantillonnage représentatif n'ont été inventées qu'au XXe siècle (Gallup)." },
-                    { text: "Par des consultations obligatoires régulières organisées sur les réseaux sociaux numériques.", isCorrect: false, rationale: "Anachronisme technologique complet." },
-                    { text: "Uniquement par la publication anonyme d'édits royaux rédigés par les ministres de la monarchie.", isCorrect: false, rationale: "Inversion : les édits royaux exprimaient l'autorité du souverain, contre laquelle l'opinion publique critique s'est précisément construite." }
-                ]
-            },
-            {
-                question: "La méthode d'échantillonnage des quotas utilisée par les instituts de sondage consiste à :",
-                options: [
-                    { text: "Construire un échantillon qui reproduit en modèle réduit la structure de la population (sexe, âge, profession, région).", isCorrect: true, rationale: "La représentativité de l'échantillon repose sur le respect des proportions statistiques observées dans les recensements nationaux de l'Insee." },
-                    { text: "Tirer au sort des numéros au hasard dans l'annuaire téléphonique sans aucun contrôle de profil.", isCorrect: false, rationale: "Confusion : c'est la méthode de l'échantillonnage aléatoire probabiliste pur, distincte de la méthode empirique des quotas." },
-                    { text: "Interroger uniquement les électeurs qui se déclarent militants d'un parti politique.", isCorrect: false, rationale: "Faux : cela créerait un biais d'échantillonnage majeur en éliminant la majorité non militante de la population." },
-                    { text: "Faire payer une cotisation financière à chaque personne acceptant de répondre aux questions.", isCorrect: false, rationale: "Faux : les sondés ne paient jamais pour répondre ; ils peuvent au contraire recevoir de menues compensations symboliques." }
-                ]
-            },
-            {
-                question: "Dans sa critique célèbre ('L'opinion publique n'existe pas'), que reproche Pierre Bourdieu aux sondages ?",
-                options: [
-                    { text: "D'agréger des opinions qui n'ont pas la même force, de poser des questions biaisées et d'imposer des problématiques non partagées.", isCorrect: true, rationale: "Bourdieu dénonce trois postulats faux des sondages : l'illusion que tout le monde a une opinion, que toutes les opinions se valent et qu'il y a un consensus sur ce qui mérite d'être posé." },
-                    { text: "D'utiliser des outils mathématiques et informatiques jugés trop complexes pour les sciences humaines.", isCorrect: false, rationale: "Faux : Bourdieu utilise lui-même abondamment la statistique et l'analyse factorielle des correspondances dans ses recherches." },
-                    { text: "D'interdire aux femmes et aux jeunes de participer aux questionnaires politiques.", isCorrect: false, rationale: "Faux : les instituts de sondage respectent des quotas stricts intégrant pleinement la parité et les tranches d'âge." },
-                    { text: "De publier les résultats des enquêtes avec plusieurs années de retard sur l'actualité.", isCorrect: false, rationale: "Faux : Bourdieu critique au contraire l'immédiateté superficielle et la fabrication instantanée d'un consensus d'opinion artificiel." }
-                ]
-            },
-            {
-                question: "Qu'entend-on par l'expression de 'démocratie d'opinion' ?",
-                options: [
-                    { text: "Un fonctionnement politique où les gouvernants et les médias adaptent continuellement leur discours aux fluctuations des sondages.", isCorrect: true, rationale: "La démocratie d'opinion met l'accent sur la communication politique permanente, l'immédiateté médiatique et le suivi au jour le jour de la popularité." },
-                    { text: "L'obligation constitutionnelle d'organiser un référendum populaire pour chaque vote de loi ordinaire.", isCorrect: false, rationale: "Confusion : cela correspondrait à de la démocratie directe radicale, pas au concept sociologique de démocratie d'opinion." },
-                    { text: "Un régime autoritaire où les citoyens sont contraints d'afficher leurs opinions sur les façades des maisons.", isCorrect: false, rationale: "Caricature totalitaire inverse de la liberté d'expression garantie en démocratie." },
-                    { text: "La suppression définitive de l'ensemble des partis politiques et des assemblées parlementaires.", isCorrect: false, rationale: "Faux : les partis et le Parlement existent toujours, mais leur rôle d'intermédiation est court-circuité par la communication sondagière." }
-                ]
-            },
-            {
-                question: "Quel effet pervers électoral peut découler de la prolifération des sondages d'intentions de vote ?",
-                options: [
-                    { text: "L'effet bandwagon (voter pour le favori annoncé) ou la transformation du débat en une 'course de chevaux' au détriment des programmes.", isCorrect: true, rationale: "La focalisation médiatique sur le classement des candidats (horse-race journalism) occulte la confrontation des idées et favorise le vote stratégique dit 'utile'." },
-                    { text: "L'annulation automatique du scrutin par le Conseil constitutionnel en cas de score serré.", isCorrect: false, rationale: "Faux : le Conseil constitutionnel contrôle la régularité du vote, il n'annule pas les élections en raison de prévisions serrées." },
-                    { text: "La hausse obligatoire des taux d'intérêt fixés par la Banque Centrale Européenne.", isCorrect: false, rationale: "Confusion de discipline : les sondages électoraux ne déterminent pas la politique monétaire de la BCE." },
-                    { text: "L'interdiction définitive de vote pour les électeurs indécis lors des derniers jours.", isCorrect: false, rationale: "Faux : le droit de vote reste garanti jusqu'à la fermeture des bureaux de vote pour tout inscrit." }
-                ]
-            },
-            {
-                question: "Qu'est-ce que l'effet 'underdog' (effet du perdant) parfois observé lors des sondages électoraux ?",
-                options: [
-                    { text: "Un regain de mobilisation des électeurs en faveur d'un candidat donné perdant ou en difficulté dans les sondages.", isCorrect: true, rationale: "Par sympathie ou réflexe de sursaut civique, certains électeurs votent pour le candidat en retard pour contrecarrer les pronostics." },
-                    { text: "L'abandon immédiat de la campagne électorale par les partis minoritaires.", isCorrect: false, rationale: "Faux : les candidats restent en lice jusqu'au premier tour de scrutin." },
-                    { text: "Le ralliement automatique de tous les indécis au président sortant.", isCorrect: false, rationale: "Confusion : le ralliement au vainqueur annoncé correspond à l'effet 'bandwagon'." },
-                    { text: "La démission collective des directeurs d'instituts de sondage après l'élection.", isCorrect: false, rationale: "Piège absurde sans fondement empirique." }
-                ]
-            },
-            {
-                question: "Comment la formulation d'une question dans un sondage peut-elle influencer les résultats obtenus (effet de cadrage) ?",
-                options: [
-                    { text: "Le choix des termes, les présupposés et l'ordre des questions orientent inconsciemment les réponses des sondés.", isCorrect: true, rationale: "Poser une question sous l'angle du 'droit d'aider à mourir' ne recueille pas le même pourcentage d'adhésion que sous l'angle du 'suicide assisté'." },
-                    { text: "Elle ne produit strictement aucun effet car les sondés répondent toujours de manière parfaitement objective.", isCorrect: false, rationale: "Erreur méthodologique : la sociologie électorale démontre la grande sensibilité des réponses à la formulation des items." },
-                    { text: "Elle double automatiquement la taille de l'échantillon interrogé par téléphone.", isCorrect: false, rationale: "Faux : la taille de l'échantillon est fixée au départ par l'institut (souvent 1 000 personnes)." },
-                    { text: "Elle annule le droit de vote des personnes qui refusent de répondre.", isCorrect: false, rationale: "Faux : les réponses aux sondages n'ont aucun lien juridique avec l'inscription sur les listes électorales." }
-                ]
-            },
-            {
-                question: "Qu'est-ce que le 'non-réponse' (ou taux de sans opinion) révèle dans l'analyse critique des sondages ?",
-                options: [
-                    { text: "Une inégale compétence politique perçue, les catégories populaires et les femmes s'abstenant plus souvent de donner un avis tranché.", isCorrect: true, rationale: "Le taux de sans-opinion n'est pas aléatoire : il reflète le sentiment d'illégitimité statutaire face à des questions techniques ou abstraites." },
-                    { text: "Une panne technique des serveurs informatiques de l'institut de sondage.", isCorrect: false, rationale: "Piège matériel sans pertinence sociologique." },
-                    { text: "L'obligation légale de répondre 'oui' à l'ensemble des questions posées.", isCorrect: false, rationale: "Faux : la liberté de ne pas répondre ou d'exprimer son absence d'avis est totale." },
-                    { text: "La disparition de toute opinion politique chez les personnes âgées de plus de 60 ans.", isCorrect: false, rationale: "Inversion : les personnes âgées ont statistiquement des opinions politiques très affirmées et participent massivement aux scrutins." }
-                ]
-            },
-            {
-                question: "Quel rôle jouent les médias d'information dans la construction de l'agenda politique public ?",
-                options: [
-                    { text: "Ils sélectionnent et hiérarchisent les faits d'actualité mis en avant (mise à l'agenda), dictant ainsi aux citoyens ce à quoi il faut penser.", isCorrect: true, rationale: "C'est la théorie du 'gatekeeping' et de l'agenda setting : les médias ne disent pas quoi penser, mais ils décident des sujets considérés comme prioritaires." },
-                    { text: "Ils rédigent directement les projets de lois votés par l'Assemblée nationale.", isCorrect: false, rationale: "Confusion institutionnelle : les lois sont rédigées par le gouvernement ou les parlementaires." },
-                    { text: "Ils interdisent aux ministres d'accorder des interviews à la télévision.", isCorrect: false, rationale: "Inversion : les médias sont le principal canal d'expression et de communication des hommes politiques." },
-                    { text: "Ils calculent les taux d'intérêt de la Banque centrale.", isCorrect: false, rationale: "Confusion de discipline : la politique monétaire est décidée par le Conseil des gouverneurs de la BCE." }
-                ]
-            },
-            {
-                question: "Quelle loi encadre strictement la publication des sondages électoraux en France à la veille des scrutins ?",
-                options: [
-                    { text: "L'interdiction de diffuser tout sondage d'intentions de vote le week-end du vote afin de préserver la sérénité du choix des électeurs.", isCorrect: true, rationale: "La loi du 19 juillet 1977 (modifiée en 2002) interdit la diffusion de sondages la veille et le jour du scrutin jusqu'à la fermeture du dernier bureau de vote." },
-                    { text: "L'obligation de publier au moins 10 sondages par jour durant toute l'année scolaire.", isCorrect: false, rationale: "Faux : la commande de sondages relève de la liberté des médias et des partis." },
-                    { text: "L'interdiction absolue de réaliser des sondages d'opinion sur tout le territoire national.", isCorrect: false, rationale: "Faux : les sondages sont pleinement légaux et régulés par la Commission des sondages." },
-                    { text: "L'obligation pour chaque sondé de montrer sa carte d'identité au sondeur par vidéo.", isCorrect: false, rationale: "Faux : les sondages garantissent le respect de l'anonymat des participants." }
-                ]
-            }
-        ]
-    },
-
-    // 10. VOTER : UNE AFFAIRE INDIVIDUELLE OU COLLECTIVE ?
-    {
-        id: "prem_voter",
-        title: "10. Voter : acte individuel ou collectif ?",
-        icon: "fa-check-to-slot",
-        color: "from-blue-700 to-indigo-800",
-        questions: [
-            {
-                question: "Qu'est-ce que le 'cens caché' mis en évidence par le politiste Daniel Gaxie ?",
-                options: [
-                    { text: "L'auto-exclusion et l'abstention des classes populaires causées par un sentiment d'illégitimité et d'incompétence politique statutaire.", isCorrect: true, rationale: "Bien que le droit de vote soit universel (fin du cens financier légal), l'inégale détention du capital culturel recrée une barrière invisible excluant les plus démunis." },
-                    { text: "Une taxe monétaire secrète prélevée sur le compte des citoyens au moment de déposer leur bulletin dans l'urne.", isCorrect: false, rationale: "Piège littéral : confusion du concept métaphorique de Gaxie avec un prélèvement fiscal réel." },
-                    { text: "L'obligation légale de voter sous le contrôle physique d'un représentant du gouvernement.", isCorrect: false, rationale: "Faux : le vote est secret et protégé par l'isoloir dans les démocraties." },
-                    { text: "La fermeture anticipée des bureaux de vote dans les quartiers défavorisés.", isCorrect: false, rationale: "Faux : les règles d'ouverture des bureaux de vote sont strictement uniformes et réglementées par le code électoral." }
-                ]
-            },
-            {
-                question: "Quelles sont les 'variables lourdes' du comportement électoral identifiées par l'école sociologique de Columbia ?",
-                options: [
-                    { text: "La classe sociale (statut professionnel), le niveau de diplôme, l'âge, le genre et la pratique religieuse.", isCorrect: true, rationale: "Le modèle sociologique montre qu'une personne pense politiquement comme elle est socialement positionnée : l'environnement social structure durablement les préférences." },
-                    { text: "Le signe astrologique, la marque de voiture et la taille corporelle de l'électeur.", isCorrect: false, rationale: "Critères fantaisistes sans aucune pertinence ni corrélation sociologique démontrée." },
-                    { text: "Le montant des dépenses consacrées aux vacances d'été à l'étranger.", isCorrect: false, rationale: "C'est un élément de mode de vie qui découle du niveau de vie, mais ce n'est pas une variable lourde canonique d'explication du vote." },
-                    { text: "La météo constatée au matin du jour du scrutin électoral.", isCorrect: false, rationale: "Faux : la météo peut marginalement influencer la participation du jour, mais ne structure pas l'orientation partisane de fond." }
-                ]
-            },
-            {
-                question: "L'essor de la figure de 'l'électeur rationnel' (vote sur enjeu / issue voting) traduit :",
-                options: [
-                    { text: "Une volatilité électorale accrue et un affaiblissement des fidélités partisanes héritées, l'électeur arbitrant selon les offres du moment.", isCorrect: true, rationale: "L'électeur compare désormais les programmes et les bilans des candidats d'une élection à l'autre selon ses priorités personnelles (pouvoir d'achat, environnement)." },
-                    { text: "La disparition totale de toute forme d'abstention lors des élections présidentielles.", isCorrect: false, rationale: "Inversion : l'électeur rationnel pratique aussi l'abstention intermittente lorsqu'il juge que l'offre politique ne répond pas à ses attentes." },
-                    { text: "La décision des électeurs de voter systématiquement et aveuglément pour le candidat sortant.", isCorrect: false, rationale: "Faux : le vote sur enjeu incite au contraire à sanctionner le sortant si son bilan économique est jugé décevant." },
-                    { text: "L'interdiction des débats télévisés entre les différents candidats en campagne.", isCorrect: false, rationale: "Faux : les débats et l'information médiatique sont précisément le carburant sur lequel s'appuie l'électeur sur enjeu pour arbitrer." }
-                ]
-            },
-            {
-                question: "Sociologiquement, comment distingue-t-on l'abstention 'hors du jeu' de l'abstention 'dans le jeu' ?",
-                options: [
-                    { text: "L'abstention 'hors du jeu' traduit une exclusion sociale et une incompétence ressentie ; celle 'dans le jeu' exprime un choix politique critique de l'offre.", isCorrect: true, rationale: "Cette typologie sépare les citoyens marginalisés éloignés de la politique des citoyens éduqués et politisés qui utilisent l'abstention comme message de protestation." },
-                    { text: "L'abstention 'hors du jeu' concerne les Français de l'étranger, celle 'dans le jeu' concerne le territoire métropolitain.", isCorrect: false, rationale: "Confusion de critère : la distinction est politique et sociale, pas géographique ou administrative." },
-                    { text: "L'abstention 'hors du jeu' est sanctionnée par une amende, celle 'dans le jeu' est autorisée par la loi.", isCorrect: false, rationale: "Faux : l'abstention n'est pas pénalisée financièrement en France, quel qu'en soit le motif." },
-                    { text: "L'abstention 'hors du jeu' concerne les électeurs de plus de 80 ans, celle 'dans le jeu' les mineurs.", isCorrect: false, rationale: "Faux : les mineurs ne sont pas inscrits sur les listes électorales, ils ne peuvent donc être comptabilisés parmi les abstentionnistes." }
-                ]
-            },
-            {
-                question: "Pourquoi affirme-t-on que le vote est simultanément un acte individuel et un acte collectif ?",
-                options: [
-                    { text: "L'acte est individuel dans l'isoloir, mais le choix est profondément façonné par les socialisations, les appartenances et les normes de groupe.", isCorrect: true, rationale: "Le secret du vote protège la liberté de décision de l'individu, mais l'analyse statistique révèle de puissants déterminismes sociologiques collectifs." },
-                    { text: "Parce que toute la famille doit obligatoirement entrer ensemble dans le même isoloir pour voter.", isCorrect: false, rationale: "Faux : le passage individuel et solitaire dans l'isoloir est une obligation légale pour garantir le secret du scrutin." },
-                    { text: "Parce que le président de la République décide à l'avance du résultat final de chaque citoyen.", isCorrect: false, rationale: "Contresens démocratique : le dépouillement public et contradictoire garantit la sincérité des suffrages exprimés." },
-                    { text: "Parce que les votes exprimés ne sont jamais comptabilisés de façon anonyme par les bureaux.", isCorrect: false, rationale: "Faux : l'anonymat absolu du bulletin déposé dans l'urne est le principe fondateur du suffrage universel démocratique." }
-                ]
-            },
-            {
-                question: "Quel rôle joue l'isoloir dans la transformation historique de l'acte électoral ?",
-                options: [
-                    { text: "Il soustrait l'électeur aux pressions des notables, de l'employeur ou de la communauté, individualisant le vote secret.", isCorrect: true, rationale: "Introduit en France par la loi de 1913, l'isoloir garantit la liberté de conscience et l'autonomie du citoyen face aux regards extérieurs." },
-                    { text: "Il permet aux représentants des partis politiques de vérifier la couleur du bulletin choisi.", isCorrect: false, rationale: "Inversion complète : l'isoloir a été créé précisément pour interdire tout contrôle ou chantage politique." },
-                    { text: "Il sert de cabine d'essayage pour les uniformes électoraux.", isCorrect: false, rationale: "Piège absurde sans rapport avec la procédure républicaine." },
-                    { text: "Il accélère le comptage informatique automatique des voix exprimées.", isCorrect: false, rationale: "Faux : l'isoloir est un meuble physique garantissant la discrétion, le dépouillement s'effectue après." }
-                ]
-            },
-            {
-                question: "Qu'est-ce que le 'vote de classe' ?",
-                options: [
-                    { text: "L'existence d'une forte corrélation statistique entre l'appartenance à un groupe socioprofessionnel et l'orientation politique du vote (ex: ouvriers à gauche).", isCorrect: true, rationale: "Historiquement mesuré par l'indice d'Alford, le vote de classe traduit la défense d'intérêts économiques et d'identités collectives partagées." },
-                    { text: "L'obligation pour les élèves d'une même classe de lycée de voter pour le même délégué.", isCorrect: false, rationale: "Piège sur le sens scolaire du mot 'classe'." },
-                    { text: "L'interdiction de vote pour les citoyens dont les revenus sont inférieurs au SMIC.", isCorrect: false, rationale: "Anachronisme : le suffrage universel masculin a aboli le cens en 1848." },
-                    { text: "Le choix des ministres de gouverner sans consulter les assemblées parlementaires.", isCorrect: false, rationale: "Confusion avec des dispositions constitutionnelles (ex: article 49.3)." }
-                ]
-            },
-            {
-                question: "Comment le concept de 'socialisation politique' explique-t-il la transmission des préférences idéologiques ?",
-                options: [
-                    { text: "La famille et les milieux de vie transmettent dès le plus jeune âge des visions du monde, des valeurs et des sensibilités partisanes durables.", isCorrect: true, rationale: "Les travaux d'Annick Percheron montrent que l'orientation politique des enfants présente une forte concordance avec celle des parents." },
-                    { text: "L'apprentissage obligatoire des discours des présidents lors des cours d'histoire à l'école primaire.", isCorrect: false, rationale: "Faux : la transmission familiale et informelle est beaucoup plus puissante et diffuse que l'enseignement civique formel." },
-                    { text: "L'obligation pour les jeunes de 18 ans d'adhérer au parti politique du maire de leur commune.", isCorrect: false, rationale: "Faux : l'adhésion partisane est un acte strictement individuel et facultatif." },
-                    { text: "La sélection génétique des opinions politiques inscrite dans l'ADN des électeurs.", isCorrect: false, rationale: "Erreur naturaliste : les idées politiques sont des constructions sociales et culturelles apprises." }
-                ]
-            },
-            {
-                question: "Qu'est-ce que la 'volatilité électorale' ?",
-                options: [
-                    { text: "Le changement de comportement d'un électeur d'un scrutin à l'autre (alternance vote/abstention ou changement de parti).", isCorrect: true, rationale: "La volatilité traduit le déclin des affiliations politiques rigides et la mobilité accrue des électeurs selon les enjeux de campagne." },
-                    { text: "L'annulation d'une élection suite à un vent violent ou une tempête le dimanche du vote.", isCorrect: false, rationale: "Piège sur le sens météorologique du mot 'volatilité'." },
-                    { text: "La variation rapide du cours de l'euro sur les marchés financiers le jour de l'élection.", isCorrect: false, rationale: "Confusion de discipline : la volatilité des marchés financiers mesure les fluctuations de prix d'actifs, pas les choix de vote." },
-                    { text: "L'obligation pour les députés de changer de groupe parlementaire chaque mois.", isCorrect: false, rationale: "Faux : les députés s'inscrivent dans un groupe pour toute la législature sauf démission volontaire." }
-                ]
-            },
-            {
-                question: "Pourquoi le niveau de diplôme est-il une variable déterminante de la participation électorale ?",
-                options: [
-                    { text: "Parce qu'il confère des compétences cognitives, un sentiment de légitimité et un intérêt supérieur pour les affaires publiques.", isCorrect: true, rationale: "Plus le niveau de diplôme est élevé, plus le sentiment de compétence politique est fort, ce qui réduit drastiquement l'abstention." },
-                    { text: "Parce que les citoyens sans diplôme n'ont pas le droit légal d'entrer dans un bureau de vote.", isCorrect: false, rationale: "Faux : le droit de vote est universel pour tous les citoyens majeurs inscrits sur les listes électorales." },
-                    { text: "Parce que le diplôme donne droit à deux voix au lieu d'une lors du dépouillement.", isCorrect: false, rationale: "Inversion démocratique : le principe républicain fondamental est 'un citoyen, une voix'." },
-                    { text: "Parce que les bacheliers sont payés par l'État pour aller voter le dimanche.", isCorrect: false, rationale: "Faux : le vote est une démarche civique bénévole non rémunérée." }
-                ]
-            }
-        ]
-    },
-
-    // 11. COMMENT L'ASSURANCE ET LA PROTECTION SOCIALE CONTRIBUENT-ELLES À LA GESTION DES RISQUES ?
-    {
-        id: "prem_risques_protection",
-        title: "11. Gestion des risques et protection sociale",
-        icon: "fa-shield-heart",
-        color: "from-rose-600 to-red-700",
-        questions: [
-            {
-                question: "Quels sont les grands risques sociaux traditionnellement couverts par la protection sociale ?",
-                options: [
-                    { text: "La maladie, la vieillesse (retraite), la famille (maternité/garde), l'emploi (chômage) et les accidents du travail/invalidité.", isCorrect: true, rationale: "Ces risques réduisent les revenus d'activité ou augmentent les dépenses indispensables des ménages, justifiant une couverture collective." },
-                    { text: "La baisse des cours de la bourse, les pannes de véhicule personnel et les retards de train.", isCorrect: false, rationale: "Faux : ce sont des aléas patrimoniaux ou contractuels privés, pas des risques sociaux fondamentaux couverts par l'État social." },
-                    { text: "Les contraventions de stationnement, les amendes fiscales et les pertes au casino.", isCorrect: false, rationale: "Faux : la protection sociale ne prend évidemment pas en charge les sanctions juridiques ou les jeux de hasard." },
-                    { text: "Les faillites commerciales des multinationales étrangères installées hors de France.", isCorrect: false, rationale: "Faux : le droit de la protection sociale protège les personnes physiques résidentes contre les aléas de la vie." }
-                ]
-            },
-            {
-                question: "Quelle est la différence fondamentale entre la logique d'assurance (Bismarck) et la logique d'assistance (Beveridge) ?",
-                options: [
-                    { text: "L'assurance est financée par des cotisations et ouvre des droits aux seuls cotisants ; l'assistance est financée par l'impôt et verse des aides sous conditions de ressources.", isCorrect: true, rationale: "Le modèle bismarckien repose sur le travail et la contributivité ; le modèle beveridgien repose sur la solidarité nationale universelle et la lutte contre la pauvreté." },
-                    { text: "L'assurance est gérée par des banques privées américaines, l'assistance est gérée par des mairies de quartier.", isCorrect: false, rationale: "Confusion institutionnelle : les deux logiques coexistent au sein même de la Sécurité sociale et de l'État social français." },
-                    { text: "L'assurance est entièrement gratuite pour tous, tandis que l'assistance exige un abonnement mensuel payant.", isCorrect: false, rationale: "Inversion complète : l'assurance exige le versement préalable de cotisations sociales sur les salaires." },
-                    { text: "Il n'existe aucune différence théorique ou pratique entre ces deux notions dans les sciences sociales.", isCorrect: false, rationale: "Faux : c'est la distinction fondatrice de l'histoire comparée des systèmes d'État-providence." }
-                ]
-            },
-            {
-                question: "Le principe de mutualisation des risques repose sur le fait que :",
-                options: [
-                    { text: "La mise en commun des cotisations d'un large groupe permet d'indemniser les quelques membres victimes d'un sinistre imprévu.", isCorrect: true, rationale: "En vertu de la loi des grands nombres, mutualiser permet de transformer un risque individuel lourd et imprévisible en un coût collectif moyen prévisible." },
-                    { text: "Chaque citoyen doit conserver l'intégralité de ses factures d'hôpital pour les payer seul sur ses deniers propres.", isCorrect: false, rationale: "Inversion : cela correspond à l'absence de couverture et à la responsabilité purement individuelle sans mutualisation." },
-                    { text: "L'État interdit formellement à tout individu de se soigner auprès d'un médecin diplômé.", isCorrect: false, rationale: "Caricature absurde sans rapport avec la mutualisation de l'assurance maladie." },
-                    { text: "Les personnes en bonne santé sont obligées d'effectuer des dons directs d'argent liquide aux malades.", isCorrect: false, rationale: "Confusion : la mutualisation passe par des organismes institutionnels collectifs (Sécurité sociale, mutuelles), pas par la charité directe." }
-                ]
-            },
-            {
-                question: "La redistribution verticale vise principalement à :",
-                options: [
-                    { text: "Transférer des revenus des ménages les plus aisés vers les plus modestes pour réduire l'échelle des inégalités économiques.", isCorrect: true, rationale: "Elle s'appuie sur la progressivité de l'impôt sur le revenu et le versement de prestations sociales ciblées (minima sociaux comme le RSA)." },
-                    { text: "Transférer des revenus des personnes en bonne santé vers les malades, sans condition de niveau de revenu.", isCorrect: false, rationale: "Confusion : cela correspond à la redistribution horizontale (couverture d'un risque indifféremment du niveau de richesse)." },
-                    { text: "Transférer des fonds publics pour financer de nouvelles armes militaires.", isCorrect: false, rationale: "Confusion : cela relève des dépenses régaliennes de défense, pas des mécanismes de redistribution sociale de l'État-providence." },
-                    { text: "Augmenter l'écart de patrimoine entre les déciles extrêmes de la population.", isCorrect: false, rationale: "Inversion : la redistribution verticale a pour finalité explicite de réduire la dispersion des revenus disponibles." }
-                ]
-            },
-            {
-                question: "En matière d'assurance santé facultative, le phénomène de 'sélection adverse' se traduit par le fait que :",
-                options: [
-                    { text: "Seuls les individus à haut risque de santé souscrivent le contrat, ce qui fait grimper les primes et peut conduire à la faillite du système.", isCorrect: true, rationale: "Faute de pouvoir distinguer le profil réel des assurés, la prime moyenne fixée dissuade les personnes en bonne santé, ne laissant que les profils coûteux." },
-                    { text: "Les compagnies d'assurance refusent d'indemniser les sinistres après avoir encaissé les cotisations.", isCorrect: false, rationale: "Confusion : cela relèverait de l'escroquerie ou du contentieux contractuel privé, pas de la défaillance d'asymétrie d'information de sélection adverse." },
-                    { text: "Tous les citoyens bénéficient sans exception de remboursements intégraux sans verser un seul euro.", isCorrect: false, rationale: "Faux : un système d'assurance privée exige obligatoirement le paiement d'une prime d'assurance contractuelle." },
-                    { text: "L'ensemble des hôpitaux publics sont nationalisés sous l'autorité exclusive de l'Armée.", isCorrect: false, rationale: "Faux : le problème de sélection adverse concerne le fonctionnement microéconomique des marchés assurantiels face à l'asymétrie d'information." }
-                ]
-            },
-            {
-                question: "Qu'est-ce que la 'redistribution horizontale' des revenus ?",
-                options: [
-                    { text: "Le transfert de revenus entre groupes d'individus confrontés ou non à un risque social (ex: des bien-portants vers les malades, des actifs vers les retraités).", isCorrect: true, rationale: "Contrairement à la redistribution verticale, la redistribution horizontale couvre un risque indépendamment des écarts de richesse entre les ménages." },
-                    { text: "Le versement d'une prime financière identique à l'ensemble des entreprises exportatrices.", isCorrect: false, rationale: "Confusion : cela relèverait de subventions au commerce extérieur." },
-                    { text: "Le prélèvement d'un impôt proportionnel sur la vente de biens immobiliers de luxe.", isCorrect: false, rationale: "Confusion : cela relève de la fiscalité patrimoniale verticale." },
-                    { text: "L'alignement mathématique de tous les salaires bruts de la fonction publique.", isCorrect: false, rationale: "Faux : les grilles salariales publiques dépendent des corps, des grades et de l'ancienneté." }
-                ]
-            },
-            {
-                question: "En France, comment est organisée la Sécurité sociale créée par les ordonnances de 1945 ?",
-                options: [
-                    { text: "En quatre branches principales (Maladie, Vieillesse, Famille, Accidents du travail) gérées paritaire­ment par les syndicats et le patronat.", isCorrect: true, rationale: "La Sécurité sociale combine la démocratie sociale (gestion paritaire) et le financement par cotisations sociales sur le travail." },
-                    { text: "Sous la forme d'une compagnie financière privée cotée à la bourse de Paris.", isCorrect: false, rationale: "Inversion : la Sécurité sociale est une institution publique de droit social non lucrative." },
-                    { text: "Par un système d'assurance purement individuel géré par des fonds de pension américains.", isCorrect: false, rationale: "Faux : la France a fait le choix de la répartition et de la solidarité collective obligatoire." },
-                    { text: "Par un tirage au sort annuel des ménages autorisés à se faire soigner à l'hôpital.", isCorrect: false, rationale: "Caricature absurde : l'accès aux soins est universel et garanti par la loi." }
-                ]
-            },
-            {
-                question: "Quel problème financier pèse lourdement sur la pérennité du système de retraite par répartition en France ?",
-                options: [
-                    { text: "Le vieillissement démographique de la population qui dégrade le ratio entre le nombre de cotisants actifs et le nombre de retraités.", isCorrect: true, rationale: "Dans un système par répartition, les cotisations des actifs du moment financent directement les pensions des retraités du moment. Si les retraités augmentent plus vite que les actifs, le système devient déficitaire." },
-                    { text: "L'interdiction légale pour les jeunes d'entrer sur le marché du travail avant 30 ans.", isCorrect: false, rationale: "Faux : l'entrée sur le marché du travail s'effectue dès la fin des études (vers 18-25 ans)." },
-                    { text: "La baisse continue de l'espérance de vie à la naissance depuis un siècle.", isCorrect: false, rationale: "Inversion : l'espérance de vie s'est au contraire allongée, augmentant la durée moyenne passée à la retraite." },
-                    { text: "L'obligation pour l'État de verser 1 million d'euros à chaque nouveau retraité.", isCorrect: false, rationale: "Caricature financière sans aucun fondement réel." }
-                ]
-            },
-            {
-                question: "Qu'est-ce que l'aléa moral dans le domaine de la consommation de soins médicaux ?",
-                options: [
-                    { text: "La tendance d'un patient intégralement remboursé par sa mutuelle à surconsommer des médicaments ou des actes médicaux superflus.", isCorrect: true, rationale: "Lorsque le coût marginal direct perçu par l'usager est nul (ticket modérateur pris en charge), la vigilance financière diminue, augmentant les dépenses collectives." },
-                    { text: "Le refus d'un médecin de prescrire un traitement efficace à son patient.", isCorrect: false, rationale: "Confusion : cela relèverait d'une faute déontologique ou médicale." },
-                    { text: "La fermeture réglementaire de l'ensemble des pharmacies de garde le dimanche.", isCorrect: false, rationale: "Confusion avec les règles de permanence des soins hospitaliers et officinaux." },
-                    { text: "L'interdiction de fabriquer des médicaments génériques moins coûteux.", isCorrect: false, rationale: "Inversion : l'Assurance maladie encourage massivement la diffusion des génériques pour réduire les coûts." }
-                ]
-            },
-            {
-                question: "Pourquoi l'assurance contre les risques sociaux est-elle obligatoire en France ?",
-                options: [
-                    { text: "Pour éviter la sélection adverse, garantir la solidarité entre tous les citoyens et empêcher que des personnes non assurées ne se retrouvent dans la misère.", isCorrect: true, rationale: "L'obligation d'assurance empêche les personnes bien-portantes de faire défection, ce qui assure une assiette financière large et pérenne." },
-                    { text: "Pour contraindre les ménages à dépenser l'intégralité de leur salaire dans des cliniques privées.", isCorrect: false, rationale: "Faux : les cotisations financent le régime général public de la Sécurité sociale." },
-                    { text: "Pour interdire tout recours à la médecine douce ou alternative.", isCorrect: false, rationale: "Hors sujet : l'obligation concerne la couverture financière des risques fondamentaux." },
-                    { text: "Parce que l'Union européenne interdit formellement la gratuité des soins d'urgence.", isCorrect: false, rationale: "Faux : les politiques de santé et d'organisation des soins relèvent de la souveraineté des États membres." }
-                ]
-            }
-        ]
-    },
-
-    // 12. COMMENT LES ENTREPRISES SONT-ELLES ORGANISÉES ET GOUVERNÉES ?
-    {
-        id: "prem_gouvernance_entreprises",
-        title: "12. Organisation et gouvernance des entreprises",
-        icon: "fa-briefcase-clock",
-        color: "from-slate-700 to-slate-900",
-        questions: [
-            {
-                question: "Quelle est la particularité juridique d'une Société Anonyme de capitaux (SA) ?",
-                options: [
-                    { text: "La responsabilité des associés est limitée au montant de leurs apports et le capital est divisé en actions négociables.", isCorrect: true, rationale: "En cas de faillite, l'actionnaire ne perd au maximum que sa mise de départ : son patrimoine personnel est juridiquement protégé." },
-                    { text: "Le dirigeant fondateur doit obligatoirement rembourser toutes les dettes de la firme sur ses biens personnels propres.", isCorrect: false, rationale: "Confusion : c'est la règle de la responsabilité illimitée des entreprises individuelles classiques ou sociétés en nom collectif." },
-                    { text: "L'entreprise a l'interdiction légale d'employer plus de 5 salariés au cours de l'année.", isCorrect: false, rationale: "Faux : la SA est précisément la forme juridique privilégiée des grandes entreprises employant des milliers de salariés." },
-                    { text: "Le capital appartient obligatoirement à 100 % à l'État sans aucun actionnaire privé.", isCorrect: false, rationale: "Confusion : cela correspond à une entreprise publique nationalisée, alors que la SA est une structure de droit privé." }
-                ]
-            },
-            {
-                question: "La 'théorie de l'agence' (Berle et Means / Jensen et Meckling) met en lumière les conflits d'intérêts possibles entre :",
-                options: [
-                    { text: "Les actionnaires (propriétaires / principaux) qui recherchent le profit et les managers (dirigeants / agents) qui ont d'autres objectifs personnels.", isCorrect: true, rationale: "Les managers peuvent chercher à maximiser leur rémunération, leur prestige ou la taille de la firme plutôt que la seule rentabilité actionnariale à long terme." },
-                    { text: "Les clients acheteurs et les banques centrales étrangères.", isCorrect: false, rationale: "Confusion d'acteurs sans lien avec la structure de gouvernance interne de l'entreprise." },
-                    { text: "Les inspecteurs du travail et les sous-traitants étrangers de l'usine.", isCorrect: false, rationale: "Faux : la théorie de l'agence traite de la relation contractuelle interne de mandat entre propriétaires et gestionnaires." },
-                    { text: "Les conducteurs de train et les usagers des lignes de banlieue.", isCorrect: false, rationale: "Faux : c'est un exemple de conflit d'usagers/salariés, sans rapport avec la séparation propriété/contrôle chez Berle et Means." }
-                ]
-            },
-            {
-                question: "Qu'est-ce que la démarche de Responsabilité Sociale et Environnementale (RSE) pour une firme ?",
-                options: [
-                    { text: "L'intégration volontaire par l'entreprise de préoccupations écologiques et sociales à ses activités et à ses relations avec les parties prenantes.", isCorrect: true, rationale: "La RSE incite la firme à dépasser la stricte obligation légale pour répondre aux attentes éthiques de ses salariés, clients, riverains et ONG." },
-                    { text: "L'interdiction absolue de faire du bénéfice commercial sous peine de dissolution de la société.", isCorrect: false, rationale: "Inversion : une entreprise en RSE reste une entité capitaliste marchande cherchant la rentabilité économique globale." },
-                    { text: "L'obligation légale de distribuer l'intégralité du chiffre d'affaires annuel sous forme de dons aux œuvres caritatives.", isCorrect: false, rationale: "Faux : la RSE concerne la manière de produire et de traiter ses salariés, pas l'abandon du modèle économique d'entreprise." },
-                    { text: "La nationalisation de l'outil productif par un vote du Conseil municipal de la ville.", isCorrect: false, rationale: "Confusion complète : la RSE est une démarche de gouvernance privée volontaire ou incitative." }
-                ]
-            },
-            {
-                question: "La vision de l'entreprise élargie aux 'parties prenantes' (stakeholders) s'oppose à la vision actionnariale (shareholders) car :",
-                options: [
-                    { text: "Elle prend en compte l'ensemble des acteurs impactés par l'activité (salariés, sous-traitants, clients, riverains, ONG) et non les seuls actionnaires.", isCorrect: true, rationale: "Cette approche partenariale de la gouvernance considère que l'entreprise a des devoirs envers toute la communauté affectée par ses choix de production." },
-                    { text: "Elle réserve le pouvoir décisionnel de gestion aux seuls détenteurs d'actions financières cotées en bourse.", isCorrect: false, rationale: "Confusion : c'est précisément la définition de la vision actionnariale pure (Friedman) que la vision partenariale conteste." },
-                    { text: "Elle impose le licenciement immédiat de l'ensemble des salariés non syndiqués de l'atelier.", isCorrect: false, rationale: "Caricature sans rapport avec la théorie partenariale de la gouvernance d'entreprise." },
-                    { text: "Elle refuse de payer les fournisseurs de matières premières pour favoriser les banques.", isCorrect: false, rationale: "Faux : les fournisseurs font partie intégrante des parties prenantes clés dont les relations doivent être équilibrées." }
-                ]
-            },
-            {
-                question: "En France, quelle est la mission principale du Comité Social et Économique (CSE) au sein de l'entreprise ?",
-                options: [
-                    { text: "Assurer la représentation des salariés et le dialogue social sur la santé, la sécurité, les conditions de travail et la marche économique de la firme.", isCorrect: true, rationale: "Le CSE est l'instance représentative unique du personnel obligatoire dans les entreprises d'au moins 11 salariés depuis les ordonnances de 2017." },
-                    { text: "Fixer souverainement et unilatéralement le prix de vente des produits sur les marchés extérieurs.", isCorrect: false, rationale: "Faux : la fixation des prix de vente relève de la direction commerciale et de la stratégie de marché de l'équipe managériale." },
-                    { text: "Voter le montant des impôts et le budget de l'État à l'Assemblée nationale.", isCorrect: false, rationale: "Confusion institutionnelle majeure avec les députés du Parlement de la République." },
-                    { text: "Décider de la faillite judiciaire immédiate des concurrents du secteur.", isCorrect: false, rationale: "Confusion avec les compétences du tribunal de commerce, instance judiciaire indépendante des entreprises." }
-                ]
-            },
-            {
-                question: "Quelle est la caractéristique d'une Société Coopérative et Participative (SCOP) ?",
-                options: [
-                    { text: "Les salariés sont les associés majoritaires (au moins 51 % du capital) et le pouvoir de décision suit le principe démocratique 'une personne = une voix'.", isCorrect: true, rationale: "Dans une SCOP (économie sociale et solidaire), les droits de vote ne sont pas proportionnels au montant du capital détenu mais attachés à la personne du travailleur." },
-                    { text: "Le capital appartient à 100 % à des fonds d'investissement étrangers cotés à Wall Street.", isCorrect: false, rationale: "Inversion complète : la SCOP est ancrée localement et détenue par ses propres salariés." },
-                    { text: "Il est strictement interdit de vendre des biens ou services contre de l'argent.", isCorrect: false, rationale: "Faux : la SCOP est une véritable entreprise marchande opérant sur un marché concurrentiel classique." },
-                    { text: "Le dirigeant est nommé par décret du président de la République.", isCorrect: false, rationale: "Faux : le gérant ou PDG est élu démocratiquement par les salariés-coopérateurs réunis en assemblée." }
-                ]
-            },
-            {
-                question: "Qu'est-ce qu'une 'stock-option' accordée aux dirigeants d'une grande entreprise ?",
-                options: [
-                    { text: "Le droit d'acheter des actions de l'entreprise à un prix fixé à l'avance pour aligner l'intérêt financier du manager sur celui des actionnaires.", isCorrect: true, rationale: "C'est un outil de gouvernance d'agence : si le dirigeant fait monter le cours de bourse, il réalise une plus-value lors de la revente de ses options." },
-                    { text: "Une amende forfaitaire infligée par l'inspection du travail en cas de retard de livraison.", isCorrect: false, rationale: "Confusion : les stock-options sont des mécanismes d'intéressement financier et non des sanctions pénales." },
-                    { text: "L'obligation pour le manager de stocker les marchandises invendues dans son propre garage.", isCorrect: false, rationale: "Piège littéral sur le mot 'stock' pris au sens d'entrepôt physique de marchandises." },
-                    { text: "Une subvention publique versée par l'État pour financer les cantines d'entreprise.", isCorrect: false, rationale: "Faux : cela n'a aucun lien avec la rémunération incitative des cadres dirigeants." }
-                ]
-            },
-            {
-                question: "Comment se déroule la 'négociation collective' au sein des relations professionnelles en entreprise ?",
-                options: [
-                    { text: "Par des discussions périodiques entre l'employeur et les syndicats représentatifs de salariés pour signer des accords d'entreprise (salaires, temps de travail).", isCorrect: true, rationale: "Le dialogue social contractuel permet d'adapter le droit du travail aux réalités locales de la firme tout en préservant l'équilibre des intérêts." },
-                    { text: "Par une décision unilatérale et autoritaire du patron sans jamais consulter le personnel.", isCorrect: false, rationale: "Inversion : cela correspond au pouvoir patronal direct unilatéral, pas à la négociation collective paritaire." },
-                    { text: "Par un vote obligatoire organisé au suffrage direct de l'ensemble des habitants de la commune.", isCorrect: false, rationale: "Confusion : la négociation concerne uniquement la communauté des salariés et dirigeants de la firme." },
-                    { text: "Par l'arbitrage systématique et payant d'un tribunal militaire.", isCorrect: false, rationale: "Caricature sans rapport avec le droit social des entreprises privées." }
-                ]
-            },
-            {
-                question: "Qu'est-ce qu'une 'entreprise individuelle' par rapport à une société de capitaux ?",
-                options: [
-                    { text: "Une structure où l'entrepreneur exerce son activité en son nom propre, sans créer de personne morale distincte de sa propre personne physique.", isCorrect: true, rationale: "L'artisan, commerçant ou auto-entrepreneur individuel est le seul maître à bord et supporte personnellement l'activité sans associés." },
-                    { text: "Une multinationale regroupant plus de 10 000 actionnaires réunis en conseil d'administration.", isCorrect: false, rationale: "Confusion : c'est la description typique d'une grande Société Anonyme cotée." },
-                    { text: "Une structure publique gérée directement par un ministère d'État.", isCorrect: false, rationale: "Confusion : cela correspond à une régie publique ou administration, pas à une entreprise individuelle privée." },
-                    { text: "Une coopérative où chaque décision exige l'accord unanime de 500 salariés.", isCorrect: false, rationale: "Confusion avec les SCOP ou coopératives de production." }
-                ]
-            },
-            {
-                question: "Pourquoi la gouvernance actionnariale pure (shareholder value) fait-elle l'objet de critiques contemporaines ?",
-                options: [
-                    { text: "Parce qu'elle privilégie le rendement financier à court terme et les dividendes au détriment des investissements d'avenir, des salaires et de l'environnement.", isCorrect: true, rationale: "La recherche exclusive du profit boursier immédiat peut déstabiliser la viabilité industrielle à long terme et fragiliser le climat social interne." },
-                    { text: "Parce qu'elle interdit aux entreprises de vendre des marchandises en dehors de leur région d'origine.", isCorrect: false, rationale: "Faux : les firmes à gouvernance actionnariale sont au contraire le moteur de la mondialisation des marchés." },
-                    { text: "Parce qu'elle oblige les actionnaires à travailler eux-mêmes sur les lignes de montage de l'usine.", isCorrect: false, rationale: "Inversion : les actionnaires sont des apporteurs de capitaux financiers, ils n'exécutent pas le travail manuel des ateliers." },
-                    { text: "Parce qu'elle supprime l'ensemble des banques commerciales de l'économie.", isCorrect: false, rationale: "Faux : le capitalisme actionnariat s'appuie au contraire sur un réseau très dense d'intermédiaires financiers et bancaires." }
-                ]
-            }
-        ]
-    }
-        ];
-
-        // =========================================================================
-        // BASE DE DONNÉES TERMINALE (INTÉGRALE : 9 CHAPITRES - 180 QUESTIONS)
-        // =========================================================================
-        const quizDataTerminale = [
+        // MASTER QUIZ DATA (9 Chapters, 20 Questions each = 180 Questions)
+        // Note pour l'enseignant : Dans ce tableau brut, la bonne réponse est toujours la première option.
+        // L'application s'occupe de mélanger l'ordre de manière aléatoire lors du lancement du quiz.
+        const quizData = [
           {
                 id: "croissance",
                 title: "Sources et défis de la croissance",
@@ -1371,6 +166,9 @@
                             { text: "Adam Smith, qui montre comment le marché se régule seul grâce à la main invisible.", isCorrect: false, rationale: "Vrai concept classique, mais ce n'est pas l'auteur de la destruction créatrice." },
                             { text: "Karl Marx, qui explique que la lutte des classes est le moteur de l'histoire économique.", isCorrect: false, rationale: "Vrai concept marxiste, mais hors sujet ici." },
                             { text: "John Maynard Keynes, qui prône l'intervention de l'État par des politiques de relance de la demande.", isCorrect: false, rationale: "Vrai concept keynésien, mais sans rapport avec la destruction créatrice." }
+                            { text: "Adam Smith.", isCorrect: false, rationale: "Faux c'est Schumpeter qui est à l'origine de la théorie de la destruction créatrice." },
+                            { text: "Karl Marx.", isCorrect: false, rationale: "Faux c'est Schumpeter qui est à l'origine de la théorie de la destruction créatrice." },
+                            { text: "John Maynard Keynes.", isCorrect: false, rationale: "Faux c'est Schumpeter qui est à l'origine de la théorie de la destruction créatrice." }
                         ]
                     },
                     {
@@ -1387,7 +185,7 @@
                         options: [
                             { text: "En augmentant le capital humain, rendant les travailleurs plus productifs et capables d'innover.", isCorrect: true, rationale: "Le capital humain (Lucas) correspond aux compétences et au niveau de santé de la population, qui augmentent l'efficacité du travail." },
                             { text: "En permettant aux entreprises de baisser les salaires des jeunes qui entrent sur le marché du travail.", isCorrect: false, rationale: "Faux, l'élévation des qualifications permet généralement d'obtenir des salaires plus élevés, pas plus bas." },
-                            { text: "En réduisant mécaniquement le nombre de machines nécessaires pour faire tourner les usines.", isCorrect: false, rationale: "Faux, une main-d'œuvre qualifiée utilise souvent des machines plus complexes et plus nombreuses (complémentarité)." },
+                            { text: "En réduisant mécaniquement le nom'bre de machines nécessaires pour faire tourner les usines.", isCorrect: false, rationale: "Faux, une main-d'œuvre qualifiée utilise souvent des machines plus complexes et plus nombreuses (complémentarité)." },
                             { text: "En incitant les administrations publiques à privatiser le système scolaire pour faire des économies.", isCorrect: false, rationale: "La privatisation n'est pas le mécanisme économique explicatif des gains de productivité de la PGF." }
                         ]
                     },
@@ -1421,13 +219,14 @@
                     {
                         question: "Qu'est-ce que l'effet rebond (ou paradoxe de Jevons) en économie de l'environnement ?",
                         options: [
-                            { text: "L'augmentation de la consommation totale d'une ressource provoquée par l'amélioration technique de son usage.", isCorrect: true, rationale: "Si une voiture consomme moins d'essence, son usage coûte moins cher, ce qui incite les usagers à rouler beaucoup plus, annulant le gain écologique initial." },
+                            { text: "L'augmentation de la consommation totale d'une ressource provoquée par l'amélioration technique de son usage.", isCorrect: true, rationale: "Si une voiture consomme moins d'essence, son usage coûte moins chem, ce qui incite les usagers à rouler beaucoup plus, annulant le gain écologique initial." },
                             { text: "La baisse du prix des technologies vertes qui survient après quelques années de commercialisation.", isCorrect: false, rationale: "Confusion : cela décrit les économies d'échelle ou l'apprentissage industriel, pas l'effet rebond." },
                             { text: "La hausse du taux de recyclage observée lorsque l'État augmente les taxes sur la pollution.", isCorrect: false, rationale: "C'est une réaction normale à une taxe incitative, sans rapport avec le paradoxe de Jevons." },
                             { text: "La décision politique d'interdire les voitures thermiques pour imposer les véhicules électriques.", isCorrect: false, rationale: "Cela correspond à une politique de réglementation (norme), pas à un effet de comportement économique paradoxal." }
                         ]
                     },
                     {
+                        question: "Selon la théorie des choix publics, pourquoi l'action publique pour l'environnement peut-elle être inefficace ?",
                         question: "Selon l'école de pensée du 'public choice', pourquoi l'action publique pour l'environnement peut-elle être inefficace ?",
                         options: [
                             { text: "Les décideurs politiques privilégient parfois les gains électoraux à court terme sur l'urgence écologique à long terme.", isCorrect: true, rationale: "Les cycles électoraux courts (5 ans) incitent à repousser les mesures environnementales impopulaires (taxes) dont les bénéfices ne seront visibles que dans plusieurs décennies." },
@@ -1438,7 +237,7 @@
                     }
                 ]
             },
-            {
+{
                 id: "commerce_international",
                 title: "Le commerce international",
                 icon: "fa-globe",
@@ -2002,7 +801,7 @@
                     }
                 ]
             },
-            {
+{
                 id: "structure_sociale",
                 title: "Espace et structure sociale",
                 icon: "fa-sitemap",
@@ -2959,7 +1758,7 @@
     </script>
 
     <!-- React App Mounting Script -->
-    <script type="text/babel">
+<script type="text/babel">
         const { useState, useEffect } = React;
 
         // Base de données des Auteurs et Citations pour Dissertation / EC3
@@ -3040,16 +1839,13 @@
         };
 
         function App() {
-            const [gradeLevel, setGradeLevel] = useState('terminale');
             const [selectedChapter, setSelectedChapter] = useState(null);
             const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
             const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
             const [isSubmitted, setIsSubmitted] = useState(false);
             const [score, setScore] = useState(0);
             const [userAnswers, setUserAnswers] = useState([]);
-            const [view, setView] = useState('dashboard');
-
-            const currentQuizData = gradeLevel === 'premiere' ? quizDataPremiere : quizDataTerminale;
+            const [view, setView] = useState('dashboard'); // 'dashboard', 'quiz', 'summary', 'authors'
 
             // Réserve d'erreurs
             const [wrongQuestions, setWrongQuestions] = useState(() => {
@@ -3064,16 +1860,18 @@
                 return saved ? JSON.parse(saved) : {};
             });
 
-            // Chronomètre
+            // Chronomètre de 15 minutes
             const [isTimerActive, setIsTimerActive] = useState(false);
             const [timeLeft, setTimeLeft] = useState(900);
 
+            // Prise en charge du rendu LaTeX
             useEffect(() => {
                 if (window.MathJax && window.MathJax.typeset) {
                     window.MathJax.typeset();
                 }
             }, [currentQuestionIndex, view, isSubmitted]);
 
+            // Gestion du compte à rebours
             useEffect(() => {
                 let timer;
                 if (view === 'quiz' && isTimerActive && timeLeft > 0) {
@@ -3094,7 +1892,7 @@
 
             const handleStartQuiz = (chapter) => {
                 setIsRemediationMode(false);
-                const originalChapter = currentQuizData.find(c => c.id === chapter.id) || chapter;
+                const originalChapter = quizData.find(c => c.id === chapter.id) || chapter;
                 const randomQuestions = shuffle(originalChapter.questions);
                 const finalShuffledQuestions = randomQuestions.map(q => ({
                     ...q,
@@ -3108,17 +1906,12 @@
                 resetQuizState();
             };
 
-            const handleStartGlobalExam = () => {
+            const handleStartBacBlanc = () => {
                 setIsRemediationMode(false);
                 let poolGlobal = [];
-                currentQuizData.forEach(chap => {
+                quizData.forEach(chap => {
                     poolGlobal = poolGlobal.concat(chap.questions);
                 });
-
-                if (poolGlobal.length === 0) {
-                    alert("Les questions de 1ère sont en cours d'intégration (Étape 2 & 3).");
-                    return;
-                }
 
                 const pickedQuestions = shuffle(poolGlobal).slice(0, 20);
                 const finalQuestions = pickedQuestions.map(q => ({
@@ -3127,8 +1920,8 @@
                 }));
 
                 setSelectedChapter({
-                    id: gradeLevel === 'premiere' ? "marathon_premiere" : "bac_blanc",
-                    title: gradeLevel === 'premiere' ? "Grand Marathon 1ère - Épreuve Globale" : "Marathon Bac Blanc - Épreuve Globale",
+                    id: "bac_blanc",
+                    title: "Marathon Bac Blanc - Épreuve Globale",
                     questions: finalQuestions
                 });
                 resetQuizState();
@@ -3231,124 +2024,104 @@
             const errorsCleared = errorBaseline - wrongQuestions.length;
             const recoveryPercent = errorBaseline > 0 ? Math.round((errorsCleared / errorBaseline) * 100) : 0;
 
-            const examId = gradeLevel === 'premiere' ? "marathon_premiere" : "bac_blanc";
-            const bestExamScore = highScores[examId];
-            let examMedal = null;
-            if (bestExamScore !== undefined) {
-                if (bestExamScore === 20) examMedal = "🥇";
-                else if (bestExamScore >= 16) examMedal = "🥈";
-                else if (bestExamScore >= 10) examMedal = "🥉";
+            const bestBacScore = highScores["bac_blanc"];
+            let bacMedal = null;
+            if (bestBacScore !== undefined) {
+                if (bestBacScore === 20) bacMedal = "🥇";
+                else if (bestBacScore >= 16) bacMedal = "🥈";
+                else if (bestBacScore >= 10) bacMedal = "🥉";
             }
 
             return (
                 <div class="min-h-screen flex flex-col justify-between">
+                    {/* BARRE DE NAVIGATION BANDEAU */}
                     <header class="bg-white border-b border-slate-200 py-4 shadow-sm sticky top-0 z-50">
-                        <div class="max-w-5xl mx-auto px-4 flex flex-wrap gap-4 justify-between items-center">
+                        <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
                             <div class="flex items-center space-x-3 cursor-pointer" onClick={() => setView('dashboard')}>
                                 <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-2.5 rounded-xl text-white shadow-md shadow-indigo-100">
                                     <i class="fa-solid fa-graduation-cap text-xl"></i>
                                 </div>
                                 <div>
-                                    <h1 class="font-extrabold text-lg text-slate-900 tracking-tight">SES Master Quiz - M. Chachero</h1>
-                                    <p class="text-xs text-slate-500 font-medium">Spécialité SES Lycée</p>
+                                    {/* MODIFIÉ : AJOUT DE VOTRE NOM DIRECTEMENT ICI */}
+                                    <h1 class="font-extrabold text-lg text-slate-900 tracking-tight">SES Terminale - M. Chachero</h1>
+                                    <p class="text-xs text-slate-500 font-medium">Révisions du Baccalauréat</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-center space-x-2 sm:space-x-3">
-                                {view === 'dashboard' && (
-                                    <div class="flex bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-bold">
-                                        <button 
-                                            onClick={() => setGradeLevel('premiere')} 
-                                            class={`px-3 py-1.5 rounded-lg transition ${gradeLevel === 'premiere' ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
-                                        >
-                                            1ère Spécialité
-                                        </button>
-                                        <button 
-                                            onClick={() => setGradeLevel('terminale')} 
-                                            class={`px-3 py-1.5 rounded-lg transition ${gradeLevel === 'terminale' ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
-                                        >
-                                            Terminale (Bac)
-                                        </button>
-                                    </div>
-                                )}
-
+                            <div class="flex items-center space-x-3">
+                                {/********* BOUTON REMÉDIATION *********/}
                                 {(view === 'dashboard' || view === 'authors') && (
                                     <button 
                                         onClick={wrongQuestions.length > 0 ? handleStartRemediation : null}
                                         disabled={wrongQuestions.length === 0}
-                                        class={`text-xs sm:text-sm font-bold px-3 py-2 rounded-xl flex items-center space-x-1.5 transition border ${
+                                        class={`text-sm font-bold px-3 py-2 rounded-xl flex items-center space-x-1.5 transition border ${
                                             wrongQuestions.length > 0 
-                                                ? "text-amber-700 bg-amber-50 hover:bg-amber-100 border-amber-200 shadow-sm" 
+                                                ? "text-amber-700 bg-amber-50 hover:bg-amber-100 border-amber-200 shadow-sm shadow-amber-50" 
                                                 : "text-slate-400 bg-slate-50 border-slate-200 opacity-60 cursor-not-allowed"
                                         }`}
                                     >
                                         <i class="fa-solid fa-kit-medical"></i>
-                                        <span>Erreurs {wrongQuestions.length > 0 ? `(${wrongQuestions.length})` : ""}</span>
+                                        <span>Remédiation {wrongQuestions.length > 0 ? `(${wrongQuestions.length} | ${recoveryPercent}%)` : ""}</span>
                                     </button>
                                 )}
 
+                                {/********* BOUTON CITATIONS & AUTEURS *********/}
                                 {view !== 'authors' && (
                                     <button 
                                         onClick={() => setView('authors')}
-                                        class="text-xs sm:text-sm font-bold text-indigo-600 hover:text-indigo-800 bg-indigo-50 hover:bg-indigo-100 px-3 py-2 rounded-xl flex items-center space-x-1.5 transition border border-indigo-100"
+                                        class="text-sm font-bold text-indigo-600 hover:text-indigo-800 bg-indigo-50 hover:bg-indigo-100 px-3 py-2 rounded-xl flex items-center space-x-1.5 transition border border-indigo-100"
                                     >
                                         <i class="fa-solid fa-book-bookmark"></i>
-                                        <span class="hidden md:inline">Citations & Auteurs</span>
+                                        <span class="hidden sm:inline">Citations & Auteurs</span>
                                     </button>
                                 )}
-                                
                                 {view !== 'dashboard' && (
-                                    <button onClick={() => setView('dashboard')} class="text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 flex items-center space-x-1.5 transition">
+                                    <button onClick={() => setView('dashboard')} class="text-sm font-semibold text-slate-600 hover:text-slate-900 flex items-center space-x-1.5 transition">
                                         <i class="fa-solid fa-arrow-left"></i>
-                                        <span>Accueil</span>
+                                        <span>Retour</span>
                                     </button>
                                 )}
                             </div>
                         </div>
                     </header>
 
+                    {/* ZONE CENTRALE DYNAMIQUE */}
                     <main class="max-w-5xl w-full mx-auto px-4 py-8 flex-grow flex items-center justify-center">
 
+                        {/* VIEW 1 : TABLEAU DE BORD ACCUEIL */}
                         {view === 'dashboard' && (
                             <div class="w-full">
                                 <div class="text-center mb-8">
-                                    <span class="bg-indigo-50 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
-                                        Niveau : {gradeLevel === 'premiere' ? 'Spécialité Première' : 'Spécialité Terminale (Baccalauréat)'}
-                                    </span>
-                                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-3 mb-2">
-                                        {gradeLevel === 'premiere' ? 'Entraînement Première SES' : "S'entraîner pour le Baccalauréat"}
-                                    </h2>
-                                    <p class="text-slate-500 max-w-xl mx-auto text-sm">
-                                        Choisissez un chapitre ou lancez une épreuve globale pour tester vos acquis.
-                                    </p>
+                                    <span class="bg-indigo-50 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Session Active : Mode Autonome</span>
+                                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-3 mb-2">Entraînez-vous pour l'Épreuve Écrite</h2>
+                                    <p class="text-slate-500 max-w-xl mx-auto text-sm">Configurez l'évaluation puis cliquez sur le bouton d'examen global ou choisissez un chapitre thématique.</p>
                                 </div>
 
+                                {/* PANNEAU DE COMMANDE COMBINÉ (CHRONO + MARATHON BAC BLANC ACCOLLÉS) */}
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-10">
                                     <div class="flex items-center space-x-4 bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
                                         <div class="bg-slate-100 p-2.5 rounded-xl text-slate-600"><i class="fa-solid fa-stopwatch text-lg"></i></div>
                                         <div class="flex-grow">
-                                            <span class="block text-sm font-bold text-slate-800">Mode Chronométré</span>
-                                            <span class="block text-xs text-slate-400 font-medium">15 minutes par session</span>
+                                            <span class="block text-sm font-bold text-slate-800">Mode Examen Chronométré</span>
+                                            <span class="block text-xs text-slate-400 font-medium">15 minutes pour finir la session</span>
                                         </div>
                                         <button onClick={() => setIsTimerActive(!isTimerActive)} class={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ${isTimerActive ? 'bg-blue-600' : 'bg-slate-200'}`}>
                                             <span class={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${isTimerActive ? 'translate-x-5' : 'translate-x-0'}`}></span>
                                         </button>
                                     </div>
 
-                                    <div class="bg-gradient-to-br from-violet-600 to-indigo-700 text-white border border-indigo-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition duration-300 flex items-center justify-between cursor-pointer group" onClick={handleStartGlobalExam}>
+                                    <div class="bg-gradient-to-br from-violet-600 to-indigo-700 text-white border border-indigo-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition duration-300 flex items-center justify-between cursor-pointer group" onClick={handleStartBacBlanc}>
                                         <div class="flex items-center space-x-4">
                                             <div class="w-10 h-10 rounded-xl bg-white/20 text-white flex items-center justify-center shadow-md"><i class="fa-solid fa-file-signature text-base"></i></div>
                                             <div>
-                                                <h3 class="font-extrabold text-white text-sm leading-tight">
-                                                    {gradeLevel === 'premiere' ? 'Grand Marathon 1ère' : 'Marathon Bac Blanc'}
-                                                </h3>
+                                                <h3 class="font-extrabold text-white text-sm leading-tight">Marathon Bac Blanc</h3>
                                                 <p class="text-[11px] text-indigo-100 font-medium">20 questions transversales</p>
                                             </div>
                                         </div>
                                         <div class="flex items-center space-x-2">
-                                            {bestExamScore !== undefined && (
+                                            {bestBacScore !== undefined && (
                                                 <span class="text-xs font-extrabold bg-white/20 px-2 py-0.5 rounded-full border border-white/10">
-                                                    {examMedal} {bestExamScore}/20
+                                                    {bacMedal} {bestBacScore}/20
                                                 </span>
                                             )}
                                             <i class="fa-solid fa-play group-hover:translate-x-1 transition text-xs"></i>
@@ -3356,58 +2129,52 @@
                                     </div>
                                 </div>
 
-                                {currentQuizData.length === 0 ? (
-                                    <div class="text-center py-12 bg-white rounded-3xl border border-slate-200 p-8 shadow-sm">
-                                        <i class="fa-solid fa-spinner fa-spin text-3xl text-blue-600 mb-4"></i>
-                                        <h3 class="font-bold text-lg text-slate-800">Chapitres de 1ère prêts pour l'étape 2</h3>
-                                        <p class="text-slate-500 text-sm mt-1">Collez les questions des étapes 2 et 3 à l'endroit indiqué dans le code.</p>
-                                    </div>
-                                ) : (
-                                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                        {currentQuizData.map((chap) => {
-                                            const bestScore = highScores[chap.id];
-                                            let medalElement = null;
+                                {/* GRILLE DES 9 CHAPITRES */}
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {quizData.map((chap) => {
+                                        const bestScore = highScores[chap.id];
+                                        let medalElement = null;
 
-                                            if (bestScore !== undefined) {
-                                                const successRatio = bestScore / chap.questions.length;
-                                                if (successRatio === 1) medalElement = { icon: "fa-trophy text-amber-500 text-lg", bg: "bg-amber-50 border-amber-200 text-amber-800" };
-                                                else if (successRatio >= 0.75) medalElement = { icon: "fa-medal text-slate-400 text-lg", bg: "bg-slate-50 border-slate-200 text-slate-700" };
-                                                else if (successRatio >= 0.5) medalElement = { icon: "fa-medal text-amber-700 text-lg", bg: "bg-orange-50 border-orange-100 text-orange-800" };
-                                            }
+                                        if (bestScore !== undefined) {
+                                            const successRatio = bestScore / chap.questions.length;
+                                            if (successRatio === 1) medalElement = { icon: "fa-trophy text-amber-500 text-lg", bg: "bg-amber-50 border-amber-200 text-amber-800", text: "🥇 Or" };
+                                            else if (successRatio >= 0.75) medalElement = { icon: "fa-medal text-slate-400 text-lg", bg: "bg-slate-50 border-slate-200 text-slate-700", text: "🥈 Argent" };
+                                            else if (successRatio >= 0.5) medalElement = { icon: "fa-medal text-amber-700 text-lg", bg: "bg-orange-50 border-orange-100 text-orange-800", text: "🥉 Bronze" };
+                                        }
 
-                                            return (
-                                                <div key={chap.id} class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between cursor-pointer group" onClick={() => handleStartQuiz(chap)}>
-                                                    <div>
-                                                        <div class="flex justify-between items-start mb-4">
-                                                            <div class={`w-12 h-12 rounded-xl bg-gradient-to-br ${chap.color} text-white flex items-center justify-center shadow-lg shadow-slate-100 group-hover:scale-105 transition`}><i class={`fa-solid ${chap.icon} text-lg`}></i></div>
-                                                            {medalElement && (
-                                                                <span class={`flex items-center space-x-1.5 border px-2.5 py-1 rounded-full text-xs font-extrabold shadow-sm ${medalElement.bg}`}>
-                                                                    <i class={`fa-solid ${medalElement.icon}`}></i>
-                                                                    <span>{bestScore}/{chap.questions.length}</span>
-                                                                </span>
-                                                            )}
-                                                        </div>
-                                                        <h3 class="font-bold text-slate-900 text-base leading-tight mb-2 group-hover:text-blue-600 transition">{chap.title}</h3>
-                                                        <p class="text-xs text-slate-500 font-medium">{chap.questions.length} Questions disponibles</p>
+                                        return (
+                                            <div key={chap.id} class="bg-white border border-slate-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between cursor-pointer group" onClick={() => handleStartQuiz(chap)}>
+                                                <div>
+                                                    <div class="flex justify-between items-start mb-5">
+                                                        <div class={`w-12 h-12 rounded-xl bg-gradient-to-br ${chap.color} text-white flex items-center justify-center shadow-lg shadow-slate-100 group-hover:scale-105 transition`}><i class={`fa-solid ${chap.icon} text-lg`}></i></div>
+                                                        {medalElement && (
+                                                            <span class={`flex items-center space-x-1.5 border px-2.5 py-1 rounded-full text-xs font-extrabold shadow-sm ${medalElement.bg}`}>
+                                                                <i class={`fa-solid ${medalElement.icon}`}></i>
+                                                                <span>{bestScore}/{chap.questions.length}</span>
+                                                            </span>
+                                                        )}
                                                     </div>
-                                                    <div class="mt-6 flex items-center justify-between text-xs font-semibold text-blue-600 pt-4 border-t border-slate-50">
-                                                        <span>{bestScore !== undefined ? "Recommencer" : "Démarrer"}</span>
-                                                        <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition"></i>
-                                                    </div>
+                                                    <h3 class="font-bold text-slate-900 text-base leading-tight mb-2 group-hover:text-blue-600 transition">{chap.title}</h3>
+                                                    <p class="text-xs text-slate-500 font-medium">{chap.questions.length} Questions dispo</p>
                                                 </div>
-                                            );
-                                        })}
-                                    </div>
-                                )}
+                                                <div class="mt-6 flex items-center justify-between text-xs font-semibold text-blue-600 pt-4 border-t border-slate-50">
+                                                    <span>{bestScore !== undefined ? "S'entraîner à nouveau" : "Démarrer"}</span>
+                                                    <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition"></i>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
                             </div>
                         )}
 
+                        {/* VIEW 2 : INDEX DES AUTEURS ET CITATIONS */}
                         {view === 'authors' && (
-                            <div class="w-full max-w-4xl">
+                            <div class="w-full max-w-4xl animate-fadeIn">
                                 <div class="text-center mb-8">
                                     <span class="bg-indigo-50 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Boîte à outils Pédagogique</span>
-                                    <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mt-3 mb-1">Dictionnaire des Citations & Auteurs</h2>
-                                    <p class="text-slate-500 text-sm">Les concepts théoriques incontournables pour étayer vos dissertations et EC3.</p>
+                                    <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mt-3 mb-1">Dictionnaire des Citations de Terminale</h2>
+                                    <p class="text-slate-500 text-sm">Les arguments théoriques incontournables pour étayer vos dissertations et EC3.</p>
                                 </div>
 
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -3424,19 +2191,20 @@
                                                 </div>
                                             </div>
                                             <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-3 text-xs text-emerald-800 leading-relaxed">
-                                                <strong>💡 Utilisation type :</strong> {author.tip}
+                                                <strong>💡 Comment l'utiliser au Bac :</strong> {author.tip}
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                                 <div class="text-center mt-8">
-                                    <button onClick={() => setView('dashboard')} class="bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-8 rounded-xl transition text-sm shadow-md">Retourner aux quiz</button>
+                                    <button onClick={() => setView('dashboard')} class="bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-8 rounded-xl transition text-sm shadow-md">Retourner aux entraînements</button>
                                 </div>
                             </div>
                         )}
 
+                        {/* VIEW 3 : SESSION DE QUIZ ACTIVE */}
                         {view === 'quiz' && selectedChapter && (
-                            <div class="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-xl max-w-2xl w-full">
+                            <div class="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-xl shadow-slate-100 max-w-2xl w-full">
                                 <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
                                     <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">{selectedChapter.title}</span>
                                     <div class="flex items-center space-x-3">
@@ -3446,13 +2214,112 @@
                                                 <span>{formatTime(timeLeft)}</span>
                                             </span>
                                         )}
-<span class="bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-full">Question {currentQuestionIndex + 1} / {selectedChapter.questions.length}</span>
-                   ]
-    }
-]; // Ferme quizDataTerminale
+                                        <span class="bg-slate-100 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-full">Question {currentQuestionIndex + 1} / {selectedChapter.questions.length}</span>
+                                    </div>
+                                </div>
+
+                                <div class="w-full bg-slate-100 h-1.5 rounded-full mb-6">
+                                    <div class="bg-blue-600 h-1.5 rounded-full transition-all duration-300" style={{ width: `${((currentQuestionIndex + 1) / selectedChapter.questions.length) * 100}%` }}></div>
+                                </div>
+
+                                <h3 class="text-lg font-bold text-slate-900 mb-6 leading-snug">{selectedChapter.questions[currentQuestionIndex].question}</h3>
+
+                                <div class="space-y-3 mb-6">
+                                    {selectedChapter.questions[currentQuestionIndex].options.map((opt, idx) => {
+                                        let optionBgClass = "border-slate-200 hover:border-blue-500 hover:bg-slate-50";
+                                        let icon = null;
+
+                                        if (selectedOptionIndex === idx) optionBgClass = "border-blue-500 bg-blue-50";
+
+                                        if (isSubmitted) {
+                                            if (opt.isCorrect) {
+                                                optionBgClass = "border-emerald-500 bg-emerald-50 text-emerald-900";
+                                                icon = <i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i>;
+                                            } else if (selectedOptionIndex === idx) {
+                                                optionBgClass = "border-rose-500 bg-rose-50 text-rose-900";
+                                                icon = <i class="fa-solid fa-circle-xmark text-rose-600 text-lg"></i>;
+                                            } else {
+                                                optionBgClass = "border-slate-200 opacity-60";
+                                            }
+                                        }
+
+                                        return (
+                                            <button key={idx} onClick={() => handleOptionSelect(idx)} disabled={isSubmitted} class={`w-full text-left border rounded-2xl p-4 flex justify-between items-center transition font-medium text-sm leading-relaxed ${optionBgClass}`}>
+                                                <span>{opt.text}</span>
+                                                {icon}
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+
+                                {isSubmitted ? (
+                                    <div class="mt-6 pt-6 border-t border-slate-100">
+                                        <div class={`p-4 rounded-2xl mb-6 text-sm leading-relaxed ${selectedChapter.questions[currentQuestionIndex].options[selectedOptionIndex].isCorrect ? "bg-emerald-50 text-emerald-800 border border-emerald-100" : "bg-rose-50 text-rose-800 border border-rose-100"}`}>
+                                            <p class="font-bold mb-1">{selectedChapter.questions[currentQuestionIndex].options[selectedOptionIndex].isCorrect ? "Correct !" : "Faux"}</p>
+                                            <p>{selectedChapter.questions[currentQuestionIndex].options[selectedOptionIndex].rationale}</p>
+                                        </div>
+                                        <button onClick={handleNextQuestion} class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-6 rounded-2xl transition shadow-md shadow-slate-200">The suivant</button>
+                                    </div>
+                                ) : (
+                                    <button onClick={handleSubmitAnswer} disabled={selectedOptionIndex === null} class={`w-full font-bold py-4 px-6 rounded-2xl transition shadow-md ${selectedOptionIndex !== null ? "bg-blue-600 hover:bg-blue-700 text-white shadow-blue-100" : "bg-slate-100 text-slate-400 cursor-not-allowed shadow-none"}`}>Valider</button>
+                                )}
+                            </div>
+                        )}
+
+                        {/* VIEW 4 : BILAN DE FIN DE QUIZ */}
+                        {view === 'summary' && selectedChapter && (
+                            <div class="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-xl shadow-slate-100 max-w-2xl w-full">
+                                <div class="text-center mb-8">
+                                    <div class={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${timeLeft === 0 ? 'bg-rose-50 text-rose-600' : 'bg-indigo-50 text-indigo-600'}`}><i class={`fa-solid ${timeLeft === 0 ? 'fa-hourglass-end animate-bounce' : 'fa-trophy'} text-2xl`}></i></div>
+                                    <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">{timeLeft === 0 ? "Temps Écoulé !" : isRemediationMode ? "Remédiation Terminée !" : "Fin du Quiz"}</h2>
+                                    <p class="text-slate-500 text-sm mt-1">{selectedChapter.title}</p>
+                                </div>
+
+                                <div class="bg-slate-50 border border-slate-150 rounded-2xl p-6 text-center mb-8">
+                                    <p class="text-sm font-bold text-slate-500 uppercase tracking-widest">Score de session</p>
+                                    <h3 class="text-5xl font-extrabold text-slate-900 mt-2 mb-1">{score} / {selectedChapter.questions.length}</h3>
+                                    {timeLeft === 0 && <p class="text-xs text-rose-600 font-bold mt-2">Le chrono a expiré avant que vous ne terminiez le questionnaire.</p>}
+                                </div>
+
+                                <div class="space-y-4 mb-8 max-h-[250px] overflow-y-auto pr-2">
+                                    <h4 class="font-bold text-sm text-slate-900 border-b border-slate-100 pb-2">Détails de vos réponses :</h4>
+                                    {userAnswers.map((ans, idx) => (
+                                        <div key={idx} class="p-4 border border-slate-100 rounded-xl text-xs space-y-1.5 leading-relaxed bg-slate-50">
+                                            <p class="font-bold text-slate-800">Q{idx + 1}: {ans.question}</p>
+                                            <div class="flex items-center space-x-2">
+                                                <span class="font-semibold text-slate-500">Votre réponse :</span>
+                                                <span class={ans.isCorrect ? "text-emerald-600 font-bold" : "text-rose-600 font-bold"}>{ans.selectedOptionText}</span>
+                                            </div>
+                                            {!ans.isCorrect && (
+                                                <div class="flex items-center space-x-2">
+                                                    <span class="font-semibold text-slate-500">La bonne réponse :</span>
+                                                    <span class="text-emerald-600 font-bold">{ans.correctOptionText}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div class="flex space-x-4">
+                                    <button onClick={() => { selectedChapter.id === "bac_blanc" ? handleStartBacBlanc() : handleStartQuiz(selectedChapter) }} class="flex-1 border border-slate-200 hover:border-slate-300 font-bold py-4 px-6 rounded-2xl transition text-slate-700 text-sm">Recommencer</button>
+                                    <button onClick={() => setView('dashboard')} class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-2xl transition shadow-md shadow-blue-100 text-sm">Retour à l'accueil</button>
+                                </div>
+                            </div>
+                        )}
+                    </main>
+
+                    {/* Pied de page */}
+                    <footer class="bg-white border-t border-slate-100 py-6 text-center text-xs text-slate-400 font-medium">
+                        <div class="max-w-5xl mx-auto px-4">
+                            <p>© 2026 SES Terminale Bac - Plateforme Éducative</p>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
 
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
     </script>
 </body>
-</html>                     
+</html>
