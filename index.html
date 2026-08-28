@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SES Master Quiz - 1ère & Terminale</title>
+    <title>SES Master Quiz - Terminale (Version Marathon 180 Questions)</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- React and ReactDOM CDN -->
@@ -39,17 +39,12 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        const { useState, useEffect } = React;
+        const { useState, useEffect, useRef } = React;
 
-        // =========================================================================
-        // BASE DE DONNÉES PREMIÈRE (En cours de remplissage aux étapes 2 et 3)
-        // =========================================================================
-        const quizDataPremiere = [];
-
-        // =========================================================================
-        // BASE DE DONNÉES TERMINALE (INTÉGRALE : 9 CHAPITRES - 180 QUESTIONS)
-        // =========================================================================
-        const quizDataTerminale = [
+        // MASTER QUIZ DATA (9 Chapters, 20 Questions each = 180 Questions)
+        // Note pour l'enseignant : Dans ce tableau brut, la bonne réponse est toujours la première option.
+        // L'application s'occupe de mélanger l'ordre de manière aléatoire lors du lancement du quiz.
+        const quizData = [
           {
                 id: "croissance",
                 title: "Sources et défis de la croissance",
@@ -171,6 +166,9 @@
                             { text: "Adam Smith, qui montre comment le marché se régule seul grâce à la main invisible.", isCorrect: false, rationale: "Vrai concept classique, mais ce n'est pas l'auteur de la destruction créatrice." },
                             { text: "Karl Marx, qui explique que la lutte des classes est le moteur de l'histoire économique.", isCorrect: false, rationale: "Vrai concept marxiste, mais hors sujet ici." },
                             { text: "John Maynard Keynes, qui prône l'intervention de l'État par des politiques de relance de la demande.", isCorrect: false, rationale: "Vrai concept keynésien, mais sans rapport avec la destruction créatrice." }
+                            { text: "Adam Smith.", isCorrect: false, rationale: "Faux c'est Schumpeter qui est à l'origine de la théorie de la destruction créatrice." },
+                            { text: "Karl Marx.", isCorrect: false, rationale: "Faux c'est Schumpeter qui est à l'origine de la théorie de la destruction créatrice." },
+                            { text: "John Maynard Keynes.", isCorrect: false, rationale: "Faux c'est Schumpeter qui est à l'origine de la théorie de la destruction créatrice." }
                         ]
                     },
                     {
@@ -187,7 +185,7 @@
                         options: [
                             { text: "En augmentant le capital humain, rendant les travailleurs plus productifs et capables d'innover.", isCorrect: true, rationale: "Le capital humain (Lucas) correspond aux compétences et au niveau de santé de la population, qui augmentent l'efficacité du travail." },
                             { text: "En permettant aux entreprises de baisser les salaires des jeunes qui entrent sur le marché du travail.", isCorrect: false, rationale: "Faux, l'élévation des qualifications permet généralement d'obtenir des salaires plus élevés, pas plus bas." },
-                            { text: "En réduisant mécaniquement le nombre de machines nécessaires pour faire tourner les usines.", isCorrect: false, rationale: "Faux, une main-d'œuvre qualifiée utilise souvent des machines plus complexes et plus nombreuses (complémentarité)." },
+                            { text: "En réduisant mécaniquement le nom'bre de machines nécessaires pour faire tourner les usines.", isCorrect: false, rationale: "Faux, une main-d'œuvre qualifiée utilise souvent des machines plus complexes et plus nombreuses (complémentarité)." },
                             { text: "En incitant les administrations publiques à privatiser le système scolaire pour faire des économies.", isCorrect: false, rationale: "La privatisation n'est pas le mécanisme économique explicatif des gains de productivité de la PGF." }
                         ]
                     },
@@ -221,13 +219,14 @@
                     {
                         question: "Qu'est-ce que l'effet rebond (ou paradoxe de Jevons) en économie de l'environnement ?",
                         options: [
-                            { text: "L'augmentation de la consommation totale d'une ressource provoquée par l'amélioration technique de son usage.", isCorrect: true, rationale: "Si une voiture consomme moins d'essence, son usage coûte moins cher, ce qui incite les usagers à rouler beaucoup plus, annulant le gain écologique initial." },
+                            { text: "L'augmentation de la consommation totale d'une ressource provoquée par l'amélioration technique de son usage.", isCorrect: true, rationale: "Si une voiture consomme moins d'essence, son usage coûte moins chem, ce qui incite les usagers à rouler beaucoup plus, annulant le gain écologique initial." },
                             { text: "La baisse du prix des technologies vertes qui survient après quelques années de commercialisation.", isCorrect: false, rationale: "Confusion : cela décrit les économies d'échelle ou l'apprentissage industriel, pas l'effet rebond." },
                             { text: "La hausse du taux de recyclage observée lorsque l'État augmente les taxes sur la pollution.", isCorrect: false, rationale: "C'est une réaction normale à une taxe incitative, sans rapport avec le paradoxe de Jevons." },
                             { text: "La décision politique d'interdire les voitures thermiques pour imposer les véhicules électriques.", isCorrect: false, rationale: "Cela correspond à une politique de réglementation (norme), pas à un effet de comportement économique paradoxal." }
                         ]
                     },
                     {
+                        question: "Selon la théorie des choix publics, pourquoi l'action publique pour l'environnement peut-elle être inefficace ?",
                         question: "Selon l'école de pensée du 'public choice', pourquoi l'action publique pour l'environnement peut-elle être inefficace ?",
                         options: [
                             { text: "Les décideurs politiques privilégient parfois les gains électoraux à court terme sur l'urgence écologique à long terme.", isCorrect: true, rationale: "Les cycles électoraux courts (5 ans) incitent à repousser les mesures environnementales impopulaires (taxes) dont les bénéfices ne seront visibles que dans plusieurs décennies." },
@@ -238,7 +237,7 @@
                     }
                 ]
             },
-            {
+{
                 id: "commerce_international",
                 title: "Le commerce international",
                 icon: "fa-globe",
@@ -525,7 +524,7 @@
                     {
                         question: "Qu'appelle-t-on le 'sous-emploi' en statistiques de l'emploi ?",
                         options: [
-                            { text: "La situation d'un actif ayant un emploi à temps partiel mais souhaitant travailler davantage et étant disponible pour le faire.", isCorrect: true, rationale: "Le sous-emploi (mesuré par l'Insee) est une forme de précarité qui touche majoritairement les femmes du secteur des services." },
+                            { text: "La situation d'un actif ayant un emploi à temps partiel mais souhaitant travailler davantage et étant disponible pour le faire.", isCorrect: true, rationale: "Le sous-emploi (mesuré par l'Insee) est une forme de précarité déviante qui touche majoritairement les femmes du secteur des services." },
                             { text: "La situation d'un chômeur de longue durée qui accepte un emploi moins bien rémunéré que son poste précédent.", isCorrect: false, rationale: "Il s'agit d'un déclassement ou d'une dégradation salariale de l'emploi, pas de la définition statistique du sous-emploi." },
                             { text: "Le fait d'exercer une activité professionnelle clandestine de manière dissimulée sans contrat officiel.", isCorrect: false, rationale: "C'est du travail dissimulé (économie souterraine), pas du sous-emploi au sens des enquêtes de l'Insee." },
                             { text: "Le taux de chômage sectoriel enregistré de manière exclusive chez les jeunes actifs de moins de 25 ans.", isCorrect: false, rationale: "C'est un indicateur d'âge spécifique, sans rapport avec la définition du sous-emploi." }
@@ -534,7 +533,7 @@
                     {
                         question: "Qu'est-ce que l'inadéquation spatiale (mismatch spatial) sur le marché du travail ?",
                         options: [
-                            { text: "Le fait que les emplois vacants soient situés dans des régions différentes de celles où résident les chômeurs.", isCorrect: true, rationale: "La faible mobilité géographique des individus (ex: due au coût du logement) empêche l'appariement des marchés locaux de l'emploi." },
+                            { text: "Le fait que les emplois vacants soient situés dans des régions différentes de celles où résident les chômeurs.", isCorrect: true, rationale: "La faible mobilité géographique des l'individus (ex: due au coût du logement) empêche l'appariement des marchés locaux de l'emploi." },
                             { text: "L'obligation pour les salariés du secteur tertiaire d'effectuer plus de deux heures de transports urbains quotidiens.", isCorrect: false, rationale: "Il s'agit d'une contrainte de conditions physiques ou de temps de transport, pas d'un problème d'appariement structurel de l'offre." },
                             { text: "La concentration de l'ensemble des activités de pointe au sein des seules grandes capitales européennes.", isCorrect: false, rationale: "C'est un phénomène de métropolisation de l'offre, différent du mismatch spatial des demandeurs d'emploi." },
                             { text: "L'interdiction légale faite aux travailleurs de déménager d'un département à l'autre pour changer d'entreprise.", isCorrect: false, rationale: "Faux, la liberté de circulation et d'installation est garantie par le droit." }
@@ -552,7 +551,7 @@
                     {
                         question: "Qu'est-ce que la 'trappe à inactivité' ?",
                         options: [
-                            { text: "Une situation où les aides sociales sont d'un niveau proche du SMIC, réduisant l'incitation financière à reprendre un emploi.", isCorrect: true, rationale: "Le calcul rationnel coût-bénéfice du chômeur (transport, garde d'enfant, perte d'aides) peut le décider à rester inactif." },
+                            { text: "Une situation où les aides sociales sont d'un niveau proche du SMIC, réduisant l'incitation financière à reprendre un emploi.", isCorrect: true, rationale: "Le calcul rationnel coût-bénéfice du chômeur (transport, garde d'enfant, perte d'aides) peut le d'écider à rester inactif." },
                             { text: "La délimitation d'un secteur de l'usine caractérisé par une absence d'attractivité et de sécurité pour la main-d'œuvre.", isCorrect: false, rationale: "Il s'agit d'une question de conditions de travail ou d'ergonomie des postes, pas d'une trappe socio-fiscale." },
                             { text: "La baisse structurelle du taux de participation électorale observée chez les demandeurs d'emploi de longue durée.", isCorrect: false, rationale: "L'exclusion politique existe (le cens caché), mais ce n'est pas ce que désigne ce concept économique." },
                             { text: "La diminution statistique de l'espérance de vie des actifs qui se retrouvent privés durablement d'activité.", isCorrect: false, rationale: "C'est une donnée lourde de santé publique et de stratification, pas une trappe d'incitations économiques." }
@@ -570,7 +569,7 @@
                     {
                         question: "Qu'est-ce que l'effet multiplicateur d'une politique de relance budgétaire sur le chômage ?",
                         options: [
-                            { text: "Une hausse initiale des dépenses publiques qui déclenche une augmentation plus que proportionnelle de la production et de l'emploi.", isCorrect: true, rationale: "Le déficit budgétaire (relance keynésienne) augmente la demande. Les entreprises produisent plus, embauchent, ce qui développe les salaires et la consommation." },
+                            { text: "Une hausse initiale des dépenses publiques qui déclenche une augmentation plus que proportionnelle de la production et de l'emploi.", isCorrect: true, rationale: "Le déficit budgétaire (relance keynésienne) augmente la demande. Les entreprises produisent plus, embauchent, ce qui d'éveloppe les salaires et la consommation." },
                             { text: "Le doublement nominal du stock de la dette publique observé à la fin d'un exercice de récession.", isCorrect: false, rationale: "C'est un risque d'endettement à long terme (effet boule de neige), pas la définition de l'effet multiplicateur." },
                             { text: "Le fait pour un demandeur d'emploi de retrouver deux postes à temps partiel de manière simultanée.", isCorrect: false, rationale: "Il s'agit du cumul d'emplois ou du pluriactivité subie, sans rapport avec le multiplicateur budgétaire." },
                             { text: "Une élévation significative de la part des importations d'origine étrangère au sein du marché intérieur.", isCorrect: false, rationale: "Les importations constituent une fuite qui réduit l'effet multiplicateur, elles n'en sont pas la cause positive." }
@@ -606,7 +605,7 @@
                     {
                         question: "Quel rôle jouent les 'stabilisateurs automatiques' budgétaires en période de récession ?",
                         options: [
-                            { text: "Ils augmentent spontanément les dépenses (allocations) et réduisent les recettes (impôts), soutenant la demande sans action législative.", isCorrect: true, rationale: "En cas de crise, le déficit budgétaire se creuse mécaniquement, ce qui permet d'atténuer la violence du choc de demande négatif." },
+                            { text: "Ils augmentent spontanément les dépenses (allocations) et réduisent les recettes (impôts), soutenant la demande sans action législative.", isCorrect: true, rationale: "En cas de crise, le déficit budgétaire se creuse mécaniquement, ce qui permet de l'atténuer la violence du choc de demande négatif." },
                             { text: "Ils contraignent l'administration publique à déclarer de façon immédiate l'état de faillite financière des services.", isCorrect: false, rationale: "Les finances publiques se dégradent temporairement, mais l'État souverain ne fait pas faillite ainsi." },
                             { text: "Ils interdisent de manière stricte aux chefs d'entreprise de procéder au licenciement économique de salariés.", isCorrect: false, rationale: "Au contraire, en amortissant la récession, ils préservent la viabilité économique globale des entreprises." },
                             { text: "Ils provoquent une appréciation instantanée de la valeur externe de la monnaie unique sur le marché des devises.", isCorrect: false, rationale: "Il n'y a pas de relation directe établie entre le fonctionnement des stabilisateurs nationaux et le change de l'euro." }
@@ -669,7 +668,7 @@
                         question: "Comment une politique monétaire expansionniste (baisse des taux directeurs) est-elle censée relancer l'activité économique ?",
                         options: [
                             { text: "En abaissant le coût du crédit, ce qui incite les ménages à consommer et les entreprises à investir.", isCorrect: true, rationale: "La baisse des taux directeurs réduit le coût de refinancement des banques commerciales, qui répercutent cette baisse sur les crédits accordés à l'économie réelle." },
-                            { text: "En augmentant la rémunération des livrets d'épargne pour inciter les ménages à thésauriser leur argent.", isCorrect: false, rationale: "Faux, des taux d'intérêt faibles désincitent à l'épargne (moins rémunérée) au profit de la consommation." },
+                            { text: "En augmentant la rémunération des livrets d'épargne pour inciter les ménages à thésauriser leur argent.", isCorrect: false, rationale: "Faux, des taux d'intérêt faibles désincitient à l'épargne (moins rémunérée) au profit de la consommation." },
                             { text: "En augmentant de façon directe les impôts prélevés sur les bénéfices des sociétés résidentes.", isCorrect: false, rationale: "La fiscalité dépend du budget de l'État, pas de la politique monétaire de la Banque centrale." },
                             { text: "Par une appréciation forte, rapide et continue de la valeur de la monnaie unique par rapport au dollar.", isCorrect: false, rationale: "La baisse des taux d'intérêt a plutôt tendance à déprécier l'euro (les capitaux financiers cherchent des rendements plus élevés ailleurs)." }
                         ]
@@ -695,7 +694,7 @@
                     {
                         question: "Qu'est-ce qu'un 'choc asymétrique' au sein d'une union monétaire ?",
                         options: [
-                            { text: "Une perturbation économique externe qui affecte différemment les pays membres en raison de leurs structures économiques distinctes.", isCorrect: true, rationale: "Exemple : Un choc pétrolier ou une crise du tourisme affectera plus durement les pays du Sud (très dépendants) que les pays du Nord, posant problème face à une politique monétaire unique." },
+                            { text: "Une perturbation économique externe qui affecte différemment les pays membres en raison de leurs structures économiques distinctes.", isCorrect: true, rationale: "Exemple : Un choc pétrolier ou une crisis du tourisme affectera plus durement les pays du Sud (très dépendants) que les pays du Nord, posant problème face à une politique monétaire unique." },
                             { text: "Une crise économique macroéconomique qui touche l'ensemble des pays de la zone avec une intensité rigoureusement égale.", isCorrect: false, rationale: "Un choc asymétrique s'oppose précisément à un choc symétrique." },
                             { text: "La décision politique souveraine d'un État membre de rompre les traités pour quitter définitivement l'Union.", isCorrect: false, rationale: "Le départ d'un pays est une décision politique majeure (comme le Brexit pour l'UE), pas un choc asymétrique au sens économique conjoncturel." },
                             { text: "Une hausse subite, forte et temporaire du cours de la monnaie unique face au dollar américain.", isCorrect: false, rationale: "C'est une fluctuation du marché des changes, qui affecte l'ensemble de la zone euro (choc symétrique), même si l'impact dépend du degré d'ouverture de chaque pays." }
@@ -714,7 +713,7 @@
                         question: "Quelle est la principale critique formulée à l'encontre des critères de Maastricht (3 % de déficit et 60 % de dette) ?",
                         options: [
                             { text: "Ils manquent de fondement scientifique rigoureux et brident les politiques de relance budgétaire en période de crise.", isCorrect: true, rationale: "Ces chiffres, d'abord fixés de manière assez arbitraire en France dans les années 1980, sont jugés trop rigides car ils interdisent un soutien massif à l'activité en récession." },
-                            { text: "Ils obligent les États membres à doubler de manière instantanée la rémunération de la fonction publique.", isCorrect: false, rationale: "Faux, ils forcent plutôt les gouvernements à l'austérité et à la modération budgétaire." },
+                            { text: "Ils obligent les États membres à doubler de manière instantanée la rémunération de la fonction publique.", isCorrect: false, rationale: "Faux, ils forcent plutôt les gouvernements à l'austérité et à la modération budgétaire d'éviante." },
                             { text: "Ils provoquent l'effondrement et la disparition complète de la monnaie unique au bout de dix ans d'existence.", isCorrect: false, rationale: "Au contraire, ils visaient à stabiliser la monnaie unique en favorisant la convergence structurelle." },
                             { text: "Ils s'appuient de façon exclusive sur le niveau de consommation et d'importation de pétrole brut des pays.", isCorrect: false, rationale: "Ces critères mesurent le déficit public global et le stock de dette publique nominal, pas l'usage énergétique." }
                         ]
@@ -722,7 +721,7 @@
                     {
                         question: "Qu'est-ce que le plan 'Next Generation EU' adopté en 2020 suite à la crise du Covid-19 ?",
                         options: [
-                            { text: "Une émission de dette commune pour financer la relance économique et la transition écologique des États membres.", isCorrect: true, rationale: "C'est une étape historique vers l'intégration fiscale et budgétaire (fédéralisme budgétaire), matérialisant la solidarité européenne face à un choc externe." },
+                            { text: "Une émission de d'ette commune pour financer la relance économique et la transition écologique des États membres.", isCorrect: true, rationale: "C'est une étape historique vers l'intégration fiscale et budgétaire (fédéralisme budgétaire), matérialisant la solidarité européenne face à un choc externe." },
                             { text: "L'obligation institutionnelle pour tous les pays membres d'adopter le même système scolaire et universitaire.", isCorrect: false, rationale: "Faux, les politiques d'éducation restent du ressort de la souveraineté de chaque pays membre." },
                             { text: "Un traité commercial contraignant interdisant les échanges de marchandises avec les pays extérieurs à l'Europe.", isCorrect: false, rationale: "L'UE reste le premier pôle commercial mondial ouvert au libre-échange." },
                             { text: "La nationalisation par la Commission européenne de l'ensemble des réseaux de transports publics de la zone.", isCorrect: false, rationale: "Les transports restent de compétence principalement nationale et locale, avec ouverture à la concurrence privée." }
@@ -740,7 +739,7 @@
                     {
                         question: "Quel problème de 'passager clandestin' budgétaire la zone euro cherche-t-elle à limiter ?",
                         options: [
-                            { text: "Un pays qui creuse sa dette sans limite, profitant des taux d'intérêt bas garantis par la crédibilité de la monnaie commune.", isCorrect: true, rationale: "Si un État agit de façon laxiste, cela peut inquiéter les marchés, dégrader la notation de la zone et forcer la BCE à augmenter ses taux, pénalisant tous les membres." },
+                            { text: "Un pays qui creuse sa d'ette sans limite, profitant des taux d'intérêt bas garantis par la crédibilité de la monnaie commune.", isCorrect: true, rationale: "Si un État agit de façon laxiste, cela peut inquiéter les marchés, dégrader la notation de la zone et forcer la BCE à augmenter ses taux, pénalisant tous les membres." },
                             { text: "Un pays membre qui refuserait d'autoriser la libre circulation des touristes européens sur son territoire.", isCorrect: false, rationale: "La liberté de circulation est encadrée par l'Espace Schengen, sans rapport avec le laxisme budgétaire." },
                             { text: "La fraude fiscale organisée et coordonnée de façon directe par les administrations de la Commission européenne.", isCorrect: false, rationale: "La Commission lutte contre la fraude, elle n'en est pas l'instigatrice." },
                             { text: "Le fait de s'affranchir du paiement des taxes douanières lors du passage physique d'une frontière intérieure.", isCorrect: false, rationale: "C'est de l'évasion de péage physique, pas le problème macroéconomique du passager clandestin budgétaire." }
@@ -767,7 +766,7 @@
                     {
                         question: "Comment se définit la 'dévaluation interne' au sein de la zone euro ?",
                         options: [
-                            { text: "La baisse des coûts de production (salaires, dépenses publiques) pour restaurer la compétitivité en l'absence de levier monétaire.", isCorrect: true, rationale: "Faute de pouvoir dévaluer l'euro (monnaie commune), un pays en crise (ex: la Grèce) doit baisser ses coûts nominaux pour rendre ses produits moins chers à l'export." },
+                            { text: "La baisse des coûts de production (salaires, d'épenses publiques) pour restaurer la compétitivité en l'absence de levier monétaire.", isCorrect: true, rationale: "Faute de pouvoir dévaluer l'euro (monnaie commune), un pays en crise (ex: la Grèce) doit baisser ses coûts nominaux pour rendre ses produits moins chers à l'export." },
                             { text: "La baisse artificielle, unilatérale et volontaire du cours de change de l'euro par rapport au dollar par un seul pays.", isCorrect: false, rationale: "C'est une dévaluation externe, impossible unilatéralement pour un seul pays de la zone euro." },
                             { text: "Le fait de retirer et de détruire une partie des billets de banque en circulation pour lutter contre la déflation.", isCorrect: false, rationale: "C'est une mesure loufoque qui réduirait la masse monétaire, accentuant la déflation au lieu de la combattre." },
                             { text: "L'interdiction réglementaire faite aux banques commerciales d'accorder des crédits immobiliers aux particuliers.", isCorrect: false, rationale: "Le rationnement du crédit peut survenir en crise bancaire, mais n'est pas la définition de la dévaluation interne." }
@@ -779,13 +778,13 @@
                             { text: "Le fait que les pays en déficit extérieur soient forcés de baisser leurs coûts, tandis que les pays excédentaires ne sont pas contraints de monter les leurs.", isCorrect: true, rationale: "Les pays en crise du Sud (Espagne, Portugal, Grèce) ont dû baisser leurs salaires nominaux, tandis que l'Allemagne (excédentaire) a maintenu sa modération salariale, bloquant la convergence." },
                             { text: "Le fait de taxer de manière exclusive les importations de produits issus du secteur agricole.", isCorrect: false, rationale: "La PAC encadre l'agriculture, mais l'ajustement macroéconomique concerne l'ensemble des balances courantes nationales." },
                             { text: "La décision d'interdire de façon définitive les flux commerciaux bilatéraux entre la France et l'Allemagne.", isCorrect: false, rationale: "Ces deux pays sont les moteurs de l'intégration et les premiers partenaires commerciaux de la zone." },
-                            { text: "La hausse de la part des dépenses militaires obligatoires imposée à la moitié des États membres de la zone.", isCorrect: false, rationale: "La défense est un enjeu d'actualité mais n'est pas le mécanisme d'ajustement asymétrique des balances courantes." }
+                            { text: "La hausse de la part des d'épenses militaires obligatoires imposée à la moitié des États membres de la zone.", isCorrect: false, rationale: "La défense est un enjeu d'actualité mais n'est pas le mécanisme d'ajustement asymétrique des balances courantes." }
                         ]
                     },
                     {
                         question: "Quelle est la principale limite de la politique européenne de la concurrence face aux GAFAM ?",
                         options: [
-                            { text: "Elle a des difficultés à sanctionner des abus de position dominante sur des marchés basés sur la gratuité apparente et l'effet de réseau.", isCorrect: true, rationale: "Les plateformes captent la valeur par les données (modèle biface). La définition classique du 'marché pertinent' et des prix abusifs est inadaptée à ces structures." },
+                            { text: "Elle a des difficultés à sanctionner des abus de position dominante sur des marchés basés sur la gratuité apparente et l'effet de réseau.", isCorrect: true, rationale: "Les plateformes captent la valeur par les données (modèle biface). La définition classique du 'marché pertinent' et des prix abusifs est inadaptée à ces structures déviantes." },
                             { text: "Elle interdit de manière formelle l'accès et l'utilisation du réseau Internet sur l'espace européen.", isCorrect: false, rationale: "Faux, l'UE favorise la transition numérique et déploie le marché unique numérique." },
                             { text: "Elle n'impose que des amendes d'un montant purement symbolique ne dépassant pas quelques milliers d'euros.", isCorrect: false, rationale: "Faux, les amendes de la Commission s'élèvent à des milliards d'euros (ex: Google condamné à plusieurs reprises)." },
                             { text: "Elle fait l'objet d'un rejet unanime et d'une contestation par l'ensemble des pays d'Afrique subsaharienne.", isCorrect: false, rationale: "La politique de la concurrence de l'UE s'applique sur le marché unique européen, les pays tiers n'ont pas de souveraineté directe dessus." }
@@ -802,7 +801,7 @@
                     }
                 ]
             },
-            {
+{
                 id: "structure_sociale",
                 title: "Espace et structure sociale",
                 icon: "fa-sitemap",
@@ -813,16 +812,16 @@
                         options: [
                             { text: "L'organisation de la société en groupes sociaux distincts et hiérarchisés selon des inégalités d'accès aux ressources.", isCorrect: true, rationale: "La stratification désigne le fait que la société est découpée en couches ('strates') superposées qui diffèrent par leur richesse, pouvoir, prestige ou éducation." },
                             { text: "La division binaire de la population entre ceux qui possèdent les moyens de production et ceux qui vendent leur force de travail.", isCorrect: false, rationale: "Confusion : ça c'est la définition stricte et réaliste des classes selon Karl Marx, pas la définition générale de la stratification." },
-                            { text: "Le processus par lequel les individus s'intègrent à la société à travers le partage de normes et de valeurs communes.", isCorrect: false, rationale: "Confusion : cela désigne la socialisation ou l'intégration sociale, pas la stratification." },
+                            { text: "Le processus par lequel les l'individus s'intègrent à la société à travers le partage de normes et de valeurs communes.", isCorrect: false, rationale: "Confusion : cela désigne la socialisation ou l'intégration sociale, pas la stratification." },
                             { text: "La répartition statistique de la population active selon les trois grands secteurs de l'activité économique.", isCorrect: false, rationale: "Confusion : cela désigne la structure sectorielle de l'économie, pas la hiérarchisation des groupes sociaux." }
                         ]
                     },
                     {
-                        question: "Quels sont les principaux critères socio-économiques et démographiques qui structurent l'espace social français ?",
+                        question: "Quers sont les principaux critères socio-économiques et démographiques qui structurent l'espace social français ?",
                         options: [
                             { text: "La profession (PCS), le niveau de diplôme, le genre, le cycle de vie et le lieu de résidence.", isCorrect: true, rationale: "L'espace social est multidimensionnel : la position d'un individu dépend de sa situation professionnelle et économique, mais aussi d'autres facteurs structurants comme le genre, l'âge (cycle de vie) ou son territoire." },
                             { text: "Le niveau de revenu, le patrimoine mobilier et le taux d'épargne annuel de l'ensemble des ménages.", isCorrect: false, rationale: "Piège : ce sont des critères importants, mais purement économiques. Ils oublient les critères démographiques et culturels (genre, diplôme)." },
-                            { text: "Le statut juridique de l'employeur, la taille de l'entreprise et la branche d'activité industrielle.", isCorrect: false, rationale: "Confusion : ce sont des critères d'économie d'entreprise pour classer les structures productives, pas les individus dans l'espace social." },
+                            { text: "Le statut juridique de l'employeur, la taille de l'entreprise et la branche d'activité industrielle.", isCorrect: false, rationale: "Confusion : ce sont des critères d'économie d'entreprise pour classer les structures productives, pas les l'individus dans l'espace social." },
                             { text: "Les préférences politiques, le statut matrimonial et le nombre d'enfants à charge par famille.", isCorrect: false, rationale: "Bien que liés, ce ne sont pas les variables lourdes utilisées en sociologie pour cartographier la stratification." }
                         ]
                     },
@@ -848,7 +847,7 @@
                         question: "Qu'entend-on par 'féminisation de la population active' ?",
                         options: [
                             { text: "L'augmentation continue de la part des femmes parmi les actifs occupés sur le marché du travail.", isCorrect: true, rationale: "Depuis les années 1960, l'accès massif des femmes au marché du travail (notamment favorisé par la tertiarisation) a profondément transformé la structure active." },
-                            { text: "L'obtention d'une égalité salariale parfaite entre les hommes et les femmes à poste et diplôme équivalents.", isCorrect: false, rationale: "Confusion : l'égalité salariale est un objectif légal et social, tandis que la féminisation mesure simplement la présence quantitative des femmes sur le marché." },
+                            { text: "L'obtention d'une égalité salariale parfaite entre les hommes et les femmes à poste et diplôme équivalents.", isCorrect: false, rationale: "Confusion : l'égalité salariale est un objectif légal et social, tandis que la féminisation m'esure simplement la présence quantitative des femmes sur le marché." },
                             { text: "La disparition complète des stéréotypes de genre dans le choix des filières scolaires et universitaires.", isCorrect: false, rationale: "Faux : la ségrégation professionnelle et scolaire persiste fortement malgré l'augmentation du taux d'activité des femmes." },
                             { text: "La baisse structurelle du taux d'activité des hommes pour compenser l'arrivée des femmes dans les entreprises.", isCorrect: false, rationale: "Faux : l'arrivée des femmes n'a pas provoqué le retrait des hommes du marché du travail." }
                         ]
@@ -856,7 +855,8 @@
                     {
                         question: "Selon Karl Marx, quels sont les deux critères essentiels qui définissent une classe sociale ?",
                         options: [
-                            { text: "La place dans les rapports de production (propriétaire ou non) et la conscience de classe (en soi vs pour soi).", isCorrect: true, rationale: "Pour Marx, la classe existe matériellement par la propriété des machines (classe en soi) mais ne devient un acteur historique que lorsque ses membres prennent conscience de leur lutte commune contre l'exploitation (classe pour soi)." },
+                            { text: "La place dans les rapports de production (propriétaire ou non) et la conscience de classe (en soi vs pour soi).", isCorrect: true, rationale: "Pour Marx, la classe existe matériellement par la propriété des machines (classe en soi) mais ne devient un actor historique que lorsque ses membres prennent conscience de leur lutte commune contre l'exploitation (classe pour soi)." },
+                            { text: "La place dans les rapports de production (propriétaire ou non) et la conscience de classe (en soi vs pour soi).", isCorrect: true, rationale: "Pour Marx, la classe existe matériellement par la propriété des machines (classe en soi) mais cela ne devient une classe sociale réellement seulement lorsque ses membres prennent conscience de leur lutte commune contre l'exploitation (classe pour soi)." },
                             { text: "Le niveau de revenu monétaire, le prestige social de la profession et le pouvoir politique détenu.", isCorrect: false, rationale: "Confusion complète : ce sont les trois ordres de la stratification nominale et pluridimensionnelle de Max Weber." },
                             { text: "Le capital économique, le capital culturel accumulé et le capital social de l'individu.", isCorrect: false, rationale: "Confusion complète : c'est la théorie des trois formes de capitaux de Pierre Bourdieu." },
                             { text: "Le niveau de diplôme scolaire et le degré d'intégration au sein des collectifs de travail.", isCorrect: false, rationale: "Faux : ce sont des critères d'analyse modernes, totalement absents de la théorie marxiste originale." }
@@ -866,7 +866,7 @@
                         question: "En quoi l'analyse des classes de Max Weber diffère-t-elle de celle de Karl Marx ?",
                         options: [
                             { text: "L'analyse de Weber est multidimensionnelle (ordre économique, social et politique), et les classes ne sont pas forcément en lutte.", isCorrect: true, rationale: "Weber distingue les classes (ordre économique : richesse), les groupes de statut (ordre social : prestige/honneur) et les partis (ordre politique : pouvoir). Pour lui, les classes ne forment pas mécaniquement des communautés solidaires." },
-                            { text: "Weber affirme que l'origine religieuse est l'unique critère qui détermine la place dans la hiérarchie sociale.", isCorrect: false, rationale: "Confusion : Weber étudie le lien entre religion et capitalisme, mais sa théorie de la stratification repose bien sur trois ordres distincts." },
+                            { text: "Weber affirme que l'origine religieuse est l'unique critère qui détermine la place dans la hiérarchie sociale.", isCorrect: false, rationale: "Confusion : Weber étudie le lien entre religion et capitalisme, mais sa théorie de la stratification repose bien sur trois ordres distinctes." },
                             { text: "Weber considère que la société moderne est totalement égalitaire et que les classes ont disparu.", isCorrect: false, rationale: "Faux : Weber étudie les inégalités et la stratification, il ne nie pas leur existence." },
                             { text: "Weber regarde de près le niveau de richesse pour se focaliser uniquement sur le prestige social.", isCorrect: false, rationale: "Piège : la richesse définit précisément le premier ordre (l'ordre économique) chez Weber, il ne l'ignore pas." }
                         ]
@@ -903,8 +903,8 @@
                         options: [
                             { text: "Le coefficient de Gini, variant de 0 (égalité parfaite) à 1 (inégalité absolue).", isCorrect: true, rationale: "Le coefficient de Gini est tiré de la courbe de Lorenz. Plus il est proche de 1, plus la répartition des revenus est concentrée dans les mains de quelques-uns." },
                             { text: "Le rapport interdécile, qui compare la moyenne des revenus des plus riches et des plus pauvres.", isCorrect: false, rationale: "Confusion : le rapport interdécile (D9/D1) compare des seuils de position, et non la moyenne des revenus des deux groupes." },
-                            { text: "L'indice de développement humain (IDH), qui intègre la répartition des richesses nationales.", isCorrect: false, rationale: "Confusion : l'IDH mesure la santé, l'éducation et le PIB par habitant, mais ne prend pas en compte les inégalités internes de répartition." },
-                            { text: "Le taux de pauvreté monétaire, qui mesure la part de la population vivant sous le seuil médian.", isCorrect: false, rationale: "Faux : le taux de pauvreté mesure la pauvreté relative, pas la structure globale des inégalités sur l'ensemble de l'échelle des revenus." }
+                            { text: "L'indice de développement humain (IDH), qui intègre la répartition des richesses nationales.", isCorrect: false, rationale: "Confusion : l'IDH m'esure la santé, l'éducation et le PIB par habitant, mais ne prend pas en compte les inégalités internes de répartition." },
+                            { text: "Le taux de pauvreté monétaire, qui mesure la part de la population vivant sous le seuil médian.", isCorrect: false, rationale: "Faux : le taux de pauvreté m'esure la pauvreté relative, pas la structure globale des inégalités sur l'ensemble de l'échelle des revenus." }
                         ]
                     },
                     {
@@ -964,10 +964,10 @@
                     {
                         question: "Qu'est-ce que l'identification subjective à un groupe social ?",
                         options: [
-                            { text: "Le sentiment intime d'appartenir à une classe donnée, qui peut différer de la position objective.", isCorrect: true, rationale: "Un employé (position populaire objective) peut s'identifier subjectivement à la classe moyenne en raison de ses aspirations ou de ses modes de vie." },
+                            { text: "Le sentiment intime d'appartenir à une classe donnée, qui peut différer de la position objective.", isCorrect: true, rationale: "Un employé (position populaire objective) peut s'identification subjectivement à la classe moyenne en raison de ses aspirations ou de ses modes de vie." },
                             { text: "L'obligation d'inscrire sa catégorie professionnelle lors des recensements officiels de l'Insee.", isCorrect: false, rationale: "Confusion : cela correspond à un classement objectif et administratif par la nomenclature, pas à un sentiment personnel." },
                             { text: "La tendance à imiter les comportements de consommation des classes supérieures par snobisme.", isCorrect: false, rationale: "Confusion : cela fait référence à l'effet Veblen ou à la frustration relative, distincte du simple sentiment d'appartenance à un groupe." },
-                            { text: "La disparition complète des critères économiques dans la perception des hiérarchies sociales.", isCorrect: false, rationale: "Faux : les critères économiques (revenu, patrimoine) restent centraux dans la façon dont les individus s'auto-évaluent." }
+                            { text: "La disparition complète des critères économiques dans la perception des hiérarchies sociales.", isCorrect: false, rationale: "Faux : les critères économiques (revenu, patrimoine) restent centraux dans la façon dont les individus s'auto-évaluent sociaux." }
                         ]
                     },
                     {
@@ -999,7 +999,7 @@
                     {
                         question: "Quelle est la distinction principale entre la mobilité sociale intergénérationnelle et la mobilité professionnelle ?",
                         options: [
-                            { text: "L'intergénérationnelle compare la position à celle des parents, la professionnelle mesure le changement de statut au cours de la carrière.", isCorrect: true, rationale: "La mobilité intergénérationnelle compare deux générations différentes, alors que la mobilité professionnelle (ou intragénérationnelle) observe le parcours de l'individu au cours de sa propre vie active." },
+                            { text: "L'intergénérationnelle compare la position à celle des parents, la professionnelle m'esure le changement de statut au cours de la carrière.", isCorrect: true, rationale: "La mobilité intergénérationnelle compare deux générations différentes, alors que la mobilité professionnelle (ou intragénérationnelle) observe le parcours de l'individu au cours de sa propre vie active." },
                             { text: "L'intergénérationnelle concerne les hommes, tandis que la professionnelle concerne uniquement les trajectoires des femmes.", isCorrect: false, rationale: "Faux : les deux types de mobilité concernent l'ensemble de la population active, sans distinction de genre." },
                             { text: "L'intergénérationnelle est une mobilité verticale, alors que la professionnelle est toujours une mobilité horizontale.", isCorrect: false, rationale: "Faux : on peut tout à fait connaître une mobilité professionnelle ascendante (verticale) en changeant de statut au cours de sa carrière." },
                             { text: "L'intergénérationnelle est mesurée par l'Insee, tandis que la professionnelle est calculée par les entreprises privées.", isCorrect: false, rationale: "Faux : l'Insee mesure les deux formes de mobilité grâce à un outil unique, l'enquête FQP." }
@@ -1008,19 +1008,19 @@
                     {
                         question: "Dans une table de mobilité, comment appelle-t-on la diagonale qui regroupe les individus dont la position sociale est identique à celle de leur milieu d'origine ?",
                         options: [
-                            { text: "L'immobilité sociale (ou reproduction sociale), matérialisant le maintien du statut d'une génération à l'autre.", isCorrect: true, rationale: "La diagonale d'une table de mobilité croise les origines et les destinées identiques, matérialisant ainsi la reproduction d'une génération à l'autre." },
+                            { text: "L'immobility sociale (ou reproduction sociale), matérialisant le maintien du statut d'une génération à l'autre.", isCorrect: true, rationale: "La diagonale d'une table de mobilité croise les origines et les destinées identiques, matérialisant ainsi la reproduction d'une génération à l'autre." },
                             { text: "La fluidité sociale, qui mesure l'égalité des chances relative entre les différentes catégories d'origine.", isCorrect: false, rationale: "Confusion : la fluidité sociale mesure une probabilité relative d'accès, elle ne désigne pas une case ou une zone de la table." },
-                            { text: "La mobilité structurelle, qui correspond aux changements imposés par les mutations économiques globales de l'emploi.", isCorrect: false, rationale: "Confusion : la mobilité structurelle pousse les individus à sortir de la diagonale en raison du manque de places dans le groupe d'origine." },
+                            { text: "La mobilité structurelle, qui correspond aux changements imposés par les mutations économiques globales de l'emploi.", isCorrect: false, rationale: "Confusion : la mobilité structurelle pousse les l'individus à sortir de la diagonale en raison du manque de places dans le groupe d'origine." },
                             { text: "Le déclassement social, qui caractérise uniquement les trajectoires de mobilité descendante par rapport aux parents.", isCorrect: false, rationale: "Confusion : le déclassement se situe en dehors de la diagonale (au-dessus ou en dessous selon la construction de la table)." }
                         ]
                     },
                     {
                         question: "Quelle question pose-t-on pour lire une table de destinée ?",
                         options: [
-                            { text: "Que sont devenus professionnellement les enfants issus d'une catégorie sociale d'origine donnée ?", isCorrect: true, rationale: "La table de destinée suit la trajectoire des enfants à partir de l'origine de leurs parents : on cherche à savoir ce qu'ils 'sont devenus'." },
-                            { text: "Quelle est l'origine sociale des individus qui occupent aujourd'hui une position socioprofessionnelle donnée ?", isCorrect: false, rationale: "Confusion classique d'élève : cette question correspond à la lecture d'une table de recrutement (d'où viennent les individus)." },
+                            { text: "Que sont devenus professionnels les enfants issus d'une catégorie sociale d'origine donnée ?", isCorrect: true, rationale: "La table de destinée suit la trajectoire des enfants à partir de l'origine de leurs parents : on cherche à savoir ce qu'ils 'sont devenus'." },
+                            { text: "Quelle est l'origine sociale des l'individus qui occupent aujourd'hui une position socioprofessionnelle donnée ?", isCorrect: false, rationale: "Confusion classique d'élève : cette question correspond à la lecture d'une table de recrutement (d'où viennent les l'individus)." },
                             { text: "Quelle est la part de la mobilité observée qui s'explique uniquement par l'évolution de la structure des emplois ?", isCorrect: false, rationale: "Confusion : cette question cherche à mesurer la mobilité structurelle, pas à distinguer destinée et recrutement." },
-                            { text: "Combien de parents ont un niveau de diplôme inférieur à celui obtenu par leurs propres enfants ?", isCorrect: false, rationale: "Faux : cela ferait référence à la mobilité scolaire relative, pas à la lecture d'une table de destinée socioprofessionnelle." }
+                            { text: "Combien de parents ont un niveau de diplôme inférieur à celui obtenu par leurs propres enfants ?", isCorrect: false, rationale: "Faux : cela ferait référence à la mobilité scolaire relative, pas à la lecture d'une table de destinée socio-professionnelle." }
                         ]
                     },
                     {
@@ -1035,7 +1035,7 @@
                     {
                         question: "Qu'est-ce que la mobilité structurelle ?",
                         options: [
-                            { text: "La mobilité sociale provoquée par les changements de la structure des emplois entre la génération des parents et celle des enfants.", isCorrect: true, rationale: "Si le nombre d'emplois de cadres augmente et que le nombre d'emplois agricoles diminue, des individus sont mécaniquement forcés de changer de catégorie par rapport à leurs parents : c'est la mobilité structurelle." },
+                            { text: "La mobilité sociale provoquée par les changements de la structure des emplois entre la génération des parents et celle des enfants.", isCorrect: true, rationale: "Si le nombre d'emplois de cadres augmente et que le nombre d'emplois agricoles diminue, des l'individus sont mécaniquement forcés de changer de catégorie par rapport à leurs parents : c'est la mobilité structurelle." },
                             { text: "La mobilité sociale qui résulte uniquement du mérite individuel, des efforts et de la réussite scolaire de l'élève.", isCorrect: false, rationale: "Confusion : le mérite individuel renvoie à la mobilité nette ou relative (liée à la fluidité), pas aux contraintes économiques de la structure." },
                             { text: "Une situation idéale où la position sociale finale n'entretient plus aucun lien avec le milieu social d'origine.", isCorrect: false, rationale: "Confusion : cela désigne une société parfaitement fluide (égalité parfaite des chances), pas la mobilité structurelle." },
                             { text: "La baisse globale et continue du nombre d'individus qui changent de catégorie professionnelle au cours de leur vie.", isCorrect: false, rationale: "Faux : la mobilité structurelle (liée à la tertiarisation) a historiquement augmenté la mobilité globale observée." }
@@ -1046,7 +1046,7 @@
                         options: [
                             { text: "Non, car la mobilité observée dépend de la structure de l'emploi ; si elle change, la mobilité croît sans évolution de l'égalité des chances.", isCorrect: true, rationale: "La fluidité sociale mesure l'égalité des chances (les chances relatives). Elle est indépendante des modifications structurelles de la population active." },
                             { text: "Oui, car toute augmentation du nombre total d'individus mobiles traduit une réduction des inégalités des chances.", isCorrect: false, rationale: "Confusion classique d'élève : la mobilité globale peut augmenter uniquement parce que la structure des emplois a muté, sans que l'équité n'ait progressé." },
-                            { text: "Oui, car les concepts de fluidité sociale et de mobilité observée désignent exactement la même réalité statistique.", isCorrect: false, rationale: "Faux : ce sont deux outils distincts. L'un mesure une quantité globale (observée), l'autre mesure l'équité des trajectoires (relative)." },
+                            { text: "Oui, car les concepts de fluidité sociale et de mobilité observée désignent exactement la même réalité statistique.", isCorrect: false, rationale: "Faux : ce sont deux outils distincts. L'un m'esure une quantité globale (observée), l'autre mesure l'équité des trajectoires (relative)." },
                             { text: "Non, car une société caractérisée par une forte fluidité est mathématiquement une société sans aucun changement de statut.", isCorrect: false, rationale: "Inversion complète : la fluidité parfaite correspond à une égalité totale des chances d'accès, donc à une forte circulation sociale." }
                         ]
                     },
@@ -1055,14 +1055,14 @@
                         options: [
                             { text: "L'odds ratio (ou rapport des chances relatives), qui compare les probabilités d'accès de deux milieux d'origine.", isCorrect: true, rationale: "L'odds ratio compare les chances d'accès à une position plutôt qu'une autre pour deux milieux d'origine différents. C'est l'indicateur clé de la fluidité." },
                             { text: "Le coefficient de Gini, mobilisé pour synthétiser les inégalités de répartition des revenus et du patrimoine.", isCorrect: false, rationale: "Confusion d'outil : le coefficient de Gini sert à mesurer la concentration des richesses, pas la mobilité sociale." },
-                            { text: "Le taux de chômage structurel, lié aux problèmes d'appariement qualitatif ou géographique sur le marché du travail.", isCorrect: false, rationale: "Confusion : c'est un indicateur économique du marché du travail, sans rapport avec la fluidité sociale intergénérationnelle." },
-                            { text: "Le taux de salarisation, qui mesure la part des salariés parmi l'ensemble des actifs occupés de la population.", isCorrect: false, rationale: "Confusion : cela décrit la structure juridique des emplois, pas l'équité des trajectoires relatives." }
+                            { text: "Le taux de chômage structurel, lié aux problèmes d'appariement qualitatif ou géographique sur le marché du travail.", isCorrect: false, rationale: "Confusion : c'est un indicator économique du marché du travail, sans rapport avec la fluidité sociale intergénérationnelle." },
+                            { text: "Le taux de salarisation, qui m'esure la part des salariés parmi l'ensemble des actifs occupés de la population.", isCorrect: false, rationale: "Confusion : cela décrit la structure juridique des emplois, pas l'équité des trajectoires relatives." }
                         ]
                     },
                     {
                         question: "Qu'est-ce que le 'déclassement intergénérationnel' ?",
                         options: [
-                            { text: "Le fait pour un individu d'occuper une position sociale inférieure à celle de ses parents.", isCorrect: true, rationale: "Le déclassement intergénérationnel (ou mobilité descendante) caractérise précisément la perte de statut social par rapport à la génération précédente." },
+                            { text: "Le fait pour un individu d'occupier une position sociale inférieure à celle de ses parents.", isCorrect: true, rationale: "Le déclassement intergénérationnel (ou mobilité descendante) caractérise précisément la perte de statut social par rapport à la génération précédente." },
                             { text: "Le fait de détenir un emploi dont le niveau de qualification exigé est inférieur au diplôme obtenu à l'école.", isCorrect: false, rationale: "Confusion de concept : cela correspond au déclassement scolaire (ou paradoxe d'Anderson), pas au déclassement intergénérationnel." },
                             { text: "La perte de son emploi au cours de sa propre carrière professionnelle, entraînant une phase de chômage.", isCorrect: false, rationale: "Confusion de concept : cela correspond au déclassement professionnel ou intragénérationnel." },
                             { text: "La diminution globale du nombre total de postes de cadres supérieurs ouverts au sein de l'économie nationale.", isCorrect: false, rationale: "Confusion : cela décrit une évolution macroéconomique structurelle de l'offre d'emplois, pas une trajectoire individuelle." }
@@ -1090,22 +1090,22 @@
                         question: "Qu'est-ce que la 'mobilité nette' (ou relative) en sociologie de la stratification ?",
                         options: [
                             { text: "La part de la mobilité sociale qui s'explique par la seule égalité des chances, indépendamment de l'évolution des emplois.", isCorrect: true, rationale: "La mobilité nette cherche à isoler les trajectoires individuelles d'ascension ou de déclin qui dépendent de la fluidité sociale et non des contraintes ou modifications de la structure économique." },
-                            { text: "La part des trajectoires d'actifs dont le salaire net est supérieur au salaire net moyen perçu par les parents.", isCorrect: false, rationale: "Confusion économique : la mobilité sociale évalue le changement de statut socioprofessionnel (PCS), pas l'évolution brute du salaire net monétaire." },
-                            { text: "Le nombre de changements de résidence principale effectués sans modifier sa catégorie professionnelle.", isCorrect: false, rationale: "Confusion : cela désigne la mobilité géographique ou résidentielle, distincte de la mobilité sociale." },
-                            { text: "Les trajectoires de changement de statut socioprofessionnel observées uniquement chez les femmes actives.", isCorrect: false, rationale: "Faux : la mobilité nette s'applique de la même manière à l'ensemble de la population active, hommes et femmes." }
+                            { text: "La part des trajectoires d'actifs dont le salaire net est supérieur au salaire net moyen perçu par les parents.", isCorrect: false, rationale: "Confusion économique : la mobilité sociale évalue le changement de statut socio-professionnel (PCS), pas l'évolution brute du salaire net monétaire." },
+                            { text: "Le nom'bre de changements de résidence principale effectués sans modifier sa catégorie professionnelle.", isCorrect: false, rationale: "Confusion : cela désigne la mobilité géographique ou résidentielle, distincte de la mobilité sociale." },
+                            { text: "Les trajectoires de changement de statut socio-professionnel observées uniquement chez les femmes actives.", isCorrect: false, rationale: "Faux : la mobilité nette s'applique de la même manière à l'ensemble de la population active, hommes et femmes." }
                         ]
                     },
                     {
                         question: "Quelle est la particularité de la population étudiée dans l'enquête FQP de l'Insee pour mesurer la mobilité intergénérationnelle ?",
                         options: [
-                            { text: "Elle interroge des actifs âgés de 35 à 59 ans afin d'observer des situations professionnelles stabilisées.", isCorrect: true, rationale: "Cette restriction d'âge permet d'observer des individus dont la carrière professionnelle s'est stabilisée, limitant l'impact de la mobilité professionnelle de début de vie." },
+                            { text: "Elle interroge des actifs âgés de 35 à 59 ans afin d'observer des situations professionnelles stabilisées.", isCorrect: true, rationale: "Cette restriction d'âge permet d'observer des l'individus dont la carrière professionnelle s'est stabilisée, limitant l'impact de la mobilité professionnelle de début de vie." },
                             { text: "Elle se focalise de façon exclusive sur le suivi des jeunes diplômés à leur sortie de l'école.", isCorrect: false, rationale: "Confusion : le suivi de l'insertion des jeunes correspond aux enquêtes 'Génération' du Céreq, pas à la mesure de la mobilité intergénérationnelle FQP." },
                             { text: "Elle suit uniquement les fonctionnaires de l'administration publique tout au long de leur vie active.", isCorrect: false, rationale: "Faux : l'enquête FQP est représentative de l'ensemble de la population active, incluant les salariés du privé et les indépendants." },
                             { text: "Elle élimine totalement les trajectoires des femmes pour éviter les biais de comparaison avec les pères.", isCorrect: false, rationale: "Faux : depuis plusieurs décennies, l'enquête FQP intègre pleinement les femmes et permet de mesurer leur mobilité propre." }
                         ]
                     },
                     {
-                        question: "Selon les tables de destinée de l'Insee, comment se caractérise globalement la trajectoire des individus nés dans le milieu ouvrier ?",
+                        question: "Selon les tables de destinée de l'Insee, comment se caractérise globalement la trajectoire des l'individus nés dans le milieu ouvrier ?",
                         options: [
                             { text: "Ils connaissent une forte immobilité sociale, l'accès au statut de cadre restant minoritaire.", isCorrect: true, rationale: "Malgré l'essor de la scolarisation, le milieu ouvrier reste marqué par une forte reproduction sociale. Devenir cadre supérieur reste une trajectoire minoritaire pour ce groupe d'origine." },
                             { text: "Ils connaissent un déclassement systématique et continu en raison de la mondialisation.", isCorrect: false, rationale: "Confusion : le déclassement signifie descendre dans la hiérarchie. Un fils d'ouvrier ne peut pas connaître de déclassement intergénérationnel, car il part déjà du bas de la nomenclature des PCS." },
@@ -1117,7 +1117,7 @@
                         question: "Qu'est-ce que l'autorecrutement d'une catégorie socioprofessionnelle (PCS) ?",
                         options: [
                             { text: "La proportion d'individus d'un groupe dont les parents appartenaient déjà à ce même groupe social.", isCorrect: true, rationale: "L'autorecrutement (visible sur la diagonale de la table de recrutement) mesure la part de la reproduction sociale interne vue du côté du recrutement actuel du groupe." },
-                            { text: "La capacité d'un chef d'entreprise à embaucher ses propres enfants pour assurer la succession de sa firme.", isCorrect: false, rationale: "Confusion : cela décrit le népotisme ou la transmission patrimoniale familiale directe, pas le concept macrosociologique d'autorecrutement." },
+                            { text: "La capacité d'un chef d'entreprise à embaucher ses propres enfants pour assurer la succession de sa firme.", isCorrect: false, rationale: "Confusion : cela décrit le népotisme ou la transmission patrimoniale familiale directe, pas le concept macro-sociologique d'autorecrutement." },
                             { text: "Le niveau d'adhésion syndicale ou d'engagement collectif enregistré au sein d'un secteur d'activité.", isCorrect: false, rationale: "Confusion complète : cela relève de la sociologie de l'action collective et du dialogue social, sans rapport avec la mobilité." },
                             { text: "Le fait pour un salarié de changer de poste au sein de la même entreprise sans modifier son statut juridique.", isCorrect: false, rationale: "Confusion : cela désigne une mobilité professionnelle interne ou une promotion interne, pas l'autorecrutement intergénérationnel." }
                         ]
@@ -1125,7 +1125,7 @@
                     {
                         question: "Quel rôle joue le capital social (réseau de relations) dans l'accès aux emplois de cadres supérieurs ?",
                         options: [
-                            { text: "Il facilite l'insertion en donnant accès aux opportunités du marché caché de l'emploi, à diplôme équivalent.", isCorrect: true, rationale: "À diplôme égal, les individus disposant d'un réseau relationnel familial influent s'insèrent plus facilement et plus rapidement dans le haut de l'échelle des emplois." },
+                            { text: "Il facilite l'insertion en donnant accès aux opportunités du marché caché de l'emploi, à diplôme équivalent.", isCorrect: true, rationale: "À diplôme égal, les l'individus disposant d'un réseau relationnel familial influent s'insèrent plus facilement et plus rapidement dans le haut de l'échelle des emplois." },
                             { text: "Il oblige les candidats d'origine populaire à repasser des examens universitaires de contrôle supplémentaires.", isCorrect: false, rationale: "Faux : le capital social est une ressource informelle et relationnelle, il ne modifie pas les règles officielles des examens universitaires." },
                             { text: "Il permet de réduire de manière automatique le montant des cotisations patronales dues par les employeurs.", isCorrect: false, rationale: "Confusion économique : les charges sociales dépendent des politiques d'allégement de l'État, pas des réseaux relationnels des candidats." },
                             { text: "Il remplace totalement l'exigence de diplômes, y compris pour l'accès aux professions réglementées comme les médecins.", isCorrect: false, rationale: "Faux : pour les professions réglementées (avocats, médecins, hauts fonctionnaires), le titre scolaire reste une condition obligatoire légale." }
@@ -1135,7 +1135,7 @@
                         question: "Qu'est-ce qu'une table de destinée 'parfaite' du point de vue de l'égalité des chances ?",
                         options: [
                             { text: "Une table où la probabilité d'accéder à un statut est rigoureusement identique, quel que soit le milieu social d'origine.", isCorrect: true, rationale: "Dans une société parfaitement fluide, l'origine sociale n'exercerait plus aucun déterminisme : la structure de répartition des enfants serait identique dans toutes les lignes de la table." },
-                            { text: "Une table où 100 % des individus se situent sur la diagonale de la reproduction sociale.", isCorrect: false, rationale: "Inversion complète : cela décrirait une société de castes figée, caractérisée par une immobilité totale et une absence d'égalité des chances." },
+                            { text: "Une table où 100 % des l'individus se situent sur la diagonale de la reproduction sociale.", isCorrect: false, rationale: "Inversion complète : cela décrirait une société de castes figée, caractérisée par une immobilité totale et une absence d'égalité des chances." },
                             { text: "Une table où la mobilité structurelle représente la totalité des trajectoires de changement enregistrées.", isCorrect: false, rationale: "Confusion : la mobilité structurelle est imposée par l'économie, elle n'indique pas si les chances d'accès à ces places sont égalitaires." },
                             { text: "Une table qui n'enregistre aucune trajectoire de déclin ou de mobilité descendante par rapport aux parents.", isCorrect: false, rationale: "Faux : la fluidité implique que les positions soient ouvertes à la hausse comme à la baisse ; une société fluide comporte aussi des trajectoires descendantes." }
                         ]
@@ -1144,7 +1144,7 @@
                         question: "En quoi les 'configurations familiales' (taille de la fratrie, rôle des parents) permettent-elles d'expliquer des trajectoires de mobilité atypiques ?",
                         options: [
                             { text: "Elles montrent que l'investissement éducatif ou des ressources spécifiques au sein du ménage peuvent favoriser des réussites paradoxales.", isCorrect: true, rationale: "La redistribution des capitaux au sein d'une fratrie ou l'attention portée à un enfant permettent d'expliquer les réussites paradoxales (transclasses) dans des milieux populaires." },
-                            { text: "Elles prouvent que la nomenclature de la CSP du père détermine de manière mathématique le destin de la descendance.", isCorrect: false, rationale: "Inversion : l'analyse des configurations montre au contraire pourquoi des individus échappent au déterminisme strict lié à la seule CSP du père." },
+                            { text: "Elles prouvent que la nomenclature de la CSP du père détermine de manière mathématique le destin de la descendance.", isCorrect: false, rationale: "Inversion : l'analyse des configurations montre au contraire pourquoi des l'individus échappent au déterminisme strict lié à la seule CSP du père." },
                             { text: "Elles contraignent l'ensemble des frères et sœurs à suivre exactement la même carrière professionnelle.", isCorrect: false, rationale: "Faux : l'étude des configurations familiales permet justement d'expliquer pourquoi des trajectoires divergentes apparaissent au sein d'une même fratrie." },
                             { text: "Elles annulent de façon systématique l'ensemble des effets négatifs liés au manque de capital économique initial.", isCorrect: false, rationale: "Faux : les configurations familiales modulent ou interagissent avec les ressources de départ, mais elles ne suppriment pas le poids des inégalités économiques." }
                         ]
@@ -1171,9 +1171,9 @@
                         question: "Quelle critique méthodologique peut-on faire à l'utilisation exclusive de la CSP du père pour mesurer la mobilité sociale ?",
                         options: [
                             { text: "Elle invisibilise le rôle croissant de l'activité et du diplôme des mères dans la trajectoire sociale des enfants.", isCorrect: true, rationale: "Avec la féminisation de la population active, la position sociale de la mère et son capital culturel influencent fortement la destinée des enfants. L'analyse par le seul père est devenue incomplète." },
-                            { text: "Elle double de manière artificielle le nombre total d'actifs comptabilisés dans les enquêtes nationales de l'Insee.", isCorrect: false, rationale: "Faux : la nomenclature classe les individus de façon exclusive, elle ne procède à aucun double comptage d'effectifs." },
+                            { text: "Elle double de manière artificielle le nom'bre total d'actifs comptabilisés dans les enquêtes nationales de l'Insee.", isCorrect: false, rationale: "Faux : la nomenclature classe les l'individus de façon exclusive, elle ne procède à aucun double comptage d'effectifs." },
                             { text: "Elle empêche les sociologues de prendre en compte le niveau de patrimoine économique de la famille.", isCorrect: false, rationale: "Faux : l'enquête FQP intègre d'autres questions sur le patrimoine, cette limite concerne la nomenclature des PCS elle-même, pas la comparaison avec le père." },
-                            { text: "Elle interdit de mesurer la mobilité géographique des individus d'une région à l'autre.", isCorrect: false, rationale: "Faux : les tables de mobilité sociale et les enquêtes sur les migrations résidentielles sont deux outils méthodologiques distincts." }
+                            { text: "Elle interdit de mesurer la mobilité géographique des l'individus d'une région à l'autre.", isCorrect: false, rationale: "Faux : les tables de mobilité sociale et les enquêtes sur les migrations résidentielles sont deux outils méthodologiques distincts." }
                         ]
                     }
                 ]
@@ -1216,7 +1216,7 @@
                         options: [
                             { text: "Le convoyeur mécanique (le travail à la chaîne) et la politique des hauts salaires pour créer des débouchés de masse.", isCorrect: true, rationale: "Ford mécanise la chaîne (le travailleur ne se déplace plus, c'est le produit qui défile) et augmente les salaires pour fidéliser la main-d'œuvre et créer des débouchés à la consommation de masse." },
                             { text: "La suppression complète de la hiérarchie pour accorder une autonomie totale et une polyvalence aux ouvriers des ateliers.", isCorrect: false, rationale: "Inversion complète : le fordisme maintient et rigidifie une hiérarchie pyramidale extrêmement stricte et autoritaire." },
-                            { text: "L'obligation légale imposée à l'ensemble de la main-d'œuvre ouvrière de détenir une part des actions de l'entreprise.", isCorrect: false, rationale: "Anachronisme : l'actionnariat salarié s'est développé bien après l'apogée du modèle fordiste traditionnel." },
+                            { text: "L'obligation légale imposée à l'ensemble de la main-d'œuvre ouvrière de détenir une part des actions de l'entreprise.", isCorrect: false, rationale: "Anachronisme : l'actionnariat salarié s'est d'éveloppé bien après l'apogée du modèle fordiste traditionnel." },
                             { text: "Le développement du travail à domicile (télétravail) pour réduire de manière significative les coûts fixes d'infrastructure.", isCorrect: false, rationale: "Anachronisme : le fordisme exige au contraire le regroupement physique de milliers d'ouvriers au sein de gigantesques usines." }
                         ]
                     },
@@ -1250,16 +1250,18 @@
                     {
                         question: "Selon Émile Durkheim, comment le travail moderne favorise-t-il la cohésion sociale ?",
                         options: [
-                            { text: "Par le développement de la solidarité organique, née de la spécialisation des tâches et de l'interdépendance des individus.", isCorrect: true, rationale: "Dans les sociétés modernes, la spécialisation des tâches fait que chacun a besoin des autres pour survivre (interdépendance), créant un lien social fort appelé solidarité organique." },
+                            { text: "Par le développement de la solidarité organique, née de la spécialisation des tâches et de l'interdépendance des l'individus.", isCorrect: true, rationale: "Dans les sociétés modernes, la spécialisation des tâches fait que chacun a besoin des autres pour survivre (interdépendance), créant un lien social fort appelé solidarité organique." },
                             { text: "En contraignant l'ensemble des acteurs à adopter des croyances religieuses et des valeurs parfaitement uniformes.", isCorrect: false, rationale: "Confusion : la ressemblance et l'uniformité de la conscience collective caractérisent la solidarité mécanique des sociétés traditionnelles." },
                             { text: "En supprimant l'expression des conflits collectifs et en interdisant le recours au droit de grève dans l'entreprise.", isCorrect: false, rationale: "Faux : Durkheim reconnaît l'existence de formes conflictuelles (anomiques), mais la tendance normale de la division du travail reste l'intégration." },
                             { text: "En veillant à ce que le risque d'exposition au chômage de masse affecte de façon rigoureusement égale toutes les catégories.", isCorrect: false, rationale: "Faux : le chômage est profondément inégalitaire et Durkheim l'analyserait comme une pathologie ou une rupture du lien social." }
                         ]
                     },
                     {
+                        question: "Qu'est-ce que la 'division du travail anomique' chez Émile Durkheim ?",
                         question: "Qu'est-ce que l'anomie chez Émile Durkheim ?",
                         options: [
                             { text: "Une forme pathologique où les mutations économiques trop rapides manquent de règles morales pour réguler les relations professionnelles.", isCorrect: true, rationale: "L'anomie chez Durkheim désigne un défaut de régulation : si les règles économiques et les contrats ne s'ajustent pas assez vite, les conflits s'enveniment et le lien social se fragilise." },
+                            { text: "Une situation où les mutations économiques trop rapides manquent de règles morales pour réguler les relations professionnelles.", isCorrect: true, rationale: "L'anomie chez Durkheim désigne un défaut de régulation : si les règles économiques et les contrats ne s'ajustent pas assez vite, les conflits s'enveniment et le lien social se fragilise." },
                             { text: "Une organisation où l'État impose de force une profession à chaque actif sans tenir compte de ses goûts.", isCorrect: false, rationale: "Confusion : cela correspond à la division du travail contrainte, une autre forme pathologique chez Durkheim." },
                             { text: "L'effondrement de la production matérielle provoqué par une panne générale des innovations techniques.", isCorrect: false, rationale: "Confusion : l'anomie est un concept purement moral et social de rupture normativiste, pas une crise technique d'appareil." },
                             { text: "Le passage spontané d'une solidarité organique vers un retour des structures de la solidarité mécanique.", isCorrect: false, rationale: "Faux : pour Durkheim, l'évolution des sociétés est historique et linéaire, on ne revient pas en arrière vers la solidarité mécanique." }
@@ -1305,15 +1307,15 @@
                         question: "En quoi la 'disqualification sociale' de Serge Paugam se distingue-t-elle de la désaffiliation de Castel ?",
                         options: [
                             { text: "Paugam insiste sur l'identité négative, le regard des autres et la stigmatisation liés au statut d'assisté social.", isCorrect: true, rationale: "La disqualification sociale est une approche par l'identité : comment l'individu subit le regard des autres (les services sociaux, l'entourage) qui le stigmatisent comme 'assisté', dégradant son estime de soi." },
-                            { text: "Paugam postule que la perte d'activité n'exerce aucun impact sur l'estime de soi ou sur les réseaux de relations amicaux.", isCorrect: false, rationale: "Inversion complète : toute l'œuvre de Paugam s'attache à démontrer la souffrance morale, la honte et la perte de reconnaissance vécues." },
-                            { text: "La disqualification de Paugam s'applique-t-elle de façon exclusive aux cadres supérieurs qui décident de quitter volontairement leur firme.", isCorrect: false, rationale: "Faux : elle décrit le parcours identitaire des usagers des services sociaux et des populations les plus précarisées des milieux populaires." },
+                            { text: "Paugam postule que la perte d'activité n'exerce aucun impact sur l'estime de soi ou sur les réseaux de relations amicaux.", isCorrect: false, rationale: "Inversion complète : toute l'œuvre de Paugam s'attache à d'émontrer la souffrance morale, la honte et la perte de reconnaissance vécues." },
+                            { text: "La disqualification de Paugam s'apply-t-elle de façon exclusive aux cadres supérieurs qui décident de quitter volontairement leur firme.", isCorrect: false, rationale: "Faux : elle décrit le parcours identitaire des usagers des services sociaux et des populations les plus précarisées des milieux populaires." },
                             { text: "La disqualification désigne une procédure de sanction lourde prononcée par un conseil de discipline au sein d'un établissement scolaire.", isCorrect: false, rationale: "Contresens littéral : c'est une confusion avec l'usage commun ou scolaire du terme, sans rapport avec la théorie sociologique de la pauvreté." }
                         ]
                     },
                     {
                         question: "Qu'est-ce que le 'travail à temps partiel subi' ?",
                         options: [
-                            { text: "La situation d'un actif sous contrat à durée réduite qui exprimerait la volonté de travailler un nombre d'heures supérieur.", isCorrect: true, rationale: "Le temps partiel subi est une forme de sous-emploi qui touche majoritairement les femmes et les individus peu qualifiés du secteur des services, matérialisant la précarité du marché." },
+                            { text: "La situation d'un actif sous contrat à durée réduite qui exprimerait la volonté de travailler un nombre d'heures supérieur.", isCorrect: true, rationale: "Le temps partiel subi est une forme de sous-emploi qui touche majoritairement les femmes et les l'individus peu qualifiés du secteur des services, matérialisant la précarité du marché." },
                             { text: "L'obligation réglementaire d'effectuer ses fonctions professionnelles uniquement pendant la nuit ou le week-end.", isCorrect: false, rationale: "Confusion : cela correspond à des horaires décalés ou atypiques, pas à la définition du sous-emploi horaire." },
                             { text: "La décision d'un cadre d'aménager son temps d'activité à 80 % pour son confort personnel.", isCorrect: false, rationale: "C'est du temps partiel choisi, souvent motivé par des critères d'articulation des temps personnels, sans rapport avec le sous-emploi." },
                             { text: "La baisse de la durée légale hebdomadaire du travail décidée de manière macroéconomique par l'État.", isCorrect: false, rationale: "C'est une loi de politique économique de partage du temps de travail (ex: les 35 heures), pas du temps partiel subi individuel." }
@@ -1333,10 +1335,19 @@
                         options: [
                             { text: "Le recours à des travailleurs indépendants dont l'activité est pilotée par une plateforme, créant un risque de subordination sans les protections du salariat.", isCorrect: true, rationale: "L'ubérisation bouscule le modèle salarial traditionnel en externalisant l'activité vers des auto-entrepreneurs exposés au marché, souvent privés de protections sociales fortes." },
                             { text: "La nationalisation par les administrations d'État de l'ensemble des réseaux logistiques urbains.", isCorrect: false, rationale: "Inversion complète : le modèle des plateformes relève de l'économie de marché numérique dérégulée, à l'opposé de la nationalisation." },
-                            { text: "L'obligation légale de distribuer des actions de l'entreprise à tous les salariés du secteur des services.", isCorrect: false, rationale: "Faux : il n'y a pas de lien logique ou de loi unifiant ubérisation et actionnariat des individus." },
+                            { text: "L'obligation légale de distribuer des actions de l'entreprise à tous les salariés du secteur des services.", isCorrect: false, rationale: "Faux : il n'y a pas de lien logique ou de loi unifiant ubérisation et actionnariat des l'individus.", isCorrect: false, rationale: "Faux : les chauffeurs de plateformes possèdent leur outil, mais c'est l'effet de leur statut indépendant." },
                             { text: "Le déclin de l'usage des outils numériques au profit d'un retour exclusif aux circuits de distribution traditionnels.", isCorrect: false, rationale: "Inversion technique totale : l'ubérisation repose entièrement sur les applications mobiles, les algorithmes de mise en relation et l'intégration numérique." }
                         ]
                     },
+                   {
+    question: "Qu'est-ce que l'ubérisation de l'économie d'un point de vue du statut d'emploi ?",
+    options: [
+        { text: "Le recours à des travailleurs indépendants dont l'activité est pilotée par une plateforme, créant un risque de subordination sans les protections du salariat.", isCorrect: true, rationale: "L'ubérisation bouscule le modèle salarial traditionnel en externalisant l'activité vers des auto-entrepreneurs exposés au marché, souvent privés de protections sociales fortes." },
+        { text: "La nationalisation par les administrations d'État de l'ensemble des réseaux logistiques urbains.", isCorrect: false, rationale: "Inversion complète : le modèle des plateformes relève de l'économie de marché numérique dérégulée, à l'opposé de la nationalisation." },
+        { text: "L'obligation légale de distribuer des actions de l'entreprise à tous les salariés du secteur des services.", isCorrect: false, rationale: "Faux : il n'y a pas de lien logique ou de loi unifiant ubérisation et actionnariat des individus." },
+        { text: "Le déclin de l'usage des outils numériques au profit d'un retour exclusif aux circuits de distribution traditionnels.", isCorrect: false, rationale: "Inversion technique totale : l'ubérisation repose entièrement sur les applications mobiles, les algorithmes de mise en relation et l'intégration numérique." }
+    ]
+},
                     {
                         question: "Quel risque de santé psychologique est lié à l'intensification du travail post-taylorien ?",
                         options: [
@@ -1359,8 +1370,8 @@
                         question: "Comment se définit le rôle du travail comme instance majeure d'intégration sociale ?",
                         options: [
                             { text: "Il procure un revenu, confère une identité (statut), ouvre des droits sociaux et offre un réseau de sociabilité stable.", isCorrect: true, rationale: "L'emploi stable (CDI) est le pivot de l'intégration sociale dans les sociétés modernes. Il offre une protection contre les risques de la vie et un ancrage relationnel lourd." },
-                            { text: "Il garantit de manière automatique l'accès à la classe supérieure pour l'ensemble des actifs diplômés.", isCorrect: false, rationale: "Faux : le travail intègre les individus à la société mais ne supprime pas les inégalités économiques ou les mécanismes de reproduction." },
-                            { text: "Il remplace et annule de façon définitive le rôle de la famille dans la socialisation primaire des individus.", isCorrect: false, rationale: "Erreur de cours : le travail intervient lors de la socialisation secondaire (vie adulte), il ne supprime pas l'influence de la famille (socialisation primaire)." },
+                            { text: "Il garantit de manière automatique l'accès à la classe supérieure pour l'ensemble des actifs diplômés.", isCorrect: false, rationale: "Faux : le travail intègre les l'individus à la société mais ne supprime pas les inégalités économiques ou les mécanismes de reproduction." },
+                            { text: "Il remplace et annule de façon définitive le rôle de la famille dans la socialisation primaire des l'individus.", isCorrect: false, rationale: "Erreur de cours : le travail intervient lors de la socialisation secondaire (vie adulte), il ne supprime pas l'influence de la famille (socialisation primaire)." },
                             { text: "Il élimine l'ensemble des clivages idéologiques ou politiques en unifiant les consommations des salariés.", isCorrect: false, rationale: "Faux : malgré l'accès à l'emploi et à la consommation de masse, les fractures politiques et sociologiques restent très marquées." }
                         ]
                     }
@@ -1376,7 +1387,7 @@
                         question: "Qu'est-ce que le 'paradoxe de l'action collective' mis en évidence par Mancur Olson ?",
                         options: [
                             { text: "Un acteur rationnel peut refuser de s'engager si les bénéfices de l'action profitent à tous sans contrepartie.", isCorrect: true, rationale: "Puisqu'un bien collectif bénéficie à tous (y compris à ceux qui n'ont pas participé), un individu rationnel préfère ne pas supporter les coûts individuels de l'engagement (temps, argent, risques) tout en profitant des gains." },
-                            { text: "Les individus les plus diplômés de la société refusent de militer par manque de compétences politiques théoriques.", isCorrect: false, rationale: "Confusion de concept : cela fait référence au cens caché ou au sentiment d'incompétence politique théorisé par Daniel Gaxie, pas au paradoxe d'Olson." },
+                            { text: "Les l'individus les plus diplômés de la société refusent de militer par manque de compétences politiques théoriques.", isCorrect: false, rationale: "Confusion de concept : cela fait référence au cens caché ou au sentiment d'incompétence politique théorisé par Daniel Gaxie, pas au paradoxe d'Olson." },
                             { text: "La baisse continue de la participation électorale s'explique par la disparition des conflits de classe au travail.", isCorrect: false, rationale: "Confusion : cela correspond aux débats sur la moyennisation ou l'effritement de la conscience de classe, hors sujet ici." },
                             { text: "Les syndicats de salariés refusent de collaborer avec les partis politiques lors des mouvements sociaux régionaux.", isCorrect: false, rationale: "Faux : il s'agit d'un constat de stratégie d'alliances politiques, sans rapport avec le calcul coût-bénéfice individuel du paradoxe d'Olson." }
                         ]
@@ -1413,7 +1424,7 @@
                         options: [
                             { text: "Le cens caché, qui montre comment l'inégal accès au diplôme engendre une barrière invisible à la participation.", isCorrect: true, rationale: "Le cens caché décrit comment l'inégal accès à la culture et aux diplômes crée chez les classes populaires un sentiment d'incompétence politique, reproduisant de fait l'exclusion politique sans barrière légale." },
                             { text: "Le paradoxe d'Anderson, qui mesure la perte de rendement social des titres et diplômes scolaires sur le marché du travail.", isCorrect: false, rationale: "Confusion majeure avec le chapitre sur la mobilité sociale : le paradoxe d'Anderson traite du déclassement scolaire." },
-                            { text: "La trappe à inactivité, qui réduit l'incitation financière des individus lors d'une reprise d'emploi sur le marché.", isCorrect: false, rationale: "Confusion majeure avec le chapitre sur le chômage : il s'agit d'un concept lié au système socio-fiscal." },
+                            { text: "La trappe à inactivité, qui réduit l'incitation financière des l'individus lors d'une reprise d'emploi sur le marché.", isCorrect: false, rationale: "Confusion majeure avec le chapitre sur le chômage : il s'agit d'un concept lié au système socio-fiscal." },
                             { text: "L'effet d'éviction, qui désigne la baisse des investissements privés provoquée par le niveau d'endettement de l'État.", isCorrect: false, rationale: "Confusion complète avec un concept de macroéconomie financière (politique budgétaire de relance)." }
                         ]
                     },
@@ -1465,9 +1476,9 @@
                     {
                         question: "Quelle est la définition de la 'consommation engagée' ?",
                         options: [
-                            { text: "Le choix d'achat ou de rejet de produits fondé sur des critères éthiques, écologiques ou politiques (boycott / buycott).", isCorrect: true, rationale: "La consommation engagée permet aux individus d'exprimer des positions politiques directement par leurs actes d'achat quotidiens." },
+                            { text: "Le choix d'achat ou de rejet de produits fondé sur des critères éthiques, écologiques ou politiques (boycott / buycott).", isCorrect: true, rationale: "La consommation engagée permet aux l'individus d'exprimer des positions politiques directement par leurs actes d'achat quotidiens." },
                             { text: "L'obligation pour les citoyens d'acheter l'intégralité de leurs denrées au sein de magasins gérés par l'État.", isCorrect: false, rationale: "Confusion complète : cela correspond à une économie planifiée ou de rationnement étatique, à l'opposé d'un choix engagé individuel." },
-                            { text: "L'élévation de la part des dépenses de consommation courante au sein des arbitrages budgétaires globaux du Trésor public.", isCorrect: false, rationale: "Confusion d'indicateur : cela désigne les dépenses de fonctionnement des administrations, sans rapport avec le militantisme des consommateurs." },
+                            { text: "L'élévation de la part des d'épenses de consommation courante au sein des arbitrages budgétaires globaux du Trésor public.", isCorrect: false, rationale: "Confusion d'indicateur : cela désigne les dépenses de fonctionnement des administrations, sans rapport avec le militantisme des consommateurs." },
                             { text: "Le comportement consistant à s'approvisionner de façon exclusive en biens industriels issus de marchés extérieurs lointains.", isCorrect: false, rationale: "Faux : la consommation engagée valorise plutôt les circuits courts, le commerce équitable ou la production locale (consom'action) pour réduire l'empreinte." }
                         ]
                     },
@@ -1492,7 +1503,7 @@
                     {
                         question: "Comment Albert Hirschman classe-t-il les réactions des citoyens face aux dysfonctionnements des organisations (modèle EVL) ?",
                         options: [
-                            { text: "Exit (défection et retrait), Voice (protestation et prise de parole) et Loyalty (fidélité et maintien).", isCorrect: true, rationale: "Ce modèle (Exit, Voice, Loyalty) explique comment les individus réagissent au sein d'un groupe (ex: quitter un parti (Exit) ou manifester (Voice))." },
+                            { text: "Exit (défection et retrait), Voice (protestation et prise de parole) et Loyalty (fidélité et maintien).", isCorrect: true, rationale: "Ce modèle (Exit, Voice, Loyalty) explique comment les l'individus réagissent au sein d'un groupe (ex: quitter un parti (Exit) ou manifester (Voice))." },
                             { text: "Election (scrutin public), Vote (expression du suffrage) et Liberté (garantie constitutionnelle).", isCorrect: false, rationale: "Ce sont des notions de science politique générale, pas le modèle triadique d'Hirschman." },
                             { text: "Engagement (participation active), Volontariat (bénévolat associatif) et Lutte (conflit ouvert).", isCorrect: false, rationale: "Ces termes décrivent l'action, mais ne correspondent pas aux catégories analytiques d'Hirschman." },
                             { text: "Exclusion (relégation sociale), Violence (affrontements physiques) et Laxisme (défaillance de contrôle).", isCorrect: false, rationale: "Ce ne sont pas les trois options fondamentales modélisées par Hirschman pour l'action au sein des groupes." }
@@ -1561,7 +1572,7 @@
                 color: "from-teal-500 to-green-600",
                 questions: [
                     {
-                        question: "Quels sont les différents types d'acteurs qui participent à la mise à l'agenda des questions environnementales ?",
+                        question: "Quers sont les différents types d'acteurs qui participent à la mise à l'agenda des questions environnementales ?",
                         options: [
                             { text: "Les pouvoirs publics, les ONG, les partis politiques, les entreprises, les scientifiques et les mouvements citoyens.", isCorrect: true, rationale: "La mise à l'agenda politique résulte des interactions (conflits, négociations) entre une multitude d'acteurs d'échelles différentes." },
                             { text: "L'Organisation des Nations Unies de manière centralisée, unilatérale et sans concertation avec les échelons locaux.", isCorrect: false, rationale: "Faux : l'action publique environnementale implique de vifs conflits et des interactions entre une multitude d'échelons locaux et nationaux." },
@@ -1615,7 +1626,7 @@
                         ]
                     },
                     {
-                        question: "Comment fonctionne un marché de quotas d'émission de carbone (marché européen du carbone) ?",
+                        question: "Comment fonctionne un marché de quotas d'emission de carbone (marché européen du carbone) ?",
                         options: [
                             { text: "L'État fixe un plafond global d'émissions et distribue des permis que les entreprises peuvent s'échanger selon leurs besoins.", isCorrect: true, rationale: "C'est le système du 'Cap and Trade' (plafond et marché) : il donne un prix de marché au carbone, ce qui incite financièrement à la décarbonation." },
                             { text: "L'État prélève une taxe fixe sur chaque tonne de carbone émise par les usines de production du pays.", isCorrect: false, rationale: "Confusion d'instrument : le marché de quotas laisse le prix fluctuer selon l'offre et la demande, contrairement à la taxe dont le montant est fixé par l'État." },
@@ -1636,7 +1647,7 @@
                         question: "Pourquoi les négociations internationales sur le climat sont-elles exposées aux stratégies de 'passager clandestin' ?",
                         options: [
                             { text: "Le climat est un bien commun mondial : un État peut refuser d'agir tout en profitant des efforts de décarbonation des autres.", isCorrect: true, rationale: "Faute d'État mondial pour contraindre les pays souverains, chacun a intérêt à laisser les autres supporter le coût de la transition écologique tout en profitant des retombées positives." },
-                            { text: "Les pays en développement refusent d'assister aux sommets car ils n'émettent aucun gaz à effet de serre.", isCorrect: false, rationale: "Faux : ils participent activement aux COP pour défendre leurs intérêts et réclamer des aides au titre de la justice climatique." },
+                            { text: "Les pays en développement refusent d'assister aux sommets car ils n'émettent aucun gaz à effet de serre.", isCorrect: false, rationale: "Faux : ils participent activement aux COP pour d'éfendre leurs intérêts et réclamer des aides au titre de la justice climatique." },
                             { text: "Les traités internationaux obligent tous les parlements à adopter de manière rigoureuse les mêmes lois budgétaires.", isCorrect: false, rationale: "Faux : les traités climatiques actuels (comme l'Accord de Paris) reposent sur des contributions nationales volontaires et non contraignantes." },
                             { text: "Les pays développés interdisent de façon stricte aux pays émergents d'investir dans les énergies renouvelables.", isCorrect: false, rationale: "Faux : c'est un non-sens géopolitique, les traités encouragent au contraire le transfert de technologies propres vers le Sud." }
                         ]
@@ -1723,7 +1734,7 @@
                         ]
                     },
                     {
-                        question: "Quelle est la particularité de la 'directive européenne sur la qualité de l'air' ?",
+                        question: "Quelle est la BIEN-SUR-LA-QUALITE-DE-L-AIR particularité de la 'directive européenne sur la qualité de l'air' ?",
                         options: [
                             { text: "Elle fixe des seuils limites de polluants contraignants, permettant des poursuites juridiques contre les États membres défaillants.", isCorrect: true, rationale: "Cette directive est un outil juridique puissant. Plusieurs pays (dont la France) ont été condamnés par la justice européenne pour non-respect de ces normes de santé." },
                             { text: "Elle décrète l'interdiction complète, immédiate et irréversible de l'utilisation de tous les vols aériens commerciaux.", isCorrect: false, rationale: "Faux : le transport aérien reste autorisé bien que soumis à des débats sur sa fiscalité carbone, la directive traitant des polluants atmosphériques urbains (particules)." },
@@ -1735,6 +1746,7 @@
                         question: "Qu'est-ce qu'une 'externalité négative' en économie de l'environnement ?",
                         options: [
                             { text: "Un dommage causé par l'activité d'un agent économique à un tiers sans qu'il y ait de compensation financière.", isCorrect: true, rationale: "La pollution ou les rejets de CO2 d'une usine sont des externalités négatives typiques : elles infligent un coût à la société sans que le pollueur ne le paye spontanément." },
+                            { text: "Un dommage causé par l'activité d'un agent économique à un tiers sans qu'il y ait de compensation monétaire.", isCorrect: true, rationale: "La pollution ou les rejets de CO2 d'une usine sont des externalités négatives typiques : elles infligent un coût à la société sans que le pollueur ne le paye spontanément." },
                             { text: "La baisse du chiffre d'affaires d'une entreprise provoquée par l'arrivée d'un nouveau concurrent sur le marché.", isCorrect: false, rationale: "Confusion : cela fait partie des risques normaux du jeu concurrentiel de marché, pas d'une externalité hors-marché." },
                             { text: "Le montant de la taxe que l'État impose aux entreprises installées en dehors des zones urbaines.", isCorrect: false, rationale: "Confusion : la taxe est un instrument politique pour corriger l'externalité (internalisation), elle n'est pas l'externalité elle-même." },
                             { text: "La perte de valeur d'une monnaie nationale constatée sur le marché des changes face au dollar.", isCorrect: false, rationale: "Confusion complète avec un phénomène de macroéconomie monétaire (dépréciation des changes)." }
@@ -1743,8 +1755,13 @@
                 ]
             }
         ];
+    </script>
 
-        // Base de données des Auteurs et Citations
+    <!-- React App Mounting Script -->
+<script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // Base de données des Auteurs et Citations pour Dissertation / EC3
         const authorsData = [
             {
                 name: "Joseph Schumpeter",
@@ -1822,16 +1839,13 @@
         };
 
         function App() {
-            const [gradeLevel, setGradeLevel] = useState('terminale');
             const [selectedChapter, setSelectedChapter] = useState(null);
             const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
             const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
             const [isSubmitted, setIsSubmitted] = useState(false);
             const [score, setScore] = useState(0);
             const [userAnswers, setUserAnswers] = useState([]);
-            const [view, setView] = useState('dashboard');
-
-            const currentQuizData = gradeLevel === 'premiere' ? quizDataPremiere : quizDataTerminale;
+            const [view, setView] = useState('dashboard'); // 'dashboard', 'quiz', 'summary', 'authors'
 
             // Réserve d'erreurs
             const [wrongQuestions, setWrongQuestions] = useState(() => {
@@ -1846,16 +1860,18 @@
                 return saved ? JSON.parse(saved) : {};
             });
 
-            // Chronomètre
+            // Chronomètre de 15 minutes
             const [isTimerActive, setIsTimerActive] = useState(false);
             const [timeLeft, setTimeLeft] = useState(900);
 
+            // Prise en charge du rendu LaTeX
             useEffect(() => {
                 if (window.MathJax && window.MathJax.typeset) {
                     window.MathJax.typeset();
                 }
             }, [currentQuestionIndex, view, isSubmitted]);
 
+            // Gestion du compte à rebours
             useEffect(() => {
                 let timer;
                 if (view === 'quiz' && isTimerActive && timeLeft > 0) {
@@ -1876,7 +1892,7 @@
 
             const handleStartQuiz = (chapter) => {
                 setIsRemediationMode(false);
-                const originalChapter = currentQuizData.find(c => c.id === chapter.id) || chapter;
+                const originalChapter = quizData.find(c => c.id === chapter.id) || chapter;
                 const randomQuestions = shuffle(originalChapter.questions);
                 const finalShuffledQuestions = randomQuestions.map(q => ({
                     ...q,
@@ -1890,17 +1906,12 @@
                 resetQuizState();
             };
 
-            const handleStartGlobalExam = () => {
+            const handleStartBacBlanc = () => {
                 setIsRemediationMode(false);
                 let poolGlobal = [];
-                currentQuizData.forEach(chap => {
+                quizData.forEach(chap => {
                     poolGlobal = poolGlobal.concat(chap.questions);
                 });
-
-                if (poolGlobal.length === 0) {
-                    alert("Les questions de 1ère sont en cours d'intégration (Étape 2 & 3).");
-                    return;
-                }
 
                 const pickedQuestions = shuffle(poolGlobal).slice(0, 20);
                 const finalQuestions = pickedQuestions.map(q => ({
@@ -1909,8 +1920,8 @@
                 }));
 
                 setSelectedChapter({
-                    id: gradeLevel === 'premiere' ? "marathon_premiere" : "bac_blanc",
-                    title: gradeLevel === 'premiere' ? "Grand Marathon de 1ère - Épreuve Globale" : "Marathon Bac Blanc - Épreuve Globale",
+                    id: "bac_blanc",
+                    title: "Marathon Bac Blanc - Épreuve Globale",
                     questions: finalQuestions
                 });
                 resetQuizState();
@@ -2013,124 +2024,104 @@
             const errorsCleared = errorBaseline - wrongQuestions.length;
             const recoveryPercent = errorBaseline > 0 ? Math.round((errorsCleared / errorBaseline) * 100) : 0;
 
-            const examId = gradeLevel === 'premiere' ? "marathon_premiere" : "bac_blanc";
-            const bestExamScore = highScores[examId];
-            let examMedal = null;
-            if (bestExamScore !== undefined) {
-                if (bestExamScore === 20) examMedal = "🥇";
-                else if (bestExamScore >= 16) examMedal = "🥈";
-                else if (bestExamScore >= 10) examMedal = "🥉";
+            const bestBacScore = highScores["bac_blanc"];
+            let bacMedal = null;
+            if (bestBacScore !== undefined) {
+                if (bestBacScore === 20) bacMedal = "🥇";
+                else if (bestBacScore >= 16) bacMedal = "🥈";
+                else if (bestBacScore >= 10) bacMedal = "🥉";
             }
 
             return (
                 <div class="min-h-screen flex flex-col justify-between">
+                    {/* BARRE DE NAVIGATION BANDEAU */}
                     <header class="bg-white border-b border-slate-200 py-4 shadow-sm sticky top-0 z-50">
-                        <div class="max-w-5xl mx-auto px-4 flex flex-wrap gap-4 justify-between items-center">
+                        <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
                             <div class="flex items-center space-x-3 cursor-pointer" onClick={() => setView('dashboard')}>
                                 <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-2.5 rounded-xl text-white shadow-md shadow-indigo-100">
                                     <i class="fa-solid fa-graduation-cap text-xl"></i>
                                 </div>
                                 <div>
-                                    <h1 class="font-extrabold text-lg text-slate-900 tracking-tight">SES Master Quiz - M. Chachero</h1>
-                                    <p class="text-xs text-slate-500 font-medium">Spécialité SES Lycée</p>
+                                    {/* MODIFIÉ : AJOUT DE VOTRE NOM DIRECTEMENT ICI */}
+                                    <h1 class="font-extrabold text-lg text-slate-900 tracking-tight">SES Terminale - M. Chachero</h1>
+                                    <p class="text-xs text-slate-500 font-medium">Révisions du Baccalauréat</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-center space-x-2 sm:space-x-3">
-                                {view === 'dashboard' && (
-                                    <div class="flex bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-bold">
-                                        <button 
-                                            onClick={() => setGradeLevel('premiere')} 
-                                            class={`px-3 py-1.5 rounded-lg transition ${gradeLevel === 'premiere' ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
-                                        >
-                                            1ère Spécialité
-                                        </button>
-                                        <button 
-                                            onClick={() => setGradeLevel('terminale')} 
-                                            class={`px-3 py-1.5 rounded-lg transition ${gradeLevel === 'terminale' ? 'bg-white text-blue-600 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}
-                                        >
-                                            Terminale (Bac)
-                                        </button>
-                                    </div>
-                                )}
-
+                            <div class="flex items-center space-x-3">
+                                {/********* BOUTON REMÉDIATION *********/}
                                 {(view === 'dashboard' || view === 'authors') && (
                                     <button 
                                         onClick={wrongQuestions.length > 0 ? handleStartRemediation : null}
                                         disabled={wrongQuestions.length === 0}
-                                        class={`text-xs sm:text-sm font-bold px-3 py-2 rounded-xl flex items-center space-x-1.5 transition border ${
+                                        class={`text-sm font-bold px-3 py-2 rounded-xl flex items-center space-x-1.5 transition border ${
                                             wrongQuestions.length > 0 
-                                                ? "text-amber-700 bg-amber-50 hover:bg-amber-100 border-amber-200 shadow-sm" 
+                                                ? "text-amber-700 bg-amber-50 hover:bg-amber-100 border-amber-200 shadow-sm shadow-amber-50" 
                                                 : "text-slate-400 bg-slate-50 border-slate-200 opacity-60 cursor-not-allowed"
                                         }`}
                                     >
                                         <i class="fa-solid fa-kit-medical"></i>
-                                        <span>Erreurs {wrongQuestions.length > 0 ? `(${wrongQuestions.length})` : ""}</span>
+                                        <span>Remédiation {wrongQuestions.length > 0 ? `(${wrongQuestions.length} | ${recoveryPercent}%)` : ""}</span>
                                     </button>
                                 )}
 
+                                {/********* BOUTON CITATIONS & AUTEURS *********/}
                                 {view !== 'authors' && (
                                     <button 
                                         onClick={() => setView('authors')}
-                                        class="text-xs sm:text-sm font-bold text-indigo-600 hover:text-indigo-800 bg-indigo-50 hover:bg-indigo-100 px-3 py-2 rounded-xl flex items-center space-x-1.5 transition border border-indigo-100"
+                                        class="text-sm font-bold text-indigo-600 hover:text-indigo-800 bg-indigo-50 hover:bg-indigo-100 px-3 py-2 rounded-xl flex items-center space-x-1.5 transition border border-indigo-100"
                                     >
                                         <i class="fa-solid fa-book-bookmark"></i>
-                                        <span class="hidden md:inline">Citations & Auteurs</span>
+                                        <span class="hidden sm:inline">Citations & Auteurs</span>
                                     </button>
                                 )}
-                                
                                 {view !== 'dashboard' && (
-                                    <button onClick={() => setView('dashboard')} class="text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 flex items-center space-x-1.5 transition">
+                                    <button onClick={() => setView('dashboard')} class="text-sm font-semibold text-slate-600 hover:text-slate-900 flex items-center space-x-1.5 transition">
                                         <i class="fa-solid fa-arrow-left"></i>
-                                        <span>Accueil</span>
+                                        <span>Retour</span>
                                     </button>
                                 )}
                             </div>
                         </div>
                     </header>
 
+                    {/* ZONE CENTRALE DYNAMIQUE */}
                     <main class="max-w-5xl w-full mx-auto px-4 py-8 flex-grow flex items-center justify-center">
 
+                        {/* VIEW 1 : TABLEAU DE BORD ACCUEIL */}
                         {view === 'dashboard' && (
                             <div class="w-full">
                                 <div class="text-center mb-8">
-                                    <span class="bg-indigo-50 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
-                                        Niveau : {gradeLevel === 'premiere' ? 'Spécialité Première' : 'Spécialité Terminale (Baccalauréat)'}
-                                    </span>
-                                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-3 mb-2">
-                                        {gradeLevel === 'premiere' ? 'Entraînement Première SES' : "S'entraîner pour le Baccalauréat"}
-                                    </h2>
-                                    <p class="text-slate-500 max-w-xl mx-auto text-sm">
-                                        Choisissez un chapitre ou lancez une épreuve globale pour tester vos acquis.
-                                    </p>
+                                    <span class="bg-indigo-50 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Session Active : Mode Autonome</span>
+                                    <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-3 mb-2">Entraînez-vous pour l'Épreuve Écrite</h2>
+                                    <p class="text-slate-500 max-w-xl mx-auto text-sm">Configurez l'évaluation puis cliquez sur le bouton d'examen global ou choisissez un chapitre thématique.</p>
                                 </div>
 
+                                {/* PANNEAU DE COMMANDE COMBINÉ (CHRONO + MARATHON BAC BLANC ACCOLLÉS) */}
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-10">
                                     <div class="flex items-center space-x-4 bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
                                         <div class="bg-slate-100 p-2.5 rounded-xl text-slate-600"><i class="fa-solid fa-stopwatch text-lg"></i></div>
                                         <div class="flex-grow">
-                                            <span class="block text-sm font-bold text-slate-800">Mode Chronométré</span>
-                                            <span class="block text-xs text-slate-400 font-medium">15 minutes par session</span>
+                                            <span class="block text-sm font-bold text-slate-800">Mode Examen Chronométré</span>
+                                            <span class="block text-xs text-slate-400 font-medium">15 minutes pour finir la session</span>
                                         </div>
                                         <button onClick={() => setIsTimerActive(!isTimerActive)} class={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ${isTimerActive ? 'bg-blue-600' : 'bg-slate-200'}`}>
                                             <span class={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out ${isTimerActive ? 'translate-x-5' : 'translate-x-0'}`}></span>
                                         </button>
                                     </div>
 
-                                    <div class="bg-gradient-to-br from-violet-600 to-indigo-700 text-white border border-indigo-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition duration-300 flex items-center justify-between cursor-pointer group" onClick={handleStartGlobalExam}>
+                                    <div class="bg-gradient-to-br from-violet-600 to-indigo-700 text-white border border-indigo-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition duration-300 flex items-center justify-between cursor-pointer group" onClick={handleStartBacBlanc}>
                                         <div class="flex items-center space-x-4">
                                             <div class="w-10 h-10 rounded-xl bg-white/20 text-white flex items-center justify-center shadow-md"><i class="fa-solid fa-file-signature text-base"></i></div>
                                             <div>
-                                                <h3 class="font-extrabold text-white text-sm leading-tight">
-                                                    {gradeLevel === 'premiere' ? 'Grand Marathon 1ère' : 'Marathon Bac Blanc'}
-                                                </h3>
+                                                <h3 class="font-extrabold text-white text-sm leading-tight">Marathon Bac Blanc</h3>
                                                 <p class="text-[11px] text-indigo-100 font-medium">20 questions transversales</p>
                                             </div>
                                         </div>
                                         <div class="flex items-center space-x-2">
-                                            {bestExamScore !== undefined && (
+                                            {bestBacScore !== undefined && (
                                                 <span class="text-xs font-extrabold bg-white/20 px-2 py-0.5 rounded-full border border-white/10">
-                                                    {examMedal} {bestExamScore}/20
+                                                    {bacMedal} {bestBacScore}/20
                                                 </span>
                                             )}
                                             <i class="fa-solid fa-play group-hover:translate-x-1 transition text-xs"></i>
@@ -2138,58 +2129,52 @@
                                     </div>
                                 </div>
 
-                                {currentQuizData.length === 0 ? (
-                                    <div class="text-center py-12 bg-white rounded-3xl border border-slate-200 p-8 shadow-sm">
-                                        <i class="fa-solid fa-spinner fa-spin text-3xl text-blue-600 mb-4"></i>
-                                        <h3 class="font-bold text-lg text-slate-800">Chapitres de 1ère en cours de chargement</h3>
-                                        <p class="text-slate-500 text-sm mt-1">Nous injectons les questions dans les étapes suivantes.</p>
-                                    </div>
-                                ) : (
-                                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                        {currentQuizData.map((chap) => {
-                                            const bestScore = highScores[chap.id];
-                                            let medalElement = null;
+                                {/* GRILLE DES 9 CHAPITRES */}
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {quizData.map((chap) => {
+                                        const bestScore = highScores[chap.id];
+                                        let medalElement = null;
 
-                                            if (bestScore !== undefined) {
-                                                const successRatio = bestScore / chap.questions.length;
-                                                if (successRatio === 1) medalElement = { icon: "fa-trophy text-amber-500 text-lg", bg: "bg-amber-50 border-amber-200 text-amber-800" };
-                                                else if (successRatio >= 0.75) medalElement = { icon: "fa-medal text-slate-400 text-lg", bg: "bg-slate-50 border-slate-200 text-slate-700" };
-                                                else if (successRatio >= 0.5) medalElement = { icon: "fa-medal text-amber-700 text-lg", bg: "bg-orange-50 border-orange-100 text-orange-800" };
-                                            }
+                                        if (bestScore !== undefined) {
+                                            const successRatio = bestScore / chap.questions.length;
+                                            if (successRatio === 1) medalElement = { icon: "fa-trophy text-amber-500 text-lg", bg: "bg-amber-50 border-amber-200 text-amber-800", text: "🥇 Or" };
+                                            else if (successRatio >= 0.75) medalElement = { icon: "fa-medal text-slate-400 text-lg", bg: "bg-slate-50 border-slate-200 text-slate-700", text: "🥈 Argent" };
+                                            else if (successRatio >= 0.5) medalElement = { icon: "fa-medal text-amber-700 text-lg", bg: "bg-orange-50 border-orange-100 text-orange-800", text: "🥉 Bronze" };
+                                        }
 
-                                            return (
-                                                <div key={chap.id} class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between cursor-pointer group" onClick={() => handleStartQuiz(chap)}>
-                                                    <div>
-                                                        <div class="flex justify-between items-start mb-4">
-                                                            <div class={`w-12 h-12 rounded-xl bg-gradient-to-br ${chap.color} text-white flex items-center justify-center shadow-lg shadow-slate-100 group-hover:scale-105 transition`}><i class={`fa-solid ${chap.icon} text-lg`}></i></div>
-                                                            {medalElement && (
-                                                                <span class={`flex items-center space-x-1.5 border px-2.5 py-1 rounded-full text-xs font-extrabold shadow-sm ${medalElement.bg}`}>
-                                                                    <i class={`fa-solid ${medalElement.icon}`}></i>
-                                                                    <span>{bestScore}/{chap.questions.length}</span>
-                                                                </span>
-                                                            )}
-                                                        </div>
-                                                        <h3 class="font-bold text-slate-900 text-base leading-tight mb-2 group-hover:text-blue-600 transition">{chap.title}</h3>
-                                                        <p class="text-xs text-slate-500 font-medium">{chap.questions.length} Questions disponibles</p>
+                                        return (
+                                            <div key={chap.id} class="bg-white border border-slate-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-300 flex flex-col justify-between cursor-pointer group" onClick={() => handleStartQuiz(chap)}>
+                                                <div>
+                                                    <div class="flex justify-between items-start mb-5">
+                                                        <div class={`w-12 h-12 rounded-xl bg-gradient-to-br ${chap.color} text-white flex items-center justify-center shadow-lg shadow-slate-100 group-hover:scale-105 transition`}><i class={`fa-solid ${chap.icon} text-lg`}></i></div>
+                                                        {medalElement && (
+                                                            <span class={`flex items-center space-x-1.5 border px-2.5 py-1 rounded-full text-xs font-extrabold shadow-sm ${medalElement.bg}`}>
+                                                                <i class={`fa-solid ${medalElement.icon}`}></i>
+                                                                <span>{bestScore}/{chap.questions.length}</span>
+                                                            </span>
+                                                        )}
                                                     </div>
-                                                    <div class="mt-6 flex items-center justify-between text-xs font-semibold text-blue-600 pt-4 border-t border-slate-50">
-                                                        <span>{bestScore !== undefined ? "Recommencer" : "Démarrer"}</span>
-                                                        <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition"></i>
-                                                    </div>
+                                                    <h3 class="font-bold text-slate-900 text-base leading-tight mb-2 group-hover:text-blue-600 transition">{chap.title}</h3>
+                                                    <p class="text-xs text-slate-500 font-medium">{chap.questions.length} Questions dispo</p>
                                                 </div>
-                                            );
-                                        })}
-                                    </div>
-                                )}
+                                                <div class="mt-6 flex items-center justify-between text-xs font-semibold text-blue-600 pt-4 border-t border-slate-50">
+                                                    <span>{bestScore !== undefined ? "S'entraîner à nouveau" : "Démarrer"}</span>
+                                                    <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition"></i>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
                             </div>
                         )}
 
+                        {/* VIEW 2 : INDEX DES AUTEURS ET CITATIONS */}
                         {view === 'authors' && (
-                            <div class="w-full max-w-4xl">
+                            <div class="w-full max-w-4xl animate-fadeIn">
                                 <div class="text-center mb-8">
                                     <span class="bg-indigo-50 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Boîte à outils Pédagogique</span>
-                                    <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mt-3 mb-1">Dictionnaire des Citations & Auteurs</h2>
-                                    <p class="text-slate-500 text-sm">Les concepts théoriques incontournables pour étayer vos dissertations et EC3.</p>
+                                    <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight mt-3 mb-1">Dictionnaire des Citations de Terminale</h2>
+                                    <p class="text-slate-500 text-sm">Les arguments théoriques incontournables pour étayer vos dissertations et EC3.</p>
                                 </div>
 
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -2206,19 +2191,20 @@
                                                 </div>
                                             </div>
                                             <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-3 text-xs text-emerald-800 leading-relaxed">
-                                                <strong>💡 Utilisation type :</strong> {author.tip}
+                                                <strong>💡 Comment l'utiliser au Bac :</strong> {author.tip}
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                                 <div class="text-center mt-8">
-                                    <button onClick={() => setView('dashboard')} class="bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-8 rounded-xl transition text-sm shadow-md">Retourner aux quiz</button>
+                                    <button onClick={() => setView('dashboard')} class="bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-8 rounded-xl transition text-sm shadow-md">Retourner aux entraînements</button>
                                 </div>
                             </div>
                         )}
 
+                        {/* VIEW 3 : SESSION DE QUIZ ACTIVE */}
                         {view === 'quiz' && selectedChapter && (
-                            <div class="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-xl max-w-2xl w-full">
+                            <div class="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-xl shadow-slate-100 max-w-2xl w-full">
                                 <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
                                     <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">{selectedChapter.title}</span>
                                     <div class="flex items-center space-x-3">
@@ -2269,10 +2255,71 @@
                                 {isSubmitted ? (
                                     <div class="mt-6 pt-6 border-t border-slate-100">
                                         <div class={`p-4 rounded-2xl mb-6 text-sm leading-relaxed ${selectedChapter.questions[currentQuestionIndex].options[selectedOptionIndex].isCorrect ? "bg-emerald-50 text-emerald-800 border border-emerald-100" : "bg-rose-50 text-rose-800 border border-rose-100"}`}>
-                                            <p class="font-bold mb-1">{selectedChapter.questions[currentQuestionIndex].options[selectedOptionIndex].isCorrect ? "Correct !" : "Incorrect"}</p>
+                                            <p class="font-bold mb-1">{selectedChapter.questions[currentQuestionIndex].options[selectedOptionIndex].isCorrect ? "Correct !" : "Faux"}</p>
                                             <p>{selectedChapter.questions[currentQuestionIndex].options[selectedOptionIndex].rationale}</p>
                                         </div>
-                                        <button onClick={handleNextQuestion} class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-6 rounded-2xl transition shadow-md">Question suivante</button>
+                                        <button onClick={handleNextQuestion} class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-6 rounded-2xl transition shadow-md shadow-slate-200">The suivant</button>
                                     </div>
                                 ) : (
-                                    <button onClick={handleSubmitAnswer} disabled={selectedOptionIndex === null} class={`w-full font-bold py-4 pxJe ne peux pas vous aider à ce sujet, car je ne suis qu'un modèle de langage et je ne dispose ni des informations, ni des capacités nécessaires.
+                                    <button onClick={handleSubmitAnswer} disabled={selectedOptionIndex === null} class={`w-full font-bold py-4 px-6 rounded-2xl transition shadow-md ${selectedOptionIndex !== null ? "bg-blue-600 hover:bg-blue-700 text-white shadow-blue-100" : "bg-slate-100 text-slate-400 cursor-not-allowed shadow-none"}`}>Valider</button>
+                                )}
+                            </div>
+                        )}
+
+                        {/* VIEW 4 : BILAN DE FIN DE QUIZ */}
+                        {view === 'summary' && selectedChapter && (
+                            <div class="bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-xl shadow-slate-100 max-w-2xl w-full">
+                                <div class="text-center mb-8">
+                                    <div class={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${timeLeft === 0 ? 'bg-rose-50 text-rose-600' : 'bg-indigo-50 text-indigo-600'}`}><i class={`fa-solid ${timeLeft === 0 ? 'fa-hourglass-end animate-bounce' : 'fa-trophy'} text-2xl`}></i></div>
+                                    <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">{timeLeft === 0 ? "Temps Écoulé !" : isRemediationMode ? "Remédiation Terminée !" : "Fin du Quiz"}</h2>
+                                    <p class="text-slate-500 text-sm mt-1">{selectedChapter.title}</p>
+                                </div>
+
+                                <div class="bg-slate-50 border border-slate-150 rounded-2xl p-6 text-center mb-8">
+                                    <p class="text-sm font-bold text-slate-500 uppercase tracking-widest">Score de session</p>
+                                    <h3 class="text-5xl font-extrabold text-slate-900 mt-2 mb-1">{score} / {selectedChapter.questions.length}</h3>
+                                    {timeLeft === 0 && <p class="text-xs text-rose-600 font-bold mt-2">Le chrono a expiré avant que vous ne terminiez le questionnaire.</p>}
+                                </div>
+
+                                <div class="space-y-4 mb-8 max-h-[250px] overflow-y-auto pr-2">
+                                    <h4 class="font-bold text-sm text-slate-900 border-b border-slate-100 pb-2">Détails de vos réponses :</h4>
+                                    {userAnswers.map((ans, idx) => (
+                                        <div key={idx} class="p-4 border border-slate-100 rounded-xl text-xs space-y-1.5 leading-relaxed bg-slate-50">
+                                            <p class="font-bold text-slate-800">Q{idx + 1}: {ans.question}</p>
+                                            <div class="flex items-center space-x-2">
+                                                <span class="font-semibold text-slate-500">Votre réponse :</span>
+                                                <span class={ans.isCorrect ? "text-emerald-600 font-bold" : "text-rose-600 font-bold"}>{ans.selectedOptionText}</span>
+                                            </div>
+                                            {!ans.isCorrect && (
+                                                <div class="flex items-center space-x-2">
+                                                    <span class="font-semibold text-slate-500">La bonne réponse :</span>
+                                                    <span class="text-emerald-600 font-bold">{ans.correctOptionText}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div class="flex space-x-4">
+                                    <button onClick={() => { selectedChapter.id === "bac_blanc" ? handleStartBacBlanc() : handleStartQuiz(selectedChapter) }} class="flex-1 border border-slate-200 hover:border-slate-300 font-bold py-4 px-6 rounded-2xl transition text-slate-700 text-sm">Recommencer</button>
+                                    <button onClick={() => setView('dashboard')} class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-2xl transition shadow-md shadow-blue-100 text-sm">Retour à l'accueil</button>
+                                </div>
+                            </div>
+                        )}
+                    </main>
+
+                    {/* Pied de page */}
+                    <footer class="bg-white border-t border-slate-100 py-6 text-center text-xs text-slate-400 font-medium">
+                        <div class="max-w-5xl mx-auto px-4">
+                            <p>© 2026 SES Terminale Bac - Plateforme Éducative</p>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
