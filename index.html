@@ -1732,6 +1732,7 @@
             "title": "Comment un marché concurrentiel fonctionne-t-il ?",
             "icon": "fa-scale-balanced",
             "color": "from-sky-500 to-blue-600",
+            "level": "premiere",
             "questions": [
               {
                 "question": "Pourquoi dit-on que le marché est une institution ?",
@@ -2130,6 +2131,7 @@
             "title": "Comment les marchés imparfaitement concurrentiels fonctionnent-ils ?",
             "icon": "fa-crown",
             "color": "from-indigo-500 to-violet-600",
+            "level": "premiere",
             "questions": [
               {
                 "question": "Qu'est-ce que le pouvoir de marché d'une entreprise ?",
@@ -2498,10 +2500,1206 @@
             ]
           },
           {
+            "id": "p1_defaillances",
+            "title": "Quelles sont les principales défaillances du marché ?",
+            "icon": "fa-triangle-exclamation",
+            "color": "from-red-500 to-orange-600",
+            "questions": [
+              {
+                "question": "Qu'est-ce qu'une externalité ?",
+                "options": [
+                  {
+                    "text": "L'effet de l'action d'un agent sur d'autres agents, sans compensation monétaire.",
+                    "isCorrect": true,
+                    "rationale": "L'externalité peut être négative (pollution) ou positive (vaccination, recherche). Elle échappe au prix de marché."
+                  },
+                  {
+                    "text": "Le coût que paie une entreprise lorsqu'elle sous-traite une partie de sa production.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : sous-traiter est un échange marchand rémunéré, alors qu'une externalité n'est pas compensée."
+                  },
+                  {
+                    "text": "L'ensemble des échanges qu'un pays réalise avec l'extérieur de ses frontières.",
+                    "isCorrect": false,
+                    "rationale": "Piège sur le mot « externe » : il s'agit du commerce extérieur, pas d'une externalité."
+                  },
+                  {
+                    "text": "Le bénéfice qu'une entreprise retire de la vente de ses produits à l'étranger.",
+                    "isCorrect": false,
+                    "rationale": "Faux : une recette d'exportation est un gain marchand, pas un effet subi par des tiers."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi le marché produit-il trop d'un bien dont la production pollue ?",
+                "options": [
+                  {
+                    "text": "Le producteur ne prend en compte que son coût privé, pas le coût subi par les autres.",
+                    "isCorrect": true,
+                    "rationale": "Le coût de la pollution n'entre pas dans son calcul : il produit jusqu'à égaliser coût marginal privé et prix, donc trop par rapport à l'optimum collectif."
+                  },
+                  {
+                    "text": "Parce que les consommateurs préfèrent toujours les biens qui polluent le plus.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le problème vient de l'absence de prix pour la pollution, pas des goûts des consommateurs."
+                  },
+                  {
+                    "text": "Parce que l'État impose aux entreprises polluantes de produire davantage.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la surproduction vient du fonctionnement du marché, pas d'une décision publique."
+                  },
+                  {
+                    "text": "Parce que le prix du bien inclut déjà le coût de la pollution pour la société.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : c'est justement parce que le prix n'inclut pas ce coût que la quantité est trop élevée."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "En présence d'une externalité positive (par exemple la vaccination), que produit le marché ?",
+                "options": [
+                  {
+                    "text": "Une quantité trop faible, car le bénéfice pour les autres n'est pas pris en compte.",
+                    "isCorrect": true,
+                    "rationale": "Celui qui se fait vacciner protège aussi les autres sans être rémunéré pour cela : spontanément, on vaccine trop peu."
+                  },
+                  {
+                    "text": "Une quantité trop élevée, car chacun profite gratuitement de la vaccination des autres.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : le bénéfice externe n'étant pas rémunéré, la quantité produite est trop faible."
+                  },
+                  {
+                    "text": "La quantité optimale, car une externalité positive ne pose jamais de problème.",
+                    "isCorrect": false,
+                    "rationale": "Faux : même positive, une externalité éloigne le marché de l'optimum collectif."
+                  },
+                  {
+                    "text": "Aucune quantité, car les biens à externalité positive ne peuvent pas être vendus.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ces biens sont produits et vendus, mais en quantité insuffisante."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelles sont les deux caractéristiques d'un bien commun ?",
+                "options": [
+                  {
+                    "text": "Il est non excluable (accès libre) mais rival (son usage par l'un en prive les autres).",
+                    "isCorrect": true,
+                    "rationale": "Exemples : les ressources halieutiques, l'eau des nappes phréatiques. Le risque est leur épuisement."
+                  },
+                  {
+                    "text": "Il est excluable (accès payant) et non rival (plusieurs peuvent l'utiliser en même temps).",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à un bien de club, comme une autoroute à péage."
+                  },
+                  {
+                    "text": "Il est non excluable et non rival : personne ne peut en être privé et il ne s'épuise pas.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à un bien collectif pur, comme l'éclairage public."
+                  },
+                  {
+                    "text": "Il appartient obligatoirement à l'État, qui le met gratuitement à disposition de tous.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la notion repose sur les caractéristiques du bien, pas sur son propriétaire."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que désigne la « tragédie des biens communs » (Garrett Hardin, 1968) ?",
+                "options": [
+                  {
+                    "text": "L'épuisement d'une ressource en libre accès, que chacun exploite au maximum.",
+                    "isCorrect": true,
+                    "rationale": "Chacun a intérêt à exploiter la ressource avant les autres (surpêche) : la ressource finit par disparaître pour tous."
+                  },
+                  {
+                    "text": "La disparition des biens publics lorsque l'État décide de les privatiser.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la tragédie concerne les ressources en accès libre, pas une privatisation."
+                  },
+                  {
+                    "text": "La hausse des prix des biens de première nécessité en période de pénurie.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la notion ne porte pas sur l'évolution des prix."
+                  },
+                  {
+                    "text": "Le conflit entre deux pays qui revendiquent la même ressource naturelle.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la tragédie résulte des comportements individuels des usagers, pas d'un conflit entre États."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi le marché ne produit-il pas spontanément un bien collectif pur, comme l'éclairage public ?",
+                "options": [
+                  {
+                    "text": "Nul ne peut être exclu : chacun préfère en profiter sans payer.",
+                    "isCorrect": true,
+                    "rationale": "Le bien étant non excluable et non rival, personne n'accepte de payer ce dont il peut profiter gratuitement."
+                  },
+                  {
+                    "text": "Parce que ce bien coûte trop cher à produire pour une entreprise privée.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le problème n'est pas le coût de production, mais l'impossibilité de faire payer les usagers."
+                  },
+                  {
+                    "text": "Parce que les consommateurs n'ont aucun besoin de ce type de bien.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ces biens sont utiles à tous ; c'est le mode de financement qui pose problème."
+                  },
+                  {
+                    "text": "Parce que la loi interdit aux entreprises privées de produire ces biens.",
+                    "isCorrect": false,
+                    "rationale": "Faux : leur production peut être déléguée au privé, mais elle doit être financée autrement que par le marché."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce qu'un « passager clandestin » au sens économique ?",
+                "options": [
+                  {
+                    "text": "Un agent qui profite d'un bien ou d'une action collective sans en supporter le coût.",
+                    "isCorrect": true,
+                    "rationale": "Il est rationnel de ne pas payer quand on ne peut pas être exclu : c'est pourquoi les biens collectifs sont financés par l'impôt."
+                  },
+                  {
+                    "text": "Un consommateur qui achète un produit à l'étranger pour éviter de payer des taxes.",
+                    "isCorrect": false,
+                    "rationale": "Faux : cela relève de l'évasion fiscale ou des achats transfrontaliers, pas de la notion de passager clandestin."
+                  },
+                  {
+                    "text": "Une entreprise qui entre sur un marché sans respecter les règles de la concurrence.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la notion ne désigne pas une infraction au droit de la concurrence."
+                  },
+                  {
+                    "text": "Un salarié qui travaille sans contrat de travail déclaré à l'administration.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au travail dissimulé."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quel exemple illustre un bien collectif impur (ou bien de club) ?",
+                "options": [
+                  {
+                    "text": "Une autoroute à péage ou une chaîne cryptée.",
+                    "isCorrect": true,
+                    "rationale": "Ces biens sont non rivaux (jusqu'à un certain point), mais il est possible d'exclure ceux qui ne paient pas."
+                  },
+                  {
+                    "text": "L'éclairage public ou la défense nationale.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : ce sont des biens collectifs purs, non excluables."
+                  },
+                  {
+                    "text": "Les poissons d'une zone de pêche en accès libre.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : il s'agit d'un bien commun, rival et non excluable."
+                  },
+                  {
+                    "text": "Une baguette de pain achetée à la boulangerie.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : c'est un bien privé, rival et excluable."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'appelle-t-on une asymétrie d'information ?",
+                "options": [
+                  {
+                    "text": "Une situation où l'une des parties à l'échange est mieux informée que l'autre.",
+                    "isCorrect": true,
+                    "rationale": "Le vendeur d'une voiture d'occasion connaît mieux son véhicule que l'acheteur, par exemple. Le marché peut alors être défaillant."
+                  },
+                  {
+                    "text": "Une situation où personne ne connaît le prix du bien échangé sur le marché.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'asymétrie suppose qu'une partie en sait plus que l'autre, pas que tous ignorent tout."
+                  },
+                  {
+                    "text": "Une situation où les médias diffusent des informations erronées sur un produit.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la notion porte sur l'inégalité d'information entre les deux parties à l'échange."
+                  },
+                  {
+                    "text": "Une situation où l'acheteur et le vendeur ne parlent pas la même langue.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la notion ne renvoie pas à une difficulté de communication."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Sur le marché des voitures d'occasion, comment se manifeste la sélection adverse ?",
+                "options": [
+                  {
+                    "text": "Les acheteurs, méfiants, proposent un prix bas, et les vendeurs de bonnes voitures se retirent.",
+                    "isCorrect": true,
+                    "rationale": "Ne pouvant distinguer les bonnes voitures des « tacots », les acheteurs paient moins ; seules restent les mauvaises voitures (Akerlof, 1970)."
+                  },
+                  {
+                    "text": "Les vendeurs de mauvaises voitures quittent le marché, car personne ne veut les acheter.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : ce sont les vendeurs de bonnes voitures qui se retirent, faute d'obtenir un prix suffisant."
+                  },
+                  {
+                    "text": "Les acheteurs paient toujours plus cher les voitures les plus récentes du marché.",
+                    "isCorrect": false,
+                    "rationale": "Faux : cela décrit une préférence normale pour la qualité, pas la sélection adverse."
+                  },
+                  {
+                    "text": "Les vendeurs s'entendent entre eux pour fixer un prix élevé pour toutes les voitures.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à une entente, pas à une asymétrie d'information."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi la sélection adverse peut-elle conduire à l'absence d'équilibre ?",
+                "options": [
+                  {
+                    "text": "Une baisse du prix signale une baisse de qualité : la demande peut chuter aussi.",
+                    "isCorrect": true,
+                    "rationale": "Le prix perd son rôle de signal : offre et demande peuvent ne jamais se rencontrer, et le marché disparaître."
+                  },
+                  {
+                    "text": "Parce que la demande devient croissante et l'offre décroissante en fonction du prix.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la sélection adverse ne renverse pas les deux courbes ; elle rend le prix ambigu."
+                  },
+                  {
+                    "text": "Parce que l'État interdit la vente des biens dont la qualité n'est pas certifiée.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'absence d'équilibre résulte des comportements des acheteurs et des vendeurs."
+                  },
+                  {
+                    "text": "Parce que les vendeurs refusent de vendre à des acheteurs mal informés.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : c'est la méfiance des acheteurs qui fait chuter le prix et fuir les bons vendeurs."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quel comportement illustre l'aléa moral dans le domaine de l'assurance ?",
+                "options": [
+                  {
+                    "text": "Un conducteur bien assuré devient moins prudent, car les dommages seront couverts.",
+                    "isCorrect": true,
+                    "rationale": "L'aléa moral est un changement de comportement après la signature du contrat, que l'assureur ne peut pas observer."
+                  },
+                  {
+                    "text": "Un assureur refuse d'assurer un conducteur qui a déjà eu plusieurs accidents.",
+                    "isCorrect": false,
+                    "rationale": "Faux : il s'agit d'une sélection des clients par l'assureur, pas d'aléa moral."
+                  },
+                  {
+                    "text": "Un conducteur prudent refuse de payer une prime d'assurance qu'il juge trop chère.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : ce comportement relève de la sélection adverse (départ des bons risques)."
+                  },
+                  {
+                    "text": "Un conducteur choisit l'assurance la moins chère en comparant plusieurs offres.",
+                    "isCorrect": false,
+                    "rationale": "Faux : comparer les offres est un comportement normal sur un marché concurrentiel."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Comment les pouvoirs publics peuvent-ils corriger une externalité négative comme la pollution ?",
+                "options": [
+                  {
+                    "text": "En taxant l'activité polluante pour faire payer au pollueur le coût qu'il impose aux autres.",
+                    "isCorrect": true,
+                    "rationale": "La taxe intègre le coût externe dans le prix : la quantité produite diminue. À l'inverse, on subventionne les externalités positives."
+                  },
+                  {
+                    "text": "En subventionnant l'activité polluante pour que les prix restent bas.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : on subventionne les activités à externalités positives, on taxe celles à externalités négatives."
+                  },
+                  {
+                    "text": "En laissant le marché fonctionner, car il finit toujours par corriger la pollution.",
+                    "isCorrect": false,
+                    "rationale": "Faux : en présence d'externalités, le marché est justement défaillant."
+                  },
+                  {
+                    "text": "En obligeant les victimes de la pollution à payer les entreprises pour qu'elles polluent moins.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce n'est pas un instrument de politique publique étudié au programme."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Comment les pouvoirs publics luttent-ils contre la sélection adverse ?",
+                "options": [
+                  {
+                    "text": "En imposant une information fiable (contrôle technique, étiquetage).",
+                    "isCorrect": true,
+                    "rationale": "Rendre l'information plus symétrique permet aux acheteurs de distinguer les bons produits des mauvais."
+                  },
+                  {
+                    "text": "En fixant un prix unique pour tous les biens d'un même marché, quelle que soit leur qualité.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un prix unique aggraverait le problème, car il ne tiendrait aucun compte de la qualité."
+                  },
+                  {
+                    "text": "En interdisant la vente de tous les biens d'occasion sur le territoire.",
+                    "isCorrect": false,
+                    "rationale": "Faux : supprimer le marché n'est pas une solution à la sélection adverse."
+                  },
+                  {
+                    "text": "En taxant les acheteurs qui se renseignent trop sur les produits.",
+                    "isCorrect": false,
+                    "rationale": "Faux : il faut au contraire améliorer l'information des acheteurs."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Comment l'assurance maladie limite-t-elle l'aléa moral ?",
+                "options": [
+                  {
+                    "text": "En laissant une partie des soins à la charge de l'assuré (franchise).",
+                    "isCorrect": true,
+                    "rationale": "L'assuré qui paie une partie des soins est incité à ne pas en consommer de façon excessive."
+                  },
+                  {
+                    "text": "En remboursant intégralement tous les soins, quel que soit leur nombre.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : un remboursement intégral et sans limite favoriserait au contraire l'aléa moral."
+                  },
+                  {
+                    "text": "En refusant d'assurer les personnes qui ont déjà été malades.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'assurance maladie obligatoire ne sélectionne pas ses assurés."
+                  },
+                  {
+                    "text": "En augmentant le nombre de médecins dans les zones rurales.",
+                    "isCorrect": false,
+                    "rationale": "Faux : c'est une mesure d'accès aux soins, pas un outil contre l'aléa moral."
+                  }
+                ],
+                "level": "premiere"
+              }
+            ]
+          },
+          {
+            "id": "p1_financement",
+            "title": "Comment les agents économiques se financent-ils ?",
+            "icon": "fa-piggy-bank",
+            "color": "from-emerald-500 to-green-600",
+            "level": "premiere",
+            "questions": [
+              {
+                "question": "Quand dit-on qu'un agent économique a un besoin de financement ?",
+                "options": [
+                  {
+                    "text": "Quand son épargne est inférieure à son investissement.",
+                    "isCorrect": true,
+                    "rationale": "Un agent à besoin de financement doit trouver des ressources auprès d'agents à capacité de financement."
+                  },
+                  {
+                    "text": "Quand son épargne dépasse le montant de ses investissements.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : cela définit un agent à capacité de financement."
+                  },
+                  {
+                    "text": "Quand il dépense plus en consommation que l'an passé.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le besoin de financement compare l'épargne et l'investissement, pas la consommation d'une année sur l'autre."
+                  },
+                  {
+                    "text": "Quand il ne parvient plus à rembourser ses dettes.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à une situation d'insolvabilité, pas à la définition du besoin de financement."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quels agents sont structurellement à capacité de financement en France ?",
+                "options": [
+                  {
+                    "text": "Les ménages, dont l'épargne dépasse en général leurs investissements.",
+                    "isCorrect": true,
+                    "rationale": "Les ménages dégagent une épargne supérieure à leurs investissements (logement) et financent les autres agents."
+                  },
+                  {
+                    "text": "Les administrations publiques, grâce aux impôts qu'elles prélèvent.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les administrations publiques sont structurellement en besoin de financement (déficit public)."
+                  },
+                  {
+                    "text": "Les sociétés non financières, grâce à leurs bénéfices.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les entreprises investissent plus qu'elles n'épargnent ; elles sont en général à besoin de financement."
+                  },
+                  {
+                    "text": "Le reste du monde, qui finance seul l'économie française.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le reste du monde peut compenser le besoin global, mais il n'est pas l'agent à capacité de financement principal."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que représente le taux d'intérêt ?",
+                "options": [
+                  {
+                    "text": "Un coût pour l'emprunteur et une rémunération pour le prêteur.",
+                    "isCorrect": true,
+                    "rationale": "Il rémunère le prêteur pour le service rendu, le risque de non-remboursement et la renonciation à disposer de son argent."
+                  },
+                  {
+                    "text": "Un impôt prélevé par l'État sur chaque crédit accordé.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le taux d'intérêt est payé au prêteur, pas à l'État."
+                  },
+                  {
+                    "text": "La part du crédit que l'emprunteur n'aura pas à rembourser.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'emprunteur rembourse la totalité du capital, plus les intérêts."
+                  },
+                  {
+                    "text": "Le bénéfice réalisé par une entreprise grâce à ses ventes.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : le bénéfice est un résultat d'activité, sans lien avec le prix de l'argent emprunté."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Vous empruntez 10 000 € à un taux d'intérêt annuel de 4 %. Combien d'intérêts payez-vous la première année ?",
+                "options": [
+                  {
+                    "text": "400 €",
+                    "isCorrect": true,
+                    "rationale": "10 000 × 4 / 100 = 400 €. Les intérêts s'ajoutent au remboursement du capital emprunté."
+                  },
+                  {
+                    "text": "40 €",
+                    "isCorrect": false,
+                    "rationale": "Erreur de calcul : 4 % de 10 000 € font 400 €, pas 40 €."
+                  },
+                  {
+                    "text": "4 000 €",
+                    "isCorrect": false,
+                    "rationale": "Erreur de calcul : cela correspondrait à un taux de 40 %."
+                  },
+                  {
+                    "text": "10 400 €",
+                    "isCorrect": false,
+                    "rationale": "Confusion : 10 400 € est la somme du capital et des intérêts, pas le montant des intérêts."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Sur le marché des fonds prêtables, qui forme l'offre et qui forme la demande ?",
+                "options": [
+                  {
+                    "text": "L'offre vient des agents à capacité de financement, la demande des agents à besoin de financement.",
+                    "isCorrect": true,
+                    "rationale": "Les épargnants offrent des fonds, les emprunteurs en demandent ; leur rencontre détermine le taux d'intérêt d'équilibre."
+                  },
+                  {
+                    "text": "L'offre vient des agents à besoin de financement, la demande des agents à capacité de financement.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : ce sont les épargnants (capacité de financement) qui offrent des fonds."
+                  },
+                  {
+                    "text": "L'offre vient de l'État, la demande vient uniquement des banques commerciales.",
+                    "isCorrect": false,
+                    "rationale": "Faux : tous les agents peuvent intervenir comme offreurs ou demandeurs de fonds."
+                  },
+                  {
+                    "text": "L'offre et la demande viennent des seuls ménages, qui se prêtent de l'argent entre eux.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les entreprises, l'État et le reste du monde interviennent aussi sur ce marché."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Sur le marché des fonds prêtables, que se passe-t-il si le taux d'intérêt augmente ?",
+                "options": [
+                  {
+                    "text": "L'épargne offerte augmente et la demande de fonds diminue.",
+                    "isCorrect": true,
+                    "rationale": "Prêter devient plus rémunérateur, emprunter plus coûteux. Le taux d'intérêt joue le rôle d'un prix."
+                  },
+                  {
+                    "text": "L'épargne offerte diminue et la demande de fonds augmente.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : un taux plus élevé encourage l'épargne et décourage l'emprunt."
+                  },
+                  {
+                    "text": "L'offre et la demande de fonds augmentent toutes les deux.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un crédit plus cher réduit la demande de fonds des emprunteurs."
+                  },
+                  {
+                    "text": "Rien ne change, car le taux d'intérêt est fixé par la loi.",
+                    "isCorrect": false,
+                    "rationale": "Faux : sur ce marché, le taux d'intérêt se forme par la rencontre de l'offre et de la demande de fonds."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Comment calcule-t-on le revenu disponible des ménages ?",
+                "options": [
+                  {
+                    "text": "Revenus primaires + revenus de transfert − impôts directs − cotisations sociales.",
+                    "isCorrect": true,
+                    "rationale": "Le revenu disponible est le revenu dont les ménages disposent réellement pour consommer ou épargner."
+                  },
+                  {
+                    "text": "Revenus primaires − dépenses de consommation − épargne des ménages.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la consommation et l'épargne sont des usages du revenu disponible, pas des éléments de son calcul."
+                  },
+                  {
+                    "text": "Salaires + épargne de l'année − remboursements des crédits en cours.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'épargne n'est pas un revenu supplémentaire, c'est la part non consommée du revenu disponible."
+                  },
+                  {
+                    "text": "Revenus primaires + revenus de transfert + impôts directs + cotisations sociales.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les impôts directs et les cotisations sont prélevés, ils doivent être retirés."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Comment se définit l'épargne des ménages ?",
+                "options": [
+                  {
+                    "text": "La part du revenu disponible qui n'est pas consommée.",
+                    "isCorrect": true,
+                    "rationale": "Épargne = revenu disponible − consommation. Elle peut être financière (placements) ou non financière (logement)."
+                  },
+                  {
+                    "text": "La somme placée chaque mois sur un livret réglementé.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : un livret n'est qu'une forme d'épargne parmi d'autres."
+                  },
+                  {
+                    "text": "Les revenus perçus grâce aux placements financiers.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond aux revenus du capital, qui font partie des revenus primaires."
+                  },
+                  {
+                    "text": "La part du revenu reversée à l'État sous forme d'impôts.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les impôts sont des prélèvements obligatoires, pas de l'épargne."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la différence entre une action et une obligation ?",
+                "options": [
+                  {
+                    "text": "L'action est un titre de propriété, l'obligation un titre de créance.",
+                    "isCorrect": true,
+                    "rationale": "L'actionnaire possède une part du capital (dividendes, droit de vote) ; le détenteur d'obligation est un prêteur rémunéré par des intérêts."
+                  },
+                  {
+                    "text": "L'action est un titre de créance, l'obligation un titre de propriété.",
+                    "isCorrect": false,
+                    "rationale": "Inversion des deux définitions."
+                  },
+                  {
+                    "text": "L'action est émise par l'État, l'obligation par les entreprises.",
+                    "isCorrect": false,
+                    "rationale": "Faux : seules les sociétés émettent des actions ; les obligations peuvent être émises par les entreprises comme par l'État."
+                  },
+                  {
+                    "text": "L'action rapporte un intérêt fixe, l'obligation un dividende variable.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : l'action rapporte un dividende variable, l'obligation un intérêt."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que l'autofinancement d'une entreprise ?",
+                "options": [
+                  {
+                    "text": "Le financement de ses investissements par ses propres ressources.",
+                    "isCorrect": true,
+                    "rationale": "C'est le financement interne : l'entreprise utilise les bénéfices mis en réserve et les amortissements."
+                  },
+                  {
+                    "text": "Le financement de ses investissements par un emprunt auprès d'une banque.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : le crédit bancaire est un financement externe indirect."
+                  },
+                  {
+                    "text": "Le financement de ses investissements par l'émission d'actions en Bourse.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : l'émission d'actions est un financement externe direct."
+                  },
+                  {
+                    "text": "Le financement de ses investissements par des subventions publiques.",
+                    "isCorrect": false,
+                    "rationale": "Faux : une subvention vient de l'extérieur de l'entreprise, ce n'est pas de l'autofinancement."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la différence entre financement externe direct et indirect ?",
+                "options": [
+                  {
+                    "text": "Le direct passe par les marchés financiers, l'indirect par le crédit bancaire.",
+                    "isCorrect": true,
+                    "rationale": "En financement direct, l'entreprise émet des titres (actions, obligations) ; en financement indirect, la banque sert d'intermédiaire."
+                  },
+                  {
+                    "text": "Le direct passe par le crédit bancaire, l'indirect par les marchés financiers.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : c'est le crédit bancaire qui est intermédié (indirect)."
+                  },
+                  {
+                    "text": "Le direct utilise les bénéfices, l'indirect les subventions de l'État.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : l'utilisation des bénéfices relève du financement interne (autofinancement)."
+                  },
+                  {
+                    "text": "Le direct concerne les ménages, l'indirect concerne seulement les entreprises.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la distinction porte sur la présence ou non d'un intermédiaire financier, pas sur le type d'agent."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que l'excédent brut d'exploitation (EBE) d'une entreprise ?",
+                "options": [
+                  {
+                    "text": "Valeur ajoutée − salaires et cotisations − impôts sur la production.",
+                    "isCorrect": true,
+                    "rationale": "L'EBE mesure ce que l'activité rapporte à l'entreprise : il sert à rémunérer les apporteurs de capitaux et à autofinancer les investissements."
+                  },
+                  {
+                    "text": "La somme de toutes les ventes réalisées par l'entreprise au cours de l'année.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au chiffre d'affaires."
+                  },
+                  {
+                    "text": "La part des bénéfices distribuée aux actionnaires sous forme de dividendes.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les dividendes ne sont qu'un usage possible d'une partie des bénéfices."
+                  },
+                  {
+                    "text": "La valeur de la production moins les consommations intermédiaires.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à la valeur ajoutée, dont l'EBE est une partie."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que le solde budgétaire de l'État ?",
+                "options": [
+                  {
+                    "text": "La différence entre les recettes et les dépenses de l'État sur une année.",
+                    "isCorrect": true,
+                    "rationale": "Si les dépenses dépassent les recettes, le solde est négatif : on parle de déficit budgétaire."
+                  },
+                  {
+                    "text": "Le montant total de la dette accumulée par l'État depuis sa création.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : la dette est un stock accumulé, le solde budgétaire est un flux annuel."
+                  },
+                  {
+                    "text": "La somme des impôts prélevés sur les ménages et les entreprises.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les impôts ne sont que les recettes ; le solde compare recettes et dépenses."
+                  },
+                  {
+                    "text": "La différence entre les exportations et les importations du pays.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au solde commercial."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la différence entre le solde budgétaire et le solde public ?",
+                "options": [
+                  {
+                    "text": "Le solde public concerne toutes les administrations publiques, pas seulement l'État.",
+                    "isCorrect": true,
+                    "rationale": "Le solde public regroupe l'État, les collectivités territoriales et les administrations de sécurité sociale."
+                  },
+                  {
+                    "text": "Le solde public concerne l'État seul, le solde budgétaire l'ensemble des administrations.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : le solde budgétaire concerne l'État, le solde public l'ensemble des administrations publiques."
+                  },
+                  {
+                    "text": "Le solde public se calcule sur dix ans, le solde budgétaire sur une seule année.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les deux soldes sont calculés sur une année."
+                  },
+                  {
+                    "text": "Il n'y a aucune différence : ce sont deux noms pour la même mesure.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ils n'ont pas le même périmètre, d'où des montants différents."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'appelle-t-on l'effet d'éviction ?",
+                "options": [
+                  {
+                    "text": "L'emprunt de l'État fait monter les taux d'intérêt, ce qui décourage l'investissement privé.",
+                    "isCorrect": true,
+                    "rationale": "En empruntant beaucoup, l'État augmente la demande de fonds prêtables : le taux monte et certains projets privés ne sont plus rentables."
+                  },
+                  {
+                    "text": "La hausse des dépenses publiques augmente la production plus que proportionnellement.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à l'effet multiplicateur, argument en faveur des dépenses publiques."
+                  },
+                  {
+                    "text": "La baisse des taux d'intérêt pousse les ménages à épargner moins et à consommer plus.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce mécanisme ne correspond pas à l'effet d'éviction, qui porte sur l'investissement privé."
+                  },
+                  {
+                    "text": "Les entreprises étrangères remplacent les entreprises nationales sur le marché intérieur.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce phénomène relève de la concurrence internationale, pas de l'effet d'éviction."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quels effets contradictoires peut avoir une hausse des dépenses publiques financée par l'emprunt ?",
+                "options": [
+                  {
+                    "text": "Elle peut relancer l'activité, mais aussi évincer l'investissement privé.",
+                    "isCorrect": true,
+                    "rationale": "La dépense publique soutient la demande ; mais l'emprunt de l'État peut faire monter les taux d'intérêt (effet d'éviction)."
+                  },
+                  {
+                    "text": "Elle augmente toujours l'activité, sans aucun effet négatif possible.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'effet d'éviction peut réduire l'investissement privé et limiter la relance."
+                  },
+                  {
+                    "text": "Elle réduit toujours l'activité, car l'État dépense moins bien que les entreprises.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la dépense publique peut soutenir la demande, notamment en période de ralentissement."
+                  },
+                  {
+                    "text": "Elle n'a aucun effet, car l'emprunt est remboursé dès l'année suivante.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le déficit est financé par l'emprunt, dont le remboursement s'étale dans le temps."
+                  }
+                ],
+                "level": "premiere"
+              }
+            ]
+          },
+          {
+            "id": "p1_monnaie",
+            "title": "Qu'est-ce que la monnaie et comment est-elle créée ?",
+            "icon": "fa-coins",
+            "color": "from-yellow-500 to-amber-600",
+            "questions": [
+              {
+                "question": "Quelles sont les trois fonctions de la monnaie ?",
+                "options": [
+                  {
+                    "text": "Unité de compte, intermédiaire des échanges et réserve de valeur.",
+                    "isCorrect": true,
+                    "rationale": "La monnaie permet d'exprimer tous les prix dans une même unité, de faciliter les échanges et de conserver du pouvoir d'achat."
+                  },
+                  {
+                    "text": "Moyen de production, source de profit et instrument de pouvoir.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce ne sont pas les fonctions économiques retenues pour définir la monnaie."
+                  },
+                  {
+                    "text": "Unité de compte, outil de crédit et garantie de l'État.",
+                    "isCorrect": false,
+                    "rationale": "Incomplet et inexact : le crédit et la garantie de l'État ne sont pas des fonctions de la monnaie."
+                  },
+                  {
+                    "text": "Intermédiaire des échanges, moyen d'épargne et impôt.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'impôt n'est pas une fonction de la monnaie."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle difficulté du troc la monnaie permet-elle de surmonter ?",
+                "options": [
+                  {
+                    "text": "La double coïncidence des besoins entre les deux personnes qui échangent.",
+                    "isCorrect": true,
+                    "rationale": "La monnaie décompose l'échange en deux opérations : vendre contre de la monnaie, puis acheter avec cette monnaie."
+                  },
+                  {
+                    "text": "L'impossibilité d'échanger des biens entre des personnes de pays différents.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le troc entre pays est possible ; la difficulté est de trouver un partenaire aux besoins complémentaires."
+                  },
+                  {
+                    "text": "Le fait que les biens échangés par le troc sont toujours de mauvaise qualité.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la qualité des biens n'est pas le problème du troc."
+                  },
+                  {
+                    "text": "L'obligation de payer une taxe sur chaque échange réalisé par le troc.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le troc n'est pas défini par une taxe."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que signifie la fonction d'unité de compte de la monnaie ?",
+                "options": [
+                  {
+                    "text": "Tous les prix sont exprimés dans une même unité, donc comparables.",
+                    "isCorrect": true,
+                    "rationale": "Sans monnaie, il faudrait connaître le prix de chaque bien en chacun des autres biens."
+                  },
+                  {
+                    "text": "La monnaie permet de compter le nombre de biens produits dans une économie.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'unité de compte sert à exprimer la valeur des biens, pas à les dénombrer."
+                  },
+                  {
+                    "text": "Chaque pays doit utiliser exactement la même monnaie que ses voisins.",
+                    "isCorrect": false,
+                    "rationale": "Faux : chaque zone monétaire a sa propre unité de compte."
+                  },
+                  {
+                    "text": "La monnaie peut être conservée pour effectuer des achats plus tard.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à la fonction de réserve de valeur."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelles sont les trois formes de la monnaie aujourd'hui ?",
+                "options": [
+                  {
+                    "text": "La monnaie peut être conservée pour effectuer des achats plus tard.",
+                    "isCorrect": true,
+                    "rationale": "La monnaie scripturale, simple jeu d'écritures sur les comptes, est de loin la plus utilisée."
+                  },
+                  {
+                    "text": "La monnaie métallique en or, la monnaie en argent et la monnaie en cuivre.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ces monnaies-marchandises appartiennent au passé ; aujourd'hui la monnaie n'a presque plus de valeur intrinsèque."
+                  },
+                  {
+                    "text": "La monnaie nationale, la monnaie européenne et la monnaie mondiale.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce classement n'est pas celui des formes de la monnaie."
+                  },
+                  {
+                    "text": "Les billets, les chèques et les cryptomonnaies, toutes émises par la banque centrale.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les chèques sont des instruments de paiement, et les cryptomonnaies ne sont pas émises par la banque centrale."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la principale forme de monnaie dans les économies contemporaines ?",
+                "options": [
+                  {
+                    "text": "La monnaie scripturale, inscrite sur les comptes bancaires.",
+                    "isCorrect": true,
+                    "rationale": "La très grande majorité des paiements se fait par virements et cartes, à partir des dépôts à vue."
+                  },
+                  {
+                    "text": "La monnaie fiduciaire, c'est-à-dire les billets de banque.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les billets représentent une faible part des paiements aujourd'hui."
+                  },
+                  {
+                    "text": "La monnaie divisionnaire, c'est-à-dire les pièces de monnaie.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les pièces représentent une part infime des transactions."
+                  },
+                  {
+                    "text": "L'or détenu dans les coffres des banques centrales.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'or ne sert plus de monnaie dans les échanges quotidiens."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi dit-on que la monnaie repose sur la confiance ?",
+                "options": [
+                  {
+                    "text": "Sa valeur repose sur le fait que chacun l'accepte et croit en sa stabilité.",
+                    "isCorrect": true,
+                    "rationale": "Un billet n'a presque aucune valeur matérielle : il vaut parce que tous l'acceptent (fiducia signifie « confiance »)."
+                  },
+                  {
+                    "text": "Parce que chaque billet est garanti par une quantité d'or équivalente.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la convertibilité en or a disparu ; la valeur de la monnaie repose sur la confiance."
+                  },
+                  {
+                    "text": "Parce que seules les personnes de confiance ont le droit d'ouvrir un compte bancaire.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la confiance dont il s'agit porte sur l'acceptation et la stabilité de la monnaie."
+                  },
+                  {
+                    "text": "Parce que les banques prêtent seulement aux clients qu'elles connaissent bien.",
+                    "isCorrect": false,
+                    "rationale": "Faux : cela concerne le risque de crédit, pas le fondement de la valeur de la monnaie."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qui crée l'essentiel de la monnaie en circulation ?",
+                "options": [
+                  {
+                    "text": "Les banques commerciales, lorsqu'elles accordent des crédits.",
+                    "isCorrect": true,
+                    "rationale": "En accordant un crédit, la banque crée un dépôt nouveau sur le compte de l'emprunteur : la monnaie est créée par un jeu d'écritures."
+                  },
+                  {
+                    "text": "La banque centrale, en imprimant de nouveaux billets chaque année.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les billets ne représentent qu'une petite partie de la masse monétaire."
+                  },
+                  {
+                    "text": "L'État, en fabriquant des pièces de monnaie à la Monnaie de Paris.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les pièces représentent une part infime de la monnaie en circulation."
+                  },
+                  {
+                    "text": "Les ménages, en plaçant leur épargne sur un livret bancaire.",
+                    "isCorrect": false,
+                    "rationale": "Faux : épargner ne crée pas de monnaie, cela la place sur un compte."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que signifie la formule « les crédits font les dépôts » ?",
+                "options": [
+                  {
+                    "text": "En accordant un crédit, la banque crée un dépôt qui n'existait pas.",
+                    "isCorrect": true,
+                    "rationale": "La banque n'a pas besoin de disposer au préalable de la somme prêtée : elle l'inscrit sur le compte de l'emprunteur."
+                  },
+                  {
+                    "text": "La banque ne peut prêter que l'argent que ses clients ont déjà déposé.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : c'est l'idée que la formule conteste. Les crédits précèdent les dépôts."
+                  },
+                  {
+                    "text": "Les clients doivent déposer une garantie avant d'obtenir un crédit.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la formule décrit la création monétaire, pas les conditions d'un prêt."
+                  },
+                  {
+                    "text": "Les banques transfèrent les dépôts des épargnants vers les emprunteurs.",
+                    "isCorrect": false,
+                    "rationale": "Faux : cette vision d'intermédiaire ne décrit pas la création monétaire."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Une banque accorde un crédit de 100 000 € à une entreprise. Comment cela apparaît-il dans le bilan de la banque ?",
+                "options": [
+                  {
+                    "text": "+ 100 000 € à l'actif (crédit) et + 100 000 € au passif (dépôt de l'entreprise).",
+                    "isCorrect": true,
+                    "rationale": "La banque détient une créance sur l'entreprise (actif) et lui doit le dépôt créé (passif) : de la monnaie nouvelle est créée."
+                  },
+                  {
+                    "text": "− 100 000 € à l'actif, car la banque se sépare de 100 000 € de ses réserves.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la banque ne puise pas dans des réserves, elle crée un dépôt nouveau."
+                  },
+                  {
+                    "text": "+ 100 000 € au passif seulement, car le crédit est une dette de la banque.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le crédit est une créance de la banque, il figure à l'actif ; seul le dépôt est au passif."
+                  },
+                  {
+                    "text": "Aucun changement, car un crédit ne modifie pas le bilan d'une banque.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'opération augmente à la fois l'actif et le passif de la banque."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que se passe-t-il lorsque l'entreprise rembourse son crédit ?",
+                "options": [
+                  {
+                    "text": "La monnaie créée est détruite : dépôt et créance disparaissent.",
+                    "isCorrect": true,
+                    "rationale": "Le remboursement d'un crédit est une destruction de monnaie, symétrique de sa création."
+                  },
+                  {
+                    "text": "La monnaie remboursée est transférée à la banque centrale.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le remboursement ne transfère pas la monnaie à la banque centrale."
+                  },
+                  {
+                    "text": "La banque peut prêter ces fonds à un autre client sans rien changer.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le remboursement détruit la monnaie qui avait été créée par le crédit."
+                  },
+                  {
+                    "text": "La quantité de monnaie en circulation augmente du montant remboursé.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : la masse monétaire diminue lors d'un remboursement."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quel est le principal levier de la banque centrale pour encadrer la création monétaire ?",
+                "options": [
+                  {
+                    "text": "Le taux directeur, auquel elle prête aux banques commerciales.",
+                    "isCorrect": true,
+                    "rationale": "En modifiant ses taux directeurs, la banque centrale agit sur le coût du crédit et donc sur la création monétaire."
+                  },
+                  {
+                    "text": "La fixation du montant des salaires dans l'ensemble des entreprises.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les salaires ne relèvent pas de la politique monétaire."
+                  },
+                  {
+                    "text": "Le niveau des impôts payés par les ménages et les entreprises.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : la fiscalité relève de la politique budgétaire de l'État."
+                  },
+                  {
+                    "text": "L'impression de billets pour les distribuer directement aux ménages.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce n'est pas l'instrument principal de la politique monétaire."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "La banque centrale baisse ses taux directeurs. Quel est l'effet recherché ?",
+                "options": [
+                  {
+                    "text": "Un crédit moins cher, qui soutient la création monétaire et l'activité.",
+                    "isCorrect": true,
+                    "rationale": "C'est une politique monétaire expansionniste, utilisée quand l'activité ralentit."
+                  },
+                  {
+                    "text": "Un crédit plus cher, qui freine l'inflation et la création monétaire.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : c'est l'effet d'une hausse des taux directeurs."
+                  },
+                  {
+                    "text": "Une hausse des impôts, qui permet de rembourser la dette publique.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : les impôts relèvent de la politique budgétaire."
+                  },
+                  {
+                    "text": "Une baisse automatique des salaires dans toutes les entreprises.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la politique monétaire n'agit pas directement sur les salaires."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi une banque centrale augmente-t-elle ses taux directeurs ?",
+                "options": [
+                  {
+                    "text": "Pour freiner le crédit et donc l'inflation.",
+                    "isCorrect": true,
+                    "rationale": "Un crédit plus cher réduit la demande de crédit, donc la création monétaire et la pression sur les prix."
+                  },
+                  {
+                    "text": "Pour encourager les ménages à emprunter davantage pour consommer.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : une hausse des taux décourage l'emprunt."
+                  },
+                  {
+                    "text": "Pour faire baisser le chômage le plus rapidement possible.",
+                    "isCorrect": false,
+                    "rationale": "Faux : une hausse des taux tend plutôt à ralentir l'activité, au risque d'augmenter le chômage."
+                  },
+                  {
+                    "text": "Pour augmenter les recettes fiscales de l'État.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les taux directeurs ne sont pas un instrument fiscal."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle institution conduit la politique monétaire dans la zone euro ?",
+                "options": [
+                  {
+                    "text": "La BCE, avec les banques centrales nationales de la zone.",
+                    "isCorrect": true,
+                    "rationale": "Le Système européen de banques centrales, dirigé par la BCE, fixe les taux directeurs pour toute la zone euro."
+                  },
+                  {
+                    "text": "La Commission européenne, qui fixe les taux d'intérêt de chaque pays.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la Commission n'est pas une autorité monétaire."
+                  },
+                  {
+                    "text": "Chaque gouvernement national, pour son propre pays.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les pays de la zone euro ont confié leur politique monétaire à la BCE."
+                  },
+                  {
+                    "text": "Le Fonds monétaire international, qui gère la monnaie mondiale.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le FMI n'émet pas l'euro et ne conduit pas la politique monétaire européenne."
+                  }
+                ],
+                "level": "premiere"
+              }
+            ]
+          },
+          {
             "id": "p1_socialisation",
             "title": "Comment la socialisation explique-t-elle les différences de comportement ?",
             "icon": "fa-children",
             "color": "from-pink-500 to-rose-600",
+            "level": "premiere",
             "questions": [
               {
                 "question": "Comment définit-on la socialisation ?",
@@ -2874,6 +4072,7 @@
             "title": "Comment se construisent et évoluent les liens sociaux ?",
             "icon": "fa-people-group",
             "color": "from-orange-500 to-amber-600",
+            "level": "premiere",
             "questions": [
               {
                 "question": "Qu'est-ce qu'un groupe social ?",
@@ -3238,401 +4437,401 @@
                   }
                 ],
                 "level": "premiere"
+              },
+              {
+                "question": "Sur quels critères la nomenclature des PCS classe-t-elle les individus ?",
+                "options": [
+                  {
+                    "text": "La profession, le statut, la qualification et la position hiérarchique.",
+                    "isCorrect": true,
+                    "rationale": "D'autres critères s'y ajoutent, comme le secteur d'activité ou la nature de l'employeur (public ou privé)."
+                  },
+                  {
+                    "text": "Le revenu, le patrimoine et le niveau de vie du ménage.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la nomenclature ne classe pas les individus selon leurs ressources."
+                  },
+                  {
+                    "text": "L'âge, le sexe et la situation familiale de chaque personne.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ces caractéristiques démographiques ne sont pas des critères de classement des PCS."
+                  },
+                  {
+                    "text": "Le lieu de résidence, la nationalité et le niveau de diplôme des parents.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la classification repose sur la profession de l'individu lui-même."
+                  }
+                ],
+                "level": "premiere"
               }
             ]
           },
           {
-            "id": "p1_financement",
-            "title": "Comment les agents économiques se financent-ils ?",
-            "icon": "fa-piggy-bank",
-            "color": "from-emerald-500 to-green-600",
+            "id": "p1_deviance",
+            "title": "Quels processus sociaux contribuent à la déviance ?",
+            "icon": "fa-user-secret",
+            "color": "from-stone-500 to-stone-700",
             "questions": [
               {
-                "question": "Quand dit-on qu'un agent économique a un besoin de financement ?",
+                "question": "Quelle est la différence entre une norme sociale et une norme juridique ?",
                 "options": [
                   {
-                    "text": "Quand son épargne est inférieure à son investissement.",
+                    "text": "La norme juridique est inscrite dans le droit et sanctionnée formellement.",
                     "isCorrect": true,
-                    "rationale": "Un agent à besoin de financement doit trouver des ressources auprès d'agents à capacité de financement."
+                    "rationale": "Toutes les normes sont sociales ; les normes juridiques sont celles qui font l'objet d'une codification formelle (lois, règlements)."
                   },
                   {
-                    "text": "Quand son épargne dépasse le montant de ses investissements.",
+                    "text": "La norme sociale est obligatoire, alors que la norme juridique est facultative.",
                     "isCorrect": false,
-                    "rationale": "Inversion : cela définit un agent à capacité de financement."
+                    "rationale": "Inversion : la norme juridique s'impose sous peine de sanction formelle."
                   },
                   {
-                    "text": "Quand il dépense plus en consommation que l'an passé.",
+                    "text": "La norme sociale est universelle, alors que la norme juridique varie selon les pays.",
                     "isCorrect": false,
-                    "rationale": "Faux : le besoin de financement compare l'épargne et l'investissement, pas la consommation d'une année sur l'autre."
+                    "rationale": "Faux : les normes sociales varient elles aussi selon les sociétés et les groupes."
                   },
                   {
-                    "text": "Quand il ne parvient plus à rembourser ses dettes.",
+                    "text": "La norme juridique concerne les adultes, la norme sociale concerne les enfants.",
                     "isCorrect": false,
-                    "rationale": "Confusion : cela correspond à une situation d'insolvabilité, pas à la définition du besoin de financement."
+                    "rationale": "Faux : la distinction porte sur la codification et la sanction, pas sur l'âge."
                   }
                 ],
                 "level": "premiere"
               },
               {
-                "question": "Quels agents sont structurellement à capacité de financement en France ?",
+                "question": "Quelle est la différence entre contrôle social formel et contrôle social informel ?",
                 "options": [
                   {
-                    "text": "Les ménages, dont l'épargne dépasse en général leurs investissements.",
+                    "text": "Le formel relève d'institutions (police, justice), l'informel de l'entourage.",
                     "isCorrect": true,
-                    "rationale": "Les ménages dégagent une épargne supérieure à leurs investissements (logement) et financent les autres agents."
+                    "rationale": "Un regard réprobateur relève du contrôle informel ; une amende ou une condamnation, du contrôle formel."
                   },
                   {
-                    "text": "Les administrations publiques, grâce aux impôts qu'elles prélèvent.",
+                    "text": "Le formel s'exerce au travail, l'informel s'exerce uniquement dans la famille.",
                     "isCorrect": false,
-                    "rationale": "Faux : les administrations publiques sont structurellement en besoin de financement (déficit public)."
+                    "rationale": "Faux : la distinction porte sur l'acteur qui sanctionne, pas sur le lieu."
                   },
                   {
-                    "text": "Les sociétés non financières, grâce à leurs bénéfices.",
+                    "text": "Le formel concerne les adultes, l'informel concerne seulement les adolescents.",
                     "isCorrect": false,
-                    "rationale": "Faux : les entreprises investissent plus qu'elles n'épargnent ; elles sont en général à besoin de financement."
+                    "rationale": "Faux : les deux formes de contrôle s'exercent à tous les âges."
                   },
                   {
-                    "text": "Le reste du monde, qui finance seul l'économie française.",
+                    "text": "Le formel est sévère, l'informel n'a jamais de conséquence pour l'individu.",
                     "isCorrect": false,
-                    "rationale": "Faux : le reste du monde peut compenser le besoin global, mais il n'est pas l'agent à capacité de financement principal."
+                    "rationale": "Faux : la réprobation ou l'exclusion d'un groupe peuvent être très lourdes à vivre."
                   }
                 ],
                 "level": "premiere"
               },
               {
-                "question": "Que représente le taux d'intérêt ?",
+                "question": "Qu'est-ce que l'autocontrôle (ou contrôle social interne) ?",
                 "options": [
                   {
-                    "text": "Un coût pour l'emprunteur et une rémunération pour le prêteur.",
+                    "text": "Respecter une norme intériorisée, même sans surveillance.",
                     "isCorrect": true,
-                    "rationale": "Il rémunère le prêteur pour le service rendu, le risque de non-remboursement et la renonciation à disposer de son argent."
+                    "rationale": "L'individu s'impose lui-même la norme apprise par la socialisation (par exemple la pudeur, étudiée par Norbert Elias)."
                   },
                   {
-                    "text": "Un impôt prélevé par l'État sur chaque crédit accordé.",
+                    "text": "Le contrôle exercé par les forces de l'ordre sur les automobilistes.",
                     "isCorrect": false,
-                    "rationale": "Faux : le taux d'intérêt est payé au prêteur, pas à l'État."
+                    "rationale": "Confusion : cela relève du contrôle social formel."
                   },
                   {
-                    "text": "La part du crédit que l'emprunteur n'aura pas à rembourser.",
+                    "text": "La surveillance exercée par les parents sur leurs enfants.",
                     "isCorrect": false,
-                    "rationale": "Faux : l'emprunteur rembourse la totalité du capital, plus les intérêts."
+                    "rationale": "Confusion : il s'agit d'un contrôle externe, exercé par autrui."
                   },
                   {
-                    "text": "Le bénéfice réalisé par une entreprise grâce à ses ventes.",
+                    "text": "La vérification de son identité par un agent de sécurité.",
                     "isCorrect": false,
-                    "rationale": "Confusion : le bénéfice est un résultat d'activité, sans lien avec le prix de l'argent emprunté."
+                    "rationale": "Confusion : il s'agit d'un contrôle externe et formel."
                   }
                 ],
                 "level": "premiere"
               },
               {
-                "question": "Vous empruntez 10 000 € à un taux d'intérêt annuel de 4 %. Combien d'intérêts payez-vous la première année ?",
+                "question": "Comment définit-on la déviance ?",
                 "options": [
                   {
-                    "text": "400 €",
+                    "text": "La transgression d'une norme, perçue et sanctionnée comme telle par un groupe.",
                     "isCorrect": true,
-                    "rationale": "10 000 × 4 / 100 = 400 €. Les intérêts s'ajoutent au remboursement du capital emprunté."
+                    "rationale": "La déviance n'existe que par rapport à une norme en vigueur : il n'y a pas d'acte déviant en soi."
                   },
                   {
-                    "text": "40 €",
+                    "text": "Tout acte interdit par le Code pénal et puni par un tribunal.",
                     "isCorrect": false,
-                    "rationale": "Erreur de calcul : 4 % de 10 000 € font 400 €, pas 40 €."
+                    "rationale": "Confusion : cela correspond à la délinquance, forme particulière de déviance."
                   },
                   {
-                    "text": "4 000 €",
+                    "text": "Un comportement anormal causé par une prédisposition biologique de l'individu.",
                     "isCorrect": false,
-                    "rationale": "Erreur de calcul : cela correspondrait à un taux de 40 %."
+                    "rationale": "Faux : la sociologie récuse les explications génétiques ou biologiques de la déviance."
                   },
                   {
-                    "text": "10 400 €",
+                    "text": "Un comportement minoritaire, adopté par moins de la moitié de la population.",
                     "isCorrect": false,
-                    "rationale": "Confusion : 10 400 € est la somme du capital et des intérêts, pas le montant des intérêts."
+                    "rationale": "Faux : un comportement rare n'est pas forcément déviant, et un acte fréquent peut l'être."
                   }
                 ],
                 "level": "premiere"
               },
               {
-                "question": "Sur le marché des fonds prêtables, qui forme l'offre et qui forme la demande ?",
+                "question": "Pourquoi dit-on que la déviance est relative ?",
                 "options": [
                   {
-                    "text": "L'offre vient des agents à capacité de financement, la demande des agents à besoin de financement.",
+                    "text": "Ce qui est jugé déviant varie selon les époques, les sociétés et les groupes sociaux.",
                     "isCorrect": true,
-                    "rationale": "Les épargnants offrent des fonds, les emprunteurs en demandent ; leur rencontre détermine le taux d'intérêt d'équilibre."
+                    "rationale": "Le port du pantalon par les femmes a longtemps été jugé déviant, ce qui n'est plus le cas aujourd'hui en France."
                   },
                   {
-                    "text": "L'offre vient des agents à besoin de financement, la demande des agents à capacité de financement.",
+                    "text": "Parce que les actes déviants sont toujours moins graves que les actes délinquants.",
                     "isCorrect": false,
-                    "rationale": "Inversion : ce sont les épargnants (capacité de financement) qui offrent des fonds."
+                    "rationale": "Faux : la relativité concerne la définition de la déviance, pas sa gravité."
                   },
                   {
-                    "text": "L'offre vient de l'État, la demande vient uniquement des banques commerciales.",
+                    "text": "Parce que chaque individu décide seul de ce qui est déviant ou non.",
                     "isCorrect": false,
-                    "rationale": "Faux : tous les agents peuvent intervenir comme offreurs ou demandeurs de fonds."
+                    "rationale": "Faux : ce sont les groupes et les sociétés qui définissent les normes."
                   },
                   {
-                    "text": "L'offre et la demande viennent des seuls ménages, qui se prêtent de l'argent entre eux.",
+                    "text": "Parce que la déviance concerne seulement une partie de la population.",
                     "isCorrect": false,
-                    "rationale": "Faux : les entreprises, l'État et le reste du monde interviennent aussi sur ce marché."
+                    "rationale": "Faux : la relativité tient à la variation des normes, pas au nombre de déviants."
                   }
                 ],
                 "level": "premiere"
               },
               {
-                "question": "Sur le marché des fonds prêtables, que se passe-t-il si le taux d'intérêt augmente ?",
+                "question": "Selon Howard Becker, comment un acte devient-il déviant ?",
                 "options": [
                   {
-                    "text": "L'épargne offerte augmente et la demande de fonds diminue.",
+                    "text": "Quand d'autres appliquent une norme à son auteur et le désignent comme déviant.",
                     "isCorrect": true,
-                    "rationale": "Prêter devient plus rémunérateur, emprunter plus coûteux. Le taux d'intérêt joue le rôle d'un prix."
+                    "rationale": "Pour Becker, la déviance n'est pas une qualité de l'acte, mais le résultat d'une interaction et d'une réaction sociale."
                   },
                   {
-                    "text": "L'épargne offerte diminue et la demande de fonds augmente.",
+                    "text": "Quand l'acte est contraire à la nature humaine, en tout temps et en tout lieu.",
                     "isCorrect": false,
-                    "rationale": "Inversion : un taux plus élevé encourage l'épargne et décourage l'emprunt."
+                    "rationale": "Faux : Becker insiste au contraire sur la relativité de la déviance."
                   },
                   {
-                    "text": "L'offre et la demande de fonds augmentent toutes les deux.",
+                    "text": "Quand l'individu agit volontairement pour provoquer la société.",
                     "isCorrect": false,
-                    "rationale": "Faux : un crédit plus cher réduit la demande de fonds des emprunteurs."
+                    "rationale": "Faux : l'intention de l'auteur ne suffit pas ; c'est la réaction des autres qui compte."
                   },
                   {
-                    "text": "Rien ne change, car le taux d'intérêt est fixé par la loi.",
+                    "text": "Quand l'acte est réalisé par une personne issue d'un milieu populaire.",
                     "isCorrect": false,
-                    "rationale": "Faux : sur ce marché, le taux d'intérêt se forme par la rencontre de l'offre et de la demande de fonds."
+                    "rationale": "Faux : la déviance ne se définit pas par l'origine sociale de son auteur."
                   }
                 ],
                 "level": "premiere"
               },
               {
-                "question": "Comment calcule-t-on le revenu disponible des ménages ?",
+                "question": "Que désigne la notion d'« entrepreneur de morale » chez Becker ?",
                 "options": [
                   {
-                    "text": "Revenus primaires + revenus de transfert − impôts directs − cotisations sociales.",
+                    "text": "Un acteur qui se mobilise pour imposer une nouvelle norme.",
                     "isCorrect": true,
-                    "rationale": "Le revenu disponible est le revenu dont les ménages disposent réellement pour consommer ou épargner."
+                    "rationale": "Exemple : les mouvements qui ont obtenu la répression de l'alcool au volant. Sans eux, certaines déviances n'existeraient pas."
                   },
                   {
-                    "text": "Revenus primaires − dépenses de consommation − épargne des ménages.",
+                    "text": "Un chef d'entreprise qui respecte des règles éthiques dans ses affaires.",
                     "isCorrect": false,
-                    "rationale": "Faux : la consommation et l'épargne sont des usages du revenu disponible, pas des éléments de son calcul."
+                    "rationale": "Piège sur le mot « entrepreneur » : la notion ne concerne pas les entreprises."
                   },
                   {
-                    "text": "Salaires + épargne de l'année − remboursements des crédits en cours.",
+                    "text": "Un professeur chargé d'enseigner la morale et l'éducation civique.",
                     "isCorrect": false,
-                    "rationale": "Faux : l'épargne n'est pas un revenu supplémentaire, c'est la part non consommée du revenu disponible."
+                    "rationale": "Faux : la notion désigne ceux qui militent pour instaurer des normes, pas un enseignant."
                   },
                   {
-                    "text": "Revenus primaires + revenus de transfert + impôts directs + cotisations.",
+                    "text": "Un individu qui transgresse volontairement les normes pour les faire évoluer.",
                     "isCorrect": false,
-                    "rationale": "Faux : les impôts directs et les cotisations sont prélevés, ils doivent être retirés."
+                    "rationale": "Inversion : l'entrepreneur de morale veut créer et faire appliquer des normes, pas les transgresser."
                   }
                 ],
                 "level": "premiere"
               },
               {
-                "question": "Comment se définit l'épargne des ménages ?",
+                "question": "Qu'est-ce que l'étiquetage (ou labellisation) ?",
                 "options": [
                   {
-                    "text": "La part du revenu disponible qui n'est pas consommée.",
+                    "text": "Désigner publiquement quelqu'un comme déviant, ce qui transforme son identité.",
                     "isCorrect": true,
-                    "rationale": "Épargne = revenu disponible − consommation. Elle peut être financière (placements) ou non financière (logement)."
+                    "rationale": "L'étiquette de déviant devient un « statut principal » qui commande la façon dont les autres le perçoivent et le traitent."
                   },
                   {
-                    "text": "La somme placée chaque mois sur un livret réglementé.",
+                    "text": "Le fait d'afficher la composition et l'origine des produits alimentaires.",
                     "isCorrect": false,
-                    "rationale": "Trop restrictif : un livret n'est qu'une forme d'épargne parmi d'autres."
+                    "rationale": "Piège sur le sens courant du mot « étiquetage »."
                   },
                   {
-                    "text": "Les revenus perçus grâce aux placements financiers.",
+                    "text": "Le classement des individus par l'Insee dans une catégorie socioprofessionnelle.",
                     "isCorrect": false,
-                    "rationale": "Confusion : cela correspond aux revenus du capital, qui font partie des revenus primaires."
+                    "rationale": "Faux : la nomenclature des PCS n'a rien à voir avec la désignation d'un déviant."
                   },
                   {
-                    "text": "La part du revenu reversée à l'État sous forme d'impôts.",
+                    "text": "La liste des sanctions prévues par le règlement intérieur d'un lycée.",
                     "isCorrect": false,
-                    "rationale": "Faux : les impôts sont des prélèvements obligatoires, pas de l'épargne."
+                    "rationale": "Faux : un règlement définit des sanctions, pas la désignation publique d'un individu comme déviant."
                   }
                 ],
                 "level": "premiere"
               },
               {
-                "question": "Quelle est la différence entre une action et une obligation ?",
+                "question": "Que désigne la stigmatisation (Erving Goffman) ?",
                 "options": [
                   {
-                    "text": "L'action est un titre de propriété, l'obligation un titre de créance.",
+                    "text": "Un attribut qui jette un discrédit profond sur la personne qui le porte.",
                     "isCorrect": true,
-                    "rationale": "L'actionnaire possède une part du capital (dividendes, droit de vote) ; le détenteur d'obligation est un prêteur rémunéré par des intérêts."
+                    "rationale": "Le stigmatisé peut intérioriser ce jugement (honte) ou chercher à le retourner, voire à le revendiquer."
                   },
                   {
-                    "text": "L'action est un titre de créance, l'obligation un titre de propriété.",
+                    "text": "Le fait de récompenser publiquement un individu pour un comportement exemplaire.",
                     "isCorrect": false,
-                    "rationale": "Inversion des deux définitions."
+                    "rationale": "Inversion : il s'agit d'une sanction positive, pas d'un discrédit."
                   },
                   {
-                    "text": "L'action est émise par l'État, l'obligation par les entreprises.",
+                    "text": "Le fait d'appliquer exactement la même sanction à tous ceux qui transgressent une loi.",
                     "isCorrect": false,
-                    "rationale": "Faux : seules les sociétés émettent des actions ; les obligations peuvent être émises par les entreprises comme par l'État."
+                    "rationale": "Faux : la notion porte sur le discrédit social, pas sur l'égalité des sanctions."
                   },
                   {
-                    "text": "L'action rapporte un intérêt fixe, l'obligation un dividende variable.",
+                    "text": "Le fait de cacher volontairement aux autres une partie de son passé.",
                     "isCorrect": false,
-                    "rationale": "Inversion : l'action rapporte un dividende variable, l'obligation un intérêt."
+                    "rationale": "Faux : dissimuler une information peut être une réponse au stigmate, mais ce n'est pas sa définition."
                   }
                 ],
                 "level": "premiere"
               },
               {
-                "question": "Qu'est-ce que l'autofinancement d'une entreprise ?",
+                "question": "Que désigne la notion de carrière déviante ?",
                 "options": [
                   {
-                    "text": "Le financement de ses investissements par ses propres ressources.",
+                    "text": "Des étapes et des apprentissages qui mènent à une identité déviante.",
                     "isCorrect": true,
-                    "rationale": "C'est le financement interne : l'entreprise utilise les bénéfices mis en réserve et les amortissements."
+                    "rationale": "L'étude de Becker sur les fumeurs de marijuana montre qu'on apprend à devenir déviant ; on peut aussi sortir de cette carrière."
                   },
                   {
-                    "text": "Le financement de ses investissements par un emprunt auprès d'une banque.",
+                    "text": "Le parcours professionnel d'une personne qui change souvent d'emploi.",
                     "isCorrect": false,
-                    "rationale": "Confusion : le crédit bancaire est un financement externe indirect."
+                    "rationale": "Piège sur le mot « carrière » : la notion ne désigne pas un parcours professionnel."
                   },
                   {
-                    "text": "Le financement de ses investissements par l'émission d'actions en Bourse.",
+                    "text": "La trajectoire inévitable d'un individu né dans un milieu défavorisé.",
                     "isCorrect": false,
-                    "rationale": "Confusion : l'émission d'actions est un financement externe direct."
+                    "rationale": "Faux : l'enchaînement des étapes n'a rien de mécanique ni d'inévitable."
                   },
                   {
-                    "text": "Le financement de ses investissements par des subventions publiques.",
+                    "text": "Le fait de commettre un seul acte déviant au cours de sa vie.",
                     "isCorrect": false,
-                    "rationale": "Faux : une subvention vient de l'extérieur de l'entreprise, ce n'est pas de l'autofinancement."
+                    "rationale": "Faux : la carrière suppose une succession d'étapes, pas un acte isolé."
                   }
                 ],
                 "level": "premiere"
               },
               {
-                "question": "Quelle est la différence entre financement externe direct et indirect ?",
+                "question": "Quelle est la différence entre déviance et délinquance ?",
                 "options": [
                   {
-                    "text": "Le direct passe par les marchés financiers, l'indirect par le crédit bancaire.",
+                    "text": "La délinquance viole une norme juridique : c'est une forme de déviance.",
                     "isCorrect": true,
-                    "rationale": "En financement direct, l'entreprise émet des titres (actions, obligations) ; en financement indirect, la banque sert d'intermédiaire."
+                    "rationale": "Tout acte délinquant est déviant, mais tout acte déviant n'est pas délinquant (par exemple, une impolitesse)."
                   },
                   {
-                    "text": "Le direct passe par le crédit bancaire, l'indirect par les marchés financiers.",
+                    "text": "La déviance est plus grave que la délinquance, car elle conduit en prison.",
                     "isCorrect": false,
-                    "rationale": "Inversion : c'est le crédit bancaire qui est intermédié (indirect)."
+                    "rationale": "Faux : la gravité n'est pas le critère ; seule la délinquance peut entraîner une sanction pénale."
                   },
                   {
-                    "text": "Le direct utilise les bénéfices, l'indirect les subventions de l'État.",
+                    "text": "La délinquance concerne les adultes, la déviance concerne les mineurs.",
                     "isCorrect": false,
-                    "rationale": "Confusion : l'utilisation des bénéfices relève du financement interne (autofinancement)."
+                    "rationale": "Faux : la distinction porte sur le type de norme transgressée, pas sur l'âge."
                   },
                   {
-                    "text": "Le direct concerne les ménages, l'indirect concerne seulement les entreprises.",
+                    "text": "Il n'y a aucune différence : les deux notions désignent les mêmes actes.",
                     "isCorrect": false,
-                    "rationale": "Faux : la distinction porte sur la présence ou non d'un intermédiaire financier, pas sur le type d'agent."
+                    "rationale": "Faux : la délinquance n'est qu'une partie de la déviance."
                   }
                 ],
                 "level": "premiere"
               },
               {
-                "question": "Pourquoi les PME se financent-elles surtout par le crédit bancaire ?",
+                "question": "Pourquoi les statistiques de la police et de la justice ne mesurent-elles pas toute la délinquance ?",
                 "options": [
                   {
-                    "text": "Parce que l'accès aux marchés financiers leur est difficile et coûteux.",
+                    "text": "Elles ne comptent que les faits connus, et dépendent des plaintes et des contrôles.",
                     "isCorrect": true,
-                    "rationale": "Émettre des actions ou des obligations exige une taille et une notoriété suffisantes ; les PME passent donc surtout par les banques."
+                    "rationale": "Toutes les victimes ne portent pas plainte, et une hausse des contrôles peut faire augmenter les chiffres sans hausse réelle."
                   },
                   {
-                    "text": "Parce que la loi interdit aux PME de conserver leurs bénéfices pour investir.",
+                    "text": "Parce que la police refuse d'enregistrer les infractions commises par les mineurs.",
                     "isCorrect": false,
-                    "rationale": "Faux : les PME peuvent tout à fait s'autofinancer."
+                    "rationale": "Faux : les infractions des mineurs sont bien enregistrées."
                   },
                   {
-                    "text": "Parce que les banques prêtent aux PME à un taux d'intérêt nul.",
+                    "text": "Parce que la loi interdit de publier des chiffres sur la délinquance.",
                     "isCorrect": false,
-                    "rationale": "Faux : le crédit bancaire a toujours un coût, le taux d'intérêt."
+                    "rationale": "Faux : ces statistiques sont publiées chaque année."
                   },
                   {
-                    "text": "Parce que les PME n'ont jamais besoin de financer des investissements.",
+                    "text": "Parce qu'elles comptent deux fois chaque infraction commise.",
                     "isCorrect": false,
-                    "rationale": "Faux : les PME investissent aussi et ont souvent besoin de financement."
+                    "rationale": "Faux : la limite tient à ce qui n'est pas enregistré, pas à des doubles comptes."
                   }
                 ],
                 "level": "premiere"
               },
               {
-                "question": "Qu'est-ce que le solde budgétaire de l'État ?",
+                "question": "À quoi servent les enquêtes de victimation ?",
                 "options": [
                   {
-                    "text": "La différence entre les recettes et les dépenses de l'État sur une année.",
+                    "text": "À mesurer les infractions subies, même non déclarées à la police.",
                     "isCorrect": true,
-                    "rationale": "Si les dépenses dépassent les recettes, le solde est négatif : on parle de déficit budgétaire."
+                    "rationale": "Elles permettent d'estimer la part des actes non déclarés à la police et de compléter les statistiques officielles."
                   },
                   {
-                    "text": "Le montant total de la dette accumulée par l'État depuis sa création.",
+                    "text": "À recenser les condamnations prononcées par les tribunaux chaque année.",
                     "isCorrect": false,
-                    "rationale": "Confusion : la dette est un stock accumulé, le solde budgétaire est un flux annuel."
+                    "rationale": "Confusion : cela correspond aux statistiques judiciaires."
                   },
                   {
-                    "text": "La somme des impôts prélevés sur les ménages et les entreprises.",
+                    "text": "À demander aux auteurs d'infractions de déclarer anonymement leurs actes.",
                     "isCorrect": false,
-                    "rationale": "Faux : les impôts ne sont que les recettes ; le solde compare recettes et dépenses."
+                    "rationale": "Confusion : cela correspond aux enquêtes de délinquance auto-déclarée."
                   },
                   {
-                    "text": "La différence entre les exportations et les importations du pays.",
+                    "text": "À indemniser les victimes d'infractions qui ont porté plainte.",
                     "isCorrect": false,
-                    "rationale": "Confusion : cela correspond au solde commercial."
+                    "rationale": "Faux : ces enquêtes ont un but de mesure, pas d'indemnisation."
                   }
                 ],
                 "level": "premiere"
               },
               {
-                "question": "Quelle est la différence entre le solde budgétaire et le solde public ?",
+                "question": "Pourquoi est-il difficile de comparer la délinquance d'une période à l'autre ?",
                 "options": [
                   {
-                    "text": "Le solde public concerne toutes les administrations publiques, pas seulement l'État.",
+                    "text": "Parce que la loi change ce qui est considéré comme une infraction.",
                     "isCorrect": true,
-                    "rationale": "Le solde public regroupe l'État, les collectivités territoriales et les administrations de sécurité sociale."
+                    "rationale": "Le champ de la délinquance change avec la loi : une comparaison n'a de sens qu'à champ constant."
                   },
                   {
-                    "text": "Le solde public concerne l'État seul, le solde budgétaire l'ensemble des administrations.",
+                    "text": "Parce que la délinquance reste toujours exactement au même niveau dans le temps.",
                     "isCorrect": false,
-                    "rationale": "Inversion : le solde budgétaire concerne l'État, le solde public l'ensemble des administrations publiques."
+                    "rationale": "Faux : si elle était stable, la comparaison serait au contraire facile."
                   },
                   {
-                    "text": "Le solde public se calcule sur dix ans, le solde budgétaire sur une seule année.",
+                    "text": "Parce que les victimes portent plainte de la même manière à toutes les époques.",
                     "isCorrect": false,
-                    "rationale": "Faux : les deux soldes sont calculés sur une année."
+                    "rationale": "Faux : la propension à porter plainte varie, ce qui complique justement les comparaisons."
                   },
                   {
-                    "text": "Il n'y a aucune différence : ce sont deux noms pour la même mesure.",
+                    "text": "Parce que les statistiques ne sont publiées qu'une fois tous les dix ans.",
                     "isCorrect": false,
-                    "rationale": "Faux : ils n'ont pas le même périmètre, d'où des montants différents."
-                  }
-                ],
-                "level": "premiere"
-              },
-              {
-                "question": "Qu'appelle-t-on l'effet d'éviction ?",
-                "options": [
-                  {
-                    "text": "L'emprunt de l'État fait monter les taux d'intérêt, ce qui décourage l'investissement privé.",
-                    "isCorrect": true,
-                    "rationale": "En empruntant beaucoup, l'État augmente la demande de fonds prêtables : le taux monte et certains projets privés ne sont plus rentables."
-                  },
-                  {
-                    "text": "La hausse des dépenses publiques augmente la production plus que proportionnellement.",
-                    "isCorrect": false,
-                    "rationale": "Confusion : cela correspond à l'effet multiplicateur, argument en faveur des dépenses publiques."
-                  },
-                  {
-                    "text": "La baisse des taux d'intérêt pousse les ménages à épargner moins et à consommer plus.",
-                    "isCorrect": false,
-                    "rationale": "Faux : ce mécanisme ne correspond pas à l'effet d'éviction, qui porte sur l'investissement privé."
-                  },
-                  {
-                    "text": "Les entreprises étrangères remplacent les entreprises nationales sur le marché intérieur.",
-                    "isCorrect": false,
-                    "rationale": "Faux : ce phénomène relève de la concurrence internationale, pas de l'effet d'éviction."
+                    "rationale": "Faux : les statistiques de la délinquance sont publiées chaque année."
                   }
                 ],
                 "level": "premiere"
@@ -3644,6 +4843,7 @@
             "title": "Comment se forme et s'exprime l'opinion publique ?",
             "icon": "fa-square-poll-vertical",
             "color": "from-purple-500 to-fuchsia-600",
+            "level": "premiere",
             "questions": [
               {
                 "question": "À quel moment apparaît la notion d'opinion publique ?",
@@ -3986,10 +5186,1075 @@
             ]
           },
           {
+            "id": "p1_vote",
+            "title": "Voter : une affaire individuelle ou collective ?",
+            "icon": "fa-check-to-slot",
+            "color": "from-blue-500 to-indigo-700",
+            "questions": [
+              {
+                "question": "Comment se calcule le taux d'inscription sur les listes électorales ?",
+                "options": [
+                  {
+                    "text": "Nombre d'inscrits / nombre d'électeurs potentiels × 100.",
+                    "isCorrect": true,
+                    "rationale": "Il mesure la part des électeurs potentiels inscrits ; les jeunes et les moins diplômés sont plus souvent non ou mal inscrits."
+                  },
+                  {
+                    "text": "Nombre de votants / nombre d'inscrits × 100.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au taux de participation."
+                  },
+                  {
+                    "text": "Nombre d'abstentionnistes / nombre d'inscrits × 100.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au taux d'abstention."
+                  },
+                  {
+                    "text": "Nombre d'inscrits / population totale du pays × 100.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la population totale inclut les mineurs et les étrangers, qui ne peuvent pas s'inscrire."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Comment se calcule le taux de participation à une élection ?",
+                "options": [
+                  {
+                    "text": "Nombre de votants / nombre d'inscrits sur les listes × 100.",
+                    "isCorrect": true,
+                    "rationale": "Le taux de participation et le taux d'abstention se calculent tous deux par rapport aux inscrits."
+                  },
+                  {
+                    "text": "Nombre de votants / population totale du pays × 100.",
+                    "isCorrect": false,
+                    "rationale": "Faux : on rapporte les votants aux inscrits, pas à la population totale."
+                  },
+                  {
+                    "text": "Nombre de suffrages exprimés / nombre de votants × 100.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce rapport mesure la part des votes valables (hors blancs et nuls)."
+                  },
+                  {
+                    "text": "Nombre de voix du gagnant / nombre d'inscrits × 100.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce rapport mesure l'audience du gagnant, pas la participation."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Une commune compte 2 000 inscrits ; 1 300 ont voté. Quel est le taux d'abstention ?",
+                "options": [
+                  {
+                    "text": "35 %",
+                    "isCorrect": true,
+                    "rationale": "700 abstentionnistes / 2 000 inscrits × 100 = 35 %. On peut aussi faire 100 − 65 % de participation."
+                  },
+                  {
+                    "text": "65 %",
+                    "isCorrect": false,
+                    "rationale": "Confusion : 65 % est le taux de participation (1 300 / 2 000)."
+                  },
+                  {
+                    "text": "70 %",
+                    "isCorrect": false,
+                    "rationale": "Erreur : 700 abstentionnistes rapportés à 1 000 au lieu de 2 000 inscrits."
+                  },
+                  {
+                    "text": "54 %",
+                    "isCorrect": false,
+                    "rationale": "Erreur : on a divisé les abstentionnistes par les votants (700 / 1 300) au lieu des inscrits."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la différence entre abstention et vote blanc ?",
+                "options": [
+                  {
+                    "text": "L'abstentionniste ne vote pas ; le votant blanc vote sans choisir.",
+                    "isCorrect": true,
+                    "rationale": "Le vote blanc exprime un « non-choix » face à l'offre électorale, l'abstention un « non-vote »."
+                  },
+                  {
+                    "text": "Il n'y a aucune différence : les deux sont comptés comme des abstentions.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les votes blancs sont comptés parmi les votants, pas parmi les abstentionnistes."
+                  },
+                  {
+                    "text": "L'abstention concerne les non-inscrits, le vote blanc les inscrits.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'abstention concerne des inscrits qui ne votent pas ; les non-inscrits ne peuvent pas s'abstenir."
+                  },
+                  {
+                    "text": "Le vote blanc est interdit en France, contrairement à l'abstention.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le vote blanc est autorisé et décompté à part depuis 2014."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quels facteurs favorisent la participation électorale ?",
+                "options": [
+                  {
+                    "text": "L'intégration sociale, l'intérêt et le sentiment de compétence politique.",
+                    "isCorrect": true,
+                    "rationale": "Ces facteurs sont inégalement répartis : ils expliquent une abstention plus forte chez les jeunes et les moins diplômés."
+                  },
+                  {
+                    "text": "La taille de la commune et le nombre de bureaux de vote disponibles.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ces éléments matériels ne sont pas les principaux facteurs étudiés."
+                  },
+                  {
+                    "text": "Le fait d'avoir déjà voté au moins une fois dans sa vie.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'abstention intermittente montre qu'avoir déjà voté ne garantit pas la participation."
+                  },
+                  {
+                    "text": "La météo du jour de l'élection et l'heure d'ouverture des bureaux.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce sont des facteurs anecdotiques face aux variables sociales."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi la participation varie-t-elle selon le type d'élection ?",
+                "options": [
+                  {
+                    "text": "Les électeurs votent plus quand les enjeux leur semblent importants.",
+                    "isCorrect": true,
+                    "rationale": "Les variables contextuelles (type d'élection, enjeux perçus) s'ajoutent aux facteurs sociaux."
+                  },
+                  {
+                    "text": "Parce que seules certaines élections sont ouvertes à tous les inscrits.",
+                    "isCorrect": false,
+                    "rationale": "Faux : tous les inscrits peuvent voter à chaque élection générale."
+                  },
+                  {
+                    "text": "Parce que le vote est obligatoire pour l'élection présidentielle uniquement.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le vote n'est obligatoire pour aucune élection en France."
+                  },
+                  {
+                    "text": "Parce que les élections locales ont lieu un jour de semaine.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les élections ont lieu le dimanche en France."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "En quoi le vote est-il un acte individuel ?",
+                "options": [
+                  {
+                    "text": "Chacun exprime ses préférences selon l'offre électorale.",
+                    "isCorrect": true,
+                    "rationale": "Il choisit en fonction des candidats, des programmes et des enjeux du moment, dans le secret de l'isoloir."
+                  },
+                  {
+                    "text": "Parce que chaque électeur vote toujours comme ses parents.",
+                    "isCorrect": false,
+                    "rationale": "Faux : cela renverrait plutôt à la dimension collective du vote."
+                  },
+                  {
+                    "text": "Parce que chaque électeur doit voter seul, sans s'être informé.",
+                    "isCorrect": false,
+                    "rationale": "Faux : s'informer fait partie de l'acte individuel de vote."
+                  },
+                  {
+                    "text": "Parce que le résultat d'une élection dépend d'un seul électeur.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le résultat dépend de l'ensemble des votes."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "En quoi le vote est-il aussi un acte collectif ?",
+                "options": [
+                  {
+                    "text": "Il exprime des appartenances sociales (milieu, religion, génération).",
+                    "isCorrect": true,
+                    "rationale": "Les choix électoraux restent liés aux groupes auxquels les individus appartiennent."
+                  },
+                  {
+                    "text": "Parce que les électeurs votent ensemble, à voix haute, dans un même bureau.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le vote est secret ; la dimension collective tient aux appartenances sociales."
+                  },
+                  {
+                    "text": "Parce que chaque famille dispose d'un seul bulletin pour tous ses membres.",
+                    "isCorrect": false,
+                    "rationale": "Faux : chaque électeur dispose de sa propre voix."
+                  },
+                  {
+                    "text": "Parce que les partis choisissent à la place des électeurs.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les électeurs choisissent eux-mêmes parmi l'offre électorale."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'appelle-t-on l'offre électorale ?",
+                "options": [
+                  {
+                    "text": "L'ensemble des candidats, partis et programmes en présence.",
+                    "isCorrect": true,
+                    "rationale": "Le comportement des électeurs dépend de cette offre : un même électeur peut voter différemment selon les candidats en présence."
+                  },
+                  {
+                    "text": "Les avantages promis par l'État aux citoyens qui acceptent de voter.",
+                    "isCorrect": false,
+                    "rationale": "Faux : aucune récompense n'est offerte pour voter."
+                  },
+                  {
+                    "text": "Le nombre de bureaux de vote ouverts le jour de l'élection.",
+                    "isCorrect": false,
+                    "rationale": "Faux : il s'agit de l'organisation matérielle du scrutin."
+                  },
+                  {
+                    "text": "Le budget dépensé par les partis pendant la campagne électorale.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les dépenses de campagne ne définissent pas l'offre électorale."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que désigne la volatilité électorale ?",
+                "options": [
+                  {
+                    "text": "Le fait de changer de choix électoral ou d'alterner entre vote et abstention.",
+                    "isCorrect": true,
+                    "rationale": "Elle prend deux formes : l'intermittence du vote et le changement de préférences d'une élection à l'autre."
+                  },
+                  {
+                    "text": "Le fait de voter toujours pour le même parti, élection après élection.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : c'est la fidélité partisane, contraire de la volatilité."
+                  },
+                  {
+                    "text": "Le fait de ne jamais s'inscrire sur les listes électorales.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la non-inscription n'est pas de la volatilité, qui suppose des changements de comportement."
+                  },
+                  {
+                    "text": "Le fait de voter par procuration plutôt qu'en personne.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la procuration est une modalité de vote, pas une forme de volatilité."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que le vote intermittent ?",
+                "options": [
+                  {
+                    "text": "Le fait de voter à certaines élections seulement.",
+                    "isCorrect": true,
+                    "rationale": "Les intermittents sont aujourd'hui bien plus nombreux que les abstentionnistes systématiques."
+                  },
+                  {
+                    "text": "Le fait de voter blanc à toutes les élections.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un électeur qui vote blanc participe à chaque scrutin."
+                  },
+                  {
+                    "text": "Le fait de changer de parti à chaque élection.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au changement de préférences, l'autre forme de volatilité."
+                  },
+                  {
+                    "text": "Le fait de ne voter qu'au second tour d'une élection.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : l'intermittence concerne l'ensemble des scrutins, pas seulement les deux tours."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Comment peut-on expliquer la hausse de la volatilité électorale ?",
+                "options": [
+                  {
+                    "text": "Le recul du clivage gauche/droite et le poids accru du contexte.",
+                    "isCorrect": true,
+                    "rationale": "L'affaiblissement ou la recomposition des appartenances sociales rend les choix moins prévisibles."
+                  },
+                  {
+                    "text": "Par l'interdiction du vote par procuration depuis les années 2000.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le vote par procuration n'a pas été interdit."
+                  },
+                  {
+                    "text": "Par la baisse du nombre de candidats à chaque élection.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'offre électorale ne s'est pas réduite de cette façon."
+                  },
+                  {
+                    "text": "Par l'obligation de voter introduite pour les jeunes électeurs.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le vote n'est obligatoire pour personne en France."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Les appartenances sociales ont-elles perdu toute influence sur le vote ?",
+                "options": [
+                  {
+                    "text": "Non : elles pèsent toujours, même si leur poids s'est affaibli ou recomposé.",
+                    "isCorrect": true,
+                    "rationale": "Des régularités demeurent (selon l'âge, le diplôme, la religion, le territoire), ce qui montre que le vote reste aussi collectif."
+                  },
+                  {
+                    "text": "Oui : chaque électeur vote désormais uniquement selon ses intérêts personnels.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la volatilité n'a pas fait disparaître les régularités sociales du vote."
+                  },
+                  {
+                    "text": "Oui : les sondages montrent que le vote est devenu totalement imprévisible.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les choix électoraux restent en partie liés aux caractéristiques sociales."
+                  },
+                  {
+                    "text": "Non : elles déterminent toujours entièrement le vote de chaque électeur.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le contexte et les enjeux jouent aussi, et leur poids augmente."
+                  }
+                ],
+                "level": "premiere"
+              }
+            ]
+          },
+          {
+            "id": "p1_assurance",
+            "title": "Comment l'assurance et la protection sociale contribuent-elles à la gestion des risques ?",
+            "icon": "fa-shield-heart",
+            "color": "from-cyan-500 to-teal-600",
+            "questions": [
+              {
+                "question": "Quels sont les principaux risques sociaux auxquels les individus sont confrontés ?",
+                "options": [
+                  {
+                    "text": "La maladie, l'accident, la perte d'emploi et la vieillesse.",
+                    "isCorrect": true,
+                    "rationale": "Ces risques peuvent entraîner des dépenses importantes ou une baisse des revenus ; ils sont couverts par la protection sociale."
+                  },
+                  {
+                    "text": "La hausse des prix, la baisse de la Bourse et la faillite des banques.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce sont des risques économiques et financiers, pas les risques sociaux du programme."
+                  },
+                  {
+                    "text": "Les catastrophes naturelles, les guerres et les épidémies uniquement.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ces événements existent, mais la liste des risques sociaux est plus large et plus quotidienne."
+                  },
+                  {
+                    "text": "Le vol, l'incendie et les dégâts des eaux dans le logement.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce sont des risques couverts par l'assurance habitation, pas les grands risques sociaux."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "L'exposition au risque est-elle la même pour tous ?",
+                "options": [
+                  {
+                    "text": "Non : elle varie selon la profession, l'âge, le genre ou le milieu social.",
+                    "isCorrect": true,
+                    "rationale": "Les ouvriers sont plus exposés aux accidents du travail, les jeunes hommes aux accidents de la route, par exemple."
+                  },
+                  {
+                    "text": "Oui : tous les individus courent exactement les mêmes risques au cours de leur vie.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les conditions de vie et de travail exposent inégalement aux risques."
+                  },
+                  {
+                    "text": "Non : seules les personnes âgées sont exposées à des risques sociaux.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la vieillesse n'est qu'un risque parmi d'autres, qui touchent tous les âges."
+                  },
+                  {
+                    "text": "Oui : grâce à la protection sociale, plus personne n'est exposé aux risques.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la protection sociale couvre les conséquences des risques, elle ne les supprime pas."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que l'aversion au risque ?",
+                "options": [
+                  {
+                    "text": "Le fait de préférer un gain certain à un gain incertain de même valeur moyenne.",
+                    "isCorrect": true,
+                    "rationale": "Face à un gain sûr de 4 € ou une chance sur deux de gagner 8 €, la plupart des individus choisissent le gain sûr."
+                  },
+                  {
+                    "text": "Le fait de rechercher volontairement les activités les plus dangereuses.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : cela correspond au goût du risque ou aux conduites à risque."
+                  },
+                  {
+                    "text": "Le refus de souscrire la moindre assurance par méfiance envers les assureurs.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'aversion au risque pousse au contraire à s'assurer."
+                  },
+                  {
+                    "text": "L'incapacité à calculer la probabilité qu'un événement se produise.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la notion désigne une préférence face au risque, pas une difficulté de calcul."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Comment les conduites à risque varient-elles selon les groupes sociaux ?",
+                "options": [
+                  {
+                    "text": "Elles dépendent de la socialisation : les jeunes hommes prennent plus de risques.",
+                    "isCorrect": true,
+                    "rationale": "La socialisation masculine valorise davantage la prise de risque, ce qui se traduit par une surmortalité accidentelle."
+                  },
+                  {
+                    "text": "Elles sont identiques dans tous les groupes, car elles dépendent seulement du hasard.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les conduites à risque sont socialement différenciées."
+                  },
+                  {
+                    "text": "Elles concernent uniquement les personnes qui ne sont pas assurées.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les conduites à risque existent aussi chez les personnes assurées."
+                  },
+                  {
+                    "text": "Elles sont déterminées par des facteurs génétiques transmis par les parents.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la sociologie explique ces différences par la socialisation, pas par la génétique."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi le partage des risques peut-il avoir des effets positifs pour la société ?",
+                "options": [
+                  {
+                    "text": "Il sécurise les individus et encourage les prises de risque utiles.",
+                    "isCorrect": true,
+                    "rationale": "Un entrepreneur qui peut limiter ses pertes ose davantage innover ; les assurés gagnent en bien-être et en sécurité."
+                  },
+                  {
+                    "text": "Il supprime totalement les risques auxquels les individus sont exposés.",
+                    "isCorrect": false,
+                    "rationale": "Faux : partager un risque n'empêche pas l'événement de se produire, cela en répartit le coût."
+                  },
+                  {
+                    "text": "Il oblige chaque individu à supporter seul les conséquences de ses choix.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : partager le risque, c'est au contraire ne plus le supporter seul."
+                  },
+                  {
+                    "text": "Il permet aux assureurs de fixer librement les prix de tous les biens.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le partage des risques n'a pas de lien avec la fixation des prix des biens."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quel effet négatif le partage des risques peut-il produire ?",
+                "options": [
+                  {
+                    "text": "L'aléa moral : protégé, l'assuré peut devenir moins prudent.",
+                    "isCorrect": true,
+                    "rationale": "Un automobiliste bien assuré peut conduire moins prudemment, par exemple, car il ne supporte plus seul les dommages."
+                  },
+                  {
+                    "text": "La sélection adverse : l'assureur choisit toujours les clients les plus risqués.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la sélection adverse désigne au contraire le départ des « bons risques » quand la prime est trop élevée."
+                  },
+                  {
+                    "text": "La hausse automatique du nombre d'accidents de la route chaque année.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le partage des risques ne provoque pas mécaniquement plus d'accidents."
+                  },
+                  {
+                    "text": "La disparition de la famille comme lieu d'entraide entre ses membres.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la famille continue de jouer un rôle complémentaire de protection."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "En quoi consiste la prévention dans la gestion des risques ?",
+                "options": [
+                  {
+                    "text": "Réduire la probabilité qu'un dommage se produise.",
+                    "isCorrect": true,
+                    "rationale": "Installer un détecteur de fumée ou se faire vacciner diminue la probabilité du sinistre."
+                  },
+                  {
+                    "text": "Répartir le coût des dommages entre un grand nombre d'assurés.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à la mutualisation."
+                  },
+                  {
+                    "text": "Placer son épargne dans plusieurs placements différents.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à la diversification."
+                  },
+                  {
+                    "text": "Indemniser les victimes après la survenue d'un sinistre.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'indemnisation intervient après le dommage, la prévention avant."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que la mutualisation des risques ?",
+                "options": [
+                  {
+                    "text": "Les primes de tous financent les indemnités de ceux qui ont un sinistre.",
+                    "isCorrect": true,
+                    "rationale": "C'est le principe même de l'assurance : le coût des sinistres de quelques-uns est réparti entre tous."
+                  },
+                  {
+                    "text": "Le fait que chaque assuré récupère exactement les primes qu'il a versées.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un assuré sans sinistre ne récupère pas ses primes ; elles ont servi à indemniser les autres."
+                  },
+                  {
+                    "text": "La fusion de plusieurs compagnies d'assurance en une seule entreprise.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : une fusion est une concentration d'entreprises, pas la mutualisation des risques."
+                  },
+                  {
+                    "text": "L'obligation pour chaque famille de s'occuper de ses membres âgés.",
+                    "isCorrect": false,
+                    "rationale": "Faux : cela renvoie à la solidarité familiale, pas au mécanisme de mutualisation."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quel exemple illustre la diversification des risques ?",
+                "options": [
+                  {
+                    "text": "Un agriculteur cultive plusieurs productions différentes.",
+                    "isCorrect": true,
+                    "rationale": "En ne mettant pas « tous ses œufs dans le même panier », on limite les conséquences d'un événement défavorable."
+                  },
+                  {
+                    "text": "Un conducteur installe un éthylotest dans sa voiture.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : il s'agit de prévention."
+                  },
+                  {
+                    "text": "Un salarié cotise à l'assurance chômage chaque mois.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : il s'agit de mutualisation."
+                  },
+                  {
+                    "text": "Un ménage paie une prime pour assurer son logement.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : il s'agit d'un recours à l'assurance, donc de mutualisation."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelles sont les principales institutions qui contribuent à la gestion des risques ?",
+                "options": [
+                  {
+                    "text": "La famille, les sociétés et mutuelles d'assurance, et les pouvoirs publics.",
+                    "isCorrect": true,
+                    "rationale": "Leurs rôles se complètent : entraide familiale, contrats d'assurance et protection sociale publique."
+                  },
+                  {
+                    "text": "Les banques centrales, les syndicats et les partis politiques.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce ne sont pas les institutions de gestion des risques retenues par le programme."
+                  },
+                  {
+                    "text": "Les seuls pouvoirs publics, depuis la création de la Sécurité sociale.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : la famille et les assurances privées jouent aussi un rôle."
+                  },
+                  {
+                    "text": "Les entreprises, qui assurent seules la protection de leurs salariés.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : l'employeur participe au financement, mais il n'est pas la seule institution."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quel rôle joue la famille dans la couverture des risques ?",
+                "options": [
+                  {
+                    "text": "Elle organise une entraide informelle : aide financière, hébergement.",
+                    "isCorrect": true,
+                    "rationale": "Ce rôle, central dans les sociétés traditionnelles, reste complémentaire de l'État-providence aujourd'hui."
+                  },
+                  {
+                    "text": "Elle n'a plus aucun rôle depuis la création de la Sécurité sociale en 1945.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la solidarité familiale reste importante, par exemple pour les jeunes adultes ou les personnes âgées."
+                  },
+                  {
+                    "text": "Elle verse des indemnités en échange de primes, comme une assurance privée.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'entraide familiale ne repose pas sur un contrat ni sur des primes."
+                  },
+                  {
+                    "text": "Elle fixe le montant des cotisations sociales que paient ses membres.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les cotisations sociales sont fixées par les pouvoirs publics et les partenaires sociaux."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que caractérise la logique d'assurance dans la protection sociale ?",
+                "options": [
+                  {
+                    "text": "Des prestations versées en échange de cotisations, à ceux qui ont cotisé.",
+                    "isCorrect": true,
+                    "rationale": "Les allocations chômage ou les pensions de retraite dépendent des cotisations versées : c'est la logique bismarckienne."
+                  },
+                  {
+                    "text": "Des prestations versées sans contrepartie, aux personnes aux ressources insuffisantes.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à la logique d'assistance (RSA, minimum vieillesse)."
+                  },
+                  {
+                    "text": "Des prestations identiques pour tous, quels que soient les revenus.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond plutôt à une logique universelle, comme les allocations familiales à l'origine."
+                  },
+                  {
+                    "text": "Des prestations versées uniquement par des compagnies d'assurance privées.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la Sécurité sociale publique fonctionne aussi selon une logique d'assurance."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que caractérise la logique d'assistance dans la protection sociale ?",
+                "options": [
+                  {
+                    "text": "Des prestations sans cotisation, sous condition de ressources, financées par l'impôt.",
+                    "isCorrect": true,
+                    "rationale": "Le RSA ou le minimum vieillesse visent à garantir un minimum aux plus démunis : c'est la solidarité nationale."
+                  },
+                  {
+                    "text": "Des prestations versées uniquement aux personnes qui ont cotisé pendant longtemps.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à la logique d'assurance."
+                  },
+                  {
+                    "text": "Des prestations versées par les familles à leurs membres en difficulté.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'assistance publique est financée par la collectivité, pas par les familles."
+                  },
+                  {
+                    "text": "Des prestations proportionnelles aux salaires perçus pendant la carrière.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cette proportionnalité caractérise la logique d'assurance."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Sur quel principe repose la protection sociale ?",
+                "options": [
+                  {
+                    "text": "Sur la solidarité collective : la société prend en charge une partie des risques de chacun.",
+                    "isCorrect": true,
+                    "rationale": "Par l'assurance et l'assistance, la protection sociale répartit le coût des risques entre tous ses membres."
+                  },
+                  {
+                    "text": "Sur la responsabilité individuelle : chacun doit s'assurer seul auprès d'une compagnie.",
+                    "isCorrect": false,
+                    "rationale": "Faux : c'est justement l'insuffisance de cette logique qui justifie la protection sociale."
+                  },
+                  {
+                    "text": "Sur la charité : les plus riches donnent librement aux plus pauvres.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la protection sociale repose sur des prélèvements obligatoires, pas sur des dons volontaires."
+                  },
+                  {
+                    "text": "Sur le marché : les prestations sont vendues au prix fixé par l'offre et la demande.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les prestations sociales ne sont pas vendues sur un marché."
+                  }
+                ],
+                "level": "premiere"
+              }
+            ]
+          },
+          {
+            "id": "p1_entreprises",
+            "title": "Comment les entreprises sont-elles organisées et gouvernées ?",
+            "icon": "fa-building",
+            "color": "from-lime-600 to-green-700",
+            "questions": [
+              {
+                "question": "Quelles sont les grandes étapes du cycle de vie d'une entreprise ?",
+                "options": [
+                  {
+                    "text": "La création, la croissance, la maturité, puis la transmission ou la disparition.",
+                    "isCorrect": true,
+                    "rationale": "Toutes les entreprises ne connaissent pas chaque étape, et beaucoup disparaissent dans leurs premières années."
+                  },
+                  {
+                    "text": "L'embauche, la formation, la promotion et le départ en retraite des salariés.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela décrit la carrière d'un salarié, pas la vie d'une entreprise."
+                  },
+                  {
+                    "text": "La conception, la fabrication, la vente et le service après-vente d'un produit.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela décrit la chaîne de valeur d'un produit."
+                  },
+                  {
+                    "text": "L'investissement, l'endettement, la faillite puis la nationalisation.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce n'est pas un cycle de vie type ; la faillite n'est pas une étape obligatoire."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi une entreprise change-t-elle souvent de statut juridique en grandissant ?",
+                "options": [
+                  {
+                    "text": "Pour accueillir des associés, lever des capitaux et protéger son patrimoine.",
+                    "isCorrect": true,
+                    "rationale": "Le passage de l'entreprise individuelle à la société (SARL, SAS…) accompagne souvent la croissance."
+                  },
+                  {
+                    "text": "Parce que la loi interdit à une entreprise de garder le même statut plus de cinq ans.",
+                    "isCorrect": false,
+                    "rationale": "Faux : aucune règle n'impose de changer de statut au bout d'une durée donnée."
+                  },
+                  {
+                    "text": "Pour pouvoir verser des salaires plus faibles à ses employés.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le statut juridique ne fixe pas le niveau des salaires."
+                  },
+                  {
+                    "text": "Parce que seules les sociétés ont le droit de vendre leurs produits.",
+                    "isCorrect": false,
+                    "rationale": "Faux : une entreprise individuelle peut tout à fait vendre ses produits."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la principale différence entre une entreprise individuelle et une société ?",
+                "options": [
+                  {
+                    "text": "La société est une personne morale distincte de ses associés.",
+                    "isCorrect": true,
+                    "rationale": "La société a ses propres statuts et sa propre personnalité juridique ; l'entreprise individuelle n'est pas une personne distincte de l'entrepreneur (même si, depuis 2022, son patrimoine personnel est protégé par défaut)."
+                  },
+                  {
+                    "text": "L'entreprise individuelle a toujours plus de salariés qu'une société.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la plupart des entreprises individuelles n'ont aucun salarié."
+                  },
+                  {
+                    "text": "La société n'a pas le droit de réaliser des bénéfices.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les sociétés commerciales cherchent au contraire à réaliser des bénéfices."
+                  },
+                  {
+                    "text": "L'entreprise individuelle appartient obligatoirement à l'État.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'entreprise individuelle appartient à un entrepreneur privé."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que le régime de la micro-entreprise ?",
+                "options": [
+                  {
+                    "text": "Un régime simplifié pour les petites activités individuelles.",
+                    "isCorrect": true,
+                    "rationale": "Souvent utilisé au démarrage d'une activité, il est limité par des seuils de chiffre d'affaires."
+                  },
+                  {
+                    "text": "Le statut réservé aux entreprises qui emploient plus de 250 salariés.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce régime concerne au contraire les très petites activités individuelles."
+                  },
+                  {
+                    "text": "Une société dont le capital appartient à plusieurs milliers d'actionnaires.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond plutôt à une société anonyme cotée."
+                  },
+                  {
+                    "text": "Une entreprise publique chargée d'aider les petites entreprises.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la micro-entreprise est un régime pour entrepreneurs individuels, pas une entreprise publique."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Selon Schumpeter, quel est le rôle de l'entrepreneur-innovateur ?",
+                "options": [
+                  {
+                    "text": "Organiser de nouvelles combinaisons (produits, procédés, marchés) pour innover.",
+                    "isCorrect": true,
+                    "rationale": "L'entrepreneur n'est ni forcément l'inventeur ni le détenteur du capital : il met en œuvre l'innovation."
+                  },
+                  {
+                    "text": "Apporter le capital de l'entreprise en échange de dividendes.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au rôle de l'actionnaire."
+                  },
+                  {
+                    "text": "Gérer au quotidien une entreprise existante sans en modifier l'activité.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la gestion courante relève plutôt du manager ; l'entrepreneur schumpétérien innove."
+                  },
+                  {
+                    "text": "Inventer de nouvelles techniques dans un laboratoire de recherche.",
+                    "isCorrect": false,
+                    "rationale": "Faux : pour Schumpeter, l'entrepreneur n'est pas l'inventeur, mais celui qui met l'invention en œuvre."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la différence entre un manager et un actionnaire ?",
+                "options": [
+                  {
+                    "text": "Le manager dirige l'entreprise ; l'actionnaire en détient une part du capital.",
+                    "isCorrect": true,
+                    "rationale": "Leurs objectifs peuvent diverger : croissance de l'entreprise pour l'un, rentabilité de son placement pour l'autre."
+                  },
+                  {
+                    "text": "Le manager possède l'entreprise, l'actionnaire y travaille comme salarié.",
+                    "isCorrect": false,
+                    "rationale": "Inversion des deux rôles."
+                  },
+                  {
+                    "text": "Le manager travaille dans le secteur public, l'actionnaire dans le privé.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la distinction porte sur la fonction dans l'entreprise, pas sur le secteur."
+                  },
+                  {
+                    "text": "Il n'y a aucune différence : les deux mots désignent le chef d'entreprise.",
+                    "isCorrect": false,
+                    "rationale": "Faux : dans les grandes entreprises, dirigeants et propriétaires sont souvent des personnes différentes."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que désigne la gouvernance d'entreprise ?",
+                "options": [
+                  {
+                    "text": "La manière dont sont prises les décisions stratégiques dans l'entreprise.",
+                    "isCorrect": true,
+                    "rationale": "Elle concerne les relations entre actionnaires, dirigeants et autres parties prenantes."
+                  },
+                  {
+                    "text": "Le contrôle exercé par le gouvernement sur toutes les entreprises du pays.",
+                    "isCorrect": false,
+                    "rationale": "Piège sur le mot : la gouvernance d'entreprise ne désigne pas l'action du gouvernement."
+                  },
+                  {
+                    "text": "L'organisation du travail des salariés sur la chaîne de production.",
+                    "isCorrect": false,
+                    "rationale": "Faux : cela relève de l'organisation du travail, pas de la gouvernance."
+                  },
+                  {
+                    "text": "La stratégie publicitaire choisie pour vendre les produits de l'entreprise.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le marketing n'est pas la gouvernance."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la différence entre gouvernance actionnariale et gouvernance partenariale ?",
+                "options": [
+                  {
+                    "text": "L'une sert surtout les actionnaires, l'autre toutes les parties prenantes.",
+                    "isCorrect": true,
+                    "rationale": "La gouvernance partenariale associe salariés, clients ou fournisseurs (exemple : la cogestion en Allemagne)."
+                  },
+                  {
+                    "text": "L'actionnariale concerne les petites entreprises, la partenariale les grandes.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la distinction porte sur les intérêts privilégiés, pas sur la taille."
+                  },
+                  {
+                    "text": "L'actionnariale est imposée par l'État, la partenariale est choisie librement.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce ne sont pas des statuts imposés par l'État."
+                  },
+                  {
+                    "text": "L'actionnariale vise la qualité des produits, la partenariale le profit.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la gouvernance actionnariale vise d'abord la valeur pour l'actionnaire."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que l'autorité dans une entreprise ?",
+                "options": [
+                  {
+                    "text": "Un pouvoir de décision reconnu comme légitime par ceux qui doivent obéir.",
+                    "isCorrect": true,
+                    "rationale": "L'autorité peut reposer sur la position hiérarchique, la compétence ou l'expertise du dirigeant."
+                  },
+                  {
+                    "text": "La force physique utilisée par un dirigeant pour imposer ses décisions.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'autorité repose sur la légitimité, pas sur la contrainte physique."
+                  },
+                  {
+                    "text": "Le droit de chaque salarié de refuser les ordres de sa hiérarchie.",
+                    "isCorrect": false,
+                    "rationale": "Faux : cela ne correspond pas à la notion d'autorité."
+                  },
+                  {
+                    "text": "Le contrôle exercé par l'inspection du travail sur l'entreprise.",
+                    "isCorrect": false,
+                    "rationale": "Faux : il s'agit d'un contrôle extérieur, pas de l'autorité interne."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la différence entre une organisation centralisée et décentralisée ?",
+                "options": [
+                  {
+                    "text": "Centralisée, on décide au sommet ; décentralisée, on délègue aux équipes.",
+                    "isCorrect": true,
+                    "rationale": "La décentralisation accroît la réactivité dans un environnement incertain ; la centralisation favorise la cohérence."
+                  },
+                  {
+                    "text": "Centralisée, l'entreprise a un seul site ; décentralisée, elle en a plusieurs.",
+                    "isCorrect": false,
+                    "rationale": "Piège : la distinction porte sur le lieu des décisions, pas sur la géographie des sites."
+                  },
+                  {
+                    "text": "Centralisée, l'entreprise est publique ; décentralisée, elle est privée.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la distinction ne porte pas sur la propriété de l'entreprise."
+                  },
+                  {
+                    "text": "Centralisée, les salariés décident ensemble ; décentralisée, le patron décide seul.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : la centralisation concentre au contraire les décisions au sommet."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que désignent les parties prenantes d'une entreprise ?",
+                "options": [
+                  {
+                    "text": "Les acteurs concernés par son activité (salariés, actionnaires, clients…).",
+                    "isCorrect": true,
+                    "rationale": "Leurs intérêts peuvent converger ou s'opposer, ce qui fait de l'entreprise un lieu de relations sociales."
+                  },
+                  {
+                    "text": "Les seuls actionnaires qui possèdent une part du capital de l'entreprise.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : les actionnaires ne sont qu'une des parties prenantes."
+                  },
+                  {
+                    "text": "Les entreprises concurrentes qui vendent des produits similaires.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les concurrents ne sont pas, en général, comptés parmi les parties prenantes."
+                  },
+                  {
+                    "text": "Les membres du gouvernement chargés de l'économie.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la notion désigne les acteurs directement concernés par l'activité de l'entreprise."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi dit-on que l'entreprise est un lieu de relations sociales ?",
+                "options": [
+                  {
+                    "text": "Ses acteurs, aux intérêts différents, y coopèrent ou s'opposent.",
+                    "isCorrect": true,
+                    "rationale": "Salariés et actionnaires coopèrent pour produire, mais peuvent s'opposer sur les salaires ou la répartition des profits."
+                  },
+                  {
+                    "text": "Parce que les salariés y nouent obligatoirement des relations amicales.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la notion ne porte pas sur l'amitié entre collègues."
+                  },
+                  {
+                    "text": "Parce que toutes les décisions y sont prises à l'unanimité des salariés.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la plupart des entreprises reposent sur une hiérarchie."
+                  },
+                  {
+                    "text": "Parce qu'elle a pour seul objectif d'organiser des activités de loisirs.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'entreprise a d'abord une fonction de production."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce qui caractérise une société coopérative et participative (SCOP) ?",
+                "options": [
+                  {
+                    "text": "Les salariés sont associés majoritaires : une personne, une voix.",
+                    "isCorrect": true,
+                    "rationale": "La SCOP illustre une gouvernance différente, où ceux qui travaillent détiennent l'essentiel du pouvoir."
+                  },
+                  {
+                    "text": "Elle appartient à l'État, qui nomme tous ses dirigeants.",
+                    "isCorrect": false,
+                    "rationale": "Faux : une SCOP est une entreprise privée détenue par ses salariés."
+                  },
+                  {
+                    "text": "Les actionnaires y disposent d'un nombre de voix proportionnel à leur capital.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : c'est le principe des sociétés classiques, pas des coopératives."
+                  },
+                  {
+                    "text": "Elle n'a pas le droit de vendre ses produits sur un marché.",
+                    "isCorrect": false,
+                    "rationale": "Faux : une SCOP vend ses produits comme toute entreprise."
+                  }
+                ],
+                "level": "premiere"
+              }
+            ]
+          },
+          {
             "id": "p1_methodologie",
             "title": "Méthodologie : calculs et lecture de données",
             "icon": "fa-calculator",
             "color": "from-slate-600 to-slate-800",
+            "level": "premiere",
             "questions": [
               {
                 "question": "Un lycée compte 1 200 élèves, dont 300 en première. Quelle part représentent les élèves de première ?",
@@ -4538,13 +6803,14 @@
 
             const handleStartBacBlanc = () => {
                 setIsRemediationMode(false);
-                // 2 questions tirées dans chaque chapitre du niveau choisi, puis complément au hasard jusqu'à 20
+                // Au moins 1 question par chapitre (2 si le niveau compte 10 chapitres ou moins), puis complément au hasard jusqu'à 20
+                const perChapter = Math.max(1, Math.floor(20 / currentData.length));
                 let picked = [];
                 let remaining = [];
                 currentData.forEach(chap => {
                     const shuffled = shuffle(chap.questions);
-                    picked = picked.concat(shuffled.slice(0, 2));
-                    remaining = remaining.concat(shuffled.slice(2));
+                    picked = picked.concat(shuffled.slice(0, perChapter));
+                    remaining = remaining.concat(shuffled.slice(perChapter));
                 });
                 picked = picked.concat(shuffle(remaining).slice(0, Math.max(0, 20 - picked.length)));
                 const pickedQuestions = shuffle(picked);
