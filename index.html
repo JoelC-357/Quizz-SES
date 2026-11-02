@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SES Master Quiz - Terminale (Version Marathon 180 Questions)</title>
+    <title>SES Quiz - Première et Terminale</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- React and ReactDOM CDN -->
@@ -1724,6 +1724,2640 @@
                 ]
             }
         ];
+
+        // QUESTIONS DE PREMIÈRE (7 modules). La bonne réponse est toujours la première option dans ce tableau.
+        const quizDataPremiere = [
+          {
+            "id": "p1_marche_concurrentiel",
+            "title": "Comment un marché concurrentiel fonctionne-t-il ?",
+            "icon": "fa-scale-balanced",
+            "color": "from-sky-500 to-blue-600",
+            "questions": [
+              {
+                "question": "Pourquoi dit-on que le marché est une institution ?",
+                "options": [
+                  {
+                    "text": "Parce qu'il ne fonctionne qu'avec des règles : droits de propriété, monnaie, contrats.",
+                    "isCorrect": true,
+                    "rationale": "Le marché n'est pas un phénomène naturel : il fonctionne grâce à des règles formelles (lois, droits de propriété) et informelles (conventions) qui créent la confiance."
+                  },
+                  {
+                    "text": "Parce que l'État y fixe lui-même les prix de vente de tous les biens et services échangés.",
+                    "isCorrect": false,
+                    "rationale": "Faux : sur un marché, les prix se forment par la rencontre de l'offre et de la demande. L'État fixe les règles du jeu, pas les prix."
+                  },
+                  {
+                    "text": "Parce qu'il apparaît spontanément dès que deux personnes se rencontrent, sans aucune règle.",
+                    "isCorrect": false,
+                    "rationale": "C'est l'inverse : sans règles (propriété, monnaie, respect des contrats), l'échange marchand ne peut pas fonctionner durablement."
+                  },
+                  {
+                    "text": "Parce qu'il se situe toujours dans un lieu physique précis, comme une halle ou une bourse.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un marché peut être virtuel (vente en ligne, marchés financiers). Ce qui le définit, c'est la rencontre d'offreurs et de demandeurs."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelles sont les quatre conditions de la concurrence pure et parfaite (CPP) ?",
+                "options": [
+                  {
+                    "text": "Atomicité, homogénéité des produits, transparence de l'information, libre entrée et sortie.",
+                    "isCorrect": true,
+                    "rationale": "Ce sont les quatre conditions du modèle de CPP, qui sert de référence pour analyser les marchés réels."
+                  },
+                  {
+                    "text": "Atomicité, différenciation des produits, transparence de l'information, barrières à l'entrée.",
+                    "isCorrect": false,
+                    "rationale": "Piège : la différenciation des produits et les barrières à l'entrée sont des sources de pouvoir de marché, contraires à la CPP."
+                  },
+                  {
+                    "text": "Un seul offreur, homogénéité des produits, publicité, libre fixation des prix par les vendeurs.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un seul offreur correspond au monopole, et en CPP aucun vendeur ne peut fixer le prix."
+                  },
+                  {
+                    "text": "Atomicité, homogénéité des produits, prix fixés par l'État, libre circulation des travailleurs.",
+                    "isCorrect": false,
+                    "rationale": "Faux : en CPP, le prix résulte de l'offre et de la demande ; la libre circulation des travailleurs n'est pas une condition du modèle."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que signifie la condition d'atomicité du marché ?",
+                "options": [
+                  {
+                    "text": "Chaque offreur et chaque demandeur est trop petit pour influencer à lui seul le prix du marché.",
+                    "isCorrect": true,
+                    "rationale": "L'atomicité suppose un très grand nombre d'agents de petite taille : aucun ne peut peser sur le prix, tous sont preneurs de prix."
+                  },
+                  {
+                    "text": "Tous les produits vendus sur le marché sont identiques, quel que soit le vendeur choisi.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à la condition d'homogénéité des produits."
+                  },
+                  {
+                    "text": "Tous les acheteurs et vendeurs connaissent en permanence les prix et les qualités proposés.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à la condition de transparence de l'information."
+                  },
+                  {
+                    "text": "Toute entreprise peut entrer sur le marché ou le quitter sans obstacle ni coût particulier.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à la condition de libre entrée et de libre sortie."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce qu'un « preneur de prix » (price taker) ?",
+                "options": [
+                  {
+                    "text": "Un agent trop petit pour influencer le prix, qui doit accepter le prix fixé par le marché.",
+                    "isCorrect": true,
+                    "rationale": "En CPP, tous les agents sont preneurs de prix. À l'inverse, un monopole est faiseur de prix (price maker)."
+                  },
+                  {
+                    "text": "Une entreprise assez puissante pour imposer son prix de vente à l'ensemble des consommateurs.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : cela décrit un faiseur de prix (price maker), comme une entreprise en monopole."
+                  },
+                  {
+                    "text": "Un consommateur qui achète toujours le produit le moins cher, quelle que soit sa qualité.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la notion ne décrit pas une stratégie d'achat, mais l'incapacité d'un agent à influencer le prix."
+                  },
+                  {
+                    "text": "Un organisme public chargé de relever les prix pour calculer l'indice des prix à la consommation.",
+                    "isCorrect": false,
+                    "rationale": "Faux : c'est le rôle de l'Insee, sans rapport avec la notion de preneur de prix."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi la courbe de demande est-elle décroissante ?",
+                "options": [
+                  {
+                    "text": "Plus le prix est élevé, moins les consommateurs sont nombreux à juger que l'achat en vaut la peine.",
+                    "isCorrect": true,
+                    "rationale": "Quand le prix monte, certains consommateurs renoncent ou achètent moins : la quantité demandée diminue. La demande est une fonction décroissante du prix."
+                  },
+                  {
+                    "text": "Parce que les producteurs réduisent les quantités offertes lorsque le prix de vente diminue.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela décrit le comportement des offreurs (courbe d'offre), pas celui des demandeurs."
+                  },
+                  {
+                    "text": "Parce que le revenu des consommateurs augmente toujours lorsque le prix des biens augmente.",
+                    "isCorrect": false,
+                    "rationale": "Faux : une hausse des prix ne fait pas augmenter le revenu ; elle réduit au contraire le pouvoir d'achat."
+                  },
+                  {
+                    "text": "Parce que plus un bien est cher, plus il est recherché par l'ensemble des consommateurs.",
+                    "isCorrect": false,
+                    "rationale": "Faux dans le cas général : cela ne vaut que pour quelques biens de prestige (effet Veblen), pas pour la demande en général."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi la courbe d'offre est-elle croissante ?",
+                "options": [
+                  {
+                    "text": "Le coût marginal croît : produire plus n'est rentable qu'à un prix plus élevé.",
+                    "isCorrect": true,
+                    "rationale": "Le producteur produit tant que le prix couvre le coût marginal. Comme ce coût augmente, il ne produit davantage que si le prix monte."
+                  },
+                  {
+                    "text": "Parce que les consommateurs achètent davantage lorsque le prix de vente augmente.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : la demande est décroissante. La croissance de l'offre s'explique par le comportement des producteurs."
+                  },
+                  {
+                    "text": "Parce que le coût de production de chaque unité supplémentaire diminue toujours avec les quantités.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : dans le modèle, le coût marginal est croissant, ce qui explique la pente positive de l'offre."
+                  },
+                  {
+                    "text": "Parce que l'État impose aux entreprises d'augmenter leur production quand les prix montent.",
+                    "isCorrect": false,
+                    "rationale": "Faux : en CPP, les producteurs décident librement ; c'est la recherche du profit qui explique leur réaction au prix."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que le coût marginal ?",
+                "options": [
+                  {
+                    "text": "Le coût de production d'une unité supplémentaire.",
+                    "isCorrect": true,
+                    "rationale": "Le producteur compare ce coût au prix : il produit une unité de plus tant que le prix est au moins égal au coût marginal."
+                  },
+                  {
+                    "text": "Le coût total divisé par le nombre d'unités produites.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au coût moyen (ou coût unitaire)."
+                  },
+                  {
+                    "text": "Le coût qui ne varie pas avec la quantité produite.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond aux coûts fixes (loyer, machines)."
+                  },
+                  {
+                    "text": "Le bénéfice réalisé sur la dernière unité vendue.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le coût marginal est un coût, pas un bénéfice ; le profit dépend de l'écart entre prix et coût."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "La baisse du prix d'un bien, toutes choses égales par ailleurs, se traduit sur le graphique par :",
+                "options": [
+                  {
+                    "text": "Un déplacement le long de la courbe de demande : la quantité demandée augmente.",
+                    "isCorrect": true,
+                    "rationale": "Quand seul le prix du bien varie, on se déplace sur la courbe. La courbe elle-même ne bouge que si un autre facteur change."
+                  },
+                  {
+                    "text": "Un déplacement de toute la courbe de demande vers la droite du graphique.",
+                    "isCorrect": false,
+                    "rationale": "Piège classique : la courbe se déplace seulement si un autre déterminant change (revenu, goûts, nombre d'acheteurs)."
+                  },
+                  {
+                    "text": "Un déplacement de toute la courbe d'offre vers la gauche du graphique.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la courbe d'offre se déplace quand les coûts ou les techniques changent, pas quand le prix varie."
+                  },
+                  {
+                    "text": "Une baisse de la quantité demandée, car le bien paraît de moins bonne qualité.",
+                    "isCorrect": false,
+                    "rationale": "Faux : dans le modèle, une baisse du prix augmente la quantité demandée (demande décroissante)."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Le revenu des consommateurs augmente. Pour un bien normal, que se passe-t-il sur le marché ?",
+                "options": [
+                  {
+                    "text": "La demande se déplace vers la droite : le prix et la quantité d'équilibre augmentent.",
+                    "isCorrect": true,
+                    "rationale": "À chaque prix, les consommateurs veulent acheter davantage. Le nouvel équilibre se fixe à un prix et une quantité plus élevés."
+                  },
+                  {
+                    "text": "La demande se déplace vers la gauche : le prix et la quantité d'équilibre diminuent.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : une hausse du revenu augmente la demande d'un bien normal ; la courbe va vers la droite."
+                  },
+                  {
+                    "text": "L'offre se déplace vers la droite : le prix baisse et la quantité augmente.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : le revenu des consommateurs est un déterminant de la demande, pas de l'offre."
+                  },
+                  {
+                    "text": "On se déplace le long de la courbe de demande, sans changement d'équilibre.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un changement de revenu déplace toute la courbe de demande et modifie l'équilibre."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Le prix d'une matière première utilisée par les producteurs augmente fortement. Quel est l'effet attendu ?",
+                "options": [
+                  {
+                    "text": "L'offre se déplace vers la gauche : le prix d'équilibre monte et la quantité échangée baisse.",
+                    "isCorrect": true,
+                    "rationale": "La hausse des coûts réduit la quantité offerte à chaque prix. Le nouvel équilibre se situe à un prix plus élevé et une quantité plus faible."
+                  },
+                  {
+                    "text": "L'offre se déplace vers la droite : le prix d'équilibre baisse et la quantité augmente.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : une hausse des coûts de production réduit l'offre, la courbe se déplace vers la gauche."
+                  },
+                  {
+                    "text": "La demande se déplace vers la droite : le prix et la quantité d'équilibre augmentent.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : le coût des matières premières est un déterminant de l'offre, pas de la demande."
+                  },
+                  {
+                    "text": "Rien ne change, car les producteurs absorbent la hausse en réduisant leur marge.",
+                    "isCorrect": false,
+                    "rationale": "Faux : dans le modèle, une hausse du coût marginal modifie l'offre et donc l'équilibre."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Le prix pratiqué sur un marché est supérieur au prix d'équilibre. Que se passe-t-il ?",
+                "options": [
+                  {
+                    "text": "La quantité offerte dépasse la quantité demandée : cet excédent fait baisser le prix.",
+                    "isCorrect": true,
+                    "rationale": "Les vendeurs ne parviennent pas à écouler leur production et baissent leurs prix jusqu'à l'équilibre : c'est l'autorégulation par les prix."
+                  },
+                  {
+                    "text": "La quantité demandée dépasse la quantité offerte : cette pénurie fait monter le prix.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : une pénurie apparaît quand le prix est inférieur au prix d'équilibre."
+                  },
+                  {
+                    "text": "Le marché reste bloqué à ce prix, car les vendeurs refusent toujours de baisser leurs prix.",
+                    "isCorrect": false,
+                    "rationale": "Faux : en concurrence, les vendeurs qui ne vendent pas ont intérêt à baisser leur prix."
+                  },
+                  {
+                    "text": "L'État doit intervenir, car un marché concurrentiel ne revient jamais seul à l'équilibre.",
+                    "isCorrect": false,
+                    "rationale": "Faux : dans le modèle, les variations du prix suffisent à rétablir l'équilibre."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que le surplus du consommateur ?",
+                "options": [
+                  {
+                    "text": "La différence entre le prix maximal qu'il était prêt à payer et le prix qu'il paie réellement.",
+                    "isCorrect": true,
+                    "rationale": "C'est son gain à l'échange. La somme des gains de tous les consommateurs forme le surplus du consommateur."
+                  },
+                  {
+                    "text": "La différence entre le prix de vente et le prix minimal auquel le vendeur acceptait de vendre.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au gain à l'échange du producteur (surplus du producteur)."
+                  },
+                  {
+                    "text": "La quantité de biens achetée en trop par rapport à ce dont le consommateur avait besoin.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le surplus est un gain mesuré en valeur, pas un excès de quantité achetée."
+                  },
+                  {
+                    "text": "La part de son revenu que le consommateur épargne après avoir payé ses achats.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à l'épargne, pas au surplus du consommateur."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi dit-on que l'équilibre concurrentiel est efficace ?",
+                "options": [
+                  {
+                    "text": "Parce que le surplus total y est maximal : tous les échanges avantageux pour les deux parties ont lieu.",
+                    "isCorrect": true,
+                    "rationale": "À l'équilibre, aucun échange mutuellement profitable n'est empêché : la somme des surplus est la plus élevée possible."
+                  },
+                  {
+                    "text": "Parce que tous les consommateurs peuvent acheter le bien, quel que soit leur revenu.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les consommateurs prêts à payer moins que le prix d'équilibre n'achètent pas. L'efficacité ne garantit pas l'égalité."
+                  },
+                  {
+                    "text": "Parce que les entreprises y réalisent toujours le profit le plus élevé qu'elles puissent obtenir.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un monopole ferait plus de profit. L'efficacité concerne le surplus total, pas le seul profit."
+                  },
+                  {
+                    "text": "Parce que l'État y fixe un prix juste qui satisfait à la fois acheteurs et vendeurs.",
+                    "isCorrect": false,
+                    "rationale": "Faux : en concurrence, le prix d'équilibre n'est pas fixé par l'État, il résulte de l'offre et de la demande."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "L'État instaure une taxe forfaitaire sur chaque unité vendue d'un bien. Quel est l'effet attendu ?",
+                "options": [
+                  {
+                    "text": "Le prix payé par les acheteurs monte, le prix reçu par les vendeurs baisse et la quantité diminue.",
+                    "isCorrect": true,
+                    "rationale": "La taxe déplace l'offre vers le haut de son montant. Sa charge est partagée entre acheteurs et vendeurs, quel que soit celui qui la verse."
+                  },
+                  {
+                    "text": "Le prix payé par les acheteurs augmente exactement du montant de la taxe, sans effet sur la quantité.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la quantité échangée diminue, et la charge de la taxe est en général partagée entre les deux côtés du marché."
+                  },
+                  {
+                    "text": "Les vendeurs supportent toute la taxe, car ce sont eux qui la reversent à l'État.",
+                    "isCorrect": false,
+                    "rationale": "Faux : celui qui verse la taxe n'est pas forcément celui qui la supporte ; la charge est partagée."
+                  },
+                  {
+                    "text": "La demande se déplace vers la droite, car les consommateurs anticipent de nouvelles hausses.",
+                    "isCorrect": false,
+                    "rationale": "Faux : dans le modèle, la taxe agit sur l'offre (hausse du coût de chaque unité), pas sur la demande."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'appelle-t-on la « perte sèche » liée à une taxe ?",
+                "options": [
+                  {
+                    "text": "La part du surplus qui disparaît parce que des échanges avantageux n'ont plus lieu.",
+                    "isCorrect": true,
+                    "rationale": "Une partie du surplus perdu devient une recette fiscale pour l'État ; l'autre disparaît : c'est la perte sèche."
+                  },
+                  {
+                    "text": "Le montant total de la recette fiscale perçue par l'État grâce à la taxe.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : la recette fiscale est transférée à l'État, elle n'est pas perdue pour la collectivité."
+                  },
+                  {
+                    "text": "La baisse du chiffre d'affaires des entreprises qui ont choisi de quitter le marché.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la perte sèche se mesure en surplus perdu pour l'ensemble des acheteurs et des vendeurs."
+                  },
+                  {
+                    "text": "Le coût administratif supporté par l'État pour collecter la taxe auprès des vendeurs.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la perte sèche ne correspond pas à un coût de gestion, mais aux échanges qui n'ont plus lieu."
+                  }
+                ],
+                "level": "premiere"
+              }
+            ]
+          },
+          {
+            "id": "p1_marche_imparfait",
+            "title": "Comment les marchés imparfaitement concurrentiels fonctionnent-ils ?",
+            "icon": "fa-crown",
+            "color": "from-indigo-500 to-violet-600",
+            "questions": [
+              {
+                "question": "Qu'est-ce que le pouvoir de marché d'une entreprise ?",
+                "options": [
+                  {
+                    "text": "Sa capacité à fixer un prix supérieur à celui qui résulterait de la concurrence.",
+                    "isCorrect": true,
+                    "rationale": "Une entreprise dotée d'un pouvoir de marché n'est plus preneuse de prix : elle peut agir sur le prix à son avantage."
+                  },
+                  {
+                    "text": "Sa capacité à vendre plus de produits que ses concurrents grâce à des prix plus bas.",
+                    "isCorrect": false,
+                    "rationale": "Faux : vendre beaucoup ne suffit pas. Le pouvoir de marché désigne la capacité d'influencer le prix."
+                  },
+                  {
+                    "text": "Le droit, accordé par l'État, de fixer librement les salaires de ses employés.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : le pouvoir de marché concerne le prix du bien vendu, pas la fixation des salaires."
+                  },
+                  {
+                    "text": "La part de marché minimale exigée par la loi pour pouvoir exercer une activité.",
+                    "isCorrect": false,
+                    "rationale": "Faux : aucune part de marché minimale n'est imposée par la loi pour exercer une activité."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi le monopole est-il « faiseur de prix » ?",
+                "options": [
+                  {
+                    "text": "Seul offreur, il fait face à toute la demande et peut choisir le prix qui maximise son profit.",
+                    "isCorrect": true,
+                    "rationale": "Sans concurrent, le monopole n'est pas soumis au prix du marché : il fixe le prix (ou la quantité) le plus favorable à son profit."
+                  },
+                  {
+                    "text": "Parce que l'État l'oblige à vendre au prix le plus bas possible pour protéger les consommateurs.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le monopole fixe au contraire un prix plus élevé qu'en concurrence."
+                  },
+                  {
+                    "text": "Parce qu'il vend un produit identique à celui de nombreux concurrents de petite taille.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : cette situation correspond à la concurrence pure et parfaite, où chacun est preneur de prix."
+                  },
+                  {
+                    "text": "Parce qu'il produit toujours plus que les entreprises d'un marché concurrentiel.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le monopole produit en général une quantité plus faible qu'un marché concurrentiel."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce qu'un monopole naturel ?",
+                "options": [
+                  {
+                    "text": "Un monopole lié à des coûts fixes très élevés, qui rendent une seule entreprise plus efficace.",
+                    "isCorrect": true,
+                    "rationale": "Dans les réseaux (rail, électricité), une seule entreprise peut couvrir ses coûts fixes ; plusieurs concurrents feraient des pertes."
+                  },
+                  {
+                    "text": "Un monopole qui exploite une ressource naturelle, comme une mine ou un gisement de pétrole.",
+                    "isCorrect": false,
+                    "rationale": "Piège sur le mot « naturel » : il désigne ici la structure des coûts, pas l'exploitation d'une ressource de la nature."
+                  },
+                  {
+                    "text": "Un monopole créé par la loi, qui réserve une activité à un seul producteur autorisé.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au monopole institutionnel (légal)."
+                  },
+                  {
+                    "text": "Un monopole temporaire accordé à une entreprise après le dépôt d'un brevet.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au monopole d'innovation."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quel exemple illustre un monopole institutionnel ?",
+                "options": [
+                  {
+                    "text": "La vente de tabac, réservée en France aux buralistes autorisés.",
+                    "isCorrect": true,
+                    "rationale": "Le monopole découle ici d'une protection réglementaire : seuls les débitants agréés peuvent vendre du tabac."
+                  },
+                  {
+                    "text": "Une entreprise qui détient un brevet sur un nouveau médicament.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : le brevet crée un monopole d'innovation, temporaire."
+                  },
+                  {
+                    "text": "Un réseau de distribution d'électricité aux coûts fixes énormes.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : il s'agit d'un monopole naturel, lié à la structure des coûts."
+                  },
+                  {
+                    "text": "Une boulangerie, seule dans un village grâce à sa réputation.",
+                    "isCorrect": false,
+                    "rationale": "Faux : aucune règle n'interdit l'arrivée d'un concurrent ; ce n'est pas un monopole institutionnel."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi un brevet crée-t-il un monopole d'innovation ?",
+                "options": [
+                  {
+                    "text": "Il réserve à l'innovateur l'exploitation de son invention pendant une durée limitée (20 ans).",
+                    "isCorrect": true,
+                    "rationale": "Le brevet empêche la copie : l'entreprise peut fixer un prix élevé et rentabiliser ses dépenses de recherche."
+                  },
+                  {
+                    "text": "Il oblige les concurrents à vendre le même produit au même prix que l'innovateur.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le brevet interdit aux concurrents d'exploiter l'invention, il ne fixe pas leurs prix."
+                  },
+                  {
+                    "text": "Il garantit à l'entreprise innovante un monopole définitif sur l'ensemble de son secteur.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la protection est temporaire et ne porte que sur l'invention brevetée."
+                  },
+                  {
+                    "text": "Il permet à l'État de fixer le prix des produits innovants pour les rendre accessibles.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le brevet est un droit de propriété intellectuelle, pas un outil de fixation des prix."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce qu'une barrière à l'entrée ?",
+                "options": [
+                  {
+                    "text": "Un obstacle technique, financier ou légal qui protège les firmes déjà installées.",
+                    "isCorrect": true,
+                    "rationale": "Coûts fixes élevés, brevets, réglementation ou image de marque protègent les firmes déjà installées et leur pouvoir de marché."
+                  },
+                  {
+                    "text": "Un droit de douane payé par les entreprises étrangères qui veulent vendre dans le pays.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : un droit de douane est une barrière tarifaire au commerce international, pas une barrière à l'entrée d'un marché."
+                  },
+                  {
+                    "text": "Le prix minimum fixé par l'État en dessous duquel un produit ne peut pas être vendu.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à un prix plancher, une intervention publique sur les prix."
+                  },
+                  {
+                    "text": "L'obligation pour une entreprise de quitter un marché lorsqu'elle réalise des pertes.",
+                    "isCorrect": false,
+                    "rationale": "Faux : cela renvoie à la sortie du marché ; une barrière à l'entrée empêche au contraire d'y entrer."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Par rapport à un marché concurrentiel, comment se situe l'équilibre du monopole ?",
+                "options": [
+                  {
+                    "text": "Le prix est plus élevé et la quantité échangée plus faible.",
+                    "isCorrect": true,
+                    "rationale": "En limitant la quantité offerte, le monopole fait monter le prix et augmente son profit."
+                  },
+                  {
+                    "text": "Le prix est plus bas et la quantité échangée plus élevée.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : c'est le marché concurrentiel qui offre un prix plus bas et une quantité plus élevée."
+                  },
+                  {
+                    "text": "Le prix et la quantité sont identiques, seul le profit change.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le monopole modifie à la fois le prix et la quantité échangée."
+                  },
+                  {
+                    "text": "Le prix est plus élevé, mais la quantité reste exactement la même.",
+                    "isCorrect": false,
+                    "rationale": "Faux : à un prix plus élevé, la quantité demandée diminue (demande décroissante)."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi l'équilibre du monopole n'est-il pas efficace ?",
+                "options": [
+                  {
+                    "text": "Le surplus total diminue, car certains échanges avantageux n'ont plus lieu.",
+                    "isCorrect": true,
+                    "rationale": "Le monopole capte une partie du surplus du consommateur ; une autre partie disparaît (perte sèche) : le surplus total baisse."
+                  },
+                  {
+                    "text": "Parce que le monopole réalise toujours des pertes, ce qui l'oblige à quitter le marché.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le monopole réalise en général un profit élevé ; le problème concerne le surplus total."
+                  },
+                  {
+                    "text": "Parce que le surplus du consommateur augmente au détriment de celui du producteur.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : c'est le surplus du consommateur qui diminue, au profit du producteur."
+                  },
+                  {
+                    "text": "Parce que le monopole produit davantage que ce que les consommateurs souhaitent acheter.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le monopole produit moins qu'en concurrence, pas plus."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce qu'un oligopole ?",
+                "options": [
+                  {
+                    "text": "Un marché où quelques entreprises seulement assurent l'offre.",
+                    "isCorrect": true,
+                    "rationale": "Exemples : Airbus et Boeing, les opérateurs de téléphonie. Chaque firme doit tenir compte des décisions des autres."
+                  },
+                  {
+                    "text": "Un marché où un grand nombre de petites entreprises vendent des produits identiques.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela décrit la concurrence pure et parfaite (atomicité, homogénéité)."
+                  },
+                  {
+                    "text": "Un marché où une seule entreprise assure toute l'offre et fixe le prix.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au monopole."
+                  },
+                  {
+                    "text": "Un marché où un seul acheteur fait face à de nombreux vendeurs.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à un monopsone, situation inverse du monopole."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "En oligopole, pourquoi les entreprises ont-elles intérêt à former une entente ?",
+                "options": [
+                  {
+                    "text": "En s'accordant sur les prix ou les quantités, elles obtiennent ensemble un profit plus élevé.",
+                    "isCorrect": true,
+                    "rationale": "L'entente leur permet d'agir comme un monopole collectif, au détriment des consommateurs. C'est pourquoi elle est illégale."
+                  },
+                  {
+                    "text": "Parce que la loi oblige les entreprises d'un même secteur à harmoniser leurs prix.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la loi interdit au contraire les ententes, considérées comme des pratiques anticoncurrentielles."
+                  },
+                  {
+                    "text": "Parce que l'entente leur permet de baisser leurs prix pour attirer davantage de clients.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : une entente vise à limiter la concurrence pour pratiquer des prix plus élevés."
+                  },
+                  {
+                    "text": "Parce qu'une entente supprime tout risque de sanction de la part des autorités.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les ententes sont sanctionnées par l'Autorité de la concurrence et la Commission européenne."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que montre le dilemme du prisonnier appliqué aux entreprises en oligopole ?",
+                "options": [
+                  {
+                    "text": "Chacun a intérêt à trahir l'accord, même si la coopération profiterait à tous.",
+                    "isCorrect": true,
+                    "rationale": "Chaque firme craint que l'autre ne baisse ses prix en secret et gagne à le faire elle-même : l'entente est fragile."
+                  },
+                  {
+                    "text": "Les entreprises respectent toujours leurs accords, car la trahison est immédiatement sanctionnée.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le dilemme montre justement que la trahison est tentante pour chacun, ce qui fragilise l'entente."
+                  },
+                  {
+                    "text": "La concurrence aboutit toujours au profit le plus élevé possible pour chaque entreprise.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la concurrence fait baisser les prix ; c'est la coopération qui donnerait le profit collectif le plus élevé."
+                  },
+                  {
+                    "text": "Une entreprise gagne toujours davantage en coopérant, quoi que fasse l'autre entreprise.",
+                    "isCorrect": false,
+                    "rationale": "Faux : si l'autre coopère, trahir rapporte encore plus ; c'est ce qui rend la coopération instable."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce qu'un abus de position dominante ?",
+                "options": [
+                  {
+                    "text": "L'utilisation de son pouvoir de marché pour imposer aux autres des conditions déloyales.",
+                    "isCorrect": true,
+                    "rationale": "Être dominant n'est pas interdit ; c'est l'abus qui l'est (prix prédateurs, ventes liées, exclusion des concurrents)."
+                  },
+                  {
+                    "text": "Le simple fait, pour une entreprise, de détenir une part de marché supérieure à 50 %.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la position dominante n'est pas illégale en soi ; seul son abus est sanctionné."
+                  },
+                  {
+                    "text": "Un accord secret entre plusieurs entreprises concurrentes pour fixer ensemble les prix.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à une entente illicite (cartel)."
+                  },
+                  {
+                    "text": "Le rachat d'une entreprise concurrente pour augmenter sa taille sur le marché.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à une fusion-acquisition, soumise à un contrôle spécifique."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi les autorités contrôlent-elles les fusions-acquisitions ?",
+                "options": [
+                  {
+                    "text": "Pour éviter qu'un rapprochement crée une entreprise capable d'imposer des prix élevés.",
+                    "isCorrect": true,
+                    "rationale": "Une fusion peut réduire la concurrence. Les autorités peuvent l'interdire ou imposer des conditions (cession d'activités)."
+                  },
+                  {
+                    "text": "Pour interdire systématiquement toute fusion entre entreprises d'un même pays.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la grande majorité des fusions sont autorisées ; seules celles qui menacent la concurrence posent problème."
+                  },
+                  {
+                    "text": "Pour obliger les petites entreprises à fusionner afin de devenir plus compétitives.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le contrôle vise à protéger la concurrence, pas à imposer des fusions."
+                  },
+                  {
+                    "text": "Pour fixer le prix de rachat que l'acheteur doit verser aux actionnaires.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le prix de rachat est négocié entre les entreprises, pas fixé par les autorités."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quel est l'objectif de la politique de la concurrence ?",
+                "options": [
+                  {
+                    "text": "Protéger la concurrence pour accroître le surplus du consommateur.",
+                    "isCorrect": true,
+                    "rationale": "En luttant contre les ententes, les abus de position dominante et les concentrations excessives, elle accroît le surplus du consommateur."
+                  },
+                  {
+                    "text": "Protéger les entreprises nationales de la concurrence des entreprises étrangères.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au protectionnisme, pas à la politique de la concurrence."
+                  },
+                  {
+                    "text": "Garantir à chaque entreprise un niveau de profit minimum fixé par l'État.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la politique de la concurrence ne garantit aucun profit ; elle vise le bon fonctionnement des marchés."
+                  },
+                  {
+                    "text": "Fixer elle-même les prix des biens essentiels pour qu'ils restent accessibles.",
+                    "isCorrect": false,
+                    "rationale": "Faux : elle agit sur les comportements des entreprises, pas par la fixation directe des prix."
+                  }
+                ],
+                "level": "premiere"
+              }
+            ]
+          },
+          {
+            "id": "p1_socialisation",
+            "title": "Comment la socialisation explique-t-elle les différences de comportement ?",
+            "icon": "fa-children",
+            "color": "from-pink-500 to-rose-600",
+            "questions": [
+              {
+                "question": "Comment définit-on la socialisation ?",
+                "options": [
+                  {
+                    "text": "Le processus d'apprentissage et d'intériorisation des normes et des valeurs.",
+                    "isCorrect": true,
+                    "rationale": "La socialisation transmet des façons d'agir, de penser et d'anticiper l'avenir. Elle commence dans l'enfance et se poursuit à l'âge adulte."
+                  },
+                  {
+                    "text": "L'apprentissage des règles de politesse, qui se termine à la fin de l'enfance.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : la socialisation ne se limite pas à la politesse et ne s'arrête pas à l'enfance."
+                  },
+                  {
+                    "text": "Le fait de nouer des amitiés et d'entretenir une vie sociale active avec ses proches.",
+                    "isCorrect": false,
+                    "rationale": "Confusion avec le langage courant (« être sociable ») : c'est la sociabilité, pas la socialisation."
+                  },
+                  {
+                    "text": "L'ensemble des comportements innés que l'enfant possède dès sa naissance.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : la socialisation porte sur ce qui est appris et construit par la société, pas sur l'inné."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la différence entre socialisation primaire et socialisation secondaire ?",
+                "options": [
+                  {
+                    "text": "La primaire a lieu dans l'enfance, la secondaire à l'âge adulte.",
+                    "isCorrect": true,
+                    "rationale": "La socialisation secondaire (travail, couple, engagement politique) prolonge ou transforme les acquis de l'enfance."
+                  },
+                  {
+                    "text": "La primaire est assurée par l'école, la secondaire par la famille.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la famille est l'instance centrale de la socialisation primaire, avec l'école."
+                  },
+                  {
+                    "text": "La primaire concerne les filles, la secondaire concerne les garçons.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la distinction porte sur le moment de la vie, pas sur le genre."
+                  },
+                  {
+                    "text": "La primaire est volontaire, la secondaire est toujours imposée.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les deux combinent des apprentissages conscients et inconscients."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelles sont les principales instances de socialisation ?",
+                "options": [
+                  {
+                    "text": "La famille, l'école, les groupes de pairs et les médias.",
+                    "isCorrect": true,
+                    "rationale": "Ces instances transmettent des normes et des valeurs, parfois de façon convergente, parfois contradictoire."
+                  },
+                  {
+                    "text": "L'État, les banques, les entreprises et les syndicats.",
+                    "isCorrect": false,
+                    "rationale": "Faux : certaines peuvent socialiser à l'âge adulte, mais ce ne sont pas les instances principales retenues par le programme."
+                  },
+                  {
+                    "text": "Les seuls parents, qui transmettent tout à leurs enfants.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : l'école, les pairs et les médias jouent aussi un rôle important."
+                  },
+                  {
+                    "text": "Les gènes et l'hérédité, transmis par les deux parents.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'hérédité biologique n'est pas une instance de socialisation, qui renvoie à des apprentissages sociaux."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Par quels mécanismes la socialisation s'opère-t-elle ?",
+                "options": [
+                  {
+                    "text": "Par inculcation, par imprégnation et par interaction avec les autres.",
+                    "isCorrect": true,
+                    "rationale": "L'inculcation est explicite (règles, récompenses, sanctions), l'imprégnation est implicite (imitation, exemple), l'interaction fait de l'enfant un acteur."
+                  },
+                  {
+                    "text": "Uniquement par les punitions et les récompenses données par les parents.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : l'imitation et l'imprégnation jouent un rôle tout aussi important."
+                  },
+                  {
+                    "text": "Par la transmission génétique des comportements de génération en génération.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la socialisation est un apprentissage social, pas une transmission biologique."
+                  },
+                  {
+                    "text": "Par la seule lecture des manuels scolaires pendant les heures de classe.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : l'essentiel de la socialisation se fait en dehors des apprentissages scolaires."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Comment se manifeste la socialisation différenciée selon le genre ?",
+                "options": [
+                  {
+                    "text": "Les adultes n'ont pas les mêmes attentes envers les filles et les garçons (jouets, loisirs, rapport au risque).",
+                    "isCorrect": true,
+                    "rationale": "Ces stéréotypes intériorisés expliquent des différences durables de comportements, d'aspirations et de choix d'orientation."
+                  },
+                  {
+                    "text": "Les filles et les garçons ont des capacités naturellement différentes, que l'éducation ne fait que révéler.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la sociologie montre que ces différences sont construites socialement, pas naturelles."
+                  },
+                  {
+                    "text": "Elle a disparu en France, car filles et garçons fréquentent désormais les mêmes écoles.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la mixité scolaire n'a pas supprimé les stéréotypes, visibles dans les jouets ou l'orientation."
+                  },
+                  {
+                    "text": "Elle concerne uniquement les familles des milieux populaires, et non les autres milieux.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la socialisation différenciée selon le genre traverse tous les milieux sociaux, avec des intensités variables."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Comment le milieu social influence-t-il la socialisation des enfants ?",
+                "options": [
+                  {
+                    "text": "Les familles transmettent des pratiques culturelles et un rapport au corps différents.",
+                    "isCorrect": true,
+                    "rationale": "La socialisation est socialement située : lecture, sorties culturelles, alimentation ou rapport à la santé varient selon le milieu."
+                  },
+                  {
+                    "text": "Il n'a aucune influence, car l'école donne exactement la même éducation à tous les enfants.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'école ne neutralise pas les différences de socialisation familiale."
+                  },
+                  {
+                    "text": "Il influence uniquement le niveau de revenu futur, mais pas les goûts ni les comportements.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le milieu social influence aussi les goûts, les loisirs et les manières d'agir."
+                  },
+                  {
+                    "text": "Il détermine totalement le destin de chaque enfant, sans aucune exception possible.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'influence est forte mais pas absolue ; il existe des trajectoires improbables."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que désigne la notion de configurations familiales ?",
+                "options": [
+                  {
+                    "text": "La diversité des familles : fratrie, situation des parents, ressources, rang.",
+                    "isCorrect": true,
+                    "rationale": "Cette notion permet de penser les familles au pluriel et d'expliquer des socialisations différentes au sein d'un même milieu."
+                  },
+                  {
+                    "text": "Le modèle unique de la famille composée de deux parents mariés et de deux enfants.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : la notion vise justement à sortir de l'idée d'un modèle familial unique."
+                  },
+                  {
+                    "text": "La répartition des pièces du logement entre les différents membres de la famille.",
+                    "isCorrect": false,
+                    "rationale": "Piège sur le mot « configuration » : la notion porte sur la structure et les ressources de la famille."
+                  },
+                  {
+                    "text": "L'arbre généalogique qui retrace l'origine d'une famille sur plusieurs générations.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : la généalogie n'est pas l'objet de cette notion sociologique."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que la socialisation professionnelle ?",
+                "options": [
+                  {
+                    "text": "L'apprentissage des savoir-faire et des normes d'un métier.",
+                    "isCorrect": true,
+                    "rationale": "Exemples : les apprentis cuisiniers ou les internes en médecine intériorisent les gestes et les codes de leur profession."
+                  },
+                  {
+                    "text": "La formation scolaire suivie avant d'entrer sur le marché du travail.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : la socialisation professionnelle se poursuit surtout au contact du métier lui-même."
+                  },
+                  {
+                    "text": "Le choix d'un métier en fonction de ses goûts personnels innés.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les goûts sont eux-mêmes construits par la socialisation, et la notion porte sur l'apprentissage du métier."
+                  },
+                  {
+                    "text": "L'ensemble des relations amicales nouées avec ses collègues de travail.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : la sociabilité au travail n'est qu'une partie de la socialisation professionnelle."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que se passe-t-il lors de la socialisation conjugale ?",
+                "options": [
+                  {
+                    "text": "Les conjoints confrontent leurs habitudes et créent de nouvelles règles de vie.",
+                    "isCorrect": true,
+                    "rationale": "La vie en couple transforme les deux partenaires (alimentation, rangement, loisirs), surtout s'ils viennent de milieux différents."
+                  },
+                  {
+                    "text": "Le conjoint le plus âgé impose toujours ses habitudes à l'autre.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la socialisation conjugale est un ajustement réciproque, pas une imposition à sens unique."
+                  },
+                  {
+                    "text": "Les conjoints conservent exactement les habitudes acquises dans leur enfance.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la vie à deux modifie les manières de faire de chacun."
+                  },
+                  {
+                    "text": "Les conjoints adoptent les règles de vie fixées par la loi pour les couples mariés.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la socialisation conjugale relève des pratiques quotidiennes, pas du droit."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que la socialisation anticipatrice (Merton) ?",
+                "options": [
+                  {
+                    "text": "Le fait d'adopter à l'avance les normes d'un groupe que l'on souhaite rejoindre.",
+                    "isCorrect": true,
+                    "rationale": "Exemple : un lycéen qui adopte les codes d'une grande école qu'il vise. Elle facilite l'intégration future dans le groupe de référence."
+                  },
+                  {
+                    "text": "Le fait de prévoir son avenir professionnel grâce aux conseils d'un orientateur.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la notion désigne l'intériorisation des normes d'un groupe visé, pas un conseil d'orientation."
+                  },
+                  {
+                    "text": "L'éducation reçue par un enfant avant sa naissance, pendant la grossesse.",
+                    "isCorrect": false,
+                    "rationale": "Faux : cela n'a pas de sens sociologique ; la socialisation commence après la naissance."
+                  },
+                  {
+                    "text": "Le fait de rejeter les normes de son groupe d'origine par esprit de rébellion.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la socialisation anticipatrice est orientée vers un groupe visé, pas vers un simple rejet."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce qu'une trajectoire improbable ?",
+                "options": [
+                  {
+                    "text": "Un parcours qui s'écarte de la trajectoire la plus fréquente dans le milieu d'origine.",
+                    "isCorrect": true,
+                    "rationale": "Exemple : un enfant d'ouvriers devenu cadre (transfuge de classe). Ces trajectoires restent des exceptions statistiques."
+                  },
+                  {
+                    "text": "Un parcours impossible à réaliser, quels que soient les efforts fournis par l'individu.",
+                    "isCorrect": false,
+                    "rationale": "Faux : improbable signifie peu fréquent statistiquement, pas impossible."
+                  },
+                  {
+                    "text": "Un parcours scolaire marqué par de nombreux redoublements successifs.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la notion compare la position atteinte à celle du milieu d'origine, pas le nombre de redoublements."
+                  },
+                  {
+                    "text": "Un parcours qui reproduit exactement la profession exercée par ses parents.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : reproduire la position des parents est au contraire la trajectoire la plus probable."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Comment la sociologie explique-t-elle les trajectoires improbables ?",
+                "options": [
+                  {
+                    "text": "Par des influences multiples (école, proches) et les configurations familiales.",
+                    "isCorrect": true,
+                    "rationale": "Un enseignant, un parent mobilisé ou une fratrie réduite peuvent favoriser des dispositions qui écartent l'individu de la trajectoire attendue."
+                  },
+                  {
+                    "text": "Par le seul talent naturel de l'individu, indépendamment de toute socialisation.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la sociologie cherche des explications sociales, pas des dons innés."
+                  },
+                  {
+                    "text": "Par le hasard pur, car ces trajectoires ne peuvent pas être expliquées.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ces trajectoires s'expliquent par des conditions sociales particulières que l'on peut étudier."
+                  },
+                  {
+                    "text": "Par l'absence totale de socialisation familiale chez les individus concernés.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la famille socialise toujours ; ce sont les influences combinées qui expliquent ces parcours."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que signifie l'idée de pluralité des dispositions chez un individu ?",
+                "options": [
+                  {
+                    "text": "Un même individu peut agir différemment selon les contextes où il se trouve.",
+                    "isCorrect": true,
+                    "rationale": "Ces dispositions, parfois contradictoires, s'activent selon les situations (famille, travail, amis)."
+                  },
+                  {
+                    "text": "Un individu agit toujours de la même manière, quel que soit le contexte où il se trouve.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : la pluralité des socialisations explique au contraire des comportements variables selon les contextes."
+                  },
+                  {
+                    "text": "Un individu peut choisir librement ses comportements sans aucune influence sociale.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les dispositions sont construites par la socialisation, elles ne relèvent pas d'un libre choix total."
+                  },
+                  {
+                    "text": "Un individu adopte les opinions politiques de la majorité de la population.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : la notion porte sur les manières d'agir et de penser intériorisées, pas sur le conformisme d'opinion."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que l'homogamie ?",
+                "options": [
+                  {
+                    "text": "Le fait de former un couple avec une personne du même milieu social.",
+                    "isCorrect": true,
+                    "rationale": "L'homogamie favorise la continuité entre socialisation primaire et socialisation conjugale."
+                  },
+                  {
+                    "text": "Le fait de choisir un conjoint d'un milieu social très différent du sien.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : cela correspond à l'hétérogamie."
+                  },
+                  {
+                    "text": "Le fait de vivre en couple sans être marié ni pacsé.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à l'union libre (concubinage)."
+                  },
+                  {
+                    "text": "Le fait de partager les tâches domestiques de façon égale dans le couple.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la notion porte sur la ressemblance sociale des conjoints, pas sur le partage des tâches."
+                  }
+                ],
+                "level": "premiere"
+              }
+            ]
+          },
+          {
+            "id": "p1_liens_sociaux",
+            "title": "Comment se construisent et évoluent les liens sociaux ?",
+            "icon": "fa-people-group",
+            "color": "from-orange-500 to-amber-600",
+            "questions": [
+              {
+                "question": "Qu'est-ce qu'un groupe social ?",
+                "options": [
+                  {
+                    "text": "Des individus en interaction, qui se sentent membres du groupe et sont reconnus comme tels.",
+                    "isCorrect": true,
+                    "rationale": "Selon Merton, un groupe repose sur des interactions réglées (critère objectif) et un sentiment d'appartenance reconnu (critère subjectif)."
+                  },
+                  {
+                    "text": "Un ensemble de personnes présentes au même endroit au même moment, comme une file d'attente.",
+                    "isCorrect": false,
+                    "rationale": "Faux : sans interactions durables ni sentiment d'appartenance, il s'agit d'un simple agrégat."
+                  },
+                  {
+                    "text": "Un ensemble de personnes qui partagent une même caractéristique statistique, comme l'âge.",
+                    "isCorrect": false,
+                    "rationale": "Faux : une catégorie statistique n'est pas un groupe si ses membres n'ont ni interactions ni sentiment d'appartenance."
+                  },
+                  {
+                    "text": "Un ensemble de personnes inscrites sur un même réseau social numérique.",
+                    "isCorrect": false,
+                    "rationale": "Faux : être inscrit sur une même plateforme ne crée ni interactions réelles ni sentiment d'appartenance."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la différence entre groupe primaire et groupe secondaire ?",
+                "options": [
+                  {
+                    "text": "Le primaire repose sur des relations proches, le secondaire sur des relations utilitaires.",
+                    "isCorrect": true,
+                    "rationale": "La famille ou les amis sont des groupes primaires ; une entreprise ou un syndicat sont des groupes secondaires."
+                  },
+                  {
+                    "text": "Le groupe primaire concerne l'école primaire, le secondaire concerne le collège et le lycée.",
+                    "isCorrect": false,
+                    "rationale": "Piège sur les mots : la distinction porte sur la nature des relations, pas sur le niveau scolaire."
+                  },
+                  {
+                    "text": "Le groupe primaire est plus important numériquement que le groupe secondaire.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les groupes primaires sont au contraire restreints, les groupes secondaires souvent plus vastes."
+                  },
+                  {
+                    "text": "Le groupe primaire est choisi librement, le groupe secondaire est toujours imposé.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la famille (groupe primaire) n'est pas choisie, alors qu'on peut choisir d'adhérer à un syndicat."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Selon Serge Paugam, quels sont les quatre types de liens sociaux ?",
+                "options": [
+                  {
+                    "text": "Filiation, participation élective, participation organique, citoyenneté.",
+                    "isCorrect": true,
+                    "rationale": "Ces liens relient l'individu à sa famille, à ses proches choisis, au monde du travail et à la nation."
+                  },
+                  {
+                    "text": "Le lien économique, le lien politique, le lien religieux et le lien sportif.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce n'est pas la typologie de Paugam, fondée sur les liens qui assurent protection et reconnaissance."
+                  },
+                  {
+                    "text": "Le lien primaire, le lien secondaire, le lien mécanique et le lien organique.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : ces termes renvoient aux groupes (primaire, secondaire) et à Durkheim (solidarités)."
+                  },
+                  {
+                    "text": "Le lien amical, le lien amoureux, le lien numérique et le lien de voisinage.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce sont des exemples de relations, pas les quatre catégories de Paugam."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Selon Paugam, qu'apportent les liens sociaux aux individus ?",
+                "options": [
+                  {
+                    "text": "De la protection (« compter sur ») et de la reconnaissance.",
+                    "isCorrect": true,
+                    "rationale": "Les liens offrent des supports face aux aléas de la vie et confirment la valeur de l'individu aux yeux des autres."
+                  },
+                  {
+                    "text": "Uniquement des ressources financières en cas de difficulté économique.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : la protection n'est pas seulement financière, et la reconnaissance compte tout autant."
+                  },
+                  {
+                    "text": "Un statut juridique qui donne des droits devant les tribunaux.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : seul le lien de citoyenneté a une dimension juridique."
+                  },
+                  {
+                    "text": "Une obligation de conformité totale aux normes du groupe d'appartenance.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la notion insiste sur ce que les liens apportent, pas sur une obligation de conformité."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quel exemple illustre un lien de participation élective ?",
+                "options": [
+                  {
+                    "text": "L'amitié, le couple ou l'adhésion à une association.",
+                    "isCorrect": true,
+                    "rationale": "Ces liens sont choisis par l'individu, contrairement au lien de filiation."
+                  },
+                  {
+                    "text": "La relation entre un enfant et ses grands-parents.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : il s'agit d'un lien de filiation, qui n'est pas choisi."
+                  },
+                  {
+                    "text": "Le fait de voter et de payer ses impôts.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : ces pratiques relèvent du lien de citoyenneté."
+                  },
+                  {
+                    "text": "La relation entre un salarié et son employeur.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : il s'agit d'un lien de participation organique, lié au travail."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "À quoi sert la nomenclature des PCS de l'Insee ?",
+                "options": [
+                  {
+                    "text": "À classer la population selon la profession, en groupes socialement homogènes.",
+                    "isCorrect": true,
+                    "rationale": "Créée en 1954 et rénovée en 2020, elle permet d'analyser la structure sociale et les inégalités."
+                  },
+                  {
+                    "text": "À classer les entreprises selon leur secteur d'activité et leur chiffre d'affaires.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les PCS classent des individus, pas des entreprises."
+                  },
+                  {
+                    "text": "À classer les individus uniquement selon leur niveau de revenu annuel.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le revenu n'est pas un critère de la nomenclature, fondée sur la profession."
+                  },
+                  {
+                    "text": "À classer les individus selon leurs opinions politiques et leurs pratiques religieuses.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ces éléments ne font pas partie des critères de classement des PCS."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle limite peut-on adresser à la nomenclature des PCS ?",
+                "options": [
+                  {
+                    "text": "Elle ignore la stabilité de l'emploi (CDD ou CDI).",
+                    "isCorrect": true,
+                    "rationale": "Deux secrétaires sont classées ensemble, l'une en CDD précaire, l'autre en CDI. Les comparaisons internationales sont aussi difficiles."
+                  },
+                  {
+                    "text": "Elle ne classe que les hommes et laisse de côté les femmes actives.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la nomenclature classe tous les individus, hommes et femmes."
+                  },
+                  {
+                    "text": "Elle n'a jamais été modifiée depuis sa création en 1954.",
+                    "isCorrect": false,
+                    "rationale": "Faux : elle a été rénovée plusieurs fois, la dernière fois en 2020."
+                  },
+                  {
+                    "text": "Elle classe les individus selon leur lieu de résidence plutôt que leur métier.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la profession est le critère central de la nomenclature."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Selon Durkheim, quelle est la différence entre solidarité mécanique et solidarité organique ?",
+                "options": [
+                  {
+                    "text": "La mécanique repose sur la ressemblance des individus, l'organique sur leur complémentarité.",
+                    "isCorrect": true,
+                    "rationale": "Avec la division du travail, les individus se différencient et deviennent interdépendants : la solidarité devient organique."
+                  },
+                  {
+                    "text": "La mécanique repose sur la complémentarité des individus, l'organique sur leur ressemblance.",
+                    "isCorrect": false,
+                    "rationale": "Inversion des deux définitions."
+                  },
+                  {
+                    "text": "La mécanique concerne le monde industriel, l'organique concerne le monde agricole.",
+                    "isCorrect": false,
+                    "rationale": "Piège sur les mots : « mécanique » ne renvoie pas aux machines, mais à la similitude des individus."
+                  },
+                  {
+                    "text": "La mécanique est imposée par l'État, l'organique est choisie par les individus.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les deux formes de solidarité ne se distinguent pas par le rôle de l'État."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que le processus d'individualisation ?",
+                "options": [
+                  {
+                    "text": "L'autonomisation des individus vis-à-vis de leurs groupes.",
+                    "isCorrect": true,
+                    "rationale": "Les individus choisissent davantage leurs liens et leurs valeurs ; ils ne vivent pas pour autant sans liens."
+                  },
+                  {
+                    "text": "La disparition complète des liens sociaux dans les sociétés modernes.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'individualisation transforme les liens, elle ne les supprime pas."
+                  },
+                  {
+                    "text": "Le développement de l'égoïsme et de l'indifférence envers les autres.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'individualisation n'est pas l'individualisme au sens moral."
+                  },
+                  {
+                    "text": "Le fait de vivre seul dans son logement, sans conjoint ni enfants.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : vivre seul est une situation de ménage, pas la définition de l'individualisation."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "La solidarité mécanique a-t-elle disparu dans les sociétés modernes ?",
+                "options": [
+                  {
+                    "text": "Non, elle subsiste, par exemple dans les groupes de pairs.",
+                    "isCorrect": true,
+                    "rationale": "Les groupes fondés sur la ressemblance (amis, supporters) entretiennent une solidarité mécanique au sein de sociétés à solidarité organique."
+                  },
+                  {
+                    "text": "Oui, elle a totalement disparu avec l'industrialisation au XIXe siècle.",
+                    "isCorrect": false,
+                    "rationale": "Faux : Durkheim et ses successeurs montrent que les deux formes coexistent."
+                  },
+                  {
+                    "text": "Oui, car les individus ne se ressemblent plus du tout aujourd'hui.",
+                    "isCorrect": false,
+                    "rationale": "Faux : des ressemblances demeurent et fondent encore des solidarités."
+                  },
+                  {
+                    "text": "Non, elle a même remplacé la solidarité organique dans toute la société.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la division du travail reste au fondement de la solidarité organique."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quel rôle jouent les sociabilités numériques dans les liens sociaux ?",
+                "options": [
+                  {
+                    "text": "Elles créent et entretiennent des liens, même si elles peuvent en exclure certains.",
+                    "isCorrect": true,
+                    "rationale": "Messageries et réseaux sociaux prolongent des liens existants et en créent de nouveaux ; la fracture numérique peut toutefois isoler."
+                  },
+                  {
+                    "text": "Elles détruisent systématiquement les liens sociaux en remplaçant les rencontres réelles.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les études montrent qu'elles complètent souvent les relations en face à face."
+                  },
+                  {
+                    "text": "Elles ne concernent que les adolescents et n'ont aucun effet chez les adultes.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les seniors les utilisent aussi pour garder le contact avec leurs proches."
+                  },
+                  {
+                    "text": "Elles n'ont aucun effet sur les liens sociaux, car elles relèvent du simple loisir.",
+                    "isCorrect": false,
+                    "rationale": "Faux : elles participent à la construction et à l'entretien des liens sociaux."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quels facteurs peuvent affaiblir ou rompre les liens sociaux ?",
+                "options": [
+                  {
+                    "text": "Précarités, isolements, ségrégations et ruptures familiales.",
+                    "isCorrect": true,
+                    "rationale": "Ces facteurs fragilisent la protection et la reconnaissance et peuvent conduire à l'exclusion sociale."
+                  },
+                  {
+                    "text": "La hausse du niveau de diplôme et l'allongement des études.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ces évolutions ne figurent pas parmi les facteurs d'affaiblissement étudiés."
+                  },
+                  {
+                    "text": "L'usage des réseaux sociaux et la pratique d'un sport collectif.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ces pratiques peuvent au contraire créer ou entretenir des liens."
+                  },
+                  {
+                    "text": "L'adhésion à un syndicat et la participation aux élections.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ces pratiques renforcent les liens de participation et de citoyenneté."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que la ségrégation résidentielle ?",
+                "options": [
+                  {
+                    "text": "La séparation de fait des groupes sociaux dans l'espace des villes.",
+                    "isCorrect": true,
+                    "rationale": "Elle concentre les difficultés dans certains quartiers et réduit les contacts entre groupes sociaux."
+                  },
+                  {
+                    "text": "L'interdiction légale faite à certains groupes de s'installer dans une ville.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : en France, la ségrégation résidentielle est surtout une séparation de fait, non de droit."
+                  },
+                  {
+                    "text": "Le choix de vivre à la campagne plutôt qu'en ville pour profiter du calme.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un choix individuel de cadre de vie ne définit pas la ségrégation."
+                  },
+                  {
+                    "text": "Le partage d'un logement entre plusieurs colocataires sans lien familial.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : la colocation est une forme de ménage, sans rapport avec la ségrégation."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que la disqualification sociale selon Serge Paugam ?",
+                "options": [
+                  {
+                    "text": "Un processus en trois étapes : fragilité, dépendance, rupture.",
+                    "isCorrect": true,
+                    "rationale": "La perte d'emploi, puis le recours à l'aide sociale et enfin la rupture des liens s'accompagnent d'une identité dévalorisée."
+                  },
+                  {
+                    "text": "L'exclusion d'un élève d'un concours en raison d'une fraude constatée.",
+                    "isCorrect": false,
+                    "rationale": "Piège sur le sens courant du mot « disqualification »."
+                  },
+                  {
+                    "text": "Le fait de ne posséder aucun diplôme à la fin de sa scolarité.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'absence de diplôme peut fragiliser, mais ce n'est pas la définition du processus décrit par Paugam."
+                  },
+                  {
+                    "text": "La perte de statut social d'un enfant par rapport à celui de ses parents.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au déclassement social intergénérationnel."
+                  }
+                ],
+                "level": "premiere"
+              }
+            ]
+          },
+          {
+            "id": "p1_financement",
+            "title": "Comment les agents économiques se financent-ils ?",
+            "icon": "fa-piggy-bank",
+            "color": "from-emerald-500 to-green-600",
+            "questions": [
+              {
+                "question": "Quand dit-on qu'un agent économique a un besoin de financement ?",
+                "options": [
+                  {
+                    "text": "Quand son épargne est inférieure à son investissement.",
+                    "isCorrect": true,
+                    "rationale": "Un agent à besoin de financement doit trouver des ressources auprès d'agents à capacité de financement."
+                  },
+                  {
+                    "text": "Quand son épargne dépasse le montant de ses investissements.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : cela définit un agent à capacité de financement."
+                  },
+                  {
+                    "text": "Quand il dépense plus en consommation que l'an passé.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le besoin de financement compare l'épargne et l'investissement, pas la consommation d'une année sur l'autre."
+                  },
+                  {
+                    "text": "Quand il ne parvient plus à rembourser ses dettes.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à une situation d'insolvabilité, pas à la définition du besoin de financement."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quels agents sont structurellement à capacité de financement en France ?",
+                "options": [
+                  {
+                    "text": "Les ménages, dont l'épargne dépasse en général leurs investissements.",
+                    "isCorrect": true,
+                    "rationale": "Les ménages dégagent une épargne supérieure à leurs investissements (logement) et financent les autres agents."
+                  },
+                  {
+                    "text": "Les administrations publiques, grâce aux impôts qu'elles prélèvent.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les administrations publiques sont structurellement en besoin de financement (déficit public)."
+                  },
+                  {
+                    "text": "Les sociétés non financières, grâce à leurs bénéfices.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les entreprises investissent plus qu'elles n'épargnent ; elles sont en général à besoin de financement."
+                  },
+                  {
+                    "text": "Le reste du monde, qui finance seul l'économie française.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le reste du monde peut compenser le besoin global, mais il n'est pas l'agent à capacité de financement principal."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que représente le taux d'intérêt ?",
+                "options": [
+                  {
+                    "text": "Un coût pour l'emprunteur et une rémunération pour le prêteur.",
+                    "isCorrect": true,
+                    "rationale": "Il rémunère le prêteur pour le service rendu, le risque de non-remboursement et la renonciation à disposer de son argent."
+                  },
+                  {
+                    "text": "Un impôt prélevé par l'État sur chaque crédit accordé.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le taux d'intérêt est payé au prêteur, pas à l'État."
+                  },
+                  {
+                    "text": "La part du crédit que l'emprunteur n'aura pas à rembourser.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'emprunteur rembourse la totalité du capital, plus les intérêts."
+                  },
+                  {
+                    "text": "Le bénéfice réalisé par une entreprise grâce à ses ventes.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : le bénéfice est un résultat d'activité, sans lien avec le prix de l'argent emprunté."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Vous empruntez 10 000 € à un taux d'intérêt annuel de 4 %. Combien d'intérêts payez-vous la première année ?",
+                "options": [
+                  {
+                    "text": "400 €",
+                    "isCorrect": true,
+                    "rationale": "10 000 × 4 / 100 = 400 €. Les intérêts s'ajoutent au remboursement du capital emprunté."
+                  },
+                  {
+                    "text": "40 €",
+                    "isCorrect": false,
+                    "rationale": "Erreur de calcul : 4 % de 10 000 € font 400 €, pas 40 €."
+                  },
+                  {
+                    "text": "4 000 €",
+                    "isCorrect": false,
+                    "rationale": "Erreur de calcul : cela correspondrait à un taux de 40 %."
+                  },
+                  {
+                    "text": "10 400 €",
+                    "isCorrect": false,
+                    "rationale": "Confusion : 10 400 € est la somme du capital et des intérêts, pas le montant des intérêts."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Sur le marché des fonds prêtables, qui forme l'offre et qui forme la demande ?",
+                "options": [
+                  {
+                    "text": "L'offre vient des agents à capacité de financement, la demande des agents à besoin de financement.",
+                    "isCorrect": true,
+                    "rationale": "Les épargnants offrent des fonds, les emprunteurs en demandent ; leur rencontre détermine le taux d'intérêt d'équilibre."
+                  },
+                  {
+                    "text": "L'offre vient des agents à besoin de financement, la demande des agents à capacité de financement.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : ce sont les épargnants (capacité de financement) qui offrent des fonds."
+                  },
+                  {
+                    "text": "L'offre vient de l'État, la demande vient uniquement des banques commerciales.",
+                    "isCorrect": false,
+                    "rationale": "Faux : tous les agents peuvent intervenir comme offreurs ou demandeurs de fonds."
+                  },
+                  {
+                    "text": "L'offre et la demande viennent des seuls ménages, qui se prêtent de l'argent entre eux.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les entreprises, l'État et le reste du monde interviennent aussi sur ce marché."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Sur le marché des fonds prêtables, que se passe-t-il si le taux d'intérêt augmente ?",
+                "options": [
+                  {
+                    "text": "L'épargne offerte augmente et la demande de fonds diminue.",
+                    "isCorrect": true,
+                    "rationale": "Prêter devient plus rémunérateur, emprunter plus coûteux. Le taux d'intérêt joue le rôle d'un prix."
+                  },
+                  {
+                    "text": "L'épargne offerte diminue et la demande de fonds augmente.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : un taux plus élevé encourage l'épargne et décourage l'emprunt."
+                  },
+                  {
+                    "text": "L'offre et la demande de fonds augmentent toutes les deux.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un crédit plus cher réduit la demande de fonds des emprunteurs."
+                  },
+                  {
+                    "text": "Rien ne change, car le taux d'intérêt est fixé par la loi.",
+                    "isCorrect": false,
+                    "rationale": "Faux : sur ce marché, le taux d'intérêt se forme par la rencontre de l'offre et de la demande de fonds."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Comment calcule-t-on le revenu disponible des ménages ?",
+                "options": [
+                  {
+                    "text": "Revenus primaires + revenus de transfert − impôts directs − cotisations sociales.",
+                    "isCorrect": true,
+                    "rationale": "Le revenu disponible est le revenu dont les ménages disposent réellement pour consommer ou épargner."
+                  },
+                  {
+                    "text": "Revenus primaires − dépenses de consommation − épargne des ménages.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la consommation et l'épargne sont des usages du revenu disponible, pas des éléments de son calcul."
+                  },
+                  {
+                    "text": "Salaires + épargne de l'année − remboursements des crédits en cours.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'épargne n'est pas un revenu supplémentaire, c'est la part non consommée du revenu disponible."
+                  },
+                  {
+                    "text": "Revenus primaires + revenus de transfert + impôts directs + cotisations.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les impôts directs et les cotisations sont prélevés, ils doivent être retirés."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Comment se définit l'épargne des ménages ?",
+                "options": [
+                  {
+                    "text": "La part du revenu disponible qui n'est pas consommée.",
+                    "isCorrect": true,
+                    "rationale": "Épargne = revenu disponible − consommation. Elle peut être financière (placements) ou non financière (logement)."
+                  },
+                  {
+                    "text": "La somme placée chaque mois sur un livret réglementé.",
+                    "isCorrect": false,
+                    "rationale": "Trop restrictif : un livret n'est qu'une forme d'épargne parmi d'autres."
+                  },
+                  {
+                    "text": "Les revenus perçus grâce aux placements financiers.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond aux revenus du capital, qui font partie des revenus primaires."
+                  },
+                  {
+                    "text": "La part du revenu reversée à l'État sous forme d'impôts.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les impôts sont des prélèvements obligatoires, pas de l'épargne."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la différence entre une action et une obligation ?",
+                "options": [
+                  {
+                    "text": "L'action est un titre de propriété, l'obligation un titre de créance.",
+                    "isCorrect": true,
+                    "rationale": "L'actionnaire possède une part du capital (dividendes, droit de vote) ; le détenteur d'obligation est un prêteur rémunéré par des intérêts."
+                  },
+                  {
+                    "text": "L'action est un titre de créance, l'obligation un titre de propriété.",
+                    "isCorrect": false,
+                    "rationale": "Inversion des deux définitions."
+                  },
+                  {
+                    "text": "L'action est émise par l'État, l'obligation par les entreprises.",
+                    "isCorrect": false,
+                    "rationale": "Faux : seules les sociétés émettent des actions ; les obligations peuvent être émises par les entreprises comme par l'État."
+                  },
+                  {
+                    "text": "L'action rapporte un intérêt fixe, l'obligation un dividende variable.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : l'action rapporte un dividende variable, l'obligation un intérêt."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que l'autofinancement d'une entreprise ?",
+                "options": [
+                  {
+                    "text": "Le financement de ses investissements par ses propres ressources.",
+                    "isCorrect": true,
+                    "rationale": "C'est le financement interne : l'entreprise utilise les bénéfices mis en réserve et les amortissements."
+                  },
+                  {
+                    "text": "Le financement de ses investissements par un emprunt auprès d'une banque.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : le crédit bancaire est un financement externe indirect."
+                  },
+                  {
+                    "text": "Le financement de ses investissements par l'émission d'actions en Bourse.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : l'émission d'actions est un financement externe direct."
+                  },
+                  {
+                    "text": "Le financement de ses investissements par des subventions publiques.",
+                    "isCorrect": false,
+                    "rationale": "Faux : une subvention vient de l'extérieur de l'entreprise, ce n'est pas de l'autofinancement."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la différence entre financement externe direct et indirect ?",
+                "options": [
+                  {
+                    "text": "Le direct passe par les marchés financiers, l'indirect par le crédit bancaire.",
+                    "isCorrect": true,
+                    "rationale": "En financement direct, l'entreprise émet des titres (actions, obligations) ; en financement indirect, la banque sert d'intermédiaire."
+                  },
+                  {
+                    "text": "Le direct passe par le crédit bancaire, l'indirect par les marchés financiers.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : c'est le crédit bancaire qui est intermédié (indirect)."
+                  },
+                  {
+                    "text": "Le direct utilise les bénéfices, l'indirect les subventions de l'État.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : l'utilisation des bénéfices relève du financement interne (autofinancement)."
+                  },
+                  {
+                    "text": "Le direct concerne les ménages, l'indirect concerne seulement les entreprises.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la distinction porte sur la présence ou non d'un intermédiaire financier, pas sur le type d'agent."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi les PME se financent-elles surtout par le crédit bancaire ?",
+                "options": [
+                  {
+                    "text": "Parce que l'accès aux marchés financiers leur est difficile et coûteux.",
+                    "isCorrect": true,
+                    "rationale": "Émettre des actions ou des obligations exige une taille et une notoriété suffisantes ; les PME passent donc surtout par les banques."
+                  },
+                  {
+                    "text": "Parce que la loi interdit aux PME de conserver leurs bénéfices pour investir.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les PME peuvent tout à fait s'autofinancer."
+                  },
+                  {
+                    "text": "Parce que les banques prêtent aux PME à un taux d'intérêt nul.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le crédit bancaire a toujours un coût, le taux d'intérêt."
+                  },
+                  {
+                    "text": "Parce que les PME n'ont jamais besoin de financer des investissements.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les PME investissent aussi et ont souvent besoin de financement."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que le solde budgétaire de l'État ?",
+                "options": [
+                  {
+                    "text": "La différence entre les recettes et les dépenses de l'État sur une année.",
+                    "isCorrect": true,
+                    "rationale": "Si les dépenses dépassent les recettes, le solde est négatif : on parle de déficit budgétaire."
+                  },
+                  {
+                    "text": "Le montant total de la dette accumulée par l'État depuis sa création.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : la dette est un stock accumulé, le solde budgétaire est un flux annuel."
+                  },
+                  {
+                    "text": "La somme des impôts prélevés sur les ménages et les entreprises.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les impôts ne sont que les recettes ; le solde compare recettes et dépenses."
+                  },
+                  {
+                    "text": "La différence entre les exportations et les importations du pays.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au solde commercial."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la différence entre le solde budgétaire et le solde public ?",
+                "options": [
+                  {
+                    "text": "Le solde public concerne toutes les administrations publiques, pas seulement l'État.",
+                    "isCorrect": true,
+                    "rationale": "Le solde public regroupe l'État, les collectivités territoriales et les administrations de sécurité sociale."
+                  },
+                  {
+                    "text": "Le solde public concerne l'État seul, le solde budgétaire l'ensemble des administrations.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : le solde budgétaire concerne l'État, le solde public l'ensemble des administrations publiques."
+                  },
+                  {
+                    "text": "Le solde public se calcule sur dix ans, le solde budgétaire sur une seule année.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les deux soldes sont calculés sur une année."
+                  },
+                  {
+                    "text": "Il n'y a aucune différence : ce sont deux noms pour la même mesure.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ils n'ont pas le même périmètre, d'où des montants différents."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'appelle-t-on l'effet d'éviction ?",
+                "options": [
+                  {
+                    "text": "L'emprunt de l'État fait monter les taux d'intérêt, ce qui décourage l'investissement privé.",
+                    "isCorrect": true,
+                    "rationale": "En empruntant beaucoup, l'État augmente la demande de fonds prêtables : le taux monte et certains projets privés ne sont plus rentables."
+                  },
+                  {
+                    "text": "La hausse des dépenses publiques augmente la production plus que proportionnellement.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à l'effet multiplicateur, argument en faveur des dépenses publiques."
+                  },
+                  {
+                    "text": "La baisse des taux d'intérêt pousse les ménages à épargner moins et à consommer plus.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce mécanisme ne correspond pas à l'effet d'éviction, qui porte sur l'investissement privé."
+                  },
+                  {
+                    "text": "Les entreprises étrangères remplacent les entreprises nationales sur le marché intérieur.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce phénomène relève de la concurrence internationale, pas de l'effet d'éviction."
+                  }
+                ],
+                "level": "premiere"
+              }
+            ]
+          },
+          {
+            "id": "p1_opinion_publique",
+            "title": "Comment se forme et s'exprime l'opinion publique ?",
+            "icon": "fa-square-poll-vertical",
+            "color": "from-purple-500 to-fuchsia-600",
+            "questions": [
+              {
+                "question": "À quel moment apparaît la notion d'opinion publique ?",
+                "options": [
+                  {
+                    "text": "Au XVIIIe siècle, portée par une minorité éclairée (salons, presse).",
+                    "isCorrect": true,
+                    "rationale": "L'opinion publique est d'abord celle d'une élite (bourgeois, intellectuels) qui revendique un droit de regard sur le pouvoir."
+                  },
+                  {
+                    "text": "Au XXe siècle, avec l'invention de la télévision et des sondages.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les sondages transforment la mesure de l'opinion publique, mais la notion apparaît bien avant."
+                  },
+                  {
+                    "text": "Dans l'Antiquité, avec les premières élections au suffrage universel.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le suffrage universel est bien plus récent, et la notion moderne naît au XVIIIe siècle."
+                  },
+                  {
+                    "text": "Au XXIe siècle, avec le développement des réseaux sociaux numériques.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les réseaux sociaux sont un nouveau lieu d'expression, pas l'origine de la notion."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi l'opinion publique devient-elle l'opinion du plus grand nombre ?",
+                "options": [
+                  {
+                    "text": "Grâce au suffrage universel, à l'école et à la presse de masse, tous peuvent s'exprimer.",
+                    "isCorrect": true,
+                    "rationale": "L'élargissement du corps électoral transforme l'opinion d'une minorité éclairée en opinion de masse."
+                  },
+                  {
+                    "text": "Parce que les élites ont été interdites de s'exprimer après la Révolution française.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les élites continuent de s'exprimer ; c'est le nombre des citoyens concernés qui s'élargit."
+                  },
+                  {
+                    "text": "Parce que la loi impose aux citoyens de donner leur avis lors de sondages obligatoires.",
+                    "isCorrect": false,
+                    "rationale": "Faux : répondre à un sondage n'est jamais obligatoire."
+                  },
+                  {
+                    "text": "Parce que les partis politiques ont disparu au profit de l'expression individuelle.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les partis jouent au contraire un rôle important dans la mobilisation de l'opinion de masse."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce qu'un sondage d'opinion ?",
+                "options": [
+                  {
+                    "text": "Un questionnaire posé à un échantillon représentatif de la population.",
+                    "isCorrect": true,
+                    "rationale": "Popularisé par George Gallup dans les années 1930, il permet d'estimer l'opinion de tous en interrogeant quelques-uns."
+                  },
+                  {
+                    "text": "Un vote officiel organisé par l'État pour prendre une décision politique.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à un référendum."
+                  },
+                  {
+                    "text": "Un débat public organisé entre des citoyens volontaires et des élus.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un sondage ne repose pas sur un débat, mais sur des réponses individuelles à un questionnaire."
+                  },
+                  {
+                    "text": "Le recensement complet de toute la population réalisé par l'Insee.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un recensement interroge toute la population, le sondage seulement un échantillon."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce qu'un échantillon représentatif ?",
+                "options": [
+                  {
+                    "text": "Un groupe qui reproduit en petit les caractéristiques de la population.",
+                    "isCorrect": true,
+                    "rationale": "Sexe, âge, PCS ou région doivent y être présents dans les mêmes proportions que dans la population."
+                  },
+                  {
+                    "text": "Un groupe composé uniquement de personnes volontaires pour répondre.",
+                    "isCorrect": false,
+                    "rationale": "Faux : des volontaires ne forment pas forcément un échantillon représentatif (biais de sélection)."
+                  },
+                  {
+                    "text": "Un groupe de spécialistes du sujet interrogés pour leur expertise.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un sondage d'opinion interroge des citoyens ordinaires, pas des experts."
+                  },
+                  {
+                    "text": "Un groupe d'au moins 100 000 personnes, sans autre condition particulière.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la représentativité dépend de la composition de l'échantillon plus que de sa seule taille."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "En quoi consiste la méthode des quotas ?",
+                "options": [
+                  {
+                    "text": "Reproduire dans l'échantillon la structure de la population (sexe, âge, PCS…).",
+                    "isCorrect": true,
+                    "rationale": "C'est la méthode la plus utilisée en France : moins coûteuse que la méthode aléatoire, elle ne nécessite pas de liste complète."
+                  },
+                  {
+                    "text": "Tirer au sort les personnes interrogées dans une liste complète de la population.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à la méthode aléatoire (probabiliste)."
+                  },
+                  {
+                    "text": "Limiter le nombre de questions posées à chaque personne interrogée.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les quotas portent sur la composition de l'échantillon, pas sur le questionnaire."
+                  },
+                  {
+                    "text": "Interroger en priorité les personnes qui ont déjà voté aux dernières élections.",
+                    "isCorrect": false,
+                    "rationale": "Faux : cela introduirait un biais, l'échantillon doit refléter toute la population."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle est la principale contrainte de la méthode aléatoire ?",
+                "options": [
+                  {
+                    "text": "Il faut une liste complète de la population, ce qui est coûteux.",
+                    "isCorrect": true,
+                    "rationale": "Le tirage au sort donne une bonne représentativité, mais exige une base de sondage exhaustive et des relances coûteuses."
+                  },
+                  {
+                    "text": "Elle ne permet jamais d'obtenir un échantillon représentatif de la population.",
+                    "isCorrect": false,
+                    "rationale": "Faux : bien appliquée, elle est même la méthode la plus rigoureuse statistiquement."
+                  },
+                  {
+                    "text": "Elle interdit de calculer une marge d'erreur sur les résultats obtenus.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : c'est justement la méthode aléatoire qui permet de calculer rigoureusement la marge d'erreur."
+                  },
+                  {
+                    "text": "Elle oblige à interroger chaque personne de la population au moins une fois.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : interroger tout le monde correspond à un recensement."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Un sondage réalisé auprès de 1 000 personnes donne 51 % au candidat A et 49 % au candidat B. Que peut-on conclure ?",
+                "options": [
+                  {
+                    "text": "Rien de sûr : la marge d'erreur (environ 3 points) dépasse l'écart.",
+                    "isCorrect": true,
+                    "rationale": "Les deux résultats peuvent se situer entre 48 % et 54 % environ : le sondage ne permet pas de désigner un vainqueur."
+                  },
+                  {
+                    "text": "Le candidat A gagnera l'élection avec exactement 51 % des voix.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un sondage est une estimation entourée d'une marge d'erreur, pas une prévision exacte."
+                  },
+                  {
+                    "text": "Le candidat A a 2 % de chances de plus que B de remporter l'élection.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'écart de 2 points ne mesure pas une probabilité de victoire."
+                  },
+                  {
+                    "text": "Le sondage est faux, car 1 000 personnes ne suffisent jamais pour un sondage.",
+                    "isCorrect": false,
+                    "rationale": "Faux : 1 000 personnes suffisent pour une estimation, à condition d'accepter la marge d'erreur."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que désigne la marge d'erreur d'un sondage ?",
+                "options": [
+                  {
+                    "text": "L'écart possible entre le résultat du sondage et celui de toute la population.",
+                    "isCorrect": true,
+                    "rationale": "Elle diminue quand la taille de l'échantillon augmente ; elle est d'environ 3 points pour 1 000 personnes et un résultat proche de 50 %."
+                  },
+                  {
+                    "text": "Le pourcentage de personnes interrogées qui ont refusé de répondre au questionnaire.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au taux de non-réponse."
+                  },
+                  {
+                    "text": "Le nombre de questions mal formulées que contient le questionnaire.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les questions mal formulées créent des biais, mais ce n'est pas la marge d'erreur."
+                  },
+                  {
+                    "text": "La différence de résultats entre deux instituts de sondage concurrents.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la marge d'erreur est propre à chaque sondage et à son échantillon."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Quelle critique Pierre Bourdieu adresse-t-il aux sondages (« L'opinion publique n'existe pas », 1973) ?",
+                "options": [
+                  {
+                    "text": "Ils postulent à tort que tous ont une opinion et que toutes les opinions se valent.",
+                    "isCorrect": true,
+                    "rationale": "Les moins diplômés se sentent souvent moins compétents ; les questions reflètent les préoccupations des commanditaires."
+                  },
+                  {
+                    "text": "Ils interrogent trop de personnes, ce qui rend leurs résultats impossibles à analyser.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la critique de Bourdieu ne porte pas sur la taille des échantillons."
+                  },
+                  {
+                    "text": "Ils sont toujours truqués par les instituts pour favoriser un candidat.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la critique de Bourdieu porte sur les postulats des sondages, pas sur une fraude des instituts."
+                  },
+                  {
+                    "text": "Ils devraient être remplacés par des votes obligatoires chaque semaine.",
+                    "isCorrect": false,
+                    "rationale": "Faux : Bourdieu ne propose pas de remplacer les sondages par des votes."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que l'effet « bandwagon » ?",
+                "options": [
+                  {
+                    "text": "Le fait de rejoindre le candidat donné gagnant par les sondages.",
+                    "isCorrect": true,
+                    "rationale": "C'est l'effet « wagon de tête » : les sondages influenceraient le vote en faveur du favori."
+                  },
+                  {
+                    "text": "Le fait de soutenir le candidat donné perdant par les sondages.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à l'effet « underdog »."
+                  },
+                  {
+                    "text": "Le fait de s'abstenir quand les sondages annoncent un résultat serré.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'effet bandwagon désigne un ralliement au favori, pas l'abstention."
+                  },
+                  {
+                    "text": "Le fait de mentir volontairement aux sondeurs sur son intention de vote.",
+                    "isCorrect": false,
+                    "rationale": "Faux : cela renvoie à un biais de réponse, pas à l'effet bandwagon."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'est-ce que l'effet « underdog » ?",
+                "options": [
+                  {
+                    "text": "Le fait de soutenir le candidat donné perdant par les sondages.",
+                    "isCorrect": true,
+                    "rationale": "Par sympathie ou par réaction, certains électeurs soutiennent le candidat en retard dans les sondages."
+                  },
+                  {
+                    "text": "Le fait de rejoindre le candidat donné gagnant par les sondages.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à l'effet « bandwagon »."
+                  },
+                  {
+                    "text": "Le fait de voter blanc pour protester contre tous les candidats.",
+                    "isCorrect": false,
+                    "rationale": "Faux : le vote blanc est un autre comportement électoral."
+                  },
+                  {
+                    "text": "Le fait de voter selon les consignes données par son parti.",
+                    "isCorrect": false,
+                    "rationale": "Faux : cela renvoie à la discipline partisane, pas à l'effet des sondages."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Pourquoi la loi encadre-t-elle la publication des sondages en période électorale ?",
+                "options": [
+                  {
+                    "text": "Pour limiter leur influence : publication interdite la veille et le jour du vote.",
+                    "isCorrect": true,
+                    "rationale": "La Commission des sondages contrôle aussi leur sérieux méthodologique pendant les campagnes."
+                  },
+                  {
+                    "text": "Parce que les sondages sont totalement interdits en France pendant toute la campagne.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les sondages sont autorisés, seule leur publication la veille et le jour du vote est interdite."
+                  },
+                  {
+                    "text": "Pour permettre à l'État de choisir les questions posées par les instituts.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les instituts restent libres de leurs questions, sous le contrôle de la Commission des sondages."
+                  },
+                  {
+                    "text": "Parce que seuls les sondages commandés par l'État ont une valeur légale.",
+                    "isCorrect": false,
+                    "rationale": "Faux : aucun sondage n'a de valeur légale, quel que soit son commanditaire."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Qu'appelle-t-on la « démocratie d'opinion » ?",
+                "options": [
+                  {
+                    "text": "Une démocratie où sondages et image médiatique pèsent fortement sur la vie politique.",
+                    "isCorrect": true,
+                    "rationale": "La communication et la personnalisation prennent de l'importance, tandis que les partis pèsent moins sur le choix des candidats."
+                  },
+                  {
+                    "text": "Une démocratie où les citoyens votent directement chaque loi par référendum.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond à la démocratie directe."
+                  },
+                  {
+                    "text": "Une démocratie où seuls les citoyens les plus diplômés ont le droit de vote.",
+                    "isCorrect": false,
+                    "rationale": "Faux : cela correspondrait à un suffrage censitaire ou capacitaire, pas à la démocratie d'opinion."
+                  },
+                  {
+                    "text": "Une démocratie où les élus doivent obéir aux résultats de chaque sondage publié.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les sondages n'ont aucune valeur contraignante pour les élus."
+                  }
+                ],
+                "level": "premiere"
+              }
+            ]
+          },
+          {
+            "id": "p1_methodologie",
+            "title": "Méthodologie : calculs et lecture de données",
+            "icon": "fa-calculator",
+            "color": "from-slate-600 to-slate-800",
+            "questions": [
+              {
+                "question": "Un lycée compte 1 200 élèves, dont 300 en première. Quelle part représentent les élèves de première ?",
+                "options": [
+                  {
+                    "text": "25 %",
+                    "isCorrect": true,
+                    "rationale": "(300 / 1 200) × 100 = 25 %. Une part se calcule toujours : (partie / tout) × 100."
+                  },
+                  {
+                    "text": "4 %",
+                    "isCorrect": false,
+                    "rationale": "Erreur : c'est le calcul inverse (1 200 / 300 = 4), qui ne donne pas une part."
+                  },
+                  {
+                    "text": "0,25 %",
+                    "isCorrect": false,
+                    "rationale": "Erreur : 300 / 1 200 = 0,25 ; il faut multiplier par 100 pour obtenir un pourcentage."
+                  },
+                  {
+                    "text": "30 %",
+                    "isCorrect": false,
+                    "rationale": "Erreur de calcul : 30 % de 1 200 donneraient 360 élèves, pas 300."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Le prix d'un bien passe de 80 € à 100 €. Quel est son taux de variation ?",
+                "options": [
+                  {
+                    "text": "+ 25 %",
+                    "isCorrect": true,
+                    "rationale": "((100 − 80) / 80) × 100 = + 25 %. On divise toujours par la valeur de départ."
+                  },
+                  {
+                    "text": "+ 20 %",
+                    "isCorrect": false,
+                    "rationale": "Erreur fréquente : on a divisé par la valeur d'arrivée (20 / 100) au lieu de la valeur de départ."
+                  },
+                  {
+                    "text": "+ 20 €",
+                    "isCorrect": false,
+                    "rationale": "Confusion : 20 € est la variation absolue, pas le taux de variation."
+                  },
+                  {
+                    "text": "+ 125 %",
+                    "isCorrect": false,
+                    "rationale": "Confusion : 1,25 est le coefficient multiplicateur, qui correspond à une hausse de 25 %."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Une production passe de 50 à 150 unités. Quelle phrase est juste ?",
+                "options": [
+                  {
+                    "text": "Elle a été multipliée par 3, soit une hausse de 200 %.",
+                    "isCorrect": true,
+                    "rationale": "Coefficient multiplicateur = 150 / 50 = 3. Taux de variation = (3 − 1) × 100 = + 200 %."
+                  },
+                  {
+                    "text": "Elle a été multipliée par 3, soit une hausse de 300 %.",
+                    "isCorrect": false,
+                    "rationale": "Erreur fréquente : multiplier par 3 correspond à + 200 %, car on retire la valeur de départ."
+                  },
+                  {
+                    "text": "Elle a été multipliée par 2, soit une hausse de 200 %.",
+                    "isCorrect": false,
+                    "rationale": "Erreur : le coefficient multiplicateur est 150 / 50 = 3, pas 2."
+                  },
+                  {
+                    "text": "Elle a augmenté de 100 unités, soit une hausse de 100 %.",
+                    "isCorrect": false,
+                    "rationale": "Erreur : + 100 unités sur une base de 50 font + 200 %, pas + 100 %."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Le taux de chômage passe de 8 % à 10 %. Comment décrire correctement cette évolution ?",
+                "options": [
+                  {
+                    "text": "Il augmente de 2 points de pourcentage, soit une hausse de 25 %.",
+                    "isCorrect": true,
+                    "rationale": "La différence de deux pourcentages s'exprime en points (10 − 8 = 2). Le taux de variation est (2 / 8) × 100 = + 25 %."
+                  },
+                  {
+                    "text": "Il augmente de 2 %, ce qui fait 2 points de pourcentage.",
+                    "isCorrect": false,
+                    "rationale": "Erreur classique : une hausse de 2 % de 8 % donnerait 8,16 %, pas 10 %."
+                  },
+                  {
+                    "text": "Il augmente de 25 points de pourcentage, soit une hausse de 2 %.",
+                    "isCorrect": false,
+                    "rationale": "Inversion des deux mesures : 2 points de pourcentage, et + 25 % en taux de variation."
+                  },
+                  {
+                    "text": "Il augmente de 20 %, ce qui fait 2 points de pourcentage.",
+                    "isCorrect": false,
+                    "rationale": "Erreur : on a divisé par la valeur d'arrivée (2 / 10) au lieu de la valeur de départ (2 / 8)."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Un indice base 100 en 2015 atteint 118 en 2024. Comment l'interpréter ?",
+                "options": [
+                  {
+                    "text": "La grandeur a augmenté de 18 % entre 2015 et 2024.",
+                    "isCorrect": true,
+                    "rationale": "Indice − 100 = taux de variation depuis l'année de base : 118 − 100 = + 18 %."
+                  },
+                  {
+                    "text": "La grandeur vaut 118 euros en 2024.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un indice n'a pas d'unité, il mesure une évolution par rapport à l'année de base."
+                  },
+                  {
+                    "text": "La grandeur a augmenté de 118 % entre 2015 et 2024.",
+                    "isCorrect": false,
+                    "rationale": "Erreur : un indice de 118 correspond à + 18 %, car on part de 100."
+                  },
+                  {
+                    "text": "La grandeur a augmenté de 18 % chaque année.",
+                    "isCorrect": false,
+                    "rationale": "Faux : + 18 % est la hausse totale sur la période, pas une hausse annuelle."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Un indice (base 100 en 2015) passe de 120 en 2020 à 150 en 2024. De combien la grandeur a-t-elle augmenté entre 2020 et 2024 ?",
+                "options": [
+                  {
+                    "text": "De 25 %, car (150 − 120) / 120 × 100 = 25.",
+                    "isCorrect": true,
+                    "rationale": "Entre deux années autres que l'année de base, on calcule un taux de variation classique entre les deux indices."
+                  },
+                  {
+                    "text": "De 30 %, car 150 − 120 = 30.",
+                    "isCorrect": false,
+                    "rationale": "Erreur fréquente : l'écart entre deux indices est en points d'indice, pas en pourcentage (sauf depuis la base 100)."
+                  },
+                  {
+                    "text": "De 50 %, car l'indice dépasse 100 de 50.",
+                    "isCorrect": false,
+                    "rationale": "Erreur : + 50 % mesure la hausse depuis 2015, pas depuis 2020."
+                  },
+                  {
+                    "text": "De 30 points de pourcentage depuis 2020.",
+                    "isCorrect": false,
+                    "rationale": "Erreur : l'écart est de 30 points d'indice, et il correspond à une hausse de 25 %."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Un prix augmente de 10 % une année, puis de 10 % l'année suivante. Quelle est la hausse totale ?",
+                "options": [
+                  {
+                    "text": "21 %",
+                    "isCorrect": true,
+                    "rationale": "On multiplie les coefficients : 1,10 × 1,10 = 1,21, soit + 21 %. Les taux de variation ne s'additionnent pas."
+                  },
+                  {
+                    "text": "20 %",
+                    "isCorrect": false,
+                    "rationale": "Erreur fréquente : on ne peut pas additionner des taux de variation successifs."
+                  },
+                  {
+                    "text": "11 %",
+                    "isCorrect": false,
+                    "rationale": "Erreur de calcul : il faut multiplier les coefficients 1,10 × 1,10."
+                  },
+                  {
+                    "text": "100 %",
+                    "isCorrect": false,
+                    "rationale": "Erreur : 10 × 10 = 100 ne correspond à aucun calcul de variation."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Le salaire médian est de 2 100 € net par mois. Que signifie cette donnée ?",
+                "options": [
+                  {
+                    "text": "La moitié des salariés gagne moins de 2 100 € par mois.",
+                    "isCorrect": true,
+                    "rationale": "La médiane partage la population ordonnée en deux groupes d'effectifs égaux."
+                  },
+                  {
+                    "text": "En moyenne, un salarié gagne 2 100 € net par mois.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : cela correspond au salaire moyen, qui se calcule différemment."
+                  },
+                  {
+                    "text": "La plupart des salariés gagnent exactement 2 100 € par mois.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la médiane ne dit pas que le salaire le plus fréquent est 2 100 €."
+                  },
+                  {
+                    "text": "Les 10 % les mieux payés gagnent plus de 2 100 € par mois.",
+                    "isCorrect": false,
+                    "rationale": "Faux : ce seuil correspondrait au neuvième décile, pas à la médiane."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Dans une entreprise, le salaire moyen est nettement supérieur au salaire médian. Comment l'expliquer ?",
+                "options": [
+                  {
+                    "text": "Quelques salaires très élevés tirent la moyenne vers le haut.",
+                    "isCorrect": true,
+                    "rationale": "La moyenne est sensible aux valeurs extrêmes, la médiane non : un écart moyenne > médiane signale des hauts salaires."
+                  },
+                  {
+                    "text": "Il y a forcément une erreur de calcul dans l'une des deux données.",
+                    "isCorrect": false,
+                    "rationale": "Faux : moyenne et médiane mesurent des choses différentes, elles peuvent être très éloignées."
+                  },
+                  {
+                    "text": "La majorité des salariés gagnent plus que le salaire moyen.",
+                    "isCorrect": false,
+                    "rationale": "Inversion : quand la moyenne dépasse la médiane, la majorité gagne moins que la moyenne."
+                  },
+                  {
+                    "text": "Les bas salaires sont plus nombreux, ce qui fait monter la médiane.",
+                    "isCorrect": false,
+                    "rationale": "Faux : de nombreux bas salaires feraient au contraire baisser la médiane."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Un salaire augmente de 3 % sur un an, alors que les prix augmentent de 5 %. Que devient le pouvoir d'achat ?",
+                "options": [
+                  {
+                    "text": "Il baisse d'environ 2 %, car les prix augmentent plus vite.",
+                    "isCorrect": true,
+                    "rationale": "En valeur réelle, le salaire perd environ 2 % (3 − 5). La valeur nominale ne tient pas compte de l'inflation."
+                  },
+                  {
+                    "text": "Il augmente de 3 %, comme le salaire nominal.",
+                    "isCorrect": false,
+                    "rationale": "Erreur : la hausse nominale ne tient pas compte de la hausse des prix."
+                  },
+                  {
+                    "text": "Il augmente de 8 %, en additionnant les deux hausses.",
+                    "isCorrect": false,
+                    "rationale": "Erreur : il ne faut pas additionner les deux taux, mais retrancher l'inflation."
+                  },
+                  {
+                    "text": "Il reste stable, car salaires et prix augmentent tous les deux.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les prix augmentent plus vite que le salaire, le pouvoir d'achat diminue."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Un tableau indique (données fictives) qu'en 2022, 20 % des ouvriers sont diplômés du supérieur. Quelle phrase de lecture est correcte ?",
+                "options": [
+                  {
+                    "text": "En 2022, sur 100 ouvriers, 20 sont diplômés du supérieur.",
+                    "isCorrect": true,
+                    "rationale": "On part de l'ensemble de référence (les ouvriers) : sur 100 ouvriers, 20 ont un diplôme du supérieur."
+                  },
+                  {
+                    "text": "En 2022, sur 100 diplômés du supérieur, 20 sont ouvriers.",
+                    "isCorrect": false,
+                    "rationale": "Erreur fréquente : on a inversé l'ensemble de référence."
+                  },
+                  {
+                    "text": "En 2022, 20 % de la population est ouvrière et diplômée.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la donnée porte sur les seuls ouvriers, pas sur toute la population."
+                  },
+                  {
+                    "text": "En 2022, 20 ouvriers sont diplômés du supérieur en France.",
+                    "isCorrect": false,
+                    "rationale": "Faux : un pourcentage n'est pas un effectif."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Dans un paragraphe AEI, que doit contenir l'explication (E) ?",
+                "options": [
+                  {
+                    "text": "Le mécanisme qui justifie l'affirmation, avec le cours.",
+                    "isCorrect": true,
+                    "rationale": "L'explication montre pourquoi l'affirmation est vraie : c'est le cœur du raisonnement."
+                  },
+                  {
+                    "text": "Un exemple chiffré tiré d'un document ou de l'actualité.",
+                    "isCorrect": false,
+                    "rationale": "Confusion : l'exemple correspond à l'illustration (I)."
+                  },
+                  {
+                    "text": "La reformulation de l'affirmation avec d'autres mots.",
+                    "isCorrect": false,
+                    "rationale": "Faux : reformuler ne suffit pas, il faut expliquer le mécanisme."
+                  },
+                  {
+                    "text": "Un résumé complet du document fourni avec le sujet.",
+                    "isCorrect": false,
+                    "rationale": "Faux : on ne résume pas le document, on l'utilise pour illustrer."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "De quelles parties se compose l'épreuve composée (EC) ?",
+                "options": [
+                  {
+                    "text": "Connaissances (EC1), étude d'un document (EC2), raisonnement sur dossier (EC3).",
+                    "isCorrect": true,
+                    "rationale": "Les trois parties évaluent des compétences différentes : connaissances, lecture de données, argumentation."
+                  },
+                  {
+                    "text": "EC1 : étude d'un document ; EC2 : raisonnement ; EC3 : mobilisation de connaissances.",
+                    "isCorrect": false,
+                    "rationale": "Faux : l'ordre des parties n'est pas respecté."
+                  },
+                  {
+                    "text": "EC1 : dissertation ; EC2 : questions de cours ; EC3 : commentaire de texte.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la dissertation est l'autre sujet au choix, elle ne fait pas partie de l'épreuve composée."
+                  },
+                  {
+                    "text": "EC1, EC2 et EC3 : trois questions de cours sur des chapitres différents.",
+                    "isCorrect": false,
+                    "rationale": "Faux : seule l'EC1 est une question de cours ; l'EC2 et l'EC3 s'appuient sur des documents."
+                  }
+                ],
+                "level": "premiere"
+              },
+              {
+                "question": "Que doit contenir l'introduction d'une dissertation ?",
+                "options": [
+                  {
+                    "text": "Accroche, définitions, problématique, annonce du plan.",
+                    "isCorrect": true,
+                    "rationale": "Ces étapes permettent de cerner le sujet, de poser la question à traiter et d'annoncer le raisonnement."
+                  },
+                  {
+                    "text": "La réponse complète au sujet, avant de développer les arguments.",
+                    "isCorrect": false,
+                    "rationale": "Faux : la réponse argumentée vient dans le développement et se résume en conclusion."
+                  },
+                  {
+                    "text": "Un résumé de chaque document du dossier, dans l'ordre.",
+                    "isCorrect": false,
+                    "rationale": "Faux : les documents servent à illustrer les arguments, on ne les résume pas un à un."
+                  },
+                  {
+                    "text": "Une citation d'auteur, suivie directement de la première partie.",
+                    "isCorrect": false,
+                    "rationale": "Trop incomplet : sans définitions ni problématique, l'introduction ne pose pas le sujet."
+                  }
+                ],
+                "level": "premiere"
+              }
+            ]
+          }
+        ];
     </script>
 
     <!-- React App Mounting Script -->
@@ -1833,7 +4467,7 @@
             const [score, setScore] = useState(0);
             const [userAnswers, setUserAnswers] = useState([]);
             const [view, setView] = useState('dashboard'); // 'dashboard', 'quiz', 'summary', 'authors'
-            
+
             // Réserve d'erreurs
             const [wrongQuestions, setWrongQuestions] = useState(() => {
                 const saved = localStorage.getItem('ses_wrong_questions');
@@ -1846,6 +4480,21 @@
                 const saved = localStorage.getItem('ses_high_scores');
                 return saved ? JSON.parse(saved) : {};
             });
+
+            // Niveau affiché : Première ou Terminale (mémorisé dans le navigateur)
+            const [level, setLevel] = useState(() => {
+                try { return localStorage.getItem('ses_level') || 'terminale'; } catch (e) { return 'terminale'; }
+            });
+            const changeLevel = (lv) => {
+                setLevel(lv);
+                try { localStorage.setItem('ses_level', lv); } catch (e) {}
+                setView('dashboard');
+            };
+            const currentData = level === 'premiere' ? quizDataPremiere : quizData;
+            const levelOf = (q) => q.level || 'terminale';
+            const levelWrong = wrongQuestions.filter(q => levelOf(q) === level);
+            const bacId = level === 'premiere' ? 'bac_blanc_premiere' : 'bac_blanc';
+            const baselineKey = level === 'premiere' ? 'ses_remediation_baseline_premiere' : 'ses_remediation_baseline';
 
             // Chronomètre de 15 minutes
             const [isTimerActive, setIsTimerActive] = useState(false);
@@ -1873,7 +4522,7 @@
 
             const handleStartQuiz = (chapter) => {
                 setIsRemediationMode(false);
-                const originalChapter = quizData.find(c => c.id === chapter.id) || chapter;
+                const originalChapter = [...quizData, ...quizDataPremiere].find(c => c.id === chapter.id) || chapter;
                 const randomQuestions = shuffle(originalChapter.questions);
                 const finalShuffledQuestions = randomQuestions.map(q => ({
                     ...q,
@@ -1889,10 +4538,10 @@
 
             const handleStartBacBlanc = () => {
                 setIsRemediationMode(false);
-                // 2 questions tirées dans chacun des 9 chapitres (18), puis 2 questions supplémentaires au hasard
+                // 2 questions tirées dans chaque chapitre du niveau choisi, puis complément au hasard jusqu'à 20
                 let picked = [];
                 let remaining = [];
-                quizData.forEach(chap => {
+                currentData.forEach(chap => {
                     const shuffled = shuffle(chap.questions);
                     picked = picked.concat(shuffled.slice(0, 2));
                     remaining = remaining.concat(shuffled.slice(2));
@@ -1905,21 +4554,21 @@
                 }));
 
                 setSelectedChapter({
-                    id: "bac_blanc",
-                    title: "Marathon Bac Blanc - Épreuve Globale",
+                    id: bacId,
+                    title: level === 'premiere' ? "Entraînement global - Première" : "Marathon Bac Blanc - Épreuve Globale",
                     questions: finalQuestions
                 });
                 resetQuizState();
             };
 
             const handleStartRemediation = () => {
-                if (wrongQuestions.length === 0) return;
+                if (levelWrong.length === 0) return;
                 setIsRemediationMode(true);
-                
+
                 setSelectedChapter({
                     id: "remediation",
                     title: "Module de Remédiation Personnalisé",
-                    questions: shuffle(wrongQuestions).map(q => ({
+                    questions: shuffle(levelWrong).map(q => ({
                         ...q,
                         options: shuffle(q.options)
                     }))
@@ -1944,20 +4593,20 @@
 
             const handleSubmitAnswer = () => {
                 if (selectedOptionIndex === null) return;
-                
+
                 const questionObj = selectedChapter.questions[currentQuestionIndex];
                 const selectedOption = questionObj.options[selectedOptionIndex];
                 const correctOptionIndex = questionObj.options.findIndex(opt => opt.isCorrect);
                 const isCorrect = selectedOption.isCorrect;
-                
+
                 if (isCorrect) {
                     setScore(prev => prev + 1);
                     if (isRemediationMode) {
                         setWrongQuestions(prev => {
                             const updated = prev.filter(q => q.question !== questionObj.question);
                             localStorage.setItem('ses_wrong_questions', JSON.stringify(updated));
-                            if (updated.length === 0) {
-                                localStorage.setItem('ses_remediation_baseline', '0');
+                            if (updated.filter(q => levelOf(q) === level).length === 0) {
+                                localStorage.setItem(baselineKey, '0');
                             }
                             return updated;
                         });
@@ -1965,12 +4614,13 @@
                 } else {
                     setWrongQuestions(prev => {
                         if (prev.some(q => q.question === questionObj.question)) return prev;
-                        const updated = [...prev, questionObj];
+                        const updated = [...prev, { ...questionObj, level: levelOf(questionObj) }];
                         localStorage.setItem('ses_wrong_questions', JSON.stringify(updated));
-                        
-                        const baseline = parseInt(localStorage.getItem('ses_remediation_baseline') || '0');
-                        if (updated.length > baseline) {
-                            localStorage.setItem('ses_remediation_baseline', updated.length.toString());
+
+                        const levelCount = updated.filter(q => levelOf(q) === level).length;
+                        const baseline = parseInt(localStorage.getItem(baselineKey) || '0');
+                        if (levelCount > baseline) {
+                            localStorage.setItem(baselineKey, levelCount.toString());
                         }
                         return updated;
                     });
@@ -2008,11 +4658,11 @@
                 }
             };
 
-            const errorBaseline = Math.max(wrongQuestions.length, parseInt(localStorage.getItem('ses_remediation_baseline') || '0'));
-            const errorsCleared = errorBaseline - wrongQuestions.length;
+            const errorBaseline = Math.max(levelWrong.length, parseInt(localStorage.getItem(baselineKey) || '0'));
+            const errorsCleared = errorBaseline - levelWrong.length;
             const recoveryPercent = errorBaseline > 0 ? Math.round((errorsCleared / errorBaseline) * 100) : 0;
 
-            const bestBacScore = highScores["bac_blanc"];
+            const bestBacScore = highScores[bacId];
             let bacMedal = null;
             if (bestBacScore !== undefined) {
                 if (bestBacScore === 20) bacMedal = "🥇";
@@ -2031,31 +4681,31 @@
                                 </div>
                                 <div>
                                     {/* MODIFIÉ : AJOUT DE VOTRE NOM DIRECTEMENT ICI */}
-                                    <h1 className="font-extrabold text-lg text-slate-900 tracking-tight">SES Terminale - M. Chachero</h1>
-                                    <p className="text-xs text-slate-500 font-medium">Révisions du Baccalauréat</p>
+                                    <h1 className="font-extrabold text-lg text-slate-900 tracking-tight">SES {level === 'premiere' ? 'Première' : 'Terminale'} - M. Chachero</h1>
+                                    <p className="text-xs text-slate-500 font-medium">{level === 'premiere' ? 'Révisions de Première' : 'Révisions du Baccalauréat'}</p>
                                 </div>
                             </div>
 
                             <div className="flex items-center space-x-3">
                                 {/********* BOUTON REMÉDIATION *********/}
                                 {(view === 'dashboard' || view === 'authors') && (
-                                    <button 
-                                        onClick={wrongQuestions.length > 0 ? handleStartRemediation : null}
-                                        disabled={wrongQuestions.length === 0}
+                                    <button
+                                        onClick={levelWrong.length > 0 ? handleStartRemediation : null}
+                                        disabled={levelWrong.length === 0}
                                         className={`text-sm font-bold px-3 py-2 rounded-xl flex items-center space-x-1.5 transition border ${
-                                            wrongQuestions.length > 0 
-                                                ? "text-amber-700 bg-amber-50 hover:bg-amber-100 border-amber-200 shadow-sm shadow-amber-50" 
+                                            levelWrong.length > 0
+                                                ? "text-amber-700 bg-amber-50 hover:bg-amber-100 border-amber-200 shadow-sm shadow-amber-50"
                                                 : "text-slate-400 bg-slate-50 border-slate-200 opacity-60 cursor-not-allowed"
                                         }`}
                                     >
                                         <i className="fa-solid fa-kit-medical"></i>
-                                        <span>Remédiation {wrongQuestions.length > 0 ? `(${wrongQuestions.length} | ${recoveryPercent}%)` : ""}</span>
+                                        <span>Remédiation {levelWrong.length > 0 ? `(${levelWrong.length} | ${recoveryPercent}%)` : ""}</span>
                                     </button>
                                 )}
 
                                 {/********* BOUTON CITATIONS & AUTEURS *********/}
-                                {view !== 'authors' && (
-                                    <button 
+                                {view !== 'authors' && level === 'terminale' && (
+                                    <button
                                         onClick={() => setView('authors')}
                                         className="text-sm font-bold text-indigo-600 hover:text-indigo-800 bg-indigo-50 hover:bg-indigo-100 px-3 py-2 rounded-xl flex items-center space-x-1.5 transition border border-indigo-100"
                                     >
@@ -2075,13 +4725,20 @@
 
                     {/* ZONE CENTRALE DYNAMIQUE */}
                     <main className="max-w-5xl w-full mx-auto px-4 py-8 flex-grow flex items-center justify-center">
-                        
+
                         {/* VIEW 1 : TABLEAU DE BORD ACCUEIL */}
                         {view === 'dashboard' && (
                             <div className="w-full">
                                 <div className="text-center mb-8">
+                                    <div className="mb-5">
+                                        <div className="inline-flex bg-slate-100 border border-slate-200 rounded-2xl p-1">
+                                            {[['premiere', 'Première'], ['terminale', 'Terminale']].map(([lv, label]) => (
+                                                <button key={lv} onClick={() => changeLevel(lv)} className={`px-6 py-2 rounded-xl text-sm font-bold transition ${level === lv ? 'bg-white text-indigo-700 shadow-sm' : 'text-slate-500 hover:text-slate-800'}`}>{label}</button>
+                                            ))}
+                                        </div>
+                                    </div>
                                     <span className="bg-indigo-50 text-indigo-700 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">Session Active : Mode Autonome</span>
-                                    <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight mt-3 mb-2">Entraînez-vous pour l'Épreuve Écrite</h2>
+                                    <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight mt-3 mb-2">{level === 'premiere' ? 'Révisez les chapitres de Première' : "Entraînez-vous pour l'Épreuve Écrite"}</h2>
                                     <p className="text-slate-500 max-w-xl mx-auto text-sm">Configurez l'évaluation puis cliquez sur le bouton d'examen global ou choisissez un chapitre thématique.</p>
                                 </div>
 
@@ -2102,8 +4759,8 @@
                                         <div className="flex items-center space-x-4">
                                             <div className="w-10 h-10 rounded-xl bg-white/20 text-white flex items-center justify-center shadow-md"><i className="fa-solid fa-file-signature text-base"></i></div>
                                             <div>
-                                                <h3 className="font-extrabold text-white text-sm leading-tight">Marathon Bac Blanc</h3>
-                                                <p className="text-[11px] text-indigo-100 font-medium">20 questions transversales</p>
+                                                <h3 className="font-extrabold text-white text-sm leading-tight">{level === 'premiere' ? 'Entraînement global' : 'Marathon Bac Blanc'}</h3>
+                                                <p className="text-[11px] text-indigo-100 font-medium">20 questions sur tous les chapitres</p>
                                             </div>
                                         </div>
                                         <div className="flex items-center space-x-2">
@@ -2117,9 +4774,9 @@
                                     </div>
                                 </div>
 
-                                {/* GRILLE DES 9 CHAPITRES */}
+                                {/* GRILLE DES CHAPITRES DU NIVEAU CHOISI */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {quizData.map((chap) => {
+                                    {currentData.map((chap) => {
                                         const bestScore = highScores[chap.id];
                                         let medalElement = null;
 
@@ -2291,7 +4948,7 @@
                                 </div>
 
                                 <div className="flex space-x-4">
-                                    <button onClick={() => { if (selectedChapter.id === "bac_blanc") { handleStartBacBlanc(); } else if (isRemediationMode) { wrongQuestions.length > 0 ? handleStartRemediation() : setView('dashboard'); } else { handleStartQuiz(selectedChapter); } }} className="flex-1 border border-slate-200 hover:border-slate-300 font-bold py-4 px-6 rounded-2xl transition text-slate-700 text-sm">Recommencer</button>
+                                    <button onClick={() => { if (selectedChapter.id.startsWith("bac_blanc")) { handleStartBacBlanc(); } else if (isRemediationMode) { levelWrong.length > 0 ? handleStartRemediation() : setView('dashboard'); } else { handleStartQuiz(selectedChapter); } }} className="flex-1 border border-slate-200 hover:border-slate-300 font-bold py-4 px-6 rounded-2xl transition text-slate-700 text-sm">Recommencer</button>
                                     <button onClick={() => setView('dashboard')} className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-2xl transition shadow-md shadow-blue-100 text-sm">Retour à l'accueil</button>
                                 </div>
                             </div>
@@ -2301,7 +4958,7 @@
                     {/* Pied de page */}
                     <footer className="bg-white border-t border-slate-100 py-6 text-center text-xs text-slate-400 font-medium">
                         <div className="max-w-5xl mx-auto px-4">
-                            <p>© 2026 SES Terminale Bac - Plateforme Éducative</p>
+                            <p>© 2026 SES Première et Terminale - Plateforme Éducative</p>
                         </div>
                     </footer>
                 </div>
